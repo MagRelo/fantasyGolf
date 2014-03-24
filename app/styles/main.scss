@@ -80,8 +80,8 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+  background-color: $mg-dark;
+  color: $mg-white;
 }
 
 .jumbotron .btn {
@@ -118,7 +118,16 @@ body {
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
         border-bottom: 0;
+        background-image: url('/images/6078_800_533.jpg');
+        height: 533px;
+        padding-top: 5px;
+        text-align: left;
     }
+
+    .jumbotron > h1{
+      padding-top: 400px;
+    }
+
 }
 
 //custom additions

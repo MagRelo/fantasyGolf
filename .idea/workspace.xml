@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.jade" afterPath="$PROJECT_DIR$/app/views/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/league.jade" afterPath="$PROJECT_DIR$/app/views/partials/league.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/login.jade" afterPath="$PROJECT_DIR$/app/views/partials/login.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/login.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/main.jade" afterPath="$PROJECT_DIR$/app/views/partials/main.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/main.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/navbar.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/navbar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/navbar.jade" afterPath="$PROJECT_DIR$/app/views/partials/navbar.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/signup.jade" afterPath="$PROJECT_DIR$/app/views/partials/signup.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/team.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/team.js" />
     </list>
     <ignored path="fantasy-golf.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -15,7 +18,14 @@
     <file path="/.gitignore" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395690642194" ignored="false" />
     <file path="/navbar.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395691265512" ignored="false" />
     <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395692927010" ignored="false" />
-    <file path="/main.scss" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395692486172" ignored="false" />
+    <file path="/main.scss" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395696025224" ignored="false" />
+    <file path="/team.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395693300558" ignored="false" />
+    <file path="/league.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395693722745" ignored="false" />
+    <file path="/main.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395696318876" ignored="false" />
+    <file path="/navbar.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395694586519" ignored="false" />
+    <file path="/login.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395696778151" ignored="false" />
+    <file path="/signup.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395696506245" ignored="false" />
+    <file path="/main.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395696689231" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +45,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="league.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/league.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="57" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="27" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/login.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/signup.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="18" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="navbar.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/navbar.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,37 +90,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
+      <file leaf-file-name="navbar.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/navbar.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="37" vertical-scroll-proportion="0.0">
+            <state line="2" column="30" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.jade" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/team.jade">
+      <file leaf-file-name="login.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="23" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.6052202">
+            <state line="17" column="31" selection-start="466" selection-end="466" vertical-scroll-proportion="0.42288557">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/settings.js">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="5" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signup.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/signup.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/settings.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="50" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -83,7 +129,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="18" selection-start="2501" selection-end="2501" vertical-scroll-proportion="0.0">
+            <state line="102" column="56" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,11 +154,18 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/app/views/partials/main.jade" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/navbar.js" />
-        <option value="$PROJECT_DIR$/app/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/views/partials/team.jade" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/team.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/league.jade" />
+        <option value="$PROJECT_DIR$/app/styles/main.scss" />
+        <option value="$PROJECT_DIR$/app/views/partials/main.jade" />
+        <option value="$PROJECT_DIR$/app/views/partials/signup.jade" />
+        <option value="$PROJECT_DIR$/app/views/partials/navbar.jade" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/main.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/login.jade" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/login.js" />
       </list>
     </option>
   </component>
@@ -297,6 +350,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantasy-golf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantasy-golf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -411,48 +482,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config/dummydata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/config/express.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="28" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.91054314">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="23" selection-start="479" selection-end="480" vertical-scroll-proportion="0.2571885">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="80" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="1" selection-start="78" selection-end="78" vertical-scroll-proportion="0.19169329">
@@ -467,23 +496,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/settings.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="24" column="50" selection-start="900" selection-end="900" vertical-scroll-proportion="0.5872757">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="0.095846646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="4" selection-start="114" selection-end="580" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/team.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="37" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/league.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="57" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="56" selection-start="2089" selection-end="2089" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/signup.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="18" selection-start="85" selection-end="85" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -495,30 +552,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/navbar.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="18" selection-start="2501" selection-end="2501" vertical-scroll-proportion="0.0">
+        <state line="2" column="30" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/settings.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/settings.jade">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="50" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+        <state line="7" column="5" selection-start="102" selection-end="102" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/team.jade">
+    <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="23" selection-start="2236" selection-end="2236" vertical-scroll-proportion="0.6052202">
+        <state line="15" column="27" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/login.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="34" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="31" selection-start="466" selection-end="466" vertical-scroll-proportion="0.42288557">
           <folding />
         </state>
       </provider>

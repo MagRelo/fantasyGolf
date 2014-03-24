@@ -1,1 +1,20 @@
-p This is the league view.
+div(ng-include='\'partials/navbar\'')
+
+h3.text-primary My leagues
+.well
+
+h3.text-primary Join a league
+.well
+
+h3.text-primary Create a new league
+.well
+    form(role='form', name='LeagueForm', data-ng-submit='submitLeague(League)')
+        legend League
+        .form-group
+            label.control-label(for='1') League Name
+            input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='League.League_Name')
+        .form-group
+            label.control-label(for='2') League Password
+            input#2.form-control(type='text', name='2_Text', data-ng-model='League.League_Password')
+        button.btn.btn-lg.btn-primary(type='submit') Create
+
