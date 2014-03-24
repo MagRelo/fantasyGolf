@@ -25,6 +25,18 @@ angular.module('fantasyGolfApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/team', {
+        templateUrl: 'partials/team',
+        controller: 'TeamCtrl'
+      })
+      .when('/league', {
+        templateUrl: 'partials/league',
+        controller: 'LeagueCtrl'
+      })
+      .when('/tournament', {
+        templateUrl: 'partials/tournament',
+        controller: 'TournamentCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

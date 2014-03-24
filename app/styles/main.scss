@@ -1,6 +1,37 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
+$mg-white:              #D2D5D8;
+$mg-mid:                #5E6266;
+$mg-dark:               #3C3F42;
+$mg-darkest:            #282B2E;
+
+$brand-info:            #2B7EC0 !default;
+$brand-primary:         #27ae60 !default;
+$brand-success:         #27ae60 !default;
+$brand-warning:         #e67e22 !default;
+$brand-danger:          #B95050 !default;
+
+// Typography
+$font-family-sans-serif:  Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$body-bg:               $mg-darkest !default;
+$text-color:            $mg-white !default;
+
+// Forms
+$input-bg:              $mg-darkest !default;
+$input-color:           $mg-white !default;
+$input-border:          $mg-mid !default;
+$legend-color:          $mg-white !default;
+
+// Panels
+$panel-bg:              $mg-dark !default;
+
+// Wells
+$well-bg:               $mg-dark !default;
+
+
 @import 'sass-bootstrap/lib/bootstrap';
+
+
 
 .browsehappy {
     margin: 0.2em 0;
@@ -88,4 +119,9 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+//custom additions
+.well{
+  border-color: $mg-mid;
 }
