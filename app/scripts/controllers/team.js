@@ -21,7 +21,7 @@ angular.module('fantasyGolfApp')
       };
 
       Auth.updateTeam(team, function(){
-
+        $scope.TeamForm.$setPristine();
         $scope.updated = true;
       });
 

@@ -35,8 +35,11 @@ div(ng-include='\'partials/navbar\'')
                         input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='user.Team_Name')
 
 
-        p(data-ng-show='updated') Updated!
-        button.btn.btn-primary.pull-right(type='submit') Save
+        ul.list-inline.pull-right
+            li
+                h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+            li
+                button.btn.btn-primary(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
 
         .clearfix
 

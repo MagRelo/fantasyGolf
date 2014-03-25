@@ -7,7 +7,7 @@ $mg-darkest:            #282B2E;
 
 $brand-info:            #2B7EC0 !default;
 $brand-primary:         #2B7EC0 !default;
-$brand-success:         #27ae60 !default;
+$brand-success:         #468847 !default;
 $brand-warning:         #e67e22 !default;
 $brand-danger:          #B95050 !default;
 
@@ -137,9 +137,9 @@ body {
 }
 
 //section titles
-.text-primary{
-  color: $brand-primary;
-}
 .text-primary:hover{
   color: $brand-primary;
+}
+.text-success:hover{
+  color: $brand-success;
 }
