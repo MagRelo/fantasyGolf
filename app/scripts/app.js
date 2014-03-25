@@ -58,7 +58,7 @@ angular.module('fantasyGolfApp', [
     $rootScope.$on('$routeChangeStart', function (event, next) {
       
       if (next.authenticate && !Auth.isLoggedIn()) {
-        $location.path('/login');
+        $location.path('/');
       }
     });
   });

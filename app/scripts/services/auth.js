@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .factory('Auth', function Auth($location, $rootScope, Session, User, $cookieStore) {
+  .factory('Auth', function Auth($location, $rootScope, Session, Team, User, $cookieStore) {
     
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
@@ -107,5 +107,26 @@ angular.module('fantasyGolfApp')
         var user = $rootScope.currentUser;
         return !!user;
       },
+
+
+      /**
+       * Update Team
+       *
+       * @param  {Object}   user     - user info
+       * @param  {Function} callback - optional
+       * @return {Promise}
+       */
+      updateTeam: function(team, callback) {
+        var cb = callback || angular.noop;
+
+        return Team.update(team,
+          function(team) {
+            return cb(team);
+          },
+          function(err) {
+            return cb(err);
+          }).$promise;
+      },
+
     };
   });
