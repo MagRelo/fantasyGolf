@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($scope, $http) {
-    $http.get('/api/awesomeThings').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+  .controller('LeagueCtrl', function ($scope, Leagues, Auth) {
+
+    $scope.user = Auth.currentUser();
+
+    $scope.leagues = Leagues.leagues;
+
+
+
   });

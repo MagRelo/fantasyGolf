@@ -1,55 +1,45 @@
 div(ng-include='\'partials/navbar\'')
 
 
-
-.row
-    div.col-sm-6
-        h3.text-primary My Team
-        div.well
-
-            form(role='form', name='TeamForm', data-ng-submit='submitTeam(Team)')
-                legend Team Settings
-                .form-group
-                    label.control-label(for='1') Owner Name
-                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='Team.Owner_Name')
-                .form-group
-                    label.control-label(for='2') Team Name
-                    input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='Team.Team_Name')
-
-                legend Select Players
-                .well.well-lg
+.well
+    form(role='form', name='TeamForm', data-ng-submit='submitTeam(Team)')
+        .row
+            .col-sm-7
+                fieldset
+                    legend Select Players
                     .form-group
                         label.control-label(for='3') Player 1
-                        select#3.form-control(name='3_Dropdown_List', required='required', data-ng-model='Team.Player_1')
-                            option(value='option 1') option 1
-                            option(value='option 2') option 2
-                            option(value='option 3') option 3
+                        select#3.form-control(name='3_Dropdown_List', required='required',
+                        data-ng-options='player.name for player in players', data-ng-model='Team.Player_1')
                     .form-group
                         label.control-label(for='4') Player 2
-                        select#4.form-control(name='4_Dropdown_List', required='required', data-ng-model='Team.Player_2')
-                            option(value='option 1') option 1
-                            option(value='option 2') option 2
-                            option(value='option 3') option 3
+                        select#4.form-control(name='4_Dropdown_List', required='required',
+                        data-ng-options='player.name for player in players', data-ng-model='Team.Player_2')
                     .form-group
                         label.control-label(for='5') Player 3
-                        select#5.form-control(name='5_Dropdown_List', required='required', data-ng-model='Team.Player_3')
-                            option(value='option 1') option 1
-                            option(value='option 2') option 2
-                            option(value='option 3') option 3
+                        select#5.form-control(name='5_Dropdown_List', required='required',
+                        data-ng-options='player.name for player in players', data-ng-model='Team.Player_3')
                     .form-group
                         label.control-label(for='6') Player 4
-                        select#6.form-control(name='6_Dropdown_List', required='required', data-ng-model='Team.Player_4')
-                            option(value='option 1') option 1
-                            option(value='option 2') option 2
-                            option(value='option 3') option 3
+                        select#6.form-control(name='6_Dropdown_List', required='required',
+                        data-ng-options='player.name for player in players', data-ng-model='Team.Player_4')
 
-                button.btn.btn-lg.btn-primary.pull-right(type='submit') Save
+            .col-sm-5
+                fieldset
+                    legend Team Settings
+                    .form-group
+                        label.control-label(for='1') Owner Name
+                        input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='Team.Owner_Name')
+                    .form-group
+                        label.control-label(for='2') Team Name
+                        input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='Team.Team_Name')
 
-            .clearfix
+        button.btn.btn-primary.pull-right(type='submit') Save
 
+        .clearfix
 
-    div.col-sm-6
-        h3.text-primary My Account
+.row
+    .col-sm-6
         .well
             div(ng-include='\'partials/settings\'')
 

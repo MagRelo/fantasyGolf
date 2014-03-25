@@ -2,9 +2,12 @@ div(ng-include='\'partials/navbar\'')
 
 h3.text-primary My leagues
 .well
+    p {{user | json}}
 
 h3.text-primary Join a league
 .well
+    div(data-ng-repeat='league in leagues')
+        p {{league.name}}
 
 h3.text-primary Create a new league
 .well

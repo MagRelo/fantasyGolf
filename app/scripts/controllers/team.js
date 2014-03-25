@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($scope, Auth) {
+  .controller('TeamCtrl', function ($scope, Auth, Players) {
+
+    $scope.players = Players.players;
 
     //Account Settings
     $scope.errors = {};
