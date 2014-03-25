@@ -1,11 +1,7 @@
-div(ng-include='\'partials/navbar.html\'')
-
-.row
-  .col-sm-12
-    h1 Change Password
-    
-  .col-sm-12
+div(data-ng-controller="SettingsCtrl")
     form.form(name='form', ng-submit='changePassword(form)', novalidate='')
+
+      legend Change Password
 
       .form-group
         label Current Password

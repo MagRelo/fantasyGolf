@@ -6,7 +6,7 @@ $mg-dark:               #3C3F42;
 $mg-darkest:            #282B2E;
 
 $brand-info:            #2B7EC0 !default;
-$brand-primary:         #27ae60 !default;
+$brand-primary:         #2B7EC0 !default;
 $brand-success:         #27ae60 !default;
 $brand-warning:         #e67e22 !default;
 $brand-danger:          #B95050 !default;
@@ -119,13 +119,14 @@ body {
     .jumbotron {
         border-bottom: 0;
         background-image: url('/images/6078_800_533.jpg');
-        height: 533px;
+        height: 413px;
+        background-position-y: -120px;
         padding-top: 5px;
         text-align: left;
     }
 
     .jumbotron > h1{
-      padding-top: 400px;
+      padding-top: 280px;
     }
 
 }

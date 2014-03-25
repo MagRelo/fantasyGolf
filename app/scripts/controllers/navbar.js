@@ -4,7 +4,7 @@ angular.module('fantasyGolfApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Tournament',
-      'link': '/'
+      'link': '/tournament'
     }, {
       'title': 'My Team',
       'link': '/team'
