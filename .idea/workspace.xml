@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/settings.jade" afterPath="$PROJECT_DIR$/app/views/partials/settings.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/settings.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/team.jade" afterPath="$PROJECT_DIR$/app/views/partials/team.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/team.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/team.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/models/teammodel.js" afterPath="$PROJECT_DIR$/app/scripts/models/teammodel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tournament.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tournament.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/controllers/api.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/models/thing.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/config/dummydata.js" afterPath="$PROJECT_DIR$/lib/config/dummydata.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395960097832" ignored="false" />
+    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395964371676" ignored="false" />
     <file path="/.gitignore" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395690642194" ignored="false" />
     <file path="/navbar.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395691265512" ignored="false" />
     <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395960866362" ignored="false" />
@@ -114,11 +112,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/settings.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="38" selection-start="596" selection-end="596" vertical-scroll-proportion="0.50319487">
+            <state line="21" column="38" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="74" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dummydata.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/config/dummydata.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="25" selection-start="889" selection-end="889" vertical-scroll-proportion="0.7960199">
+              <folding>
+                <element signature="e#257#452#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,8 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/scripts/services/pga.js" />
-        <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/players.js" />
         <option value="$PROJECT_DIR$/lib/controllers/pga.js" />
         <option value="$PROJECT_DIR$/app/views/partials/tournament.jade" />
@@ -166,6 +182,8 @@
         <option value="$PROJECT_DIR$/app/scripts/controllers/tournament.js" />
         <option value="$PROJECT_DIR$/app/views/partials/settings.jade" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/settings.js" />
+        <option value="$PROJECT_DIR$/lib/routes.js" />
+        <option value="$PROJECT_DIR$/lib/config/dummydata.js" />
       </list>
     </option>
   </component>
@@ -366,28 +384,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="styles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -407,94 +403,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -549,7 +457,11 @@
       <created>1395960100301</created>
       <updated>1395960100301</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="testing settings">
+      <created>1395964377652</created>
+      <updated>1395964377652</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -617,7 +529,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add team update functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing settings" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -635,6 +547,7 @@
     <MESSAGE value="refine views" />
     <MESSAGE value="refine league list and dummy data" />
     <MESSAGE value="add team update functions" />
+    <MESSAGE value="testing settings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -642,20 +555,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/models/tournamentmodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="47" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/resources/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="256" selection-end="256" vertical-scroll-proportion="0.26357827">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="38" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.8042414">
@@ -754,8 +653,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="596" selection-end="596" vertical-scroll-proportion="0.50319487">
+        <state line="21" column="38" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="74" selection-start="1621" selection-end="1621" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/config/dummydata.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="25" selection-start="889" selection-end="889" vertical-scroll-proportion="0.7960199">
+          <folding>
+            <element signature="e#257#452#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
