@@ -7,11 +7,11 @@ div(ng-include='\'partials/navbar\'')
 
         h3.text-primary My leagues
         .well
-            div(data-ng-show='!userLeagues.length')
+            div(data-ng-show='!currentUser.leagues.length')
                 p No leagues yet - join a league!
 
-            div(data-ng-show='userLeagues.length')
-                p(data-ng-repeat='league in userLeagues') {{league.leagueName}}
+            div(data-ng-show='currentUser.leagues.length')
+                p(data-ng-repeat='league in currentUser.leagues') {{league.leagueName}}
 
     .col-sm-6
 
@@ -24,7 +24,7 @@ div(ng-include='\'partials/navbar\'')
 
                 .form-group
                     label
-                        input(type="checkbox", data-ng-model="League.private")
+                        input(type="checkbox", data-ng-model="League.private", data-ng-true-value="true", data-ng-false-value="false")
                         |  Private league
 
 
@@ -53,7 +53,8 @@ div(ng-include='\'partials/navbar\'')
 
             //list
             div.row(data-ng-repeat='league in leagues | filter: searchFilter')
-                p.col-sm-offset-2.col-sm-10 {{league.name}}
+                div.col-sm-offset-2.col-sm-10
+                    a(ng-href="api/league/{{league._id}}") {{league.leagueName}}
 
 
 

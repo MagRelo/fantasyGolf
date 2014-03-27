@@ -3,8 +3,7 @@
 angular.module('fantasyGolfApp')
   .controller('LeagueCtrl', function ($rootScope, $scope, League) {
 
-    //list user leagues
-    $scope.userLeagues = $scope.currentUser.leagues;
+    $scope.leagues = League.query();
 
     $scope.createLeague = function(league){
 
@@ -16,8 +15,8 @@ angular.module('fantasyGolfApp')
 
       //save
       newLeague.$save(function(response){
-        //        $scope.team = response.league;
         $rootScope.currentUser = response.user;
+        $scope.League = {};
         $scope.LeagueForm.$setPristine();
       });
 

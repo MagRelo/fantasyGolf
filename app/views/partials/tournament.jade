@@ -28,8 +28,12 @@ div(ng-include='\'partials/navbar\'')
     .col-sm-6
         h3.text-primary My Leagues
         .well
-            div.text-center(data-ng-if="!currentUser.leagues.length")
-                a.btn.btn-primary(href="/league") Join or start a league >
+            div(data-ng-show='!currentUser.leagues.length')
+                p No leagues yet - join a league!
+
+            div(data-ng-repeat='league in currentUser.leagues')
+                span.glyphicon.glyphicon-remove.pull-right(data-ng-click="")
+                p {{league.leagueName}}
 
 
 
