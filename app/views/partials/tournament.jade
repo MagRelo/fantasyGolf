@@ -7,14 +7,32 @@ div(ng-include='\'partials/navbar\'')
             p Buena Vista, FL
 
     .col-sm-6
-        h3.text-primary My Team
+        h3.text-primary {{team.teamName}}
+            small  {{team.ownerName}}
         .well
+
+            //team not setup
+            div.text-center(data-ng-if="!currentUser.teamId")
+                a.btn.btn-primary(href="/team") Setup your team >
+
+
+            ul.list-unstyled
+                li {{team.player1}}
+                li {{team.player2}}
+                li {{team.player3}}
+                li {{team.player4}}
+
 
 
 
     .col-sm-6
         h3.text-primary My Leagues
         .well
+            div.text-center(data-ng-if="!currentUser.leagues.length")
+                a.btn.btn-primary(href="/league") Join or start a league >
+
+
+
 
 
 

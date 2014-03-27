@@ -1,23 +1,59 @@
 div(ng-include='\'partials/navbar\'')
 
-h3.text-primary My leagues
-.well
-    p {{user | json}}
 
-h3.text-primary Join a league
-.well
-    div(data-ng-repeat='league in leagues')
-        p {{league.name}}
+.row
 
-h3.text-primary Create a new league
-.well
-    form(role='form', name='LeagueForm', data-ng-submit='submitLeague(League)')
-        legend League
-        .form-group
-            label.control-label(for='1') League Name
-            input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='League.League_Name')
-        .form-group
-            label.control-label(for='2') League Password
-            input#2.form-control(type='text', name='2_Text', data-ng-model='League.League_Password')
-        button.btn.btn-lg.btn-primary(type='submit') Create
+    .col-sm-6
+
+        h3.text-primary My leagues
+        .well
+            div(data-ng-show='!user.leagues.length')
+                p No leagues yet - join a league!
+
+            div(data-ng-show='user.leagues.length')
+                p(data-ng-repeat='league in user.leagues')
+
+    .col-sm-6
+
+        h3.text-primary Create a new league
+        .well
+            form(role='form', name='LeagueForm', data-ng-submit='submitLeague(League)')
+                .form-group
+                    label.control-label(for='1') League Name
+                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='League.name')
+
+                .form-group
+                    label
+                        input(type="checkbox", data-ng-model="League.private")
+                        |  Private league
+
+
+                .form-group
+                    label.control-label(for='2') League Password
+                    input#2.form-control(type='text', name='2_Text', data-ng-model='League.password')
+
+                button.btn.btn-success.pull-right(type='submit', data-ng-show='LeagueForm.$dirty') Create league
+
+                .clearfix
+
+
+
+.row
+    .col-sm-12
+
+        h3.text-primary Join a league
+        .well
+
+            //search
+            div.form-horizontal
+                .form-group
+                    label.control-label.col-sm-2 Search
+                    div.col-sm-10
+                        input.form-control(type='text', data-ng-model='searchFilter')
+
+            //list
+            div.row(data-ng-repeat='league in leagues | filter: searchFilter')
+                p.col-sm-offset-2.col-sm-10 {{league.name}}
+
+
 
