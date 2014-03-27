@@ -6,20 +6,12 @@ angular.module('fantasyGolfApp')
     // ...
     var team = {};
 
-//    function loadData(id, deferred) {
-//      Team.get(id,
-//        function(data) {
-//          team = data;
-//          deferred.resolve(data);
-//        },function() {
-//          deferred.reject();
-//        })
-//    }
-
     // Public API here
     return {
 
-      team: function(id) {
+      team: team,
+
+      getTeam: function(id) {
         var deferred = $q.defer();
 
         if (team.userId) {
@@ -33,28 +25,31 @@ angular.module('fantasyGolfApp')
         return deferred.promise;
       },
 
-      updateTeam: function(id, team){
+      saveTeam : function(id, team){
         var deferred = $q.defer();
 
-        Team.update(id, team, function(response){
-          team = response;
-          deferred.resolve(response)
-        });
+        if(id){
+
+          //update
+          Team.update(id, team, function(response){
+            team = response;
+            deferred.resolve(response)
+          });
+
+        } else {
+
+          //create
+          var newTeam = new Team(team);
+
+          newTeam.$save(function(response){
+            team = response;
+            deferred.resolve(response)
+          });
+
+        }
 
         return deferred.promise;
-      },
 
-      createTeam: function(team){
-        var deferred = $q.defer();
-
-        var newTeam = new Team(team);
-
-        newTeam.$save(function(response){
-          team = response;
-          deferred.resolve(response)
-        });
-
-        return deferred.promise;
       }
 
     };

@@ -9,35 +9,27 @@ angular.module('fantasyGolfApp')
     });
 
     //get team data
-    teamModel.team($scope.currentUser.teamId).then(function(data){
+    teamModel.getTeam($scope.currentUser.teamId).then(function(data){
       $scope.team = data;
     });
 
-    //add update team
-    $scope.updateTeam = function(team){
+    //save team
+    $scope.saveTeam = function(team){
 
       //add user id
       team.userId = $scope.currentUser.userId;
 
-      if(!team._id){
-        //create
-        teamModel.createTeam(team)
-          .then(function(team){
-            $scope.team = team;
-            $scope.TeamForm.$setPristine();
-            $scope.updated = true;
-        })
-      }
+      //save
+      teamModel.saveTeam(team._id, team)
+        .then(function(team){
 
-      else {
-        //update
-        teamModel.updateTeam({id: team._id}, team)
-          .then(function(team){
-            $scope.team = team;
-            $scope.TeamForm.$setPristine();
-            $scope.updated = true;
+          //update team
+          $scope.team = team;
+
+          //reset form
+          $scope.TeamForm.$setPristine();
+          $scope.updated = true;
         })
-      }
 
     };
 

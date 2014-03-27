@@ -21,8 +21,8 @@ div(data-ng-controller="SettingsCtrl")
             p.help-block(ng-show='(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || submitted)')
               | Password must be at least 3 characters.
 
-    p.help-block  {{ message }}
+        p.help-block  {{ message }}
 
-    button.btn.btn-success.pull-right(type='submit', data-ng-show='SettingsForm.$dirty') Save changes
+        button.btn.btn-success.pull-right(type='submit', data-ng-show='SettingsForm.$dirty') Save changes
 
     .clearfix

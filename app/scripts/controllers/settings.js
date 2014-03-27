@@ -7,7 +7,7 @@ angular.module('fantasyGolfApp')
     $scope.changePassword = function(form) {
       $scope.submitted = true;
 
-      if(form.$valid) {
+      if($scope.SettingsForm.$valid) {
         Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
         .then( function() {
           $scope.message = 'Password successfully changed.';
