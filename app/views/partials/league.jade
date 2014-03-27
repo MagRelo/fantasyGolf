@@ -7,20 +7,20 @@ div(ng-include='\'partials/navbar\'')
 
         h3.text-primary My leagues
         .well
-            div(data-ng-show='!user.leagues.length')
+            div(data-ng-show='!userLeagues.length')
                 p No leagues yet - join a league!
 
-            div(data-ng-show='user.leagues.length')
-                p(data-ng-repeat='league in user.leagues')
+            div(data-ng-show='userLeagues.length')
+                p(data-ng-repeat='league in userLeagues') {{league.leagueName}}
 
     .col-sm-6
 
         h3.text-primary Create a new league
         .well
-            form(role='form', name='LeagueForm', data-ng-submit='submitLeague(League)')
+            form(role='form', name='LeagueForm', data-ng-submit='createLeague(League)')
                 .form-group
                     label.control-label(for='1') League Name
-                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='League.name')
+                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='League.leagueName')
 
                 .form-group
                     label

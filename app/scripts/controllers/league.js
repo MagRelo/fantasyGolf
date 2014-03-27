@@ -1,12 +1,26 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($scope, Leagues, Auth) {
+  .controller('LeagueCtrl', function ($rootScope, $scope, League) {
 
-    $scope.user = Auth.currentUser();
+    //list user leagues
+    $scope.userLeagues = $scope.currentUser.leagues;
 
-    $scope.leagues = Leagues.leagues;
+    $scope.createLeague = function(league){
 
+      //add user id
+      league.ownerUserId = $scope.currentUser.userId;
 
+      //create
+      var newLeague = new League(league);
+
+      //save
+      newLeague.$save(function(response){
+        //        $scope.team = response.league;
+        $rootScope.currentUser = response.user;
+        $scope.LeagueForm.$setPristine();
+      });
+
+    };
 
   });
