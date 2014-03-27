@@ -1,29 +1,43 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($scope, Auth, Players) {
+  .controller('TeamCtrl', function ($rootScope, $scope, $location, Auth, Players, Team) {
 
     //select players list
     $scope.players = Players.players;
 
-    //team settings
-    $scope.user = Auth.currentUser();
+    if($scope.currentUser.teamId){
+      $scope.team = Team.get({id: $scope.currentUser.teamId})
+    }
 
-    $scope.updateTeam = function(){
+    $scope.updateTeam = function(team){
 
-      var team = {
-        Team_Name:  $scope.user.Team_Name,
-        Owner_Name: $scope.user.Owner_Name,
-        Player_1:   $scope.user.Player_1,
-        Player_2:   $scope.user.Player_2,
-        Player_3:   $scope.user.Player_3,
-        Player_4:   $scope.user.Player_4
-      };
+      //add user id
+      team.userId = $scope.currentUser.userId;
 
-      Auth.updateTeam(team, function(){
-        $scope.TeamForm.$setPristine();
-        $scope.updated = true;
-      });
+      if(!team._id){
+
+        //create
+        var newTeam = new Team(team);
+
+        //save
+        newTeam.$save(function(response){
+          $scope.team = response.team;
+          $rootScope.currentUser = response.user;
+          $scope.TeamForm.$setPristine();
+          $scope.updated = true;
+        });
+      }
+
+      else {
+
+        //update
+        Team.update({id: team._id}, team, function(team){
+          $scope.team = team;
+          $scope.TeamForm.$setPristine();
+          $scope.updated = true;
+        })
+      }
 
     };
 

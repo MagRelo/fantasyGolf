@@ -10,13 +10,13 @@ angular.module('fantasyGolfApp')
   
       if(form.$valid) {
         Auth.createUser({
-          name: $scope.user.name,
+          Owner_Name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/team');
+          $location.path('/tournament');
         })
         .catch( function(err) {
           err = err.data;

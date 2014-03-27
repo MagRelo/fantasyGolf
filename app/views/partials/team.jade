@@ -1,8 +1,9 @@
 div(ng-include='\'partials/navbar\'')
 
+button.btn.btn-info(data-ng-click="getTeam()") Get Team
 
 .well
-    form(role='form', name='TeamForm', data-ng-submit='updateTeam()')
+    form(role='form', name='TeamForm', data-ng-submit='updateTeam(team)')
         .row
             .col-sm-7
                 fieldset
@@ -10,36 +11,37 @@ div(ng-include='\'partials/navbar\'')
                     .form-group
                         label.control-label(for='3') Player 1
                         select#3.form-control(name='3_Dropdown_List', required='required',
-                        data-ng-options='player.name as player.name for player in players', data-ng-model='user.Player_1')
+                        data-ng-options='player.name as player.name for player in players', data-ng-model='team.player1')
                     .form-group
                         label.control-label(for='4') Player 2
                         select#4.form-control(name='4_Dropdown_List', required='required',
-                        data-ng-options='player.name as player.name for player in players', data-ng-model='user.Player_2')
+                        data-ng-options='player.name as player.name for player in players', data-ng-model='team.player2')
                     .form-group
                         label.control-label(for='5') Player 3
                         select#5.form-control(name='5_Dropdown_List', required='required',
-                        data-ng-options='player.name as player.name for player in players', data-ng-model='user.Player_3')
+                        data-ng-options='player.name as player.name for player in players', data-ng-model='team.player3')
                     .form-group
                         label.control-label(for='6') Player 4
                         select#6.form-control(name='6_Dropdown_List', required='required',
-                        data-ng-options='player.name as player.name for player in players', data-ng-model='user.Player_4', value='user.Player_4')
+                        data-ng-options='player.name as player.name for player in players', data-ng-model='team.player4')
 
             .col-sm-5
                 fieldset
                     legend Team Settings
                     .form-group
                         label.control-label(for='1') Owner Name
-                        input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='user.name')
+                        input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='team.ownerName')
                     .form-group
                         label.control-label(for='2') Team Name
-                        input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='user.Team_Name')
+                        input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='team.teamName')
 
 
         ul.list-inline.pull-right
             li
                 h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
             li
-                button.btn.btn-primary(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
+                button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
+
 
         .clearfix
 

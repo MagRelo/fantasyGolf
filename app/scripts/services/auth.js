@@ -106,27 +106,9 @@ angular.module('fantasyGolfApp')
       isLoggedIn: function() {
         var user = $rootScope.currentUser;
         return !!user;
-      },
+      }
 
 
-      /**
-       * Update Team
-       *
-       * @param  {Object}   user     - user info
-       * @param  {Function} callback - optional
-       * @return {Promise}
-       */
-      updateTeam: function(team, callback) {
-        var cb = callback || angular.noop;
-
-        return Team.update(team,
-          function(team) {
-            return cb(team);
-          },
-          function(err) {
-            return cb(err);
-          }).$promise;
-      },
 
     };
   });
