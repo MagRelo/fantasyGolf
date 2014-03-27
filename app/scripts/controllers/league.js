@@ -1,9 +1,12 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($rootScope, $scope, League) {
+  .controller('LeagueCtrl', function ($rootScope, $scope, leagueModel) {
 
-    $scope.leagues = League.query();
+    //get team data
+    leagueModel.leagues($scope.currentUser.teamId).then(function(data){
+      $scope.leagues = data;
+    });
 
     $scope.createLeague = function(league){
 

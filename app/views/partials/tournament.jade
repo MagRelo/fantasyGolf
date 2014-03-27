@@ -2,8 +2,8 @@ div(ng-include='\'partials/navbar\'')
 
 .row
     .col-sm-12
-        h3.text-primary {{tournament.name}}
-        p.text-muted  {{tournament.date}}
+        h3.text-primary {{tournament.info.name}}
+        p.text-muted  {{tournament.info.date}}
 
         div(data-ng-repeat='course in tournament.courses')
 

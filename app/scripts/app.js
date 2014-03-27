@@ -12,10 +12,6 @@ angular.module('fantasyGolfApp', [
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       })
-      .when('/login', {
-        templateUrl: 'partials/login',
-        controller: 'LoginCtrl'
-      })
       .when('/team', {
         templateUrl: 'partials/team',
         controller: 'TeamCtrl',
@@ -42,7 +38,7 @@ angular.module('fantasyGolfApp', [
       return {
         'responseError': function(response) {
           if(response.status === 401 || response.status === 403) {
-            $location.path('/login');
+            $location.path('/');
             return $q.reject(response);
           }
           else {

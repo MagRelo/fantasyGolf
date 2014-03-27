@@ -1,14 +1,17 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($rootScope, $scope, $location, Auth, Players, Team) {
+  .controller('TeamCtrl', function ($rootScope, $scope, $location, Auth, tournamentModel, teamModel) {
 
-    //select players list
-    $scope.players = Players.players;
+    //get tournament info data
+    tournamentModel.tournamentInfo().then(function(data){
+      $scope.tournament = data;
+    });
 
-    if($scope.currentUser.teamId){
-      $scope.team = Team.get({id: $scope.currentUser.teamId})
-    }
+    //get team data
+    teamModel.team($scope.currentUser.teamId).then(function(data){
+      $scope.team = data;
+    });
 
     $scope.updateTeam = function(team){
 
