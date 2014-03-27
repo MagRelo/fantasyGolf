@@ -27,11 +27,12 @@ div(ng-include='\'partials/navbar\'')
                 fieldset
                     legend Team Settings
                     .form-group
-                        label.control-label(for='1') Owner Name
-                        input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='team.ownerName')
-                    .form-group
                         label.control-label(for='2') Team Name
                         input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='team.teamName')
+                    .form-group
+                        label.control-label(for='1') Owner Name
+                        input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='team.ownerName')
+
 
 
         ul.list-inline.pull-right
