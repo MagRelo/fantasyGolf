@@ -2,28 +2,41 @@ div(ng-include='\'partials/navbar\'')
 
 .row
     .col-sm-12
-        h3.text-primary The BMW International
-        .well
-            p Buena Vista, FL
+        h3.text-primary {{tournament.name}}
+        p.text-muted  {{tournament.date}}
+
+        div(data-ng-repeat='course in tournament.courses')
+
+            a(href='' data-ng-click='showCourse = !showCourse') {{course.n}}
+
+            table.table(data-ng-show='showCourse')
+                thead
+                    th Hole
+                    th(data-ng-repeat='hole in course.h') {{hole.n}}
+                tbody
+                    tr
+                        td Dist
+                        td(data-ng-repeat='hole in course.h') {{hole.d}}
+                    tr
+                        td Par
+                        td(data-ng-repeat='hole in course.h') {{hole.p}}
 
     .col-sm-6
-        h3.text-primary {{team.teamName}}
-            small  {{team.ownerName}}
-        .well
+        //team not setup
+        div(data-ng-if="!currentUser.teamId")
+            h3.text-primary My Team
+            a.btn.btn-primary(href="/team") Setup your team >
 
-            //team not setup
-            div.text-center(data-ng-if="!currentUser.teamId")
-                a.btn.btn-primary(href="/team") Setup your team >
+        div(data-ng-if="currentUser.teamId")
+            h3.text-primary(data-ng-bind='team.teamName')
+                small {{team.ownerName}}
 
-
-            ul.list-unstyled
-                li {{team.player1}}
-                li {{team.player2}}
-                li {{team.player3}}
-                li {{team.player4}}
-
-
-
+            .well
+                ul.list-unstyled
+                    li {{team.player1}}
+                    li {{team.player2}}
+                    li {{team.player3}}
+                    li {{team.player4}}
 
     .col-sm-6
         h3.text-primary My Leagues

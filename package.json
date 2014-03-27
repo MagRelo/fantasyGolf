@@ -9,7 +9,8 @@
     "connect-mongo": "~0.4.0",
     "passport": "latest",
     "passport-local": "latest",
-    "jade": "latest"
+    "jade": "latest",
+    "request": "2.34.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
