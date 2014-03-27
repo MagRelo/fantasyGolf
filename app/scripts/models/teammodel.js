@@ -31,6 +31,30 @@ angular.module('fantasyGolfApp')
           });
         }
         return deferred.promise;
+      },
+
+      updateTeam: function(id, team){
+        var deferred = $q.defer();
+
+        Team.update(id, team, function(response){
+          team = response;
+          deferred.resolve(response)
+        });
+
+        return deferred.promise;
+      },
+
+      createTeam: function(team){
+        var deferred = $q.defer();
+
+        var newTeam = new Team(team);
+
+        newTeam.$save(function(response){
+          team = response;
+          deferred.resolve(response)
+        });
+
+        return deferred.promise;
       }
 
     };

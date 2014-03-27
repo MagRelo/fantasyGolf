@@ -13,37 +13,33 @@ angular.module('fantasyGolfApp')
       $scope.team = data;
     });
 
+    //add update team
     $scope.updateTeam = function(team){
 
       //add user id
       team.userId = $scope.currentUser.userId;
 
       if(!team._id){
-
         //create
-        var newTeam = new Team(team);
-
-        //save
-        newTeam.$save(function(response){
-          $scope.team = response.team;
-          $rootScope.currentUser = response.user;
-          $scope.TeamForm.$setPristine();
-          $scope.updated = true;
-        });
+        teamModel.createTeam(team)
+          .then(function(team){
+            $scope.team = team;
+            $scope.TeamForm.$setPristine();
+            $scope.updated = true;
+        })
       }
 
       else {
-
         //update
-        Team.update({id: team._id}, team, function(team){
-          $scope.team = team;
-          $scope.TeamForm.$setPristine();
-          $scope.updated = true;
+        teamModel.updateTeam({id: team._id}, team)
+          .then(function(team){
+            $scope.team = team;
+            $scope.TeamForm.$setPristine();
+            $scope.updated = true;
         })
       }
 
     };
-
 
     //Account Settings
     $scope.errors = {};

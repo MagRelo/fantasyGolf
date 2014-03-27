@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/services/leagues.js" afterPath="$PROJECT_DIR$/app/scripts/resources/league.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/services/pga.js" afterPath="$PROJECT_DIR$/app/scripts/resources/pga.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/services/session.js" afterPath="$PROJECT_DIR$/app/scripts/resources/session.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/services/team.js" afterPath="$PROJECT_DIR$/app/scripts/resources/team.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/scripts/services/user.js" afterPath="$PROJECT_DIR$/app/scripts/resources/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.jade" afterPath="$PROJECT_DIR$/app/views/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/league.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/league.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/pga.js" afterPath="$PROJECT_DIR$/lib/controllers/pga.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/services/players.js" afterPath="$PROJECT_DIR$/app/scripts/services/players.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/team.jade" afterPath="$PROJECT_DIR$/app/views/partials/team.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/team.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/team.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/tournament.jade" afterPath="$PROJECT_DIR$/app/views/partials/tournament.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/tournament.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/tournament.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/models/teammodel.js" afterPath="$PROJECT_DIR$/app/scripts/models/teammodel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
@@ -25,7 +13,7 @@
     <file path="/navbar.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395691265512" ignored="false" />
     <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395902999415" ignored="false" />
     <file path="/main.scss" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395784224415" ignored="false" />
-    <file path="/team.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395952276313" ignored="false" />
+    <file path="/team.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395959617367" ignored="false" />
     <file path="/league.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395891333726" ignored="false" />
     <file path="/main.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395716489333" ignored="false" />
     <file path="/navbar.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395721107668" ignored="false" />
@@ -49,9 +37,9 @@
     <file path="/pga.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395949686546" ignored="false" />
     <file path="$PROJECT_DIR$/.tmp/styles/main.css" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395901610656" ignored="false" />
     <file path="/tournamentmodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395952845557" ignored="false" />
-    <file path="/teammodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395954343142" ignored="false" />
+    <file path="/teammodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395959538869" ignored="false" />
     <file path="/index.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395955793969" ignored="false" />
-    <file path="/leaguemodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395955933535" ignored="false" />
+    <file path="/leaguemodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395956830948" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,56 +59,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="leaguemodel.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/scripts/models/leaguemodel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="41" selection-start="440" selection-end="440" vertical-scroll-proportion="0.40095848">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tournament.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tournament.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="263" selection-end="379" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="league.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/league.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="40" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="league.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/resources/league.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="52" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="teammodel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/scripts/models/teammodel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="40" selection-start="0" selection-end="749" vertical-scroll-proportion="0.0">
+            <state line="51" column="55" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/index.jade">
+      <file leaf-file-name="team.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="38" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="44" column="92" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.35942492">
+              <folding>
+                <element signature="e#239#278#0" expanded="false" />
+                <element signature="e#367#400#0" expanded="false" />
+                <element signature="e#464#1020#0" expanded="false" />
+                <element signature="e#1113#1532#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,7 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/lib/routes.js" />
         <option value="$PROJECT_DIR$/test/temp.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/pga.js" />
@@ -155,10 +111,11 @@
         <option value="$PROJECT_DIR$/app/scripts/services/tournamentmodel.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/tournament.js" />
         <option value="$PROJECT_DIR$/app/scripts/services/teammodel.js" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/team.js" />
         <option value="$PROJECT_DIR$/app/views/index.jade" />
-        <option value="$PROJECT_DIR$/app/scripts/models/leaguemodel.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/league.js" />
+        <option value="$PROJECT_DIR$/app/scripts/models/leaguemodel.js" />
+        <option value="$PROJECT_DIR$/app/scripts/models/teammodel.js" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/team.js" />
       </list>
     </option>
   </component>
@@ -525,14 +482,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23229912" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23229912" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -612,30 +569,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/resources/pga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="41" selection-start="182" selection-end="182" vertical-scroll-proportion="0.14376996">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/pga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="63" selection-start="399" selection-end="399" vertical-scroll-proportion="0.38338658">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1312#1338#0" expanded="false" />
-            <element signature="e#2111#2269#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/team.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -664,17 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="70" selection-start="1102" selection-end="1102" vertical-scroll-proportion="0.45527157">
-          <folding>
-            <element signature="e#442#1052#0" expanded="false" />
-            <element signature="e#532#831#0" expanded="false" />
-            <element signature="e#1146#1565#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/models/tournamentmodel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="47" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
@@ -691,43 +613,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="38" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/models/teammodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="0" selection-end="749" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tournament.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="263" selection-end="379" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/league.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="40" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0">
+        <state line="75" column="38" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.8042414">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/resources/league.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="52" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
+        <state line="13" column="52" selection-start="261" selection-end="261" vertical-scroll-proportion="0.3115016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/services/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tournament.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="58" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/resources/session.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/league.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="51" selection-start="295" selection-end="295" vertical-scroll-proportion="0.23961662">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/models/leaguemodel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="41" selection-start="440" selection-end="440" vertical-scroll-proportion="0.40095848">
+        <state line="11" column="64" selection-start="283" selection-end="283" vertical-scroll-proportion="0.23961662">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/models/teammodel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="55" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="92" selection-start="1069" selection-end="1069" vertical-scroll-proportion="0.35942492">
+          <folding>
+            <element signature="e#239#278#0" expanded="false" />
+            <element signature="e#367#400#0" expanded="false" />
+            <element signature="e#464#1020#0" expanded="false" />
+            <element signature="e#1113#1532#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
