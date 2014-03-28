@@ -42,7 +42,7 @@ angular.module('fantasyGolfApp')
           var newTeam = new Team(team);
 
           newTeam.$save(function(response){
-            team = response;
+            team = response.team;
             deferred.resolve(response)
           });
 
