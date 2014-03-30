@@ -6,12 +6,27 @@ angular.module('fantasyGolfApp')
     //1. Display Tournament info
     tournamentModel.tournamentInfo().then(function(data){
       $scope.tournament = data;
+      $scope.players = data.players;
+
+
+
     });
 
     //2. Display Team Info
     if($scope.currentUser.teamId){
       teamModel.getTeam($scope.currentUser.teamId).then(function(data){
+
         $scope.team = data;
+        $scope.team.players = [];
+
+        angular.forEach($scope.players, function(tourneyPlayer){
+
+          if(tourneyPlayer.id == $scope.team.player1){
+            $scope.team.players.push(tourneyPlayer)
+          }
+
+        })
+
       });
     }
 
