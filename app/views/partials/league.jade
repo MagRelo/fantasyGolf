@@ -17,20 +17,20 @@ div(ng-include='\'partials/navbar\'')
 
         h3.text-primary Create a new league
         .well
-            form(role='form', name='LeagueForm', data-ng-submit='createLeague(League)')
+            form(role='form', name='LeagueForm', data-ng-submit='createLeague()')
                 .form-group
                     label.control-label(for='1') League Name
-                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='League.leagueName')
+                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='league.leagueName')
 
                 .form-group
                     label
-                        input(type="checkbox", data-ng-model="League.private", data-ng-true-value="true", data-ng-false-value="false")
+                        input(type="checkbox", data-ng-model="league.private", data-ng-true-value="true", data-ng-false-value="false")
                         |  Private league
 
 
                 .form-group
                     label.control-label(for='2') League Password
-                    input#2.form-control(type='text', name='2_Text', data-ng-model='League.password')
+                    input#2.form-control(type='text', name='2_Text', data-ng-model='league.password')
 
                 button.btn.btn-success.pull-right(type='submit', data-ng-show='LeagueForm.$dirty') Create league
 
@@ -54,7 +54,8 @@ div(ng-include='\'partials/navbar\'')
             //list
             div.row(data-ng-repeat='league in leagues | filter: searchFilter')
                 div.col-sm-offset-2.col-sm-10
-                    a(ng-href="api/league/{{league._id}}") {{league.leagueName}}
+                    ul.list-unstyled
+                        li(data-ng-click='joinLeague(league)') {{league.leagueName}}
 
 
 

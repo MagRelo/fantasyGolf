@@ -9,9 +9,12 @@ angular.module('fantasyGolfApp')
     });
 
     //get team data
-    teamModel.getTeam($scope.currentUser.teamId).then(function(data){
-      $scope.team = data;
-    });
+    if($scope.currentUser.teamId){
+      teamModel.getTeam($scope.currentUser.teamId).then(function(data){
+        $scope.team = data;
+      });
+    }
+
 
     //save team
     $scope.saveTeam = function(team){
@@ -29,7 +32,7 @@ angular.module('fantasyGolfApp')
           //reset form
           $scope.TeamForm.$setPristine();
           $scope.updated = true;
-        })
+        });
 
     };
 

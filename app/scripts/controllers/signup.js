@@ -10,7 +10,7 @@ angular.module('fantasyGolfApp')
   
       if(form.$valid) {
         Auth.createUser({
-          Owner_Name: $scope.user.name,
+          name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password
         })

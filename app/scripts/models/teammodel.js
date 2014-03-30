@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .factory('teamModel', function ($q, Team) {
+  .factory('teamModel', function ($rootScope, $q, Team) {
     // Service logic
     // ...
     var team = {};
@@ -17,10 +17,12 @@ angular.module('fantasyGolfApp')
         if (team.userId) {
           deferred.resolve(team);
         } else {
+
           Team.get({ id: id }, function(response){
             team = response;
-            deferred.resolve(response)
+            deferred.resolve(response);
           });
+
         }
         return deferred.promise;
       },
@@ -33,7 +35,7 @@ angular.module('fantasyGolfApp')
           //update
           Team.update(id, team, function(response){
             team = response;
-            deferred.resolve(response)
+            deferred.resolve(team);
           });
 
         } else {
@@ -43,7 +45,8 @@ angular.module('fantasyGolfApp')
 
           newTeam.$save(function(response){
             team = response.team;
-            deferred.resolve(response)
+            $rootScope.currentUser = response.user;
+            deferred.resolve(team);
           });
 
         }
