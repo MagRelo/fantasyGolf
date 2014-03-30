@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($rootScope, $scope, leagueModel) {
+  .controller('LeagueCtrl', function ($scope, leagueModel) {
 
     //get leagues list
     leagueModel.leagues().then(function(data){
@@ -30,15 +30,9 @@ angular.module('fantasyGolfApp')
 
     };
 
-    $scope.joinLeague = function(league){
+    $scope.joinLeague = function(index){
 
-      leagueModel.joinLeague(league, $scope.currentUser.userId).then(function(){
-
-        //update leagues list
-        //$scope.leagues = leagues;
-
-      });
-
+      leagueModel.joinLeague(index, $scope.currentUser.userId);
 
     };
 

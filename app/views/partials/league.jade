@@ -10,8 +10,9 @@ div(ng-include='\'partials/navbar\'')
             div(data-ng-show='!currentUser.leagues.length')
                 p No leagues yet - join a league!
 
-            div(data-ng-show='currentUser.leagues.length')
-                p(data-ng-repeat='league in currentUser.leagues') {{league.leagueName}}
+            div(data-ng-repeat='league in currentUser.leagues')
+                span.glyphicon.glyphicon-remove.pull-right(data-ng-click="")
+                h5 {{league.leagueName}}
 
     .col-sm-6
 
@@ -22,13 +23,12 @@ div(ng-include='\'partials/navbar\'')
                     label.control-label(for='1') League Name
                     input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='league.leagueName')
 
-                .form-group
+                //.form-group
                     label
                         input(type="checkbox", data-ng-model="league.private", data-ng-true-value="true", data-ng-false-value="false")
                         |  Private league
 
-
-                .form-group
+                //.form-group
                     label.control-label(for='2') League Password
                     input#2.form-control(type='text', name='2_Text', data-ng-model='league.password')
 
@@ -52,10 +52,16 @@ div(ng-include='\'partials/navbar\'')
                         input.form-control(type='text', data-ng-model='searchFilter')
 
             //list
-            div.row(data-ng-repeat='league in leagues | filter: searchFilter')
-                div.col-sm-offset-2.col-sm-10
-                    ul.list-unstyled
-                        li(data-ng-click='joinLeague(league)') {{league.leagueName}}
+            div.row
+
+                div.col-sm-2
+                   label.pull-right Click to join:
+
+                div.col-sm-10
+                    ul.list-inline
+                        li.mg-buttongroup(data-ng-repeat='league in leagues | filter: searchFilter')
+                            a.btn.btn-primary(href="", data-ng-click='joinLeague($index)')
+                                | {{league.leagueName}}
 
 
 

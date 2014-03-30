@@ -15,7 +15,6 @@ angular.module('fantasyGolfApp')
       });
     }
 
-
     //save team
     $scope.saveTeam = function(team){
 

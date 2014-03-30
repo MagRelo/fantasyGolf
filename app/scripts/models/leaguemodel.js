@@ -34,14 +34,17 @@ angular.module('fantasyGolfApp')
             deferred.resolve(response);
           });
 
-        } else {
+        }
+        else {
 
           //create
           var newLeague = new League(league);
 
           newLeague.$save(function(response){
-            leagues.push(response.league);
-            $rootScope.currentUser = response.user;
+
+            //update user object
+            $rootScope.currentUser.leagues = response.userLeagues;
+
             deferred.resolve(leagues);
           });
 
@@ -51,16 +54,16 @@ angular.module('fantasyGolfApp')
 
       },
 
-      joinLeague: function(league, userId){
+      joinLeague: function(leagueIndex, userId){
         var deferred = $q.defer();
 
-        league.users = league.users || [];
-        league.users.push(userId);
+        League.join({userId: userId}, leagues[leagueIndex], function(response){
 
-        League.update(league, function(err, response){
+          //update user object
+          $rootScope.currentUser.leagues = response.userLeagues;
 
-          $rootScope.currentUser = response.user;
-          leagues = response.leagues;
+          //remove league from list
+          leagues.splice(leagueIndex, 1);
 
           deferred.resolve(leagues);
         });
