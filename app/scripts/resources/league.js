@@ -5,9 +5,11 @@ angular.module('fantasyGolfApp')
     return $resource('/api/league/:id', {
       id: '@_id'
     }, { //parameters default
-      update: {
+      join: {
         method: 'PUT',
-        params: {}
+        params: {
+          userID: '@_userID'
+        }
       }
     });
   });
