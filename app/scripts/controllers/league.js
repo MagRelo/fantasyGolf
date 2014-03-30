@@ -14,7 +14,7 @@ angular.module('fantasyGolfApp')
       $scope.league.ownerUserId = $scope.currentUser.userId;
 
       //add users property and add owner
-      $scope.users = [];
+      $scope.league.users = [];
       $scope.league.users.push($scope.currentUser.userId);
 
       //create league
