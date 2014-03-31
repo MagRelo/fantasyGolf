@@ -45,7 +45,7 @@ angular.module('fantasyGolfApp')
 
           newTeam.$save(function(response){
             team = response.team;
-            $rootScope.currentUser = response.user;
+            $rootScope.currentUser.teamId = response.teamId;
             deferred.resolve(team);
           });
 

@@ -21,6 +21,13 @@ angular.module('fantasyGolfApp')
       //add user id
       team.userId = $scope.currentUser.userId;
 
+      //process player inputs into an array
+      team.players = [];
+      team.players.push(team.player1);
+      team.players.push(team.player2);
+      team.players.push(team.player3);
+      team.players.push(team.player4);
+
       //save
       teamModel.saveTeam(team._id, team)
         .then(function(team){
