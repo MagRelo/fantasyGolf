@@ -17,12 +17,10 @@ angular.module('fantasyGolfApp')
         if (team.userId) {
           deferred.resolve(team);
         } else {
-
           Team.get({ id: id }, function(response){
             team = response;
             deferred.resolve(response);
           });
-
         }
         return deferred.promise;
       },

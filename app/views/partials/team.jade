@@ -5,9 +5,9 @@ div(ng-include='\'partials/navbar\'')
         .row
             .col-sm-7
                 fieldset
-                    legend Select Players
+                    legend
                     .form-group
-                        label.control-label(for='3') Player 1
+                        label.control-label(for='3') Select Player
                         select#3.form-control(name='3_Dropdown_List', required='required',
                         data-ng-options='player.id as player.ln for player in tournament.players', data-ng-model='team.player1')
                     .form-group

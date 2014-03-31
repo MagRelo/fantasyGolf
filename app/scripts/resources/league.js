@@ -8,7 +8,7 @@ angular.module('fantasyGolfApp')
       join: {
         method: 'PUT',
         params: {
-          userID: '@_userID'
+          teamID: '@_teamID'
         }
       }
     });

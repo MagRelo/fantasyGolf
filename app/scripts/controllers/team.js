@@ -9,9 +9,14 @@ angular.module('fantasyGolfApp')
     });
 
     //get team data
+    $scope.team = {players: []};
     if($scope.currentUser.teamId){
       teamModel.getTeam($scope.currentUser.teamId).then(function(data){
         $scope.team = data;
+        $scope.team.player1 = data.players[0];
+        $scope.team.player2 = data.players[1];
+        $scope.team.player3 = data.players[2];
+        $scope.team.player4 = data.players[3];
       });
     }
 

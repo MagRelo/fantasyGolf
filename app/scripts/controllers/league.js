@@ -1,12 +1,19 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($scope, leagueModel) {
+  .controller('LeagueCtrl', function ($scope, leagueModel, teamModel) {
 
     //get leagues list
     leagueModel.leagues().then(function(data){
       $scope.leagues = data;
     });
+
+    //get team data
+    if($scope.currentUser.teamId){
+      teamModel.getTeam($scope.currentUser.teamId).then(function(data){
+        $scope.team = data;
+      });
+    }
 
     $scope.createLeague = function(){
 
@@ -14,8 +21,8 @@ angular.module('fantasyGolfApp')
       $scope.league.ownerUserId = $scope.currentUser.userId;
 
       //add users property and add owner
-      $scope.league.users = [];
-      $scope.league.users.push($scope.currentUser.userId);
+      $scope.league.teams = [];
+      $scope.league.teams.push($scope.currentUser.teamId);
 
       //create league
       leagueModel.saveLeague(null, $scope.league).then(function(leagues){
@@ -32,7 +39,7 @@ angular.module('fantasyGolfApp')
 
     $scope.joinLeague = function(index){
 
-      leagueModel.joinLeague(index, $scope.currentUser.userId);
+      leagueModel.joinLeague(index, $scope.currentUser.teamId);
 
     };
 

@@ -68,14 +68,13 @@ angular.module('fantasyGolfApp')
         teamModel.getTeam($scope.currentUser.teamId).then(function(data){
 
           $scope.team = data;
-          $scope.team.players = [];
 
           angular.forEach($scope.players, function(tourneyPlayer){
 
-            if(tourneyPlayer.id == $scope.team.player1
-              || tourneyPlayer.id == $scope.team.player2
-              || tourneyPlayer.id == $scope.team.player3
-              || tourneyPlayer.id == $scope.team.player4){
+            if(tourneyPlayer.id == $scope.team.players[0]
+              || tourneyPlayer.id == $scope.team.players[1]
+              || tourneyPlayer.id == $scope.team.players[2]
+              || tourneyPlayer.id == $scope.team.players[3]){
 
               $scope.team.players.push(tourneyPlayer)
 

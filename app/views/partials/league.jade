@@ -7,10 +7,10 @@ div(ng-include='\'partials/navbar\'')
 
         h3.text-primary My leagues
         .well
-            div(data-ng-show='!currentUser.leagues.length')
+            div(data-ng-show='!team.leagues.length')
                 p No leagues yet - join a league!
 
-            div(data-ng-repeat='league in currentUser.leagues')
+            div(data-ng-repeat='league in team.leagues')
                 span.glyphicon.glyphicon-remove.pull-right(data-ng-click="")
                 h5 {{league.leagueName}}
 

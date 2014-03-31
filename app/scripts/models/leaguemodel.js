@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .factory('leagueModel', function ($rootScope, $q, League) {
+  .factory('leagueModel', function (teamModel, $q, League) {
     // Service logic
     // ...
     var leagues = [];
@@ -54,13 +54,13 @@ angular.module('fantasyGolfApp')
 
       },
 
-      joinLeague: function(leagueIndex, userId){
+      joinLeague: function(leagueIndex, teamId){
         var deferred = $q.defer();
 
-        League.join({userId: userId}, leagues[leagueIndex], function(response){
+        League.join({teamId: teamId}, leagues[leagueIndex], function(response){
 
           //update user object
-          $rootScope.currentUser.leagues = response.userLeagues;
+          teamModel.team = response.team;
 
           //remove league from list
           leagues.splice(leagueIndex, 1);
