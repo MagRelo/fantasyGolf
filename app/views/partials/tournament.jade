@@ -21,6 +21,10 @@ div(ng-include='\'partials/navbar\'')
                         td Par
                         td(data-ng-repeat='hole in course.h') {{hole.p}}
 
+
+    .col-sm-12
+
+
     .col-sm-6
         //team not setup
         div(data-ng-if="!currentUser.teamId")
