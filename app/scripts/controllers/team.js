@@ -1,24 +1,28 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($rootScope, $scope, $location, Auth, tournamentModel, teamModel) {
+  .controller('TeamCtrl', function ($scope, $location, Auth, pga, Team) {
 
-    //get tournament info data
-    tournamentModel.tournamentInfo().then(function(data){
-      $scope.tournament = data;
-    });
+    //1. Display Tournament info
+    pga.setup({},
+      function(data){
+        //$scope.event = data.event;
+        $scope.players = data.field;
+        //$scope.courses = data.courseInfos;
+      },
+      function(error){ $scope.setuperror = error; }
+    );
 
-    //get team data
-    $scope.team = {players: []};
-    if($scope.currentUser.teamId){
-      teamModel.getTeam($scope.currentUser.teamId).then(function(data){
+    //2. get team data
+    Team.get({id: $scope.currentUser.teamId},
+      function(data){
         $scope.team = data;
-        $scope.team.player1 = data.players[0];
-        $scope.team.player2 = data.players[1];
-        $scope.team.player3 = data.players[2];
-        $scope.team.player4 = data.players[3];
-      });
-    }
+      },
+      function(error){ $scope.teamerror = error; }
+    );
+
+
+
 
     //save team
     $scope.saveTeam = function(team){

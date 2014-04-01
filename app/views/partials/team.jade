@@ -1,45 +1,38 @@
 div(ng-include='\'partials/navbar\'')
 
+h3.text-primary Team Settings
 .well
     form(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
         .row
-            .col-sm-7
+            .col-sm-6
                 fieldset
-                    legend
-                    .form-group
-                        label.control-label(for='3') Select Player
-                        select#3.form-control(name='3_Dropdown_List', required='required',
-                        data-ng-options='player.id as player.ln for player in tournament.players', data-ng-model='team.player1')
-                    .form-group
-                        label.control-label(for='4') Player 2
-                        select#4.form-control(name='4_Dropdown_List', required='required',
-                        data-ng-options='player.id as player.ln for player in tournament.players', data-ng-model='team.player2')
-                    .form-group
-                        label.control-label(for='5') Player 3
-                        select#5.form-control(name='5_Dropdown_List', required='required',
-                        data-ng-options='player.id as player.ln for player in tournament.players', data-ng-model='team.player3')
-                    .form-group
-                        label.control-label(for='6') Player 4
-                        select#6.form-control(name='6_Dropdown_List', required='required',
-                        data-ng-options='player.id as player.ln for player in tournament.players', data-ng-model='team.player4')
-
-            .col-sm-5
-                fieldset
-                    legend Team Settings
                     .form-group
                         label.control-label(for='2') Team Name
                         input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='team.teamName')
+
+            .col-sm-6
                     .form-group
                         label.control-label(for='1') Owner Name
                         input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='team.ownerName')
 
+        .row
+            .col-sm-12
+                .well(data-ng-repeat="player in [0,1,2,3]")
+                    ul.list-inline
+                        li
+                            p Player {{$index + 1}}
+                        li
+                            a Edit
 
 
-        ul.list-inline.pull-right
-            li
-                h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
-            li
-                button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
+        .row
+            .col-sm-12
+
+                ul.list-inline.pull-right
+                    li
+                        h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+                    li
+                        button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
 
 
         .clearfix
