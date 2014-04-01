@@ -18,11 +18,14 @@ h3.text-primary Team Settings
         .row
             .col-sm-12
                 .well(data-ng-repeat="player in team.players")
-                    ul.list-inline
-                        li
-                            p {{player.name}}
-                        li
-                            a Edit
+                    .form-group
+                        label.control-label.col-sm-4 select player:
+                        div.col-sm-8
+                            select.form-control(name="feildDropdown",
+                            data-ng-options='fieldPlayer.id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
+                            data-ng-model='player.pgaId')
+                    .clearfix
+
 
 
         .row

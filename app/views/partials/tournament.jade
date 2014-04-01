@@ -24,7 +24,7 @@ div(ng-include='\'partials/navbar\'')
             .well
                 ul.list-unstyled
                     li(data-ng-repeat="player in team.players")
-                        h5 {{player.fn + ' ' + player.ln}}
+                        a(ng-href="{{'/player/' + player.pgaId}}") {{player.pgaId}}
 
     .col-sm-6
         h3.text-primary My Leagues

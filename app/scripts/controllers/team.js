@@ -7,7 +7,7 @@ angular.module('fantasyGolfApp')
     pga.setup({},
       function(data){
         //$scope.event = data.event;
-        $scope.players = data.field;
+        $scope.field = data.field;
         //$scope.courses = data.courseInfos;
       },
       function(error){ $scope.setuperror = error; }
@@ -20,9 +20,7 @@ angular.module('fantasyGolfApp')
         //initialize players if < 4 are present
         if(!data.players){data.players = []}
         while(data.players.length < 4){
-          data.players.push({
-            name: 'select player'
-          })
+          data.players.push({})
         }
 
         $scope.team = data;
@@ -37,24 +35,17 @@ angular.module('fantasyGolfApp')
       //add user id
       team.userId = $scope.currentUser.userId;
 
-      //process player inputs into an array
-      team.players = [];
-      team.players.push(team.player1);
-      team.players.push(team.player2);
-      team.players.push(team.player3);
-      team.players.push(team.player4);
-
-      //save
-      teamModel.saveTeam(team._id, team)
-        .then(function(team){
-
+      Team.update(team,
+        function(team){
           //update team
           $scope.team = team;
 
           //reset form
           $scope.TeamForm.$setPristine();
           $scope.updated = true;
-        });
+        },
+        function(error){ $scope.teamerror = error; }
+      )
 
     };
 
