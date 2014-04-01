@@ -16,12 +16,19 @@ angular.module('fantasyGolfApp')
     //2. get team data
     Team.get({id: $scope.currentUser.teamId},
       function(data){
+
+        //initialize players if < 4 are present
+        if(!data.players){data.players = []}
+        while(data.players.length < 4){
+          data.players.push({
+            name: 'select player'
+          })
+        }
+
         $scope.team = data;
       },
       function(error){ $scope.teamerror = error; }
     );
-
-
 
 
     //save team

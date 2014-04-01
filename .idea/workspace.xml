@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="add team creation to user creation =&gt; can always assume currentUser.teamId">
+    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/team.jade" afterPath="$PROJECT_DIR$/app/views/partials/team.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/controllers/team.js" afterPath="$PROJECT_DIR$/app/scripts/controllers/team.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/team.js" afterPath="$PROJECT_DIR$/lib/controllers/team.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/team.js" afterPath="$PROJECT_DIR$/lib/models/team.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/users.js" afterPath="$PROJECT_DIR$/lib/controllers/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396376738822" ignored="false" />
+    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396377164094" ignored="false" />
     <file path="/.gitignore" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395690642194" ignored="false" />
     <file path="/navbar.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395691265512" ignored="false" />
-    <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396374734503" ignored="false" />
+    <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396377553900" ignored="false" />
     <file path="/main.scss" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396205314932" ignored="false" />
-    <file path="/team.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396376836332" ignored="false" />
+    <file path="/team.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396377588969" ignored="false" />
     <file path="/league.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396295285158" ignored="false" />
     <file path="/main.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395716489333" ignored="false" />
     <file path="/navbar.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395721107668" ignored="false" />
@@ -65,55 +62,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="team.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/models/team.js">
+      <file leaf-file-name="tournament.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/tournament.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="73" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+            <state line="15" column="24" selection-start="301" selection-end="320" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="16" selection-start="829" selection-end="829" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#201#823#0" expanded="false" />
-                <element signature="e#884#910#0" expanded="false" />
-                <element signature="e#977#1294#0" expanded="false" />
-                <element signature="e#1360#1518#0" expanded="false" />
-                <element signature="e#1588#1785#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/controllers/users.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="71" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.98242813">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tournament.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tournament.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="35" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="team.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="70" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+            <state line="24" column="78" selection-start="685" selection-end="685" vertical-scroll-proportion="0.57507986">
               <folding>
-                <element signature="e#626#1179#0" expanded="false" />
-                <element signature="e#1272#1691#0" expanded="false" />
+                <element signature="e#846#1399#0" expanded="false" />
+                <element signature="e#1492#1911#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -122,10 +86,8 @@
       <file leaf-file-name="team.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/team.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="53" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="tag#fieldset#0;tag#.#0;tag#.#0;tag#form#0;tag#.#0" expanded="false" />
-              </folding>
+            <state line="21" column="64" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -161,10 +123,10 @@
         <option value="$PROJECT_DIR$/app/views/partials/tournament.jade" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/tournament.js" />
         <option value="$PROJECT_DIR$/lib/controllers/team.js" />
-        <option value="$PROJECT_DIR$/app/views/partials/team.jade" />
-        <option value="$PROJECT_DIR$/app/scripts/controllers/team.js" />
         <option value="$PROJECT_DIR$/lib/models/team.js" />
         <option value="$PROJECT_DIR$/lib/controllers/users.js" />
+        <option value="$PROJECT_DIR$/app/views/partials/team.jade" />
+        <option value="$PROJECT_DIR$/app/scripts/controllers/team.js" />
       </list>
     </option>
   </component>
@@ -342,6 +304,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantasy-golf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantasy-golf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantasy-golf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fantasy-golf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -516,7 +518,11 @@
       <created>1396335338907</created>
       <updated>1396335338907</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="add team creation to user creation =&gt; can always assume currentUser.teamId">
+      <created>1396377171614</created>
+      <updated>1396377171614</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -689,26 +695,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/tournament.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="8" selection-start="67" selection-end="82" vertical-scroll-proportion="0.095846646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/team.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="53" selection-start="944" selection-end="944" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="tag#fieldset#0;tag#.#0;tag#.#0;tag#form#0;tag#.#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -732,27 +722,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="70" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#626#1179#0" expanded="false" />
-            <element signature="e#1272#1691#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tournament.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="35" selection-start="374" selection-end="374" vertical-scroll-proportion="0.0">
+        <state line="14" column="35" selection-start="374" selection-end="374" vertical-scroll-proportion="0.33546326">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="71" selection-start="1093" selection-end="1093" vertical-scroll-proportion="0.98242813">
+        <state line="9" column="88" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21565495">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/tournament.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="24" selection-start="301" selection-end="320" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/team.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="64" selection-start="833" selection-end="833" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="78" selection-start="685" selection-end="685" vertical-scroll-proportion="0.57507986">
+          <folding>
+            <element signature="e#846#1399#0" expanded="false" />
+            <element signature="e#1492#1911#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

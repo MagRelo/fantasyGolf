@@ -17,10 +17,10 @@ h3.text-primary Team Settings
 
         .row
             .col-sm-12
-                .well(data-ng-repeat="player in [0,1,2,3]")
+                .well(data-ng-repeat="player in team.players")
                     ul.list-inline
                         li
-                            p Player {{$index + 1}}
+                            p {{player.name}}
                         li
                             a Edit
 
