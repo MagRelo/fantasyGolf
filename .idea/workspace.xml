@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="">
+    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="added tournament setup file to API, including caching!">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/pga.js" afterPath="$PROJECT_DIR$/lib/controllers/pga.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/player.js" afterPath="$PROJECT_DIR$/lib/models/player.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/tournament.js" afterPath="$PROJECT_DIR$/lib/models/tournament.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396303676238" ignored="false" />
+    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396329004572" ignored="false" />
     <file path="/.gitignore" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395690642194" ignored="false" />
     <file path="/navbar.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395691265512" ignored="false" />
     <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396239705483" ignored="false" />
@@ -35,7 +35,7 @@
     <file path="/tournament.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396307759533" ignored="false" />
     <file path="/dummydata.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395891001700" ignored="false" />
     <file path="/package.json" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395892849011" ignored="false" />
-    <file path="/pga.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396309352484" ignored="false" />
+    <file path="/pga.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396323029245" ignored="false" />
     <file path="/tournamentmodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396235917764" ignored="false" />
     <file path="/teammodel.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396234128931" ignored="false" />
     <file path="/index.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396201767044" ignored="false" />
@@ -43,7 +43,7 @@
     <file path="/settings.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395963597361" ignored="false" />
     <file path="$PROJECT_DIR$/.tmp/styles/main.css" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396242821140" ignored="false" />
     <file path="/notes.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396295628783" ignored="false" />
-    <file path="/player.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396303517664" ignored="false" />
+    <file path="/player.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396317850720" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,45 +63,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tournament.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/models/tournament.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="43" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="routes.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="66" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+            <state line="38" column="62" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.5686901">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pga.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pga.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/controllers/pga.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="78" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-0.24600638">
+            <state line="31" column="45" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#173#560#0" expanded="false" />
+                <element signature="e#215#602#0" expanded="false" />
+                <element signature="e#650#1867#0" expanded="false" />
+                <element signature="e#1912#5251#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
+      <file leaf-file-name="player.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/models/player.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="19" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#800#826#0" expanded="false" />
-                <element signature="e#893#1210#0" expanded="false" />
-                <element signature="e#1276#1434#0" expanded="false" />
-                <element signature="e#1504#1701#0" expanded="false" />
-              </folding>
+            <state line="11" column="63" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,9 +125,9 @@
         <option value="$PROJECT_DIR$/lib/models/user.js" />
         <option value="$PROJECT_DIR$/lib/models/team.js" />
         <option value="$PROJECT_DIR$/lib/models/league.js" />
+        <option value="$PROJECT_DIR$/lib/models/tournament.js" />
         <option value="$PROJECT_DIR$/lib/models/player.js" />
         <option value="$PROJECT_DIR$/lib/routes.js" />
-        <option value="$PROJECT_DIR$/lib/models/tournament.js" />
         <option value="$PROJECT_DIR$/lib/controllers/pga.js" />
       </list>
     </option>
@@ -275,152 +263,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="partials" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -586,7 +428,11 @@
       <created>1396303679510</created>
       <updated>1396303679510</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added tournament setup file to API, including caching!">
+      <created>1396309818461</created>
+      <updated>1396309818461</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -654,7 +500,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add tournament and player mongoose models, update league" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tournament setup file to API, including caching!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -689,6 +535,7 @@
     <MESSAGE value="tournament contains stableford data, calculated in controller." />
     <MESSAGE value="commit before refactor" />
     <MESSAGE value="add tournament and player mongoose models, update league" />
+    <MESSAGE value="added tournament setup file to API, including caching!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -696,16 +543,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/scripts/models/leaguemodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="79" selection-start="1377" selection-end="1377" vertical-scroll-proportion="0.50319487">
-          <folding>
-            <element signature="e#227#532#0" expanded="false" />
-            <element signature="e#574#1136#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/scripts/controllers/league.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="66" selection-start="1049" selection-end="1049" vertical-scroll-proportion="0.0">
@@ -776,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="47" selection-start="371" selection-end="371" vertical-scroll-proportion="0.52715653">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/models/league.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="49" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0">
@@ -802,26 +632,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes.js">
+    <entry file="file://$PROJECT_DIR$/lib/models/tournament.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="66" selection-start="351" selection-end="351" vertical-scroll-proportion="0.0">
+        <state line="19" column="83" selection-start="361" selection-end="361" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/tournament.js">
+    <entry file="file://$PROJECT_DIR$/app/scripts/controllers/tournament.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="43" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+        <state line="28" column="82" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="63" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/controllers/pga.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="78" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-0.24600638">
+        <state line="31" column="45" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#173#560#0" expanded="false" />
+            <element signature="e#215#602#0" expanded="false" />
+            <element signature="e#650#1867#0" expanded="false" />
+            <element signature="e#1912#5251#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="62" selection-start="1311" selection-end="1311" vertical-scroll-proportion="0.5686901">
+          <folding />
         </state>
       </provider>
     </entry>
