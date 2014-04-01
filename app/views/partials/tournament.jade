@@ -2,24 +2,10 @@ div(ng-include='\'partials/navbar\'')
 
 .row
     .col-sm-12
-        h3.text-primary {{tournament.info.name}}
-        p.text-muted  {{tournament.info.date}}
-
-        div(data-ng-repeat='course in tournament.courses')
-
-            a(href='' data-ng-click='showCourse = !showCourse') {{course.n}}
-
-            table.table(data-ng-show='showCourse')
-                thead
-                    th Hole
-                    th(data-ng-repeat='hole in course.h') {{hole.n}}
-                tbody
-                    tr
-                        td Dist
-                        td(data-ng-repeat='hole in course.h') {{hole.d}}
-                    tr
-                        td Par
-                        td(data-ng-repeat='hole in course.h') {{hole.p}}
+        h3.text-primary {{event.name}}
+        ul.list-inline
+            li(data-ng-repeat='course in courses')
+                p.text-primary {{course.name}}
 
 
     .col-sm-12

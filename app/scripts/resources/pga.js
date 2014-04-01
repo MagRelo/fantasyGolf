@@ -2,12 +2,19 @@
 
 angular.module('fantasyGolfApp')
   .factory('pga', function ($resource) {
-    return $resource('/api/leaderboard/:id', {
-      id: '@_id'
+    return $resource('/api/pga/:playerId', {
+      playerId: '@_playerId'
     }, { //parameters default
       update: {
         method: 'PUT',
         params: {}
+      },
+      setup: {
+        method: 'GET',
+        params: {
+          playerId: 'setup'
+        }
       }
+
     });
   });
