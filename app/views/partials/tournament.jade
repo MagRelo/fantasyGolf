@@ -7,9 +7,10 @@ div(ng-include='\'partials/navbar\'')
 
     .col-sm-12
 
-        a.btn.btn-primary(href="/team", data-ng-show='!team.players.length') Setup your team >
+        .well(data-ng-show='!team.players.length')
+            a.btn.btn-primary(href="/team") Setup your team >
 
-        div
+        div(data-ng-show='team.players.length')
 
             h3 {{team.teamName}}
                 small {{team.ownerName}}
@@ -49,7 +50,6 @@ div(ng-include='\'partials/navbar\'')
                             h5 -7
                         td.text-center
                             h5 43
-
 
 
     .col-sm-12

@@ -5,15 +5,14 @@ h3.text-primary Team Settings
     form(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
         .row
             .col-sm-6
-                fieldset
-                    .form-group
-                        label.control-label(for='2') Team Name
-                        input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='team.teamName')
+                .form-group
+                    label.control-label(for='2') Team Name
+                    input#2.form-control(type='text', name='2_Text', required='required', data-ng-model='team.teamName')
 
             .col-sm-6
-                    .form-group
-                        label.control-label(for='1') Owner Name
-                        input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='team.ownerName')
+                .form-group
+                    label.control-label(for='1') Owner Name
+                    input#1.form-control(type='text', name='1_Text', required='required', data-ng-model='team.ownerName')
 
         .row
             .col-sm-12
@@ -24,7 +23,7 @@ h3.text-primary Team Settings
                             select.form-control(name="feildDropdown",
                             data-ng-options='fieldPlayer.id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
                             data-ng-model='player.pgaId')
-                        a.btn.btn-primary.pull-right(ng-href="{{'/player/' + player.pgaId}}", data-ng-show='player.pgaId') view >
+                        //a.btn.btn-primary.pull-right(ng-href="{{'/player/' + player.pgaId}}", data-ng-show='player.pgaId') view >
                     .clearfix
 
 
@@ -41,9 +40,7 @@ h3.text-primary Team Settings
 
         .clearfix
 
-.row
-    .col-sm-6
-        .well
-            div(ng-include='\'partials/settings\'')
+
+div(ng-include='\'partials/settings\'')
 
 
