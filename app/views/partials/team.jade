@@ -19,11 +19,12 @@ h3.text-primary Team Settings
             .col-sm-12
                 .well(data-ng-repeat="player in team.players")
                     .form-group
-                        label.control-label.col-sm-4 select player:
-                        div.col-sm-8
+                        label.control-label.col-sm-3 select player:
+                        div.col-sm-6
                             select.form-control(name="feildDropdown",
                             data-ng-options='fieldPlayer.id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
                             data-ng-model='player.pgaId')
+                        a.btn.btn-primary.pull-right(ng-href="{{'/player/' + player.pgaId}}", data-ng-show='player.pgaId') view >
                     .clearfix
 
 

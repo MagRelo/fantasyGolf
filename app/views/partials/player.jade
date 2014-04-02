@@ -1,3 +1,20 @@
 div(ng-include='\'partials/navbar\'')
 
-p This is the player view.
+h3.text-primary Scorecard
+
+
+img.playerImage(ng-src="http://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{playerId}}.png")
+span.h3  {{player.name.first + ' ' + player.name.last}}
+
+
+table.table
+    thead
+        th Round
+        th(data-ng-repeat='hole in player.rounds[0].holes') {{$index + 1}}
+        th tot
+
+    tbody
+        tr(data-ng-repeat='round in player.rounds')
+            td round {{$index + 1}}
+            td(data-ng-repeat='hole in round.holes') {{hole.sc}}
+            td {{round.sc}}

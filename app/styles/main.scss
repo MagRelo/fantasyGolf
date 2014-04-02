@@ -139,6 +139,14 @@ body {
 }
 
 //custom additions
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: $mg-dark;
+  color: $mg-white;
+}
+
 .well{
   border-color: $mg-mid;
 }
@@ -153,4 +161,8 @@ body {
 
 .mg-buttongroup{
   margin-bottom: 10px;
+}
+
+.playerImage{
+  margin-right: 10px;
 }

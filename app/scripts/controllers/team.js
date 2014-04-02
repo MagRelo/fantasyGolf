@@ -37,6 +37,7 @@ angular.module('fantasyGolfApp')
 
       Team.update(team,
         function(team){
+
           //update team
           $scope.team = team;
 
