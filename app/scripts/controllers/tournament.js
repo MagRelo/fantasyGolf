@@ -1,47 +1,48 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TournamentCtrl', function ($scope, teamModel, pga, Team) {
+  .controller('TournamentCtrl', function ($scope,$q, pga, Team) {
 
+    //load data
+    $scope.init = function() {
 
-    //2. Get Team Info
-    Team.get({id: $scope.currentUser.teamId},
-      function(data){
-        $scope.team = data;
+      return $q.all([
+          pga.setup().$promise,
+          Team.get({id: $scope.currentUser.teamId}).$promise
+        ])
 
+        .then( function(result) {
 
-        //1. Get Tournament info
-        pga.setup({},
-          function(data){
-            $scope.event = data.event;
-            $scope.courses = data.courseInfos;
-            $scope.players = data.field;
+          //set results to scope
+          $scope.event = result[0].event;
+          $scope.courses = result[0].courseInfos;
+          $scope.field = result[0].field;
+          $scope.team = result[1];
 
-
-            //loop through team players
-            angular.forEach($scope.team.players, function(teamPlayer, teamIndex){
-
-              //loop through field players
-              angular.forEach(data.field, function(fieldPlayer){
-
-                if(teamPlayer.pgaId == fieldPlayer.id){
-                  angular.extend($scope.team.players[teamIndex], fieldPlayer);
-                }
-
-              });
-
+          //add field data to each team player
+          angular.forEach($scope.team.players, function(teamPlayer, index){
+            angular.forEach($scope.field, function(fieldPlayer){
+              if(teamPlayer.pgaId == fieldPlayer.id){
+                angular.extend($scope.team.players[index], fieldPlayer);
+              }
             });
+          });
 
-          },
-          function(error){ $scope.error = error; }
-        );
+          //get player records and then extend onto team.player object
+          $q.all([
+              pga.get({playerId: $scope.team.players[0].pgaId}).$promise,
+              pga.get({playerId: $scope.team.players[1].pgaId}).$promise,
+              pga.get({playerId: $scope.team.players[2].pgaId}).$promise,
+              pga.get({playerId: $scope.team.players[3].pgaId}).$promise
+            ])
+            .then( function(result) {
+              angular.forEach(result, function(playerData, index){
+                angular.extend($scope.team.players[index], playerData);
+              });
+            })
+        })
+    };
 
-
-      },
-      function(error){ $scope.error = error; }
-    );
-
-    //3.Display User Leagues
-    $scope.userLeagues = $scope.currentUser.leagues;
+    $scope.init();
 
   });

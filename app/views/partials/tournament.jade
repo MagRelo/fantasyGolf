@@ -36,20 +36,20 @@ div(ng-include='\'partials/navbar\'')
                             h4 {{player.name.first + ' ' + player.name.last}}
 
                             p
-                                a(ng-href="{{'/player/' + player.pgaId}}") scorecard
+                                a(ng-href="{{'/player/' + player.pgaId}}") view scorecard
 
 
 
                         td.hidden-xs
-                            h5 -1
+                            h5 {{player.rounds[0].sc}}
                         td.hidden-xs
-                            h5 -7
+                            h5 {{player.rounds[1].sc}}
                         td.hidden-xs
-                            h5 -1
+                            h5 {{player.rounds[2].sc}}
                         td.hidden-xs
-                            h5 -7
-                        td.text-center
-                            h5 43
+                            h5 {{player.rounds[3].sc}}
+                        td
+                            h5.text-center 20
 
 
     .col-sm-12
