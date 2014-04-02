@@ -10,7 +10,6 @@ angular.module('fantasyGolfApp')
           pga.setup().$promise,
           Team.get({id: $scope.currentUser.teamId}).$promise
         ])
-
         .then( function(result) {
 
           //set results to scope
@@ -19,7 +18,7 @@ angular.module('fantasyGolfApp')
           $scope.field = result[0].field;
           $scope.team = result[1];
 
-          //add field data to each team player
+          //extend field data to each team player
           angular.forEach($scope.team.players, function(teamPlayer, index){
             angular.forEach($scope.field, function(fieldPlayer){
               if(teamPlayer.pgaId == fieldPlayer.id){
@@ -28,7 +27,7 @@ angular.module('fantasyGolfApp')
             });
           });
 
-          //get player records and then extend onto team.player object
+          //get player records and then extend each one onto team.player object
           $q.all([
               pga.get({playerId: $scope.team.players[0].pgaId}).$promise,
               pga.get({playerId: $scope.team.players[1].pgaId}).$promise,
