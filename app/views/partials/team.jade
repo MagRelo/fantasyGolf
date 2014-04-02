@@ -7,12 +7,12 @@ h3.text-primary Team Settings
         .form-group
             label.control-label.col-sm-3(for='teamName') Team Name
             div.col-sm-7
-                input#2.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+                input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
 
         .form-group
             label.control-label.col-sm-3(for='ownerName') Owner Name
             div.col-sm-7
-                input#1.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+                input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
 
         div(data-ng-repeat="player in team.players")
@@ -30,7 +30,7 @@ h3.text-primary Team Settings
                 h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
 
 
-        .clearfix
+                .clearfix
 
 
 div(ng-include='\'partials/settings\'')
