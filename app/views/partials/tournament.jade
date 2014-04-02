@@ -3,30 +3,56 @@ div(ng-include='\'partials/navbar\'')
 .row
     .col-sm-12
         h3.text-primary {{event.name}}
-        ul.list-inline
-            li(data-ng-repeat='course in courses')
-                p.text-primary {{course.name}}
-
+            small(data-ng-repeat='course in courses') {{course.name}}
 
     .col-sm-12
 
+        a.btn.btn-primary(href="/team", data-ng-show='!team.players.length') Setup your team >
 
-    .col-sm-6
-        //team not setup
-        div(data-ng-if="!currentUser.teamId")
-            h3.text-primary My Team
-            a.btn.btn-primary(href="/team") Setup your team >
+        div
 
-        div(data-ng-if="currentUser.teamId")
-            h3.text-primary(data-ng-bind='team.teamName')
+            h3 {{team.teamName}}
                 small {{team.ownerName}}
 
-            .well
-                ul.list-unstyled
-                    li(data-ng-repeat="player in team.players")
-                        a(ng-href="{{'/player/' + player.pgaId}}") {{player.pgaId}}
+            table.table.table-responsive
+                thead
+                    th.hidden-xs
+                    th
+                    th.hidden-xs rnd 1
+                    th.hidden-xs rnd 2
+                    th.hidden-xs rnd 3
+                    th.hidden-xs rnd 4
+                    th.text-center points
 
-    .col-sm-6
+                tbody
+                    tr(data-ng-repeat="player in team.players")
+
+                        td.hidden-xs
+                            div.playerList
+                                a(ng-href="{{'/player/' + player.pgaId}}") {{translate(player.pgaId)}}
+                                    img.playerImage(ng-src="http://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{player.pgaId}}.png")
+                        td
+                            h4 {{player.name.first + ' ' + player.name.last}}
+
+                            p
+                                a(ng-href="{{'/player/' + player.pgaId}}") scorecard
+
+
+
+                        td.hidden-xs
+                            h5 -1
+                        td.hidden-xs
+                            h5 -7
+                        td.hidden-xs
+                            h5 -1
+                        td.hidden-xs
+                            h5 -7
+                        td.text-center
+                            h5 43
+
+
+
+    .col-sm-12
         h3.text-primary My Leagues
         .well
             div(data-ng-show='!currentUser.leagues.length')

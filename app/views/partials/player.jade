@@ -5,7 +5,7 @@ h3.text-primary Scorecard
 
 img.playerImage(ng-src="http://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{playerId}}.png")
 span.h3  {{player.name.first + ' ' + player.name.last}}
-
+    small.text-muted {{player.info.hometown}}
 
 table.table
     thead

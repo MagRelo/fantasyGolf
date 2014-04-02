@@ -167,4 +167,27 @@ body {
 
 .playerImage{
   margin-right: 10px;
+  margin-top: 2px;
+}
+
+
+.playerList{
+  margin-bottom: 3px;
+}
+
+.table{
+  margin-bottom: 10px;
+}
+.table > thead > tr > th {
+  border-bottom: 1px solid $mg-white;
+}
+
+.teamWell{
+  border: solid 1px $mg-mid;
+  padding: 0 20px 0 20px;
+}
+
+h3 > small,
+span.h3 > small{
+  margin-left: 10px;
 }
