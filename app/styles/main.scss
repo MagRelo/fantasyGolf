@@ -89,6 +89,8 @@ body {
 
 .jumbotron h1{
   font-family: Yellowtail, cursive, serif;
+  //text-shadow: 1px 1px 0 black, -2px 2px 40px rgb(255, 23, 171);
+  text-shadow: 1px 1px 0 black, -2px 2px 40px $brand-primary;
 }
 
 .jumbotron .btn {
@@ -125,7 +127,7 @@ body {
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
         border-bottom: 0;
-        background-image: url('/images/6078_800_533.jpg');
+        background-image: url('/images/sunset1.jpg');
         height: 413px;
         background-position-y: -120px;
         padding-top: 5px;
