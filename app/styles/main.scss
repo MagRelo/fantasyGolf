@@ -175,6 +175,11 @@ body {
   margin-bottom: 3px;
 }
 
+.leagueList{
+  max-height: 300px;
+  overflow: hidden;
+}
+
 .table{
   margin-bottom: 10px;
 }
@@ -190,4 +195,8 @@ body {
 h3 > small,
 span.h3 > small{
   margin-left: 10px;
+}
+
+.input-group-addon {
+  background-color: $mg-mid;
 }
