@@ -56,8 +56,7 @@ h3.text-primary Create a new league
                 label.control-label(for='1') Location
                 input.form-control(type='text', name='leagueLocation', required='required', data-ng-model='league.leagueLocation')
 
-            button.btn.btn-success.pull-right(type='submit',
-                data-ng-show='LeagueForm.$dirty', data-ng-click="createLeague()") Create
+            button.btn.btn-success.pull-right(type='submit', data-ng-show='LeagueForm.$dirty') Create
 
             .clearfix
 

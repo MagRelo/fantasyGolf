@@ -21,7 +21,7 @@ angular.module('fantasyGolfApp')
       })
     };
 
-    $scope.init();
+
 
     $scope.joinLeague = function(index){
 
@@ -31,20 +31,23 @@ angular.module('fantasyGolfApp')
 
     $scope.createLeague = function(){
 
+      var newLeague = new League();
+
       //add owner id
-      $scope.league.teamId = $scope.currentUser.teamId;
+      newLeague.teamId = $scope.currentUser.teamId;
+      newLeague.leagueName = $scope.league.leagueName;
+      newLeague.location = $scope.league.location;
 
       //add users property and add owner
-      $scope.league.teams = [];
-      $scope.league.teams.push($scope.currentUser.teamId);
+      newLeague.teams = [];
+      newLeague.teams.push($scope.currentUser.teamId);
 
       //create league
-      var newLeague = new League($scope.league);
       newLeague.$save({},
-        function(leagues){
+        function(){
 
-        //update leagues list
-        $scope.leagues = leagues;
+        //update all
+        $scope.init();
 
         //reset form
         $scope.LeagueForm.$setPristine();
@@ -52,5 +55,7 @@ angular.module('fantasyGolfApp')
       });
 
     };
+
+    $scope.init();
 
   });

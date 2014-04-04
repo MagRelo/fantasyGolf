@@ -19,10 +19,8 @@ div(ng-include='\'partials/navbar\'')
                 thead
                     th.hidden-xs
                     th
-                    th.hidden-xs rnd 1
-                    th.hidden-xs rnd 2
-                    th.hidden-xs rnd 3
-                    th.hidden-xs rnd 4
+                    th.hidden-xs(data-ng-repeat="round in team.players[0].rounds")
+                        | {{'rnd ' + ($index + 1)}}
                     th.text-center points
 
                 tbody
@@ -40,26 +38,33 @@ div(ng-include='\'partials/navbar\'')
 
 
 
-                        td.hidden-xs
-                            h5 {{player.rounds[0].sc}}
-                        td.hidden-xs
-                            h5 {{player.rounds[1].sc}}
-                        td.hidden-xs
-                            h5 {{player.rounds[2].sc}}
-                        td.hidden-xs
-                            h5 {{player.rounds[3].sc}}
+                        td.hidden-xs(data-ng-repeat="round in player.rounds")
+                            h5 {{round.modstable}}
                         td
                             h5.text-center 20
 
 
     .col-sm-12
-        h3.text-primary My Leagues
-        .well
-            div(data-ng-show='!currentUser.leagues.length')
-                p No leagues yet - join a league!
+        h3.text-primary My leagues
+        div.well
+            p(data-ng-show='!team.leagues.length') No leagues yet - join a league!
 
-            div(data-ng-repeat='league in currentUser.leagues')
-                p {{league.leagueName}}
+            table(data-ng-show='team.leagues.length').table.table-responsive
+                thead
+                    th Name
+                    th Location
+                    th Teams
+                    th.text-center Leave
+                tbody
+                    tr(data-ng-repeat="league in team.leagues")
+                        td
+                            h5 {{league.leagueName}}
+                        td
+                        td
+                        td.text-center
+                            button.btn.btn-primary.btn-sm.h5 view >
+
+
 
 
 
