@@ -19,7 +19,7 @@ div(ng-include='\'partials/navbar\'')
                 thead
                     th.hidden-xs
                     th
-                    th.hidden-xs(data-ng-repeat="round in team.players[0].rounds")
+                    th.hidden-xs(data-ng-repeat="round in [1,2,3]")
                         | {{'rnd ' + ($index + 1)}}
                     th.text-center points
 
@@ -41,7 +41,15 @@ div(ng-include='\'partials/navbar\'')
                         td.hidden-xs(data-ng-repeat="round in player.rounds")
                             h5 {{round.modstable}}
                         td
-                            h5.text-center 20
+                            h5.text-center {{player.modstable}}
+
+                    tr
+                        td
+                        td
+                        td
+                        td
+                        td total:
+                        td.text-center {{team.modstable}}
 
 
     .col-sm-12

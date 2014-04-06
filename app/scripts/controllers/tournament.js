@@ -18,6 +18,16 @@ angular.module('fantasyGolfApp')
           $scope.field = result[0].field;
           $scope.team = result[1];
 
+          //setup team totals
+          $scope.team.sc = 0;
+          $scope.team.stable = 0;
+          $scope.team.modstable = 0;
+
+          //break if the players are not setup
+          if(!$scope.team.players.length > 0){
+            return;
+          }
+
           //extend field data to each team player
           angular.forEach($scope.team.players, function(teamPlayer, index){
             angular.forEach($scope.field, function(fieldPlayer){
@@ -36,11 +46,28 @@ angular.module('fantasyGolfApp')
             ])
             .then( function(result) {
               angular.forEach(result, function(playerData, index){
+
+                //pad out rounds for player that missed the cut
+                while(playerData.rounds.length < $scope.event.currentRnd){
+                  playerData.rounds.push({
+                    sc: '--',
+                    stable: '--',
+                    modstable: '--'
+                  })
+                }
+
+                //total up scores
+                $scope.team.sc += playerData.sc;
+                $scope.team.stable += playerData.stable;
+                $scope.team.modstable += playerData.modstable;
+
                 angular.extend($scope.team.players[index], playerData);
+
               });
             })
         })
     };
+
 
     $scope.init();
 
