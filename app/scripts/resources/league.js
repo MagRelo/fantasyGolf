@@ -2,14 +2,19 @@
 
 angular.module('fantasyGolfApp')
   .factory('League', function ($resource) {
-    return $resource('/api/league/:id', {
-      id: '@_id'
-    }, { //parameters default
-      join: {
-        method: 'PUT',
-        params: {
-          teamID: '@_teamID'
+    return $resource('/api/league/:id',
+      {
+        id: '@_id'
+      },
+      {
+        join: {
+          method: 'PUT',
+          params: {id: 'join'}
+        },
+        leave: {
+          method: 'PUT',
+          params: {id: 'leave'}
         }
       }
-    });
+    );
   });

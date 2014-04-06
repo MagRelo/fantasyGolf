@@ -1,27 +1,29 @@
 div(ng-include='\'partials/navbar\'')
 
 
-h3.text-primary My leagues
-div.well
-    p(data-ng-show='!team.leagues.length') No leagues yet - join a league!
 
-    table(data-ng-show='team.leagues.length').table.table-responsive
+div.well
+
+    h3 My leagues
+    //p(data-ng-show='!team.leagues.length') No leagues yet - join a league!
+
+    table.table.table-responsive
         thead
             th Name
             th Location
             th Teams
             th.text-center Leave
         tbody
-            tr(data-ng-repeat="league in team.leagues")
+            tr(data-ng-repeat="league in leagues| filter: {active: true}")
                 td
                     h5 {{league.leagueName}}
                 td
+                    h5 {{league.location}}
                 td
                 td.text-center
-                    button.btn.btn-primary.btn-sm.h5 leave
+                    button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
 
-h3.text-primary All leagues
-div.well
+    h3 All leagues
     div.input-group
         label.input-group-addon Search
         input.form-control(type="text", data-ng-model="leagueFilter")
@@ -35,13 +37,14 @@ div.well
                 th Teams
                 th.text-center Join!
             tbody
-                tr(data-ng-repeat="league in leagues | filter:leagueFilter")
+                tr(data-ng-repeat="league in leagues | filter: {active: false}")
                     td
                         h5 {{league.leagueName}}
                     td
+                        h5 {{league.location}}
                     td
                     td.text-center
-                        button.btn.btn-primary.btn-sm.h5(data-ng-click="joinLeague($index)") join
+                        button.btn.btn-success.btn-sm.h5(data-ng-click="joinLeague(league._id)") join
 
 
 h3.text-primary Create a new league

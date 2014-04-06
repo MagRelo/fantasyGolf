@@ -14,19 +14,11 @@ angular.module('fantasyGolfApp')
         $scope.leagues = result[0];
         $scope.team = result[1];
 
-          //if(team.leagues){
-          //  mark league as 'joined'
-          // }
-
+          //set team leagues as 'active'
+          angular.forEach($scope.leagues, function(league){
+            league.active = ($scope.team.leagues.indexOf(league._id) > -1);
+          })
       })
-    };
-
-
-
-    $scope.joinLeague = function(index){
-
-      //League.update(index, $scope.currentUser.teamId);
-
     };
 
     $scope.createLeague = function(){
@@ -36,7 +28,7 @@ angular.module('fantasyGolfApp')
       //add owner id
       newLeague.teamId = $scope.currentUser.teamId;
       newLeague.leagueName = $scope.league.leagueName;
-      newLeague.location = $scope.league.location;
+      newLeague.location = $scope.league.leagueLocation;
 
       //add users property and add owner
       newLeague.teams = [];
@@ -46,15 +38,52 @@ angular.module('fantasyGolfApp')
       newLeague.$save({},
         function(){
 
-        //update all
-        $scope.init();
+          //update all
+          $scope.init();
 
-        //reset form
-        $scope.LeagueForm.$setPristine();
-        $scope.league = {};
-      });
+          //reset form
+          $scope.LeagueForm.$setPristine();
+          $scope.league = {};
+        });
 
     };
+
+    $scope.joinLeague = function(leagueId){
+
+
+      League.join({},
+        {
+          leagueId: leagueId,
+          teamId: $scope.currentUser.teamId
+        },
+        function(data){
+
+          //update all
+          $scope.init();
+        },
+        function(error){});
+
+    };
+
+    $scope.leaveLeague = function(leagueId){
+
+
+      League.leave({},
+        {
+          leagueId: leagueId,
+          teamId: $scope.currentUser.teamId
+        },
+        function(data){
+
+          //update all
+          $scope.init();
+        },
+        function(error){});
+
+    };
+
+
+
 
     $scope.init();
 
