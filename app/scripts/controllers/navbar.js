@@ -8,9 +8,6 @@ angular.module('fantasyGolfApp')
     }, {
       'title': 'My Team',
       'link': '/team'
-    }, {
-      'title': 'My Leagues',
-      'link': '/league'
     }];
     
     $scope.logout = function() {

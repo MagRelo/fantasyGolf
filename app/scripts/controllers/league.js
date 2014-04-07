@@ -10,6 +10,7 @@ angular.module('fantasyGolfApp')
         Team.get({id: $scope.currentUser.teamId}).$promise
       ])
       .then(function(result) {
+
         //set results to scope
         $scope.leagues = result[0];
         $scope.team = result[1];
@@ -17,13 +18,15 @@ angular.module('fantasyGolfApp')
           //loop through leagues
           angular.forEach($scope.leagues, function(league){
 
-            if(!league.teams){
-              league.teams = [];
+            //check for teams(remove?)
+            if(league.teams){
+
+              //check for team id of current user, mark league as active
+              league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
             }
-            //check for team id of current user, mark league as active
-            league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
-          })
-      })
+
+          });
+      });
     };
 
     $scope.createLeague = function(){
@@ -86,9 +89,6 @@ angular.module('fantasyGolfApp')
         function(error){});
 
     };
-
-
-
 
     $scope.init();
 

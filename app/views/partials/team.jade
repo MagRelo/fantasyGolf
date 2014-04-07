@@ -5,34 +5,33 @@ h3.text-primary Team Settings
     form.form-horizontal(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
 
         .form-group
-            label.control-label.col-sm-3(for='teamName') Team Name
-            div.col-sm-7
+            .col-sm-6
+                label.control-label(for='teamName') Team Name
                 input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
 
-        .form-group
-            label.control-label.col-sm-3(for='ownerName') Owner Name
-            div.col-sm-7
+            .col-sm-6
+                label.control-label(for='ownerName') Owner Name
                 input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
+        //players
+        .form-group
+            .col-sm-6(data-ng-repeat="player in team.players")
+                label(for="fieldDropdown").control-label {{'Golfer ' + ($index + 1)}}
+                select.form-control(name="fieldDropdown",
+                data-ng-options='fieldPlayer.id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
+                data-ng-model='player.pgaId')
 
-        div(data-ng-repeat="player in team.players")
-            .form-group
-                label(for="fieldDropdown").control-label.col-sm-3 {{'Player ' + ($index + 1)}}
-                div.col-sm-7
-                    select.form-control(name="fieldDropdown",
-                    data-ng-options='fieldPlayer.id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
-                    data-ng-model='player.pgaId')
-
-
-        .row
-            div.text-center
-                button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
-                h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+        //buttons
+        div.pull-right
+            button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
+            h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
 
 
-                .clearfix
+        .clearfix
 
+
+
+
+div(ng-include='\'partials/league\'')
 
 div(ng-include='\'partials/settings\'')
-
-

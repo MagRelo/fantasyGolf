@@ -1,63 +1,63 @@
-div(ng-include='\'partials/navbar\'')
+div(data-ng-controller="LeagueCtrl")
+    h3.text-primary League Settings
+    div.well
 
+        h4.text-primary My leagues
+        //p(data-ng-show='!team.leagues.length') No leagues yet - join a league!
 
-
-div.well
-
-    h3 My leagues
-    //p(data-ng-show='!team.leagues.length') No leagues yet - join a league!
-
-    table.table.table-responsive
-        thead
-            th Name
-            th Location
-            th Teams
-            th.text-center Leave
-        tbody
-            tr(data-ng-repeat="league in leagues| filter: {active: true}")
-                td
-                    h5 {{league.leagueName}}
-                td
-                    h5 {{league.location}}
-                td
-                td.text-center
-                    button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
-
-    h3 All leagues
-    div.input-group
-        label.input-group-addon Search
-        input.form-control(type="text", data-ng-model="leagueFilter")
-
-    br
-    div.leagueList
         table.table.table-responsive
-            thead
+            thead.text-muted
                 th Name
                 th Location
                 th Teams
                 th.text-center Join!
             tbody
-                tr(data-ng-repeat="league in leagues | filter: {active: false}")
+                tr(data-ng-repeat="league in leagues| filter: {active: true}")
                     td
                         h5 {{league.leagueName}}
                     td
                         h5 {{league.location}}
                     td
                     td.text-center
-                        button.btn.btn-success.btn-sm.h5(data-ng-click="joinLeague(league._id)") join
+                        button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
+
+        br
+        h4.text-primary All leagues
+        div.input-group
+            label.input-group-addon.text-primary Search
+            input.form-control(type="text", data-ng-model="leagueFilter")
+
+        br
+        div.leagueList
+            table.table.table-responsive
+                thead.text-muted
+                    th Name
+                    th Location
+                    th Teams
+                    th.text-center Join!
+                tbody
+                    tr(data-ng-repeat="league in leagues | filter: {active: false}")
+                        td
+                            h5 {{league.leagueName}}
+                        td
+                            h5 {{league.location}}
+                        td
+                        td.text-center
+                            button.btn.btn-success.btn-sm.h5(data-ng-click="joinLeague(league._id)") join
 
 
-h3.text-primary Create a new league
-.well
-    div
-        form(role='form', name='LeagueForm', data-ng-submit='createLeague()')
-            .form-group.col-sm-6
-                label.control-label(for='1') League Name
-                input.form-control(type='text', name='leagueName', required='required', data-ng-model='league.leagueName')
 
-            .form-group.col-sm-6
-                label.control-label(for='1') Location
-                input.form-control(type='text', name='leagueLocation', required='required', data-ng-model='league.leagueLocation')
+
+        h4.text-primary Create a new league
+        form.form-horizontal(role='form', name='LeagueForm', data-ng-submit='createLeague()')
+            .form-group
+                .col-sm-6
+                    label.control-label(for='1') League Name
+                    input.form-control(type='text', name='leagueName', required='required', data-ng-model='league.leagueName')
+
+                .col-sm-6
+                    label.control-label(for='1') Location
+                    input.form-control(type='text', name='leagueLocation', required='required', data-ng-model='league.leagueLocation')
 
             button.btn.btn-success.pull-right(type='submit', data-ng-show='LeagueForm.$dirty') Create
 

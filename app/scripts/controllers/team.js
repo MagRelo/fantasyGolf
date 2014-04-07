@@ -28,7 +28,6 @@ angular.module('fantasyGolfApp')
       function(error){ $scope.teamerror = error; }
     );
 
-
     //save team
     $scope.saveTeam = function(team){
 
