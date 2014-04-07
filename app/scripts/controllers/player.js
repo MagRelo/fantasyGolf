@@ -6,6 +6,8 @@ angular.module('fantasyGolfApp')
     $scope.player = {};
     $scope.playerId = $routeParams.playerId;
 
+    $scope.scoringStyle = 'modstable';
+
     pga.get({playerId: $scope.playerId},
       function(player){
         angular.extend($scope.player, player);
