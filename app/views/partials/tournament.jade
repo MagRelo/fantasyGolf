@@ -19,7 +19,7 @@ div(ng-include='\'partials/navbar\'')
                 thead
                     th.hidden-xs
                     th
-                    th.hidden-xs(data-ng-repeat="round in [1,2,3]")
+                    th.hidden-xs(data-ng-repeat="round in [1,2,3,4]")
                         | {{'rnd ' + ($index + 1)}}
                     th.text-center points
 
@@ -44,11 +44,9 @@ div(ng-include='\'partials/navbar\'')
                             h5.text-center {{player.modstable}}
 
                     tr
+                        td.hidden-xs
                         td
-                        td
-                        td
-                        td
-                        td total:
+                        td.hidden-xs(data-ng-repeat="round in [1,2,3,4]")
                         td.text-center {{team.modstable}}
 
 
@@ -68,6 +66,7 @@ div(ng-include='\'partials/navbar\'')
                         td
                             h5 {{league.leagueName}}
                         td
+                            h5 {{league.location}}
                         td
                         td.text-center
                             button.btn.btn-primary.btn-sm.h5 view >

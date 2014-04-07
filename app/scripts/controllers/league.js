@@ -14,9 +14,14 @@ angular.module('fantasyGolfApp')
         $scope.leagues = result[0];
         $scope.team = result[1];
 
-          //set team leagues as 'active'
+          //loop through leagues
           angular.forEach($scope.leagues, function(league){
-            league.active = ($scope.team.leagues.indexOf(league._id) > -1);
+
+            if(!league.teams){
+              league.teams = [];
+            }
+            //check for team id of current user, mark league as active
+            league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
           })
       })
     };
