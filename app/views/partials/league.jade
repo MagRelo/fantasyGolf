@@ -49,19 +49,19 @@ div(data-ng-controller="LeagueCtrl")
 
         //create a league
         h4.text-primary Create a new league
-            form.form-horizontal(role='form', name='LeagueForm', data-ng-submit='createLeague()')
-                .form-group
-                    .col-sm-6
-                        label.control-label(for='1') League Name
-                        input.form-control(type='text', name='leagueName', required='required', data-ng-model='league.leagueName')
+        form.form-horizontal(role='form', name='LeagueForm', data-ng-submit='createLeague()')
+            .form-group
+                .col-sm-6
+                    label.control-label(for='1') League Name
+                    input.form-control(type='text', name='leagueName', required='required', data-ng-model='league.leagueName')
 
-                    .col-sm-6
-                        label.control-label(for='1') Location
-                        input.form-control(type='text', name='leagueLocation', required='required', data-ng-model='league.leagueLocation')
+                .col-sm-6
+                    label.control-label(for='1') Location
+                    input.form-control(type='text', name='leagueLocation', required='required', data-ng-model='league.leagueLocation')
 
-                button.btn.btn-success.pull-right(type='submit', data-ng-show='LeagueForm.$dirty') Create
+            button.btn.btn-success.pull-right(type='submit', data-ng-show='LeagueForm.$dirty') Create
 
-                .clearfix
+            .clearfix
 
 
 

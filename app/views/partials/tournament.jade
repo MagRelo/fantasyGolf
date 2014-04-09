@@ -19,7 +19,7 @@ div(ng-include='\'partials/navbar\'')
                 thead
                     th.hidden-xs
                     th
-                    th.hidden-xs(data-ng-repeat="round in [1,2,3,4]")
+                    th.hidden-xs(data-ng-repeat="round in [1]")
                         | {{'rnd ' + ($index + 1)}}
                     th.text-center points
 
@@ -33,8 +33,9 @@ div(ng-include='\'partials/navbar\'')
                         td
                             h4 {{player.name.first + ' ' + player.name.last}}
 
-                            p
-                                a(ng-href="{{'/player/' + player.pgaId}}") view scorecard
+                            ul.list-inline
+                                li
+                                    a(ng-href="{{'/player/' + player.pgaId}}") scorecard
 
 
 
@@ -46,7 +47,7 @@ div(ng-include='\'partials/navbar\'')
                     tr
                         td.hidden-xs
                         td
-                        td.hidden-xs(data-ng-repeat="round in [1,2,3,4]")
+                        td.hidden-xs(data-ng-repeat="round in [1]")
                         td.text-center {{team.modstable}}
 
 
@@ -60,7 +61,7 @@ div(ng-include='\'partials/navbar\'')
                     th Name
                     th Location
                     th Teams
-                    th.text-center Leave
+                    th.text-center View
                 tbody
                     tr(data-ng-repeat="league in team.leagues")
                         td
