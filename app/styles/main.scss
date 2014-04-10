@@ -81,21 +81,15 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
-  background-color: $mg-dark;
-  color: $mg-white;
-
+.front {
+  margin-top: -155px;
+  margin-bottom: 10px;
 }
 
-.jumbotron h1{
+.front h1{
+  font-size: 70px;
   font-family: Yellowtail, cursive, serif;
-  //text-shadow: 1px 1px 0 black, -2px 2px 40px rgb(255, 23, 171);
   text-shadow: 1px 1px 0 black, -2px 2px 40px $brand-primary;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
 }
 
 /* Supporting marketing content */
@@ -127,9 +121,9 @@ body {
     /* Remove the bottom border on the jumbotron for visual effect */
     .jumbotron {
         border-bottom: 0;
-        background-image: url('/images/sunset1.jpg');
+        //background-image: url('/images/sunset1.jpg');
         height: 413px;
-        background-position-y: -120px;
+        //background-position-y: -120px;
         padding-top: 5px;
         text-align: left;
     }
@@ -141,6 +135,15 @@ body {
 }
 
 //custom additions
+
+.centerImage{
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  border: solid $mg-darkest 1px;
+}
+
+
 
 .nav > li > a:hover,
 .nav > li > a:focus {

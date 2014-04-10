@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="cleanup scoring">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/setupTournament.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="gh#4 - fix background image issue">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gruntfile.js" afterPath="$PROJECT_DIR$/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.jade" afterPath="$PROJECT_DIR$/app/views/index.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/partials/main.jade" afterPath="$PROJECT_DIR$/app/views/partials/main.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397089176270" ignored="false" />
+    <file path="/Dummy.txt" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397167550374" ignored="false" />
     <file path="/.gitignore" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395690642194" ignored="false" />
     <file path="/navbar.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395691265512" ignored="false" />
     <file path="/team.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396835390290" ignored="false" />
-    <file path="/main.scss" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396839035322" ignored="false" />
+    <file path="/main.scss" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397166851915" ignored="false" />
     <file path="/team.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396749944168" ignored="false" />
     <file path="/league.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396841087172" ignored="false" />
-    <file path="/main.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395716489333" ignored="false" />
+    <file path="/main.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397164667373" ignored="false" />
     <file path="/navbar.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396839397059" ignored="false" />
     <file path="/login.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395888626246" ignored="false" />
     <file path="/signup.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1395767200654" ignored="false" />
@@ -45,6 +47,12 @@
     <file path="/player.jade" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1396843099918" ignored="false" />
     <file path="/server.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397089198885" ignored="false" />
     <file path="/setupTournament.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397156260164" ignored="false" />
+    <file path="$PROJECT_DIR$/dist/lib/controllers/pga.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397163429045" ignored="false" />
+    <file path="$PROJECT_DIR$/dist/lib/models/tournament.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397163429045" ignored="false" />
+    <file path="$PROJECT_DIR$/dist/public/bower_components/jquery/test/unit/ajax.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397163429045" ignored="false" />
+    <file path="$PROJECT_DIR$/dist/public/scripts/fbe0e69f.scripts.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397163429045" ignored="false" />
+    <file path="$PROJECT_DIR$/dist/lib/config/dummydata.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397163429045" ignored="false" />
+    <file path="/Gruntfile.js" changelist="50b01cab-c01b-4338-93b8-21ce317af720" time="1397163557775" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,28 +72,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="setupTournament.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bin/setupTournament.js">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="81" selection-start="505" selection-end="505" vertical-scroll-proportion="0.50319487">
+            <state line="226" column="84" selection-start="5811" selection-end="5811" vertical-scroll-proportion="-22.32">
+              <folding>
+                <element signature="e#710#1006#0" expanded="false" />
+                <element signature="e#2371#2796#0" expanded="false" />
+                <element signature="e#3373#3609#0" expanded="false" />
+                <element signature="e#5568#5810#0" expanded="false" />
+                <element signature="e#6925#7106#0" expanded="false" />
+                <element signature="e#7158#7237#0" expanded="false" />
+                <element signature="e#8429#8629#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="127" selection-start="322" selection-end="322" vertical-scroll-proportion="11.166667">
+            <state line="36" column="58" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="express.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/config/express.js">
+      <file leaf-file-name="main.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="29" selection-start="1409" selection-end="1409" vertical-scroll-proportion="0.0">
+            <state line="115" column="87" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.928115">
               <folding />
             </state>
           </provider>
@@ -110,11 +135,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/partials/team.jade" />
         <option value="$PROJECT_DIR$/app/views/partials/navbar.jade" />
-        <option value="$PROJECT_DIR$/app/styles/main.scss" />
-        <option value="$PROJECT_DIR$/app/views/partials/main.jade" />
-        <option value="$PROJECT_DIR$/app/views/index.jade" />
         <option value="$PROJECT_DIR$/app/scripts/app.js" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/player.js" />
         <option value="$PROJECT_DIR$/app/views/partials/player.jade" />
@@ -122,10 +143,14 @@
         <option value="$PROJECT_DIR$/lib/controllers/pga.js" />
         <option value="$PROJECT_DIR$/app/views/partials/tournament.jade" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/dist/public/styles/fb1b7db0.main.css" />
         <option value="$PROJECT_DIR$/dist/bin/setupTournament.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/bin/setupTournament.js" />
+        <option value="$PROJECT_DIR$/dist/public/styles/fb1b7db0.main.css" />
+        <option value="$PROJECT_DIR$/app/views/partials/main.jade" />
+        <option value="$PROJECT_DIR$/app/views/index.jade" />
+        <option value="$PROJECT_DIR$/app/styles/main.scss" />
+        <option value="$PROJECT_DIR$/Gruntfile.js" />
       </list>
     </option>
   </component>
@@ -196,34 +221,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -526,7 +523,19 @@
       <created>1397084232389</created>
       <updated>1397084232389</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="add tournament setup job">
+      <created>1397163361616</created>
+      <updated>1397163361616</updated>
+    </task>
+    <task id="LOCAL-00054" summary="updated to include /bin/ folder">
+      <created>1397164554978</created>
+      <updated>1397164554978</updated>
+    </task>
+    <task id="LOCAL-00055" summary="removed commas">
+      <created>1397164590693</created>
+      <updated>1397164590694</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -538,7 +547,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21559268" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21559268" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28134558" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -594,7 +603,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup scoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="gh#4 - fix background image issue" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -608,10 +617,6 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="initialize team object if empty" />
-    <MESSAGE value="font up" />
-    <MESSAGE value="clean up tourney and route, add player route" />
-    <MESSAGE value="add view player, with pics!" />
     <MESSAGE value="blue glow styling on jumbotron" />
     <MESSAGE value="styling improvments, remove columns for xs screens" />
     <MESSAGE value="minor styling changes" />
@@ -633,6 +638,10 @@
     <MESSAGE value="pull main views into views dir&#10;" />
     <MESSAGE value="display player scores in all formats" />
     <MESSAGE value="cleanup scoring" />
+    <MESSAGE value="add tournament setup job" />
+    <MESSAGE value="updated to include /bin/ folder" />
+    <MESSAGE value="removed commas" />
+    <MESSAGE value="gh#4 - fix background image issue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,41 +649,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dist/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1033" selection-end="1033" vertical-scroll-proportion="0.85623">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/lib/config/express.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="48" selection-start="1238" selection-end="1238" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="97" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.1709266">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/public/styles/fb1b7db0.main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="94444" selection-start="94444" selection-end="94444" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="91" selection-start="214" selection-end="214" vertical-scroll-proportion="0.047923323">
@@ -686,15 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.44371942">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/lib/controllers/pga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="155" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#651#1868#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,7 +714,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/setupTournament.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="81" selection-start="505" selection-end="505" vertical-scroll-proportion="0.50319487">
+        <state line="21" column="81" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/partials/main.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="58" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="84" selection-start="5811" selection-end="5811" vertical-scroll-proportion="-22.32">
+          <folding>
+            <element signature="e#710#1006#0" expanded="false" />
+            <element signature="e#2371#2796#0" expanded="false" />
+            <element signature="e#3373#3609#0" expanded="false" />
+            <element signature="e#5568#5810#0" expanded="false" />
+            <element signature="e#6925#7106#0" expanded="false" />
+            <element signature="e#7158#7237#0" expanded="false" />
+            <element signature="e#8429#8629#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="126" selection-start="793" selection-end="793" vertical-scroll-proportion="0.41598696">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="87" selection-start="2375" selection-end="2375" vertical-scroll-proportion="0.928115">
           <folding />
         </state>
       </provider>
