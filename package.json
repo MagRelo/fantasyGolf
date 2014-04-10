@@ -10,7 +10,8 @@
     "passport": "latest",
     "passport-local": "latest",
     "jade": "latest",
-    "request": "2.34.0"
+    "request": "2.34.0",
+    "mongojs": "latest"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
