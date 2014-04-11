@@ -137,13 +137,12 @@ body {
 //custom additions
 
 .centerImage{
-  margin-right: auto;
-  margin-left: auto;
   display: block;
-  border: solid $mg-darkest 1px;
+  position: relative;
+  left: -50px;
+  border: solid #282b2e 1px;
+  z-index: -1;
 }
-
-
 
 .nav > li > a:hover,
 .nav > li > a:focus {

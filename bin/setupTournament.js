@@ -39,6 +39,7 @@ var tournamentSetup = function() {
           }
 
           console.log('setup record saved: ' + saved);
+          return;
         });
 
     }

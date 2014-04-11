@@ -14,7 +14,7 @@ angular.module('fantasyGolfApp')
 
           //set results to scope
           $scope.event = result[0].event;
-          $scope.courses = result[0].courseInfos;
+          $scope.courses = result[0].courses;
           $scope.field = result[0].field;
           $scope.team = result[1];
 
