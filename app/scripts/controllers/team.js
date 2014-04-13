@@ -12,22 +12,28 @@ angular.module('fantasyGolfApp')
         ])
         .then(function(result) {
 
-          //set results to scope
+          //process leagues
           $scope.leagues = result[0];
-          $scope.team = result[1];
-          $scope.field = result[2].field;
-
-          //loop through leagues
           angular.forEach($scope.leagues, function(league){
-
-            //check for teams(remove?)
             if(league.teams){
 
               //check for team id of current user, mark league as active
               league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
             }
-
           });
+
+          //process team
+          $scope.team = result[1];
+          if(!$scope.team.players){
+            $scope.team.players = [];
+          }
+          while($scope.team.players.length < 4){
+            $scope.team.players.push({});
+          }
+
+          //process field
+          $scope.field = result[2].field;
+
         });
     };
 
@@ -36,6 +42,11 @@ angular.module('fantasyGolfApp')
 
       //add user id
       team.userId = $scope.currentUser.userId;
+
+      team.players = team.players.map(function(player){
+        return player._id;
+      });
+
 
       Team.update(team,
         function(team){

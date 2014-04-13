@@ -11,7 +11,9 @@
     "passport-local": "latest",
     "jade": "latest",
     "request": "2.34.0",
-    "mongojs": "latest"
+    "mongojs": "latest",
+    "cron": "latest",
+    "async": "~0.7.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

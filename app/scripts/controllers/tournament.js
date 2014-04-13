@@ -18,56 +18,25 @@ angular.module('fantasyGolfApp')
           $scope.field = result[0].field;
           $scope.team = result[1];
 
-          //setup team totals
-          $scope.team.sc = 0;
-          $scope.team.stable = 0;
-          $scope.team.modstable = 0;
-
-          //break if the players are not setup
-          if(!$scope.team.players.length > 0){
-            return;
+          //setup table header (rounds)
+          $scope.rounds = [];
+          while($scope.rounds.length < $scope.event.currentRnd){
+            $scope.rounds.push({number: ($scope.rounds.length + 1) })
           }
 
-          //extend field data to each team player
-          angular.forEach($scope.team.players, function(teamPlayer, index){
-            angular.forEach($scope.field, function(fieldPlayer){
-              if(teamPlayer.pgaId == fieldPlayer.id){
-                angular.extend($scope.team.players[index], fieldPlayer);
-              }
-            });
+          //pad out rounds for player that missed the cut
+          angular.forEach($scope.team.players, function(playerData){
+            while(playerData.rounds.length < $scope.event.currentRnd){
+              playerData.rounds.push({
+                sc: '--',
+                stable: '--',
+                modstable: '--'
+              })
+            }
           });
 
-          //get player records and then extend each one onto team.player object
-          $q.all([
-              pga.get({playerId: $scope.team.players[0].pgaId}).$promise,
-              pga.get({playerId: $scope.team.players[1].pgaId}).$promise,
-              pga.get({playerId: $scope.team.players[2].pgaId}).$promise,
-              pga.get({playerId: $scope.team.players[3].pgaId}).$promise
-            ])
-            .then( function(result) {
-              angular.forEach(result, function(playerData, index){
-
-                //pad out rounds for player that missed the cut
-                while(playerData.rounds.length < $scope.event.currentRnd){
-                  playerData.rounds.push({
-                    sc: '--',
-                    stable: '--',
-                    modstable: '--'
-                  })
-                }
-
-                //total up scores
-                $scope.team.sc += playerData.sc;
-                $scope.team.stable += playerData.stable;
-                $scope.team.modstable += playerData.modstable;
-
-                angular.extend($scope.team.players[index], playerData);
-
-              });
-            })
         })
     };
-
 
     $scope.init();
 

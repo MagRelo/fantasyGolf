@@ -28,6 +28,10 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 if(process.env.NODE_ENV == 'development'){
   require('./lib/config/dummydata');
 }
+
+//start jobs
+require('./bin/cronjobs');
+
   
 // Passport Configuration
 require('./lib/config/passport')();

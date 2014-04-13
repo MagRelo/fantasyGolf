@@ -18,8 +18,8 @@ h3.text-primary Team Settings
             .col-sm-6(data-ng-repeat="player in team.players")
                 label(for="fieldDropdown").control-label {{'Golfer ' + ($index + 1)}}
                 select.form-control(name="fieldDropdown",
-                data-ng-options='fieldPlayer.id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
-                data-ng-model='player.pgaId')
+                data-ng-options='fieldPlayer._id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
+                data-ng-model='player._id')
 
         //buttons
         div.pull-right
