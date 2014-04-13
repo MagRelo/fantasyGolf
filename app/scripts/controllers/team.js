@@ -1,32 +1,60 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($scope, $location, Auth, pga, Team) {
+  .controller('TeamCtrl', function ($scope, $q, Auth, pga, Team, League) {
 
-    //1. Display Tournament info
-    pga.setup({},
-      function(data){
-        //$scope.event = data.event;
-        $scope.field = data.field;
-        //$scope.courses = data.courseInfos;
-      },
-      function(error){ $scope.setuperror = error; }
-    );
+    $scope.init = function(){
 
-    //2. get team data
-    Team.get({id: $scope.currentUser.teamId},
-      function(data){
+      $q.all([
+          League.query().$promise,
+          Team.get({id: $scope.currentUser.teamId}).$promise,
+          pga.setup().$promise
+        ])
+        .then(function(result) {
 
-        //initialize players if < 4 are present
-        if(!data.players){data.players = []}
-        while(data.players.length < 4){
-          data.players.push({})
-        }
+          //set results to scope
+          $scope.leagues = result[0];
+          $scope.team = result[1];
+          $scope.field = result[2].field;
 
-        $scope.team = data;
-      },
-      function(error){ $scope.teamerror = error; }
-    );
+          //loop through leagues
+          angular.forEach($scope.leagues, function(league){
+
+            //check for teams(remove?)
+            if(league.teams){
+
+              //check for team id of current user, mark league as active
+              league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
+            }
+
+          });
+        });
+    };
+
+//    //1. Display Tournament info
+//    pga.setup({},
+//      function(data){
+//        //$scope.event = data.event;
+//        $scope.field = data.field;
+//        //$scope.courses = data.courseInfos;
+//      },
+//      function(error){ $scope.setuperror = error; }
+//    );
+//
+//    //2. get team data
+//    Team.get({id: $scope.currentUser.teamId},
+//      function(data){
+//
+//        //initialize players if < 4 are present
+//        if(!data.players){data.players = []}
+//        while(data.players.length < 4){
+//          data.players.push({})
+//        }
+//
+//        $scope.team = data;
+//      },
+//      function(error){ $scope.teamerror = error; }
+//    );
 
     //save team
     $scope.saveTeam = function(team){
@@ -67,4 +95,8 @@ angular.module('fantasyGolfApp')
           });
       }
     };
+
+
+    //init data
+    $scope.init();
   });

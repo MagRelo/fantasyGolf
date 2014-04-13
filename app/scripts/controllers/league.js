@@ -90,6 +90,6 @@ angular.module('fantasyGolfApp')
 
     };
 
-    $scope.init();
+  //    $scope.init();
 
   });
