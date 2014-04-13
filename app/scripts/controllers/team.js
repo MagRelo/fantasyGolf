@@ -31,31 +31,6 @@ angular.module('fantasyGolfApp')
         });
     };
 
-//    //1. Display Tournament info
-//    pga.setup({},
-//      function(data){
-//        //$scope.event = data.event;
-//        $scope.field = data.field;
-//        //$scope.courses = data.courseInfos;
-//      },
-//      function(error){ $scope.setuperror = error; }
-//    );
-//
-//    //2. get team data
-//    Team.get({id: $scope.currentUser.teamId},
-//      function(data){
-//
-//        //initialize players if < 4 are present
-//        if(!data.players){data.players = []}
-//        while(data.players.length < 4){
-//          data.players.push({})
-//        }
-//
-//        $scope.team = data;
-//      },
-//      function(error){ $scope.teamerror = error; }
-//    );
-
     //save team
     $scope.saveTeam = function(team){
 
