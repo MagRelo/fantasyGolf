@@ -8,7 +8,7 @@ angular.module('fantasyGolfApp')
       $q.all([
           League.query().$promise,
           Team.get({id: $scope.currentUser.teamId}).$promise,
-          pga.setup().$promise
+          pga.getField().$promise
         ])
         .then(function(result) {
 
@@ -32,7 +32,7 @@ angular.module('fantasyGolfApp')
           }
 
           //process field
-          $scope.field = result[2].field;
+          $scope.field = result[2];
 
         });
     };
