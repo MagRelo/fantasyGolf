@@ -10,7 +10,6 @@ span.h3  {{player.name.first + ' ' + player.name.last}}
 div
     div.btn-group.pull-right
         button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'sc'", data-ng-class="{active: scoringStyle == 'sc'}") strokes
-        button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'pDay'", data-ng-class="{active: scoringStyle == 'pDay'}") to par
         button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'stable'", data-ng-class="{active: scoringStyle == 'stable'}") stableford
         button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'modstable'", data-ng-class="{active: scoringStyle == 'modstable'}") mod stable
 
@@ -23,7 +22,7 @@ table.table
     tbody
         tr(data-ng-repeat='round in player.rounds')
             td.text-muted round {{$index + 1}}
-            td(data-ng-repeat='hole in round.holes')
+            td(data-ng-repeat='hole in round.holes', data-ng-class="{'positive': (hole.modstable > 0), 'negative': (hole.modstable < 0)}")
                 span(data-ng-show="scoringStyle == 'sc'") {{hole.sc}}
                 span(data-ng-show="scoringStyle == 'stable'") {{hole.stable}}
                 span(data-ng-show="scoringStyle == 'modstable'") {{hole.modstable}}
