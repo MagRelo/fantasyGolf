@@ -26,11 +26,11 @@ angular.module('fantasyGolfApp')
       newLeague.teams.push($scope.currentUser.teamId);
 
       //create league
-      newLeague.$save({},
-        function(){
+      League.create(newLeague,
+        function(response){
 
-          //update all
-          $scope.init();
+          //reset league list
+          $scope.leagues = $scope.setActiveLeagues(response, $scope.currentUser.teamId);
 
           //reset form
           $scope.LeagueForm.$setPristine();

@@ -16,6 +16,10 @@ angular.module('fantasyGolfApp')
           method: 'PUT',
           isArray: true,
           params: {id: 'leave'}
+        },
+        create: {
+          isArray: true,
+          method: 'POST'
         }
       }
     );
