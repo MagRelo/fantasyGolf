@@ -14,6 +14,12 @@ angular.module('fantasyGolfApp')
         params: {
           playerId: 'setup'
         }
+      },
+      getField: {
+        method: 'GET',
+        params: {
+          playerId: 'field'
+        }
       }
 
     });
