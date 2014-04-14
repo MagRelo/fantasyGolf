@@ -1,12 +1,6 @@
 'use strict';
 var request = require('request');
 
-//var databaseUrl = process.env.MONGOLAB_URI ||
-//                  process.env.MONGOHQ_URL ||
-//                  process.env.MODULUS_URL ||
-//                  'mongodb://localhost/ballstrikers';
-
-//var db = require("mongojs").connect(databaseUrl, ["tournaments", "players", "teams"]);
 
 var CronJob = require('cron').CronJob;
 var async = require('async');
@@ -21,66 +15,77 @@ var tournamentSetup = function() {
   //clear existing records
   async.parallel([
     function(callback){
-      Tournament.find({}).remove(function() {
+      Tournament.find({}).remove(function(err) {
+        if(err)
         console.log('deleted tourneys');
-        callback();
+        callback(err);
       });
     },
     function(callback){
-      Player.find({}).remove(function() {
+      Player.find({}).remove(function(err) {
         console.log('deleted players');
-        callback();
+        callback(err);
       });
-    }
-  ],
-    function(err){
-      if(err){ console.log(err); return; }
-
+    },
+    function(callback){
       //get setupFile
       request({uri: 'http://www.pgatour.com/data/r/current/setup.json', json: true},
         function(err, response, body) {
-          if(err){
-            console.log(err);
-            return;
-          }
-
-          console.log('setup record retrieved');
-
-          //check for tournament object
-          if(typeof body.trn === "undefined"){
-            console.log('tournament setup record retrieved but undefined');
-            return;
-          }
-
-          var setupObj = {
-            event: body.trn.event,
-            courses: body.trn.courseInfos,
-            field: body.trn.field,
-            rounds: body.trn.rnds
-          };
-
-          //save all players
-          if(setupObj.field){
-            setupObj.field.forEach(function(player){
-
-              //save
-              var fieldPlayer = new Player(player);
-              fieldPlayer.save(player, function(err){
-                if(err){ console.log(err); }
-              })
-
-            });
-          }
-
-          Tournament.create(setupObj, function(err, item){
-              if(err){ console.log('setup file not saved: ' + err); return; }
-
-            console.log('setup record saved: ' + item._id);
-            });
-
+          console.log('got setup');
+          callback(err, body);
         }
       )
+    },
+    function(callback){
+      //get leaderboard
+      request({uri: 'http://www.pgatour.com/data/r/current/leaderboard.json', json: true},
+        function(err, response, body) {
+          console.log('got leaderboard');
+          callback(err, body);
+        }
+      )
+    }
+  ],
+    function(err, results){
+      if(err){return console.log(err);}
 
+      //test
+      console.log(results[3]);
+
+      //get data from results array
+      var setupFile, leaderboard = {};
+      setupFile = results[2];
+      leaderboard = results[3];
+
+      //check for tournament object
+      if(typeof setupFile.trn === "undefined" || typeof leaderboard.lb.c.c === "undefined"){
+        return console.log('tournament setup record retrieved but undefined');
+      }
+
+      var setupObj = {
+        event: setupFile.trn.event,
+        field: setupFile.trn.field,
+        rounds: setupFile.trn.rnds,
+        courses: leaderboard.lb.c.c
+      };
+
+      //save all players
+      if(setupObj.field){
+        setupObj.field.forEach(function(player){
+
+          //save
+          var fieldPlayer = new Player(player);
+          fieldPlayer.save(player, function(err){
+            if(err){ console.log(err); }
+          })
+
+        });
+      }
+
+      Tournament.create(setupObj, function(err, item){
+        if(err){ return console.log('setup file not saved: ' + err);}
+        return console.log('setup record saved: ' + item._id);
+      });
 
     });
 
@@ -91,7 +96,14 @@ var tournamentSetup = function() {
 var refreshPlayers = function(){
 
   //get par for courses from setup
-  var course = [];
+  Tournament
+    .find({})
+    .exec(function(err, setup){
+       if(err){console.log(err)}
+
+      setup.courses
+
+    });
 
 
   Player.find({}, function(err, players) {
@@ -278,7 +290,7 @@ new CronJob('00 * * * * *', function(){
   var now = new Date;
   console.log('test start: ' + now);
 
-  //calcTeams();
+  tournamentSetup();
 
 }, null, true);
 
