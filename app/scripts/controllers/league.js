@@ -1,32 +1,15 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($scope, $q, League, Team) {
+  .controller('LeagueCtrl', function ($scope, $q, League) {
 
     $scope.init = function(){
 
-      $q.all([
-        League.query().$promise,
-        Team.get({id: $scope.currentUser.teamId}).$promise
-      ])
-      .then(function(result) {
+      League.query().$promise.then(function(result) {
+        //process leagues
+        $scope.leagues = $scope.setActiveLeagues(result, $scope.currentUser.teamId);
+      })
 
-        //set results to scope
-        $scope.leagues = result[0];
-        $scope.team = result[1];
-
-          //loop through leagues
-          angular.forEach($scope.leagues, function(league){
-
-            //check for teams(remove?)
-            if(league.teams){
-
-              //check for team id of current user, mark league as active
-              league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
-            }
-
-          });
-      });
     };
 
     $scope.createLeague = function(){
@@ -65,16 +48,16 @@ angular.module('fantasyGolfApp')
           teamId: $scope.currentUser.teamId
         },
         function(data){
-
-          //update all
-          $scope.init();
+          //reset league list
+          $scope.leagues = $scope.setActiveLeagues(data, $scope.currentUser.teamId);
         },
-        function(error){});
+        function(error){
+          //modal?
+        });
 
     };
 
     $scope.leaveLeague = function(leagueId){
-
 
       League.leave({},
         {
@@ -82,14 +65,33 @@ angular.module('fantasyGolfApp')
           teamId: $scope.currentUser.teamId
         },
         function(data){
-
-          //update all
-          $scope.init();
+          //reset league list
+          $scope.leagues = $scope.setActiveLeagues(data, $scope.currentUser.teamId);
         },
-        function(error){});
+        function(error){
+          //modal?
+        });
 
     };
 
-  //    $scope.init();
+    $scope.setActiveLeagues = function(leagues, teamId){
 
+      //loop through each league
+      angular.forEach(leagues, function(league){
+        if(league.teams){
+          league.active = false;
+
+          //loop through each team in the league
+          league.teams.forEach(function(team){
+            if(team._id == teamId){
+              league.active = true;
+            }
+          });
+        }
+      });
+
+      return leagues;
+    };
+
+    $scope.init();
   });

@@ -9,10 +9,12 @@ angular.module('fantasyGolfApp')
       {
         join: {
           method: 'PUT',
+          isArray: true,
           params: {id: 'join'}
         },
         leave: {
           method: 'PUT',
+          isArray: true,
           params: {id: 'leave'}
         }
       }

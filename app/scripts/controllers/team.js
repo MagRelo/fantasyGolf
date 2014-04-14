@@ -6,24 +6,13 @@ angular.module('fantasyGolfApp')
     $scope.init = function(){
 
       $q.all([
-          League.query().$promise,
           Team.get({id: $scope.currentUser.teamId}).$promise,
           pga.getField().$promise
         ])
         .then(function(result) {
 
-          //process leagues
-          $scope.leagues = result[0];
-          angular.forEach($scope.leagues, function(league){
-            if(league.teams){
-
-              //check for team id of current user, mark league as active
-              league.active = (league.teams.indexOf($scope.currentUser.teamId) > -1);
-            }
-          });
-
           //process team
-          $scope.team = result[1];
+          $scope.team = result[0];
           if(!$scope.team.players){
             $scope.team.players = [];
           }
@@ -32,11 +21,10 @@ angular.module('fantasyGolfApp')
           }
 
           //process field
-          $scope.field = result[2];
+          $scope.field = result[1];
 
         });
     };
-
     //save team
     $scope.saveTeam = function(team){
 
@@ -86,3 +74,5 @@ angular.module('fantasyGolfApp')
     //init data
     $scope.init();
   });
+
+
