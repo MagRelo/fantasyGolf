@@ -95,114 +95,140 @@ var tournamentSetup = function() {
 //refresh all players
 var refreshPlayers = function(){
 
-  //get par for courses from setup
-  Tournament
-    .find({})
-    .exec(function(err, setup){
-       if(err){console.log(err)}
+  async.parallel([
+    function(callback){
+      //get par for courses from setup
+      Tournament
+        .findOne({})
+        .exec(function(err, setup){
+          console.log('got setup');
+          callback(err, setup);
+        });
+    },
+    function(callback){
+      Player
+        .find({})
+        .exec(function(err, players) {
+          console.log('got players');
+          callback(err, players);
+        });
+    }
+  ],
+    function(err, results){
+      if(err){return console.log(err);}
 
-      setup.courses
-
-    });
-
-
-  Player.find({}, function(err, players) {
-    if(err){return console.log(err);}
-    if (!players) {return console.log('no players found');}
-
-    players.forEach(function(player){
-
-      //get scorecard
-      request({uri: 'http://www.pgatour.com/data/r/current/scorecards/' + player.id + '.json', json: true},
-        function(err, response, body) {
-          if(err){return console.log(err);}
-          if(typeof body.p.rnds === "undefined"){ return console.log('player record retrieved but undefined'); }
-          console.log('player score retrieved: ' + player.id);
-
-          //initialize player obj
-          player.rounds = [];
-          player.sc = 0;
-          player.stable = 0;
-          player.modstable = 0;
-
-          //process rounds, push each into player object
-          body.p.rnds.forEach(function(round){
-
-            var modStablefordTotal = 0;
-            var stablefordTotal = 0;
-            var standardTotal = 0;
-
-            //loop through holes
-            for(var j = 0 ; j < round.holes.length; j++ ){
+      console.log(results[0]) ;
 
 
-              //****
-              ///**********
-              var par = 4;
-              ///**********
-              //****
+      var setup = results[0];
+      var players = results[1];
+      if (!players || !setup.courses) {return console.log('no players or courses found');}
 
-              var score = '';
-              score = round.holes[j].sc;
-              var modstable = 0;
-              var stable = 0;
+      //get array of holes
+      var holes = setup.courses[0].h;
 
-              if(score == ''){
-                modstable = '--';
-                stable = '--';}
-              else{
+      players.forEach(function(player){
 
-                var diff = score - par;
+        //get scorecard
+        request({uri: 'http://www.pgatour.com/data/r/current/scorecards/' + player.id + '.json', json: true},
+          function(err, response, body) {
+            if(err){return console.log(err);}
+            if(typeof body.p.rnds === "undefined"){ return console.log('player record retrieved but undefined'); }
+            console.log('player score retrieved: ' + player.id);
 
-                //modStable
-                if(diff > 1){modstable = -3}
-                else if (diff == 1 ){modstable = -1}
-                else if (diff == 0 ){modstable = 0}
-                else if (diff == -1){modstable = 2}
-                else if (diff == -2){modstable = 5}
-                else if (diff < -2 ){modstable = 8}
+            //initialize player obj
+            player.rounds = [];
+            player.sc = 0;
+            player.stable = 0;
+            player.modstable = 0;
 
-                //Stable
-                if(diff > 1){stable = 0}
-                else if (diff == 1 ){stable = 1}
-                else if (diff == 0 ){stable = 2}
-                else if (diff == -1){stable = 3}
-                else if (diff == -2){stable = 4}
-                else if (diff == -3){stable = 5}
-                else if (diff >  -3){stable = 6}
 
-                standardTotal = standardTotal + Number(score);
-                stablefordTotal =  stablefordTotal + stable;
-                modStablefordTotal = modStablefordTotal + modstable;
+            //process rounds, push each into player object
+            body.p.rnds.forEach(function(round){
+
+              var modStablefordTotal = 0;
+              var stablefordTotal = 0;
+              var standardTotal = 0;
+
+              //loop through holes
+              for(var j = 0 ; j < round.holes.length; j++ ){
+
+
+                //****
+                ///**********
+
+                holes.forEach(function(hole){
+                  if(round.holes[j].n == hole.n){
+                    round.holes[j].par = hole.p;
+                  }
+                });
+
+                var par = round.holes[j].par || 4;
+                ///**********
+                //****
+
+                var score = '';
+                score = round.holes[j].sc;
+                var modstable = 0;
+                var stable = 0;
+
+                if(score == ''){
+                  modstable = '--';
+                  stable = '--';}
+                else{
+
+                  var diff = score - par;
+
+                  //modStable
+                  if(diff > 1){modstable = -3}
+                  else if (diff == 1 ){modstable = -1}
+                  else if (diff == 0 ){modstable = 0}
+                  else if (diff == -1){modstable = 2}
+                  else if (diff == -2){modstable = 5}
+                  else if (diff < -2 ){modstable = 8}
+
+                  //Stable
+                  if(diff > 1){stable = 0}
+                  else if (diff == 1 ){stable = 1}
+                  else if (diff == 0 ){stable = 2}
+                  else if (diff == -1){stable = 3}
+                  else if (diff == -2){stable = 4}
+                  else if (diff == -3){stable = 5}
+                  else if (diff >  -3){stable = 6}
+
+                  standardTotal = standardTotal + Number(score);
+                  stablefordTotal =  stablefordTotal + stable;
+                  modStablefordTotal = modStablefordTotal + modstable;
+                }
+
+                round.holes[j].stable =  stable;
+                round.holes[j].modstable =  modstable;
               }
 
-              round.holes[j].stable =  stable;
-              round.holes[j].modstable =  modstable;
-            }
+              //round totals
+              round.sc =  standardTotal;
+              round.stable =  stablefordTotal;
+              round.modstable = modStablefordTotal;
 
-            //round totals
-            round.sc =  standardTotal;
-            round.stable =  stablefordTotal;
-            round.modstable = modStablefordTotal;
+              //tournament totals
+              player.sc +=  standardTotal;
+              player.stable +=  stablefordTotal;
+              player.modstable += modStablefordTotal;
 
-            //tournament totals
-            player.sc +=  standardTotal;
-            player.stable +=  stablefordTotal;
-            player.modstable += modStablefordTotal;
+              player.rounds.push(round)
+            });
 
-            player.rounds.push(round)
-          });
+            player.save(function(err){
+              if (err) {console.log(err);}
+              console.log('player score saved: ' + player.id)
+            })
+          }
+        );
+      });
 
-          player.save(function(err){
-            if (err) {console.log(err);}
-            console.log('player score saved: ' + player.id)
-          })
-        }
-      );  
-    });
- 
 
-  });
+    }
+  );
 
 }; //refreshPlayers()
 
@@ -290,7 +316,7 @@ new CronJob('00 * * * * *', function(){
   var now = new Date;
   console.log('test start: ' + now);
 
-  tournamentSetup();
+  refreshPlayers();
 
 }, null, true);
 
