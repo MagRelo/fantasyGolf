@@ -284,41 +284,41 @@ var calcTeams = function(){
 
 
 
-////Setup Tournament - every tuesday midnight
-//new CronJob('00 00 00 * * 2', function(){
-//  var now = new Date;
-//  console.log('setup Tournament begin: ' + now);
-//
-//  tournamentSetup();
-//
-//}, null, true);
-//
-//
-////Get Players - every 15 minutes
-//new CronJob('00 00,15,30,45 * * * *', function(){
-//  console.log('refresh players begin: ' + new Date);
-//
-//  refreshPlayers();
-//
-//}, null, true);
-//
-////Calc Teams - every 15 minutes
-//new CronJob('00 05,20,35,50 * * * *', function(){
-//  console.log('calc teams begin: ' + new Date);
-//
-//  calcTeams();
-//
-//}, null, true);
-
-
-//test
-new CronJob('00 * * * * *', function(){
+//Setup Tournament - every tuesday midnight
+new CronJob('00 00 00 * * 2', function(){
   var now = new Date;
-  console.log('test start: ' + now);
+  console.log('setup Tournament begin: ' + now);
+
+  tournamentSetup();
+
+}, null, true);
+
+
+//Get Players - every 15 minutes
+new CronJob('00 00,15,30,45 * * * *', function(){
+  console.log('refresh players begin: ' + new Date);
 
   refreshPlayers();
 
 }, null, true);
+
+//Calc Teams - every 15 minutes
+new CronJob('00 05,20,35,50 * * * *', function(){
+  console.log('calc teams begin: ' + new Date);
+
+  calcTeams();
+
+}, null, true);
+
+
+////test
+//new CronJob('00 * * * * *', function(){
+//  var now = new Date;
+//  console.log('test start: ' + now);
+//
+//  calcTeams();
+//
+//}, null, true);
 
 
 
