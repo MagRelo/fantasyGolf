@@ -4,13 +4,6 @@ div(data-ng-controller="SettingsCtrl")
         form.form-horizontal(name='SettingsForm', ng-submit='changePassword(form)', novalidate='')
 
             .form-group
-                label.control-label.col-sm-3 New Email
-                div.col-sm-7
-                    input.form-control(type='email', name='password', ng-model='user.newEmail', mongoose-error='')
-                    p.help-block(ng-show='form.password.$error.mongoose')
-                        | {{ errors.other }}
-
-            .form-group
                 label.control-label.col-sm-3 Current Password
                 div.col-sm-7
                     input.form-control(type='password', name='password', ng-model='user.oldPassword', mongoose-error='')
