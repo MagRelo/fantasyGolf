@@ -17,6 +17,7 @@ angular.module('fantasyGolfApp')
       },
       getField: {
         method: 'GET',
+        isArray: true,
         params: {
           playerId: 'field'
         }
