@@ -70,7 +70,7 @@ div(ng-include='\'partials/navbar\'')
                             h5 {{league.location}}
                         td
                         td.text-center
-                            button.btn.btn-primary.btn-sm.h5 view >
+                            a.btn.btn-primary.btn-sm(ng-href="{{'/league/' + league._id}}") view >
 
 
 
