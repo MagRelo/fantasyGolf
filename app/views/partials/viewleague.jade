@@ -1,0 +1,14 @@
+div(ng-include='\'partials/navbar\'')
+
+h3.text-primary {{league.leagueName}}
+
+table.table
+    thead.text-muted
+        th Team
+        th Owner
+        th Score
+    tbody
+        tr(data-ng-repeat='team in league.teams')
+            td {{team.teamName}}
+            td {{team.ownerName}}
+            td {{team.modstable}}
