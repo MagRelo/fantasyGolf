@@ -27,11 +27,6 @@ angular.module('fantasyGolfApp', [
         controller: 'TournamentCtrl',
         authenticate: true
       })
-      .when('/team', {
-        templateUrl: 'partials/team',
-        controller: 'TeamCtrl',
-        authenticate: true
-      })
       .when('/player/:playerId', {
         templateUrl: 'partials/player',
         controller: 'PlayerCtrl'
