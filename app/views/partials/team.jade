@@ -1,18 +1,21 @@
 
 div(data-ng-controller="TeamCtrl")
+    button.btn.btn-primary.btn-sm.pull-right(data-ng-click="showSettings = !showSettings", data-ng-show="!showSettings" )
+        span(data-ng-show="!showSettings") edit team
+    button.btn.btn-primary.btn-sm.pull-right(data-ng-click="showSettings = !showSettings", data-ng-show="showSettings")
+        span display team
+
 
     h3 {{team.teamName}}
         small {{team.ownerName}}
 
-            button.btn.btn-primary.btn-sm.pull-right(data-ng-click="showSettings = !showSettings")
-                span(data-ng-show="!showSettings") view team setup
-                span(data-ng-show="showSettings") hide team setup
+
 
     .clearfix
 
     div(data-ng-show='showSettings')
         .well
-            form.form-horizontal(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
+            form.form-horizontal(role='form', name='TeamForm')
 
                 legend team setup
                 .form-group
@@ -34,7 +37,7 @@ div(data-ng-controller="TeamCtrl")
 
                 //buttons
                 div.pull-right
-                    button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
+                    button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)", data-ng-show='TeamForm.$dirty') Save Changes
                     h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
 
 
@@ -42,10 +45,7 @@ div(data-ng-controller="TeamCtrl")
 
 
     div(data-ng-show='!showSettings')
-
-
         table.table.table-responsive
-
             thead
                 th.hidden-xs
                 th
@@ -69,6 +69,8 @@ div(data-ng-controller="TeamCtrl")
                         h5.text-center {{player.modstable}}
                 tr
                     td.hidden-xs
-                    td
                     td.hidden-xs(data-ng-repeat="round in rounds")
-                    td.text-center {{team.modstable}}
+                    td
+                        h4 team score:
+                    td.text-center
+                        h4 {{team.modstable}}
