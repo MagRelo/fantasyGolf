@@ -1,15 +1,16 @@
 'use strict';
-var request = require('request');
 
-
-var CronJob = require('cron').CronJob;
 var async = require('async');
+var request = require('request');
+var CronJob = require('cron').CronJob;
+
 
 var mongoose = require('mongoose'),
   Team = mongoose.model('Team'),
   Player = mongoose.model('Player'),
   Tournament = mongoose.model('Tournament');
 
+//setup tournament
 var tournamentSetup = function() {
 
   //clear existing records
@@ -48,9 +49,6 @@ var tournamentSetup = function() {
   ],
     function(err, results){
       if(err){return console.log(err);}
-
-      //test
-      console.log(results[3]);
 
       //get data from results array
       var setupFile, leaderboard = {};
@@ -117,12 +115,9 @@ var refreshPlayers = function(){
     function(err, results){
       if(err){return console.log(err);}
 
-      console.log(results[0]) ;
-
-
       var setup = results[0];
       var players = results[1];
-      if (!players || !setup.courses) {return console.log('no players or courses found');}
+      if (!players || !setup) {return console.log('no players or courses found');}
 
       //get array of holes
       var holes = setup.courses[0].h;
@@ -230,7 +225,7 @@ var refreshPlayers = function(){
     }
   );
 
-}; //refreshPlayers()
+};
 
 //calc Team scores
 var calcTeams = function(){
@@ -241,12 +236,10 @@ var calcTeams = function(){
     .exec(function(err, teams){
       if (err) {return console.log(err);}
       if (!teams) {return console.log('calc: did not load teams');}
-
       console.log('calc: teams: ' + teams.length);
 
+      //called for each team
       async.each(teams,
-
-        //called for each team
         function(team, callback){
           team.modstable = 0;
           team.stable = 0;
@@ -259,8 +252,8 @@ var calcTeams = function(){
           });
 
           //de-populate players
-          team.players = team.players.map(function(player){
-            return player._id;
+          team.players.forEach(function(player, index){
+            team.players[index] = player._id;
           });
 
           team.save(function(err){
@@ -275,13 +268,12 @@ var calcTeams = function(){
         //after all async ops
         function(err){
           if (err) {return console.log(err);}
-          return console.log('teams updated');
+          console.log('teams updated');
         })
 
     });
 
 };
-
 
 
 //Setup Tournament - every tuesday midnight
@@ -311,14 +303,20 @@ new CronJob('00 05,20,35,50 * * * *', function(){
 }, null, true);
 
 
-////test
-//new CronJob('00 * * * * *', function(){
-//  var now = new Date;
-//  console.log('test start: ' + now);
+//test
+//var testJob = new CronJob('00 * * * * *',
+//  function(){
+//    console.log('test job - start time: ' + new Date);
 //
-//  calcTeams();
+//    calcTeams();
+//  },
+//  function(job){
 //
-//}, null, true);
+//    //job.stop();
+//    console.log('test job - completion time: ' + new Date)
+//  },
+//
+//true);
 
 
 
