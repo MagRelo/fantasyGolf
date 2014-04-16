@@ -1,7 +1,5 @@
-div(ng-include='\'partials/navbar\'')
-
 h3.text-primary Team Settings
-.well
+.well(data-ng-controller="TeamCtrl")
     form.form-horizontal(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
 
         .form-group
@@ -28,10 +26,3 @@ h3.text-primary Team Settings
 
 
         .clearfix
-
-
-
-
-div(ng-include='\'partials/league\'')
-
-div(ng-include='\'partials/settings\'')

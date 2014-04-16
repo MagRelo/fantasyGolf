@@ -32,6 +32,11 @@ angular.module('fantasyGolfApp', [
         controller: 'ViewLeagueCtrl',
         authenticate: true
       })
+      .when('/setup', {
+        templateUrl: 'partials/setup',
+        controller: 'SetupCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });

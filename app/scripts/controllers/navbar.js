@@ -2,12 +2,13 @@
 
 angular.module('fantasyGolfApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
+
     $scope.menu = [{
       'title': 'Tournament',
       'link': '/tournament'
     }, {
-      'title': 'My Team',
-      'link': '/team'
+      'title': 'Setup',
+      'link': '/setup'
     }];
     
     $scope.logout = function() {
