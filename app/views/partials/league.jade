@@ -4,7 +4,6 @@ div(data-ng-controller="LeagueCtrl")
 
         //My Leagues
         h4.text-primary My leagues
-        p.alert(data-ng-show='!team.leagues.length') You're not in any leagues - join a league!
 
         table.table.table-responsive()
             thead.text-muted
@@ -21,7 +20,7 @@ div(data-ng-controller="LeagueCtrl")
                     td
                     td.text-center
                         button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
-
+        br
         h4.text-primary All leagues
 
         //search
