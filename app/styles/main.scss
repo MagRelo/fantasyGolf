@@ -178,9 +178,16 @@ body {
   margin-bottom: 3px;
 }
 
-.leagueList{
+.leagueList {
+  overflow: auto;
+  border: solid 1px gray;
+  border-radius: 4px;
+  padding: 20px 40px;
+  background: $mg-dark;
+}
+
+.tableHeight{
   max-height: 300px;
-  overflow: hidden;
 }
 
 .table{
