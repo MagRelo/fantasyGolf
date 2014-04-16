@@ -307,7 +307,8 @@ new CronJob('00 05,20,35,50 * * * *', function(){
 new CronJob('00 * * * * *',
   function(){
 
-    if(process.env.RUN_SETUP){
+    console.log('run setup? ' + process.env.RUN_SETUP);
+    if(process.env.RUN_SETUP == 'true'){
       console.log('run setup - start time: ' + new Date);
       tournamentSetup();
     }
