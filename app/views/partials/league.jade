@@ -1,40 +1,41 @@
 div(data-ng-controller="LeagueCtrl")
-    h3.text-primary League Settings
+
     div.well
 
-        //My Leagues
-        h4.text-primary My leagues
-
         table.table.table-responsive()
+
+            legend My leagues
+
             thead.text-muted
                 th Name
                 th Location
-                th Teams
-                th.text-center Join!
+                th.text-center Leave
+                th.text-center View
             tbody
                 tr(data-ng-repeat="league in leagues| filter: {active: true}")
                     td
                         h5 {{league.leagueName}}
                     td
                         h5 {{league.location}}
-                    td
                     td.text-center
                         button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
+                    td.text-center
+                            a.btn.btn-primary.btn-sm(ng-href="{{'/league/' + league._id}}") view >
         br
-        h4.text-primary All leagues
-
-        //search
-        div.input-group
-            label.input-group-addon.text-primary Search
-            input.form-control(type="text", data-ng-model="leagueFilter")
 
         //all leagues table
         div.leagueList
+            legend All leagues
+
+            //search
+            div.input-group
+                label.input-group-addon.text-primary Search
+                input.form-control(type="text", data-ng-model="leagueFilter")
+
             table.table.table-responsive
                 thead.text-muted
                     th Name
                     th Location
-                    th Teams
                     th.text-center Join!
                 tbody
                     tr(data-ng-repeat="league in leagues | filter: {active: false}")
@@ -42,7 +43,6 @@ div(data-ng-controller="LeagueCtrl")
                             h5 {{league.leagueName}}
                         td
                             h5 {{league.location}}
-                        td
                         td.text-center
                             button.btn.btn-success.btn-sm.h5(data-ng-click="joinLeague(league._id)") join
 

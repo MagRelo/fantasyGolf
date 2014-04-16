@@ -4,9 +4,7 @@ angular.module('fantasyGolfApp')
   .controller('LeagueCtrl', function ($scope, $q, League) {
 
     $scope.init = function(){
-
       League.query().$promise.then(function(result) {
-        //process leagues
         $scope.leagues = $scope.setActiveLeagues(result, $scope.currentUser.teamId);
       })
 

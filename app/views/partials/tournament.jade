@@ -5,31 +5,17 @@ div(ng-include='\'partials/navbar\'')
         h3.text-primary {{event.name}}
             small(data-ng-repeat='course in courses') {{course.n}}
 
+.row
     .col-sm-12
-
+        h3.text-primary My Team
         div(ng-include='\'partials/team\'')
-
-
+.row
     .col-sm-12
         h3.text-primary My leagues
-        div.well
-            p(data-ng-show='!team.leagues.length') No leagues yet - join a league!
+        div(ng-include='\'partials/league\'')
 
-            table(data-ng-show='team.leagues.length').table.table-responsive
-                thead
-                    th Name
-                    th Location
-                    th Teams
-                    th.text-center View
-                tbody
-                    tr(data-ng-repeat="league in team.leagues")
-                        td
-                            h5 {{league.leagueName}}
-                        td
-                            h5 {{league.location}}
-                        td
-                        td.text-center
-                            a.btn.btn-primary.btn-sm(ng-href="{{'/league/' + league._id}}") view >
+
+
 
 
 
