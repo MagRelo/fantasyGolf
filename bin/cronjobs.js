@@ -214,8 +214,8 @@ var refreshPlayers = function(){
             });
 
             player.save(function(err){
-              if (err) {console.log(err);}
-              console.log('player score saved: ' + player.id)
+              if (err) {return console.log(err);}
+              return console.log('player score saved: ' + player.id)
             })
           }
         );
