@@ -16,6 +16,10 @@ angular.module('fantasyGolfApp')
           if(!$scope.team.players){
             $scope.team.players = [];
           }
+
+          //set showSettings default
+          $scope.showSettings = $scope.team.players.length < 1;
+
           while($scope.team.players.length < 4){
             $scope.team.players.push({});
           }
@@ -45,8 +49,9 @@ angular.module('fantasyGolfApp')
           //reset form
           $scope.TeamForm.$setPristine();
           $scope.updated = true;
+          $scope.showSettings = false;
         },
-        function(error){ $scope.teamerror = error; }
+        function(error){$scope.teamerror = error;}
       )
 
     };

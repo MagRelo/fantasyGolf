@@ -1,28 +1,74 @@
-h3.text-primary Team Settings
-.well(data-ng-controller="TeamCtrl")
-    form.form-horizontal(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
 
-        .form-group
-            .col-sm-6
-                label.control-label(for='teamName') Team Name
-                input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+div(data-ng-controller="TeamCtrl")
 
-            .col-sm-6
-                label.control-label(for='ownerName') Owner Name
-                input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+    h3 {{team.teamName}}
+        small {{team.ownerName}}
 
-        //players
-        .form-group
-            .col-sm-6(data-ng-repeat="player in team.players")
-                label(for="fieldDropdown").control-label {{'Golfer ' + ($index + 1)}}
-                select.form-control(name="fieldDropdown",
-                data-ng-options='fieldPlayer._id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
-                data-ng-model='player._id')
+            button.btn.btn-primary.btn-sm.pull-right(data-ng-click="showSettings = !showSettings")
+                span(data-ng-show="!showSettings") view team setup
+                span(data-ng-show="showSettings") hide team setup
 
-        //buttons
-        div.pull-right
-            button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
-            h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+    .clearfix
+
+    div(data-ng-show='showSettings')
+        .well
+            form.form-horizontal(role='form', name='TeamForm', data-ng-submit='saveTeam(team)')
+
+                legend team setup
+                .form-group
+                    .col-sm-6
+                        label.control-label(for='teamName') Team Name
+                        input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+
+                    .col-sm-6
+                        label.control-label(for='ownerName') Owner Name
+                        input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+
+                //players
+                .form-group
+                    .col-sm-6(data-ng-repeat="player in team.players")
+                        label(for="fieldDropdown").control-label {{'Golfer ' + ($index + 1)}}
+                        select.form-control(name="fieldDropdown",
+                        data-ng-options='fieldPlayer._id as (fieldPlayer.name.first + " " + fieldPlayer.name.last) for fieldPlayer in field',
+                        data-ng-model='player._id')
+
+                //buttons
+                div.pull-right
+                    button.btn.btn-success(type='submit', data-ng-show='TeamForm.$dirty') Save Changes
+                    h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
 
 
-        .clearfix
+                .clearfix
+
+
+    div(data-ng-show='!showSettings')
+
+
+        table.table.table-responsive
+
+            thead
+                th.hidden-xs
+                th
+                th.hidden-xs(data-ng-repeat="round in rounds")
+                    | {{'rnd ' + round.number}}
+                th.text-center points
+            tbody
+                tr(data-ng-repeat="player in team.players")
+                    td.hidden-xs
+                        div.playerList
+                            a(ng-href="{{'/player/' + player.pgaId}}") {{translate(player.pgaId)}}
+                                img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{player.id}}.png")
+                    td
+                        h4 {{player.name.first + ' ' + player.name.last}}
+                        ul.list-inline
+                            li
+                                a(ng-href="{{'/player/' + player.id}}") scorecard
+                    td.hidden-xs(data-ng-repeat="round in player.rounds")
+                        h5 {{round.modstable}}
+                    td
+                        h5.text-center {{player.modstable}}
+                tr
+                    td.hidden-xs
+                    td
+                    td.hidden-xs(data-ng-repeat="round in rounds")
+                    td.text-center {{team.modstable}}
