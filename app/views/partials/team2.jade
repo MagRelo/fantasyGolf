@@ -1,3 +1,5 @@
+div(ng-include='\'partials/navbar\'')
+
 div(data-ng-controller="TeamCtrl")
 
     div.well.well-sm
@@ -13,7 +15,7 @@ div(data-ng-controller="TeamCtrl")
                     input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
 
-        h4 my players
+        h4 my roster for the {{}}
         table.table.table-responsive()
             thead.text-muted
                 th Name
@@ -31,7 +33,13 @@ div(data-ng-controller="TeamCtrl")
                     td.text-center
                         a.btn.btn-danger.btn-sm(data-ng-click="dropPlayer(player._id)") drop
 
-        h4 available players
+                tr(data-ng-repeat="player in emptyPlayerSlots")
+                    td(colspan="4")
+                        h5
+                            em.text-muted select another player from the list below...
+
+
+        h4 all players in the field for the
 
         //search
         div

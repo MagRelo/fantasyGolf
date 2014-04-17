@@ -116,6 +116,11 @@ angular.module('fantasyGolfApp')
 
       });
 
+      $scope.emptyPlayerSlots = [];
+      while(($scope.team.players.length + $scope.emptyPlayerSlots.length) < 4){
+        $scope.emptyPlayerSlots.push({})
+      }
+
     };
 
     //init data
