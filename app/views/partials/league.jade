@@ -1,7 +1,6 @@
 div(data-ng-controller="LeagueCtrl")
 
     div.well
-
         table.table.table-responsive()
 
             legend my leagues
@@ -21,9 +20,6 @@ div(data-ng-controller="LeagueCtrl")
                         button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
                     td.text-center
                             a.btn.btn-primary.btn-sm(ng-href="{{'/league/' + league._id}}") view >
-
-    //all leagues table
-    div.well
 
         table.table.table-responsive
 
