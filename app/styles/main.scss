@@ -173,6 +173,15 @@ body {
   margin-top: 2px;
 }
 
+.allPlayerList {
+  max-height: 400px;
+  overflow: auto;
+
+}
+
+.teamTable{
+  padding: 0 30px;
+}
 
 .playerList{
   margin-bottom: 3px;

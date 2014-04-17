@@ -8,6 +8,16 @@ angular.module('fantasyGolfApp')
       update: {
         method: 'PUT',
         params: {}
+      },
+      add: {
+        method: 'PUT',
+        isArray: false,
+        params: {id: 'add'}
+      },
+      drop: {
+        method: 'PUT',
+        isArray: false,
+        params: {id: 'drop'}
       }
     });
   });

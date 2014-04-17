@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($scope, $q, Auth, pga, Team, League) {
+  .controller('TeamCtrl', function ($scope, $q, Auth, pga, Team) {
 
     $scope.init = function(){
 
@@ -13,22 +13,15 @@ angular.module('fantasyGolfApp')
 
           //process team
           $scope.team = result[0];
-          if(!$scope.team.players){
-            $scope.team.players = [];
-          }
-
-          //set showSettings default
-          $scope.showSettings = $scope.team.players.length < 1;
-
-          while($scope.team.players.length < 4){
-            $scope.team.players.push({});
-          }
 
           //process field
           $scope.field = result[1];
 
+          $scope.setActivePlayers();
+
         });
     };
+
     //save team
     $scope.saveTeam = function(team){
 
@@ -56,25 +49,74 @@ angular.module('fantasyGolfApp')
 
     };
 
-    //Account Settings
-    $scope.errors = {};
-    $scope.changePassword = function(form) {
-      $scope.submitted = true;
+    $scope.addPlayer = function(playerId){
 
-      if(form.$valid) {
-        Auth.changePassword( $scope.user.oldPassword, $scope.user.newPassword )
+      Team.add({},
+        {
+          playerId: playerId,
+          teamId: $scope.currentUser.teamId
+        },
+        function(){
 
-          .then( function() {
-            $scope.message = 'Password successfully changed.';
-          })
+          //add player to team
+          $scope.team.players.push({_id: playerId});
 
-          .catch( function() {
-            form.password.$setValidity('mongoose', false);
-            $scope.errors.other = 'Incorrect password';
-          });
-      }
+          //reset field list
+          $scope.setActivePlayers()
+
+        },
+        function(error){
+          //modal?
+          console.log('error!' +error);
+        });
+
     };
 
+    $scope.dropPlayer = function(playerId){
+
+      Team.drop({},
+        {
+          playerId: playerId,
+          teamId: $scope.currentUser.teamId
+        },
+        function(){
+
+          //remove player from team
+          angular.forEach($scope.team.players, function(player, index){
+            if(player._id == playerId){
+              $scope.team.players.splice(index, 1);
+            }
+          });
+
+          //reset league list
+          $scope.setActivePlayers();
+
+        },
+        function(error){
+          //modal?
+
+          console.log('error!' + error);
+        });
+
+    };
+
+    $scope.setActivePlayers = function(){
+
+      //loop through player in field
+      angular.forEach($scope.field, function(fieldPlayer, fieldIndex){
+
+        fieldPlayer.active = false;
+
+        //loop through player in field
+        angular.forEach($scope.team.players, function(teamPlayer){
+          if(teamPlayer._id == fieldPlayer._id){
+            $scope.field[fieldIndex].active  = true;
+          }
+        });
+
+      });
+
+    };
 
     //init data
     $scope.init();

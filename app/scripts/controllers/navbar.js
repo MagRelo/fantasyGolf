@@ -7,6 +7,12 @@ angular.module('fantasyGolfApp')
       'title': 'Tournament',
       'link': '/tournament'
     }, {
+      'title': 'Team',
+      'link': '/team'
+    }, {
+      'title': 'League',
+      'link': '/league'
+    }, {
       'title': 'Setup',
       'link': '/setup'
     }];
