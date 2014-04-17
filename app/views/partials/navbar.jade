@@ -1,6 +1,6 @@
 div.header(ng-controller='NavbarCtrl')
 
-    ul.nav.nav-pills.pull-right.hidden-xs
+    ul.nav.nav-pills.pull-right
         li(ng-show='currentUser', ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
             a(ng-href='{{item.link}}') {{item.title}}
         li(ng-show='currentUser', ng-class='{active: isActive("/logout")}')
