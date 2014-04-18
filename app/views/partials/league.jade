@@ -1,9 +1,11 @@
 div(data-ng-controller="LeagueCtrl")
 
+    h3.text-primary League setup
+
     div.well
         table.table.table-responsive()
 
-            legend my leagues
+            legend My leagues
 
             thead.text-muted
                 th Name
@@ -20,10 +22,10 @@ div(data-ng-controller="LeagueCtrl")
                         button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
                     td.text-center
                             a.btn.btn-primary.btn-sm(ng-href="{{'/league/' + league._id}}") view >
-
+    div.well
         table.table.table-responsive
 
-            legend join leagues
+            legend Join leagues
 
             //search
             //div.input-group

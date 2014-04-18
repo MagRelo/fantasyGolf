@@ -13,7 +13,7 @@ angular.module('fantasyGolfApp')
       'title': 'League',
       'link': '/league'
     }, {
-      'title': 'Setup',
+      'title': 'Settings',
       'link': '/setup'
     }];
     

@@ -121,6 +121,9 @@ angular.module('fantasyGolfApp')
         $scope.emptyPlayerSlots.push({})
       }
 
+
+      $scope.addPlayerDisabled = ($scope.team.players.length > 3)
+
     };
 
     //init data

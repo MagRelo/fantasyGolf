@@ -1,10 +1,10 @@
-div(ng-include='\'partials/navbar\'')
-
 div(data-ng-controller="TeamCtrl")
 
-    div.well.well-sm
+    h3.text-primary My Team
 
-        form.form-horizontal
+    div.well
+
+        form.form-horizontal(role='form', name='TeamForm')
             .form-group
                 .col-sm-6
                     label.control-label(for='teamName') Team Name
@@ -13,6 +13,14 @@ div(data-ng-controller="TeamCtrl")
                 .col-sm-6
                     label.control-label(for='ownerName') Owner Name
                     input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+
+            .form-group
+                //buttons
+                div.text-center
+                    button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)", data-ng-show='TeamForm.$dirty') Save Changes
+                    h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+                .clearfix
+
 
 
         h4 my roster for the {{}}
@@ -36,9 +44,10 @@ div(data-ng-controller="TeamCtrl")
                 tr(data-ng-repeat="player in emptyPlayerSlots")
                     td(colspan="4")
                         h5
-                            em.text-muted select another player from the list below...
+                            em.text-muted add another golfer from the list below...
 
 
+    div.well
         h4 all players in the field for the
 
         //search
@@ -64,7 +73,7 @@ div(data-ng-controller="TeamCtrl")
                         td
                             h5 {{player.cup.ytdRank}}
                         td.text-center
-                            a.btn.btn-success.btn-sm(data-ng-click="addPlayer(player._id)") add
+                            a.btn.btn-success.btn-sm(data-ng-click="addPlayer(player._id)", data-ng-disabled="addPlayerDisabled") add
 
 
 
