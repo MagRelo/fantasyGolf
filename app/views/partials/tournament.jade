@@ -1,14 +1,18 @@
+
 .row
     .col-sm-12
-        h3.text-primary {{event.name}}
+
+        h3.text-primary Leaderboard
+
+        h3 {{event.name}}
             small(data-ng-repeat='course in courses') {{course.n}}
 
 .row
     .col-sm-12
         div(ng-include='\'partials/team\'')
-//.row
+.row
     .col-sm-12
-        div(ng-include='\'partials/league\'')
+        div(ng-include='\'partials/league2\'')
 
 
 

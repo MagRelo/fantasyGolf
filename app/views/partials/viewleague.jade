@@ -4,9 +4,11 @@ table.table
     thead.text-muted
         th Team
         th Owner
+        th Players
         th Score
     tbody
         tr(data-ng-repeat='team in league.teams')
             td {{team.teamName}}
             td {{team.ownerName}}
+            td {{team.players | json}}
             td {{team.modstable}}

@@ -9,6 +9,7 @@ angular.module('fantasyGolfApp')
       return $q.all([
           pga.setup().$promise,
           Team.get({id: $scope.currentUser.teamId}).$promise
+
         ])
         .then( function(result) {
 
