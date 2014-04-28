@@ -32,7 +32,7 @@ html.no-js
 
     // Add your site or application content here
 
-    div(data-ng-include='\'partials/navbar\'')
+    div(data-ng-include='\'components/userSession/navbar\'')
 
     div(class="container" ng-view)
 
@@ -54,28 +54,30 @@ html.no-js
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/directives/mongooseError.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/navbar.js"></script>
-    <script src="scripts/controllers/login.js"></script>
-    <script src="scripts/controllers/signup.js"></script>
-    <script src="scripts/controllers/settings.js"></script>
-    <script src="scripts/controllers/team.js"></script>
-    <script src="scripts/controllers/league.js"></script>
-    <script src="scripts/controllers/tournament.js"></script>
-    <script src="scripts/controllers/player.js"></script>
+    <script src="components/app.js"></script>
 
-    <script src="scripts/services/auth.js"></script>
+    <script src="components/league/leagueResource.js"></script>
+    <script src="components/league/league.js"></script>
+    <script src="components/league/viewleague.js"></script>
 
-    <script src="scripts/resources/session.js"></script>
-    <script src="scripts/resources/user.js"></script>
-    <script src="scripts/resources/league.js"></script>
-    <script src="scripts/resources/team.js"></script>
-    <script src="scripts/resources/pga.js"></script>
+    <script src="components/player/player.js"></script>
+
+    <script src="components/team/teamResource.js"></script>
+    <script src="components/team/team.js"></script>
+
+    <script src="components/tournament/tournament.js"></script>
+    <script src="components/tournament/pga.js"></script>
 
 
-    <script src="scripts/controllers/viewLeague.js"></script>
-    <script src="scripts/controllers/setup.js"></script>
+    <script src="components/userSession/auth.js"></script>
+    <script src="components/userSession/login.js"></script>
+    <script src="components/userSession/navbar.js"></script>
+    <script src="components/userSession/session.js"></script>
+    <script src="components/userSession/settings.js"></script>
+    <script src="components/userSession/signup.js"></script>
+    <script src="components/userSession/user.js"></script>
+
+    <script src="components/userSession/mongooseError.js"></script>
+
     <!-- endbuild -->
     

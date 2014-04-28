@@ -9,7 +9,7 @@ angular.module('fantasyGolfApp', [
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main',
+        templateUrl: 'components/userSession/main',
         controller: 'MainCtrl'
       })
       .when('/tournament', {
