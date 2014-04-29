@@ -9,36 +9,35 @@ angular.module('fantasyGolfApp', [
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'components/userSession/main',
-        controller: 'MainCtrl'
+        templateUrl: 'components/userSession/main'
       })
       .when('/tournament', {
-        templateUrl: 'partials/tournament',
+        templateUrl: 'components/tournament/tournament',
         controller: 'TournamentCtrl',
         authenticate: true
       })
       .when('/team', {
-        templateUrl: 'partials/team2',
+        templateUrl: 'components/team/team2',
         controller: 'TeamCtrl',
         authenticate: true
       })
       .when('/league', {
-        templateUrl: 'partials/league',
+        templateUrl: 'components/league/league',
         controller: 'LeagueCtrl',
         authenticate: true
       })
       .when('/player/:playerId', {
-        templateUrl: 'partials/player',
+        templateUrl: 'components/player/player',
         controller: 'PlayerCtrl',
         authenticate: true
       })
       .when('/league/:leagueId', {
-        templateUrl: 'partials/viewleague',
+        templateUrl: 'components/league/viewleague',
         controller: 'ViewLeagueCtrl',
         authenticate: true
       })
       .when('/setup', {
-        templateUrl: 'partials/setup',
+        templateUrl: 'components/userSession/setup',
         controller: 'SetupCtrl',
         authenticate: true
       })

@@ -4,15 +4,15 @@
 
         h3.text-primary Leaderboard
 
-        h3 {{event.name}}
-            small(data-ng-repeat='course in courses') {{course.n}}
+        h5 {{event.name}}
+            small(data-ng-repeat='course in courses')  {{course.n}}
 
 .row
     .col-sm-12
-        div(ng-include='\'partials/team\'')
+        div(ng-include='\'components/team/team\'')
 .row
     .col-sm-12
-        div(ng-include='\'partials/league2\'')
+        div(ng-include='\'components/league/league2\'')
 
 
 

@@ -3,12 +3,12 @@ img.centerImage.hidden-sm.hidden-xs(src="/images/sunset1.jpg")
 .front.hidden-sm.hidden-xs
     h1 Ballstrikers
 
-
 .row
-    .col-sm-6
-        .well
-            div(ng-include='\'partials/signup\'')
 
     .col-sm-6
         .well
-            div(ng-include='\'partials/login\'')
+            div(ng-include='\'components/userSession/login\'')
+
+    .col-sm-6
+        .well
+            div(ng-include='\'components/userSession/signup\'')
