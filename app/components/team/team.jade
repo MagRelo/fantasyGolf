@@ -4,12 +4,13 @@ div(data-ng-controller="TeamCtrl")
     a(href="/team")
         h3.text-primary My Team
 
+    h4 {{team.teamName}}
+        small  {{team.ownerName}}
+
     table.table.table-condensed
 
         thead
             th(colspan="2")
-                h5 {{team.teamName}}
-                    small  {{team.ownerName}}
             th.hidden-xs(data-ng-repeat="round in rounds")
                 | {{'rnd ' + round.number}}
             th.text-center points
