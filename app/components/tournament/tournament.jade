@@ -1,12 +1,8 @@
 
 .row
     .col-sm-12
-
-        h3.text-primary Leaderboard
-
-        h5 {{event.name}}
-            small(data-ng-repeat='course in courses')  {{course.n}}
-
+        div(ng-include='\'components/leaderboard/leaderboard\'')
+        a.btn.btn-primary.pull-right(href="#/leaderboard") See full leaderboard >
 .row
     .col-sm-12
         div(ng-include='\'components/team/team\'')

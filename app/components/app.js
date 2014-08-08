@@ -18,7 +18,6 @@ angular.module('fantasyGolfApp', [
       })
       .when('/team', {
         templateUrl: 'components/team/team2',
-        controller: 'TeamCtrl',
         authenticate: true
       })
       .when('/league', {
@@ -39,6 +38,10 @@ angular.module('fantasyGolfApp', [
       .when('/setup', {
         templateUrl: 'components/userSession/setup',
         controller: 'SetupCtrl',
+        authenticate: true
+      })
+      .when('/leaderboard', {
+        templateUrl: 'components/leaderboard/leaderboard',
         authenticate: true
       })
       .otherwise({

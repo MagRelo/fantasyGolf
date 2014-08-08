@@ -32,10 +32,12 @@ html.no-js
 
     // Add your site or application content here
 
-    div(data-ng-include='\'components/userSession/navbar\'')
 
-    div(class="container" ng-view)
 
+    div(class="container")
+        div(data-ng-include='\'components/userSession/navbar\'')
+
+        div(ng-view)
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script.
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
@@ -55,6 +57,8 @@ html.no-js
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="components/app.js"></script>
+
+    <script src="components/leaderboard/leaderboard.js"></script>
 
     <script src="components/league/leagueResource.js"></script>
     <script src="components/league/league.js"></script>

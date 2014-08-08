@@ -21,6 +21,12 @@ angular.module('fantasyGolfApp')
         params: {
           playerId: 'field'
         }
+      },
+      leaderboard: {
+        method: 'GET',
+        params: {
+          playerId: 'leaderboard'
+        }
       }
 
     });
