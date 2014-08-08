@@ -13,7 +13,6 @@ angular.module('fantasyGolfApp', [
       })
       .when('/tournament', {
         templateUrl: 'components/tournament/tournament',
-        controller: 'TournamentCtrl',
         authenticate: true
       })
       .when('/team', {
