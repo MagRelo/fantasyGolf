@@ -5,7 +5,8 @@ angular.module('fantasyGolfApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'firebase'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
