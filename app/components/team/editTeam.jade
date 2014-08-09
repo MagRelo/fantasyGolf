@@ -1,52 +1,54 @@
 div.row(data-ng-controller="TeamCtrl")
 
-    h3.text-primary My Team
+    .col-sm-6
+        h3.text-primary My Team
 
-    form.form-horizontal(role='form', name='TeamForm')
-        .form-group
-            .col-sm-6
-                label.control-label(for='teamName') Team Name
-                input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+        .well
 
-            .col-sm-6
-                label.control-label(for='ownerName') Owner Name
-                input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+            form.form-horizontal(role='form', name='TeamForm')
+                .form-group
+                    .col-sm-12
+                        label.control-label(for='teamName') Team Name
+                        input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
 
-        .form-group
-            //buttons
-            div.text-center
-                button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)", data-ng-show='TeamForm.$dirty') Save Changes
-                h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
-            .clearfix
+                    .col-sm-12
+                        label.control-label(for='ownerName') Owner Name
+                        input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+
+                .form-group(data-ng-show='TeamForm.$dirty')
+                    //buttons
+                    div.text-center
+                        button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)") Save Changes
+                        h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+            //.clearfix
+
+            table.table.table-responsive()
+                thead.text-muted
+                    th Name
+                    th drop
+                tbody
+                    tr(data-ng-repeat="player in field | filter: {active: true}")
+                        td
+                            h5 {{player.name.last}}, {{player.name.first}}
+
+                        td.text-center
+                            a.btn.btn-danger.btn-sm(data-ng-click="dropPlayer(player._id)") drop
+
+                    tr(data-ng-repeat="player in emptyPlayerSlots")
+                        td(colspan="4")
+                            h5
+                                em.text-muted add another golfer from the list below...
+
 
     .col-sm-6
 
-        h4 my roster for the {{}}
-        table.table.table-responsive()
-            thead.text-muted
-                th Name
-                th drop
-            tbody
-                tr(data-ng-repeat="player in field | filter: {active: true}")
-                    td
-                        h5 {{player.name.last}}, {{player.name.first}}
+        h3.text-primary The Feild
 
-                    td.text-center
-                        a.btn.btn-danger.btn-sm(data-ng-click="dropPlayer(player._id)") drop
-
-                tr(data-ng-repeat="player in emptyPlayerSlots")
-                    td(colspan="4")
-                        h5
-                            em.text-muted add another golfer from the list below...
-
-
-    .col-sm-6
-        h4 all players in the field for the
 
         //search
         div
             div.input-group
-                label.input-group-addon.text-primary filter
+                label.input-group-addon.text-primary search
                 input.form-control(type="text", data-ng-model="playerFilter")
 
         div

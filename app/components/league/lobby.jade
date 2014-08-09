@@ -7,18 +7,20 @@ div(ng-controller="LeagueCtrl")
 
             //leagues
             tabset(type='pills')
+
+
+
                 tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
 
-                button.btn.btn-success.pull-right Join League
+                    .col-sm-8
+                        h3.text-primary {{league.leagueName}}
+                        div.well
+                    .col-sm-4
+                        h3.text-primary Leaderboard
+                        div.well
 
-        .col-sm-8
-            h3.text-primary Chat
-            div.well
+                    .col-sm-12
+                        div.well.teamWell(ng-include='\'components/team/displayTeam\'')
 
-        .col-sm-4
+                a.btn.btn-success.pull-right(href='/joinleague') Join League
 
-            h3.text-primary League leaderboard
-            div.well
-    .row
-        .col-sm-12
-            div(ng-include='\'components/team/displayTeam\'')
