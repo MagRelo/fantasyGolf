@@ -1,14 +1,20 @@
 
 .row
-    .col-sm-12
+    .col-sm-8
+        h3.text-primary Chat
+
+        div.well
+
+
+    .col-sm-4
         div(ng-include='\'components/leaderboard/leaderboard\'')
-        a.btn.btn-primary.pull-right(href="#/leaderboard") See full leaderboard >
+
+        div.text-center
+            a.btn.btn-primary(href='#/leaderboard') See full leaderboard
+
 .row
     .col-sm-12
         div(ng-include='\'components/team/team\'')
-.row
-    .col-sm-12
-        div(ng-include='\'components/league/league2\'')
 
 
 

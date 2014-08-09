@@ -1,43 +1,36 @@
-div(data-ng-controller="TeamCtrl")
+div.row(data-ng-controller="TeamCtrl")
 
     h3.text-primary My Team
 
-    div.well
+    form.form-horizontal(role='form', name='TeamForm')
+        .form-group
+            .col-sm-6
+                label.control-label(for='teamName') Team Name
+                input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
 
-        form.form-horizontal(role='form', name='TeamForm')
-            .form-group
-                .col-sm-6
-                    label.control-label(for='teamName') Team Name
-                    input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+            .col-sm-6
+                label.control-label(for='ownerName') Owner Name
+                input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
-                .col-sm-6
-                    label.control-label(for='ownerName') Owner Name
-                    input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+        .form-group
+            //buttons
+            div.text-center
+                button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)", data-ng-show='TeamForm.$dirty') Save Changes
+                h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+            .clearfix
 
-            .form-group
-                //buttons
-                div.text-center
-                    button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)", data-ng-show='TeamForm.$dirty') Save Changes
-                    h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
-                .clearfix
-
-
+    .col-sm-6
 
         h4 my roster for the {{}}
         table.table.table-responsive()
             thead.text-muted
                 th Name
-                th money ranking
-                th fedex ranking
                 th drop
             tbody
                 tr(data-ng-repeat="player in field | filter: {active: true}")
                     td
                         h5 {{player.name.last}}, {{player.name.first}}
-                    td
-                        h5 {{player.money.ytdRank}}
-                    td
-                        h5 {{player.cup.ytdRank}}
+
                     td.text-center
                         a.btn.btn-danger.btn-sm(data-ng-click="dropPlayer(player._id)") drop
 
@@ -47,7 +40,7 @@ div(data-ng-controller="TeamCtrl")
                             em.text-muted add another golfer from the list below...
 
 
-    div.well
+    .col-sm-6
         h4 all players in the field for the
 
         //search
@@ -61,17 +54,11 @@ div(data-ng-controller="TeamCtrl")
             table.table.table-responsive
                 thead.text-muted
                     th Name
-                    th money ranking
-                    th fedex ranking
                     th add
                 tbody
                     tr(data-ng-repeat="player in field | filter: {active: false} | filter:playerFilter | orderBy: 'name.last' ")
                         td
                             h5 {{player.name.last}}, {{player.name.first}}
-                        td
-                            h5 {{player.money.ytdRank}}
-                        td
-                            h5 {{player.cup.ytdRank}}
                         td.text-center
                             a.btn.btn-success.btn-sm(data-ng-click="addPlayer(player._id)", data-ng-disabled="addPlayerDisabled") add
 

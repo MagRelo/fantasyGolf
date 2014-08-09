@@ -4,11 +4,8 @@ div.header(ng-controller='NavbarCtrl')
 
     h1 Ballstrikers
 
-    div
-        ul.nav.nav-tabs.nav-justified
-            li(ng-show='currentUser', ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-                a(ng-href='{{item.link}}') {{item.title}}
+    ul.nav.nav-pills
+        li(ng-show='currentUser', ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+            a(ng-href='{{item.link}}') {{item.title}}
 
-
-        .clearfix
 

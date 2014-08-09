@@ -4,7 +4,8 @@ angular.module('fantasyGolfApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'ui.bootstrap'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -16,12 +17,11 @@ angular.module('fantasyGolfApp', [
         authenticate: true
       })
       .when('/team', {
-        templateUrl: 'components/team/team2',
+        templateUrl: 'components/team/editTeam',
         authenticate: true
       })
       .when('/league', {
-        templateUrl: 'components/league/league',
-        controller: 'LeagueCtrl',
+        templateUrl: 'components/league/lobby',
         authenticate: true
       })
       .when('/player/:playerId', {
@@ -36,7 +36,6 @@ angular.module('fantasyGolfApp', [
       })
       .when('/setup', {
         templateUrl: 'components/userSession/setup',
-        controller: 'SetupCtrl',
         authenticate: true
       })
       .when('/leaderboard', {
