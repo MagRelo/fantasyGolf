@@ -118,14 +118,7 @@ body {
 
 //custom additions
 
-.centerImage{
-  display: block;
-  position: relative;
-  left: -50px;
-  border: solid #282b2e 1px;
-  z-index: -1;
-  border-radius: 8px;
-}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -141,9 +134,6 @@ body {
 //section titles
 .text-primary:hover{
   color: $brand-primary;
-}
-.text-success:hover{
-  color: $brand-success;
 }
 
 .mg-buttongroup{
@@ -235,4 +225,9 @@ span.h3 > small{
   border: 1px solid $mg-mid;
   border-bottom-color: transparent;
   background: $mg-dark;
+}
+
+table > thead > tr > th,
+table > tbody > tr > td{
+  text-align: center;
 }

@@ -8,7 +8,8 @@ div(data-ng-controller="TeamCtrl")
     table.table.table-condensed
 
         thead
-            th(colspan="2")
+            th
+            th
             th.hidden-xs(data-ng-repeat="round in rounds")
                 | {{'rnd ' + round.number}}
             th.text-center total
@@ -29,10 +30,11 @@ div(data-ng-controller="TeamCtrl")
                     h5 {{round.modstable}}
                 td
                     h5.text-center {{player.modstable}}
+        tfoot
             tr
                 td.hidden-xs
                 td.hidden-xs(data-ng-repeat="round in rounds")
                 td
-                    h4 team score:
+                    h4 total:
                 td.text-center
                     h4 {{team.modstable}}
