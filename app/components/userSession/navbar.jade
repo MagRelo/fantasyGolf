@@ -1,11 +1,8 @@
 div.header(ng-controller='NavbarCtrl')
 
-    button.btn.btn-sm.pull-right(href='', ng-click='logout()') Logout
+    button.btn.btn-sm.btn-danger.pull-right(ng-click='logout()') Logout
 
     h1 Ballstrikers
 
-    ul.nav.nav-pills
-        li(ng-show='currentUser', ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
-            a(ng-href='{{item.link}}') {{item.title}}
 
 

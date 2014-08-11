@@ -189,7 +189,7 @@ body {
 }
 
 .teamWell{
-  border: solid 1px $mg-mid;
+  //border: solid 1px $mg-mid;
   padding: 0 20px 0 20px;
 }
 
@@ -210,4 +210,29 @@ span.h3 > small{
   background-color: $brand-danger;
 }
 
+.chatbox{
+  background: $mg-darkest;
+  border: solid 1px $mg-mid;
+  padding: 8px;
+  margin-bottom: 0;
+}
 
+.leagueBox{
+  border-bottom: solid 1px $mg-mid;
+  border-right: solid 1px $mg-mid;
+  border-left: solid 1px $mg-mid;
+  background: $mg-dark;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid $mg-mid;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: $mg-white;
+  border: 1px solid $mg-mid;
+  border-bottom-color: transparent;
+  background: $mg-dark;
+}

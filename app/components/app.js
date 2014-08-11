@@ -25,7 +25,7 @@ angular.module('fantasyGolfApp', [
         templateUrl: 'components/league/lobby',
         authenticate: true
       })
-      .when('/joinleague', {
+      .when('/editleagues', {
         templateUrl: 'components/league/league',
         authenticate: true
       })

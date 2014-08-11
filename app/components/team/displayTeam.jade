@@ -1,6 +1,7 @@
 
 div(data-ng-controller="TeamCtrl")
 
+
     h3 {{team.teamName}}
         small  {{team.ownerName}}
 
@@ -10,7 +11,7 @@ div(data-ng-controller="TeamCtrl")
             th(colspan="2")
             th.hidden-xs(data-ng-repeat="round in rounds")
                 | {{'rnd ' + round.number}}
-            th.text-center points
+            th.text-center total
         tbody
             tr(data-ng-repeat="player in team.players")
                 td.hidden-xs

@@ -312,6 +312,9 @@ new CronJob('00 10,25,40,55 * * * *', function(){
       tournamentSetup();
     }
 
+  //test
+  //tournamentSetup();
+
 }, null, true);
 
 

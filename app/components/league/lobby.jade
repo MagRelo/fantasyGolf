@@ -2,25 +2,57 @@
    Created by mattlovan on 8/8/14.
 div(ng-controller="LeagueCtrl")
 
-    .row
-        .col-sm-12
+    div
+        ul.list-inline.pull-right
+            li
+                a.btn.btn-primary(href='/editleagues')
+                    span.glyphicon.glyphicon-th-large
+                    |  Edit Leagues
 
-            //leagues
-            tabset(type='pills')
+            li
+                a.btn.btn-primary(href='/team')
+                    span.glyphicon.glyphicon-list
+                    |  Edit Team
+
+        .clearfix
+
+    //leagues
+    tabset(type='tabs')
+        tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
+
+            .leagueBox
+
+                .col-sm-12
+
+                    div
+                        h3 {{league.leagueName}}
+
+                .col-sm-8
+
+                    div
+                        //chat messsages
+                        ul.list-unstyled.chatbox
+                            li(ng-repeat='message in chat')
+                                span.p.text-primary {{message.from}}:
+                                span.p  {{message.content}}
+
+                        //input
+                        div.input-group
+                            input.form-control(type='text')
+                            span.input-group-btn
+                                button.btn.btn-primary(type='button') Send
 
 
+                .col-sm-4
+                    div(ng-include='\'components/league/viewLeague\'')
 
-                tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
+                .col-sm-12
+                    div(ng-include='\'components/team/displayTeam\'')
 
-                    .col-sm-8
-                        h3.text-primary {{league.leagueName}}
-                        div.well
-                    .col-sm-4
-                        h3.text-primary Leaderboard
-                        div.well
+                .clearfix
+        //
+        //tab(heading='Manage Leagues')
+        //
+        //    div.leagueBox(ng-include='\'components/league/league\'')
 
-                    .col-sm-12
-                        div.well.teamWell(ng-include='\'components/team/displayTeam\'')
-
-                a.btn.btn-success.pull-right(href='/joinleague') Join League
-
+        .clearfix

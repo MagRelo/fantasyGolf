@@ -16,7 +16,7 @@ angular.module('fantasyGolfApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/tournament');
+          $location.path('/leagues');
         })
         .catch( function(err) {
           err = err.data;

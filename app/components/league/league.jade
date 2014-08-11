@@ -1,7 +1,5 @@
 div(data-ng-controller="LeagueCtrl")
 
-    h3.text-primary League setup
-
     div.well
         table.table.table-responsive()
 
@@ -11,7 +9,7 @@ div(data-ng-controller="LeagueCtrl")
                 th Name
                 th Location
                 th.text-center Leave
-                th.text-center View
+                //th.text-center View
             tbody
                 tr(data-ng-repeat="league in leagues| filter: {active: true}")
                     td
@@ -20,7 +18,7 @@ div(data-ng-controller="LeagueCtrl")
                         h5 {{league.location}}
                     td.text-center
                         button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)") leave
-                    td.text-center
+                    //td.text-center
                             a.btn.btn-primary.btn-sm(ng-href="{{'/league/' + league._id}}") view >
     div.well
         table.table.table-responsive

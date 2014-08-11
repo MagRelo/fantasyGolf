@@ -7,15 +7,33 @@ angular.module('fantasyGolfApp')
 
       $q.all([
           Team.get({id: $scope.currentUser.teamId}).$promise,
-          pga.getField().$promise
+          pga.getField().$promise,
+          pga.setup().$promise
         ])
         .then(function(result) {
 
-          //process team
           $scope.team = result[0];
-
-          //process field
           $scope.field = result[1];
+
+          $scope.event = result[2].event;
+          $scope.courses = result[2].courses;
+
+          //setup table header (rounds)
+          $scope.rounds = [];
+          while($scope.rounds.length < $scope.event.currentRnd){
+            $scope.rounds.push({number: ($scope.rounds.length + 1) })
+          }
+
+          //pad out rounds for player that missed the cut
+          angular.forEach($scope.team.players, function(playerData){
+            while(playerData.rounds.length < $scope.event.currentRnd){
+              playerData.rounds.push({
+                sc: '--',
+                stable: '--',
+                modstable: '--'
+              })
+            }
+          });
 
           $scope.setActivePlayers();
 
@@ -125,6 +143,8 @@ angular.module('fantasyGolfApp')
       $scope.addPlayerDisabled = ($scope.team.players.length > 3)
 
     };
+
+
 
     //init data
     $scope.init();

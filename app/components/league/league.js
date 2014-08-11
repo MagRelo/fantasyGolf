@@ -1,12 +1,21 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('LeagueCtrl', function ($scope, $q, League) {
+  .controller('LeagueCtrl', function ($scope, $q, $firebase, League) {
+
+    var firebaseRef = new Firebase('https://ballstrikers.firebaseio.com/chat');
+
+    // create an AngularFire reference to the data
+    var sync = $firebase(firebaseRef);
 
     $scope.init = function(){
+
       League.query().$promise.then(function(result) {
         $scope.leagues = $scope.setActiveLeagues(result, $scope.currentUser.teamId);
-      })
+      });
+
+      // download the data into a local object
+      $scope.chat = sync.$asObject();
 
     };
 
