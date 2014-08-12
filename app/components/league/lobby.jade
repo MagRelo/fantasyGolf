@@ -1,16 +1,15 @@
 //
    Created by mattlovan on 8/8/14.
 
-div(ng-controller="LeagueCtrl")
+div.row
 
-    div.row
+    a.btn.btn-primary.pull-right(href='/editleagues')
+        span.glyphicon.glyphicon-th-large
+        | Edit Leagues
 
-        a.btn.btn-primary.pull-right(href='/editleagues')
-            span.glyphicon.glyphicon-th-large
-            |  Edit Leagues
 
-        //leagues
-        tabset(type='tabs')
+    div(ng-controller="LeagueCtrl")
+        tabset
             tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
 
                 div.leagueBox
@@ -39,6 +38,6 @@ div(ng-controller="LeagueCtrl")
 
                     .clearfix
 
-    .row
-        .col-sm-12
-            div(ng-include='\'components/team/displayTeam\'')
+.row
+    .col-sm-12
+        div(ng-include='\'components/team/displayTeam\'')
