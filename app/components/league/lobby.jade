@@ -1,35 +1,24 @@
 //
    Created by mattlovan on 8/8/14.
+
 div(ng-controller="LeagueCtrl")
 
-    div
-        ul.list-inline.pull-right
-            li
-                a.btn.btn-primary(href='/editleagues')
-                    span.glyphicon.glyphicon-th-large
-                    |  Edit Leagues
+    div.row
 
-            li
-                a.btn.btn-primary(href='/team')
-                    span.glyphicon.glyphicon-list
-                    |  Edit Team
+        a.btn.btn-primary.pull-right(href='/editleagues')
+            span.glyphicon.glyphicon-th-large
+            |  Edit Leagues
 
-        .clearfix
+        //leagues
+        tabset(type='tabs')
+            tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
 
-    //leagues
-    tabset(type='tabs')
-        tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
+                div.leagueBox
 
-            .leagueBox
+                    .col-sm-8
 
-                .col-sm-12
-
-                    div
                         h3 {{league.leagueName}}
 
-                .col-sm-8
-
-                    div
                         //chat messsages
                         ul.list-unstyled.chatbox
                             li(ng-repeat='message in chat')
@@ -43,16 +32,13 @@ div(ng-controller="LeagueCtrl")
                                 button.btn.btn-primary(type='button') Send
 
 
-                .col-sm-4
-                    div(ng-include='\'components/league/viewLeague\'')
+                    .col-sm-4
+                        h3 Leaderboard
 
-                .col-sm-12
-                    div(ng-include='\'components/team/displayTeam\'')
+                        div(ng-include='\'components/league/viewLeague\'')
 
-                .clearfix
-        //
-        //tab(heading='Manage Leagues')
-        //
-        //    div.leagueBox(ng-include='\'components/league/league\'')
+                    .clearfix
 
-        .clearfix
+    .row
+        .col-sm-12
+            div(ng-include='\'components/team/displayTeam\'')

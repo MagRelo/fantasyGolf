@@ -1,6 +1,9 @@
 
 div(data-ng-controller="TeamCtrl")
 
+    a.btn.btn-primary.pull-right(href='/team')
+        span.glyphicon.glyphicon-list
+        |  Edit Team
 
     h3 {{team.teamName}}
         small  {{team.ownerName}}
@@ -8,7 +11,7 @@ div(data-ng-controller="TeamCtrl")
     table.table.table-condensed
 
         thead
-            th
+            th.hidden-xs
             th
             th.hidden-xs(data-ng-repeat="round in rounds")
                 | {{'rnd ' + round.number}}

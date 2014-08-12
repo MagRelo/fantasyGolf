@@ -202,7 +202,9 @@ span.h3 > small{
 
 .chatbox{
   background: $mg-darkest;
-  border: solid 1px $mg-mid;
+  border-top: solid 1px $mg-mid;
+  border-right: solid 1px $mg-mid;
+  border-left: solid 1px $mg-mid;
   padding: 8px;
   margin-bottom: 0;
 }
@@ -212,6 +214,8 @@ span.h3 > small{
   border-right: solid 1px $mg-mid;
   border-left: solid 1px $mg-mid;
   background: $mg-dark;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .nav-tabs {
