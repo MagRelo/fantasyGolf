@@ -22,13 +22,15 @@ div(data-ng-controller="TeamCtrl")
                     div.playerList
                         a(ng-href="{{'/player/' + player.id}}")
                             img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{player.id}}.png")
+
+
                 td
                     h4 {{player.name.first + ' ' + player.name.last}}
-                    ul.list-inline
-                        li
-                            a(ng-href="{{'/player/' + player.id}}")
-                                span.glyphicon.glyphicon-list
-                                |  scorecard
+                    a(ng-href="{{'/player/' + player.id}}")
+                        span.glyphicon.glyphicon-list
+                        |  scorecard
+
+
                 td.hidden-xs(data-ng-repeat="round in player.rounds")
                     h5 {{round.modstable}}
                 td
