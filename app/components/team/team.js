@@ -6,17 +6,22 @@ angular.module('fantasyGolfApp')
     $scope.init = function(){
 
       $q.all([
-          Team.get({id: $scope.currentUser.teamId}).$promise,
-          pga.getField().$promise,
-          pga.setup().$promise
+          Team.getTeam($scope.currentUser.teamId),
+          pga.getField(),
+          pga.getSetup()
         ])
+
         .then(function(result) {
 
-          $scope.team = result[0];
-          $scope.field = result[1];
+          //Team.getTeam()
+          $scope.team = result[0].data;
 
-          $scope.event = result[2].event;
-          $scope.courses = result[2].courses;
+          //pga.getField()
+          $scope.field = result[1].data;
+
+          //pga.getSetup()
+          $scope.event = result[2].data.event;
+          $scope.courses = result[2].data.courses;
 
           //setup table header (rounds)
           $scope.rounds = [];

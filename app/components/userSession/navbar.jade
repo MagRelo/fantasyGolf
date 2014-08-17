@@ -4,5 +4,7 @@ div.row.header(ng-controller='NavbarCtrl')
 
     h1 Ballstrikers
 
-
+    ul.list-inline
+        li(ng-repeat="item in menu")
+            a(ng-href="{{item.link}}") {{item.title}}
 

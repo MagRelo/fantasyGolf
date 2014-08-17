@@ -10,9 +10,12 @@ angular.module('fantasyGolfApp')
 
     $scope.init = function(){
 
-      League.query().$promise.then(function(result) {
-        $scope.leagues = $scope.setActiveLeagues(result, $scope.currentUser.teamId);
-      });
+      League.getLeagues()
+        .then(function(result) {
+          $scope.leagues = $scope.setActiveLeagues(result.data, $scope.currentUser.teamId);
+        },function(error){
+          $scope.error = error;
+        });
 
       // download the data into a local object
       $scope.chat = sync.$asObject();

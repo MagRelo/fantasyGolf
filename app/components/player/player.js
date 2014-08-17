@@ -8,16 +8,18 @@ angular.module('fantasyGolfApp')
 
     $scope.scoringStyle = 'modstable';
 
-    pga.get({playerId: $scope.playerId},
-      function(player){
-        angular.extend($scope.player, player);
+    pga.getPlayer($scope.playerId)
+      .then(
+      function(result){
+        angular.extend($scope.player, result.data);
       },
       function(error){$scope.error = error;}
     );
 
-    pga.setup({},
-      function(data){
-        angular.forEach(data.field, function(fieldPlayer){
+    pga.getSetup()
+      .then(
+      function(result){
+        angular.forEach(result.data.field, function(fieldPlayer){
           if(fieldPlayer.id == $scope.playerId){
             angular.extend($scope.player, fieldPlayer);
           }

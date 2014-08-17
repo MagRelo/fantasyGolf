@@ -3,13 +3,16 @@
 angular.module('fantasyGolfApp')
   .controller('LeaderboardCtrl', function ($scope, $routeParams, pga) {
 
-    pga.leaderboard({},
-      function(data){
-        $scope.leaderboard = data;
-        $scope.course = data.courses[0];
-        $scope.info = data.info;
+    pga.getLeaderboard()
+      .then(
+      function(result){
+        $scope.players = result.data.players;
+        $scope.course = result.data.courses[0];
+        $scope.info = result.data.info;
       },
-      function(error){$scope.error = error;}
+      function(error){
+        $scope.error = error;
+      }
     );
 
 

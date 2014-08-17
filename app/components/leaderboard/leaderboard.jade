@@ -1,13 +1,14 @@
 div(ng-controller="LeaderboardCtrl")
 
-    h3.text-primary Leaderboard
+    h3.text-primary {{info.name}}
+        small {{info.date}}
 
     table.table
         thead.text-muted
             th name
             th tot
         tbody
-            tr(data-ng-repeat='player in leaderboard.players | limitTo:3')
+            tr(data-ng-repeat='player in players | limitTo:49')
                 td.text-muted
                     a(ng-href="/player/{{player.id}}") {{player.ln +', ' + player.fn}}
                 td {{player.tp}}

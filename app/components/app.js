@@ -6,8 +6,10 @@ angular.module('fantasyGolfApp', [
   'ngSanitize',
   'ngRoute',
   'ui.bootstrap',
-  'firebase'
+  'firebase',
+  'angular-promise-cache'
 ])
+
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
