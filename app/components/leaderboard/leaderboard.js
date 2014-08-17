@@ -7,7 +7,7 @@ angular.module('fantasyGolfApp')
       .then(
       function(result){
         $scope.players = result.data.players;
-        $scope.course = result.data.courses[0];
+        $scope.courses = result.data.courses;
         $scope.info = result.data.info;
       },
       function(error){
