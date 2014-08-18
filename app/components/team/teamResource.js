@@ -9,10 +9,16 @@ angular.module('fantasyGolfApp')
           promise: function () {
             return $http.get('/api/team/' + teamId);
           },
-          ttl: -1 //never expire
+          ttl: -1,
+          bustCache: false,
+          key: 'getTeam'
         });
       },
       updateTeam: function (team, teamId) {
+
+        //bust cache
+        promiseCache.remove('getTeam', false);
+
         return $http.put('/api/team/' + teamId, team);
       }
     };

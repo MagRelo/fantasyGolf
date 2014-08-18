@@ -1,34 +1,46 @@
 .well(data-ng-controller="editTeamCtrl")
-    form.form-horizontal(role='form', name='TeamForm')
 
+    form(role='form', name='TeamForm')
         legend edit team
 
-        label.control-label(for='teamName') Team Name
-        input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+        .form-group
+            label.control-label(for='teamName') Team Name
+            input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
 
-        label.control-label(for='ownerName') Owner Name
-        input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+        .form-group
+            label.control-label(for='ownerName') Owner Name
+            input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
-        label.control-label(for='ownerName') Player 1
-        select(class="form-control", ng-model="team.player1", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
-            option select player
+        .form-group
+            label.control-label(for='ownerName') Player 1
+            select(class="form-control", ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                option select player
 
-        label.control-label(for='ownerName') Player 2
-        select(class="form-control", ng-model="team.player2", ng-options="p._id as (p.name.last + ', '+ p.name.first)  for p in field")
-            option select player
+        .form-group
+            label.control-label(for='ownerName') Player 2
+            select(class="form-control", ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first)  for p in field")
+                option select player
 
-        label.control-label(for='ownerName') Player 3
-        select(class="form-control", ng-model="team.player3", ng-options="p._id as (p.name.last + ', '+ p.name.first)  for p in field")
-            option select player
+        .form-group
+            label.control-label(for='ownerName') Player 3
+            select(class="form-control", ng-model="team.player3._id", ng-options="p._id as (p.name.last + ', '+ p.name.first)  for p in field")
+                option select player
 
-        label.control-label(for='ownerName') Player 4
-        select(class="form-control", ng-model="team.player4", ng-options="p._id as (p.name.last + ', '+ p.name.first)  for p in field")
-            option select player
+        .form-group
+            label.control-label(for='ownerName') Player 4
+            select(class="form-control", ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first)  for p in field")
+                option select player
 
 
-            //buttons
-        div.well-lg.text-center
-            button.btn.btn-success.btn-sm(data-ng-click="saveTeam(team)", data-ng-show='TeamForm.$dirty') Save Changes
+        //buttons
+        ul.list-inline.text-center(collapse='!TeamForm.$dirty')
+            li
+                button.btn.btn-success(data-ng-click="saveTeam(team)") Save Changes
+            li
+                button.btn.btn-danger(data-ng-click="cancel()") Cancel
+
             h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
 
 
+        //error
+        alert(type="danger", ng-show="teamError") {{teamError}}
