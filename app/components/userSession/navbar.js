@@ -5,14 +5,13 @@ angular.module('fantasyGolfApp')
 
     $scope.menu = [
     {
-      'title': 'My Leagues',
+      'title': 'leagues',
       'link': '/leagues'
     }, {
-      'title': 'My Team',
+      'title': 'team',
       'link': '/team'
-    }
-    , {
-      'title': 'Leaderboard',
+    }, {
+      'title': 'leaderboard',
       'link': '/leaderboard'
     }];
     

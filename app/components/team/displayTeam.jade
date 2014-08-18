@@ -1,25 +1,17 @@
 
 div(data-ng-controller="displayTeamCtrl")
-
-    a.btn.btn-primary.pull-right(href='/team')
-        span.glyphicon.glyphicon-list
-        |  Edit Team
-
-    h3 {{team.teamName}}
-        small  {{team.ownerName}}
-
     table.table.table-condensed
-
         thead
-            th.hidden-xs
-            th
+            th(colspan=2)
+                h3 {{team.teamName}}
+                    small  {{team.ownerName}}
             th.hidden-xs(data-ng-repeat="round in rounds")
                 | {{'rnd ' + round.number}}
             th.text-center total
 
         tbody
             tr
-                td.hidden-xs
+                td
                     div.playerList
                         a(ng-href="{{'/player/' + team.player1.id}}")
                             img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{team.player1.id}}.png")
@@ -38,7 +30,7 @@ div(data-ng-controller="displayTeamCtrl")
                     h5.text-center {{team.player1.modstable}}
 
             tr
-                td.hidden-xs
+                td
                     div.playerList
                         a(ng-href="{{'/player/' + team.player2.id}}")
                             img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{team.player2.id}}.png")
@@ -57,7 +49,7 @@ div(data-ng-controller="displayTeamCtrl")
                     h5.text-center {{team.player2.modstable}}
 
             tr
-                td.hidden-xs
+                td
                     div.playerList
                         a(ng-href="{{'/player/' + team.player3.id}}")
                             img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{team.player3.id}}.png")
@@ -76,7 +68,7 @@ div(data-ng-controller="displayTeamCtrl")
                     h5.text-center {{team.player3.modstable}}
 
             tr
-                td.hidden-xs
+                td
                     div.playerList
                         a(ng-href="{{'/player/' + team.player4.id}}")
                             img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{team.player4.id}}.png")
@@ -92,7 +84,7 @@ div(data-ng-controller="displayTeamCtrl")
         
         tfoot
             tr
-                td.hidden-xs
+                td
                 td.hidden-xs(data-ng-repeat="round in rounds")
                 td
                     h4 total:

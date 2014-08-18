@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="add leaderboard">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/components/team/team.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/cronjobs.js" afterPath="$PROJECT_DIR$/bin/cronjobs.js" />
+    <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="split team into two controls - display and edit">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/app.js" afterPath="$PROJECT_DIR$/app/components/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/team/displayTeam.jade" afterPath="$PROJECT_DIR$/app/components/team/displayTeam.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/team/editTeam.jade" afterPath="$PROJECT_DIR$/app/components/team/editTeam.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/team/editTeamCtrl.js" afterPath="$PROJECT_DIR$/app/components/team/editTeamCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/index.jade" afterPath="$PROJECT_DIR$/app/components/index.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/team/teamResource.js" afterPath="$PROJECT_DIR$/app/components/team/teamResource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/league/lobby.jade" afterPath="$PROJECT_DIR$/app/components/league/lobby.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/userSession/navbar.jade" afterPath="$PROJECT_DIR$/app/components/userSession/navbar.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/userSession/navbar.js" afterPath="$PROJECT_DIR$/app/components/userSession/navbar.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
@@ -32,74 +30,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="displayTeam.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/team/displayTeam.jade">
+      <file leaf-file-name="lobby.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/league/lobby.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1164" max-vertical-offset="1635">
-              <caret line="103" column="47" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="600">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/index.jade">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="892" max-vertical-offset="1470">
-              <caret line="73" column="59" selection-start-line="73" selection-start-column="59" selection-end-line="73" selection-end-column="59" />
+            <state vertical-scroll-proportion="0.28773585" vertical-offset="148" max-vertical-offset="930">
+              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
-                <marker date="1408392666000" expanded="true" signature="1748:1891" placeholder="{...}" />
+                <element signature="e#369#462#0" expanded="false" />
+                <element signature="e#485#571#0" expanded="false" />
+                <element signature="e#597#681#0" expanded="false" />
+                <element signature="e#711#796#0" expanded="false" />
+                <element signature="e#831#950#0" expanded="false" />
+                <element signature="e#985#1112#0" expanded="false" />
+                <element signature="e#1136#1225#0" expanded="false" />
+                <element signature="e#1369#1402#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="displayTeamCtrl.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/team/displayTeamCtrl.js">
+      <file leaf-file-name="navbar.jade" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/userSession/navbar.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9870968" vertical-offset="171" max-vertical-offset="825">
-              <caret line="42" column="48" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+              <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editTeam.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/team/editTeam.jade">
+      <file leaf-file-name="navbar.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/userSession/navbar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="765">
-              <caret line="43" column="63" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="510">
+              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="team.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="930">
-              <caret line="43" column="84" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
-              <folding>
-                <element signature="e#239#862#0" expanded="false" />
-                <element signature="e#932#1257#0" expanded="false" />
-                <element signature="e#1410#2347#0" expanded="false" />
-                <element signature="e#2635#2928#0" expanded="false" />
-                <element signature="e#2994#3287#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cronjobs.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/cronjobs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1095">
-              <caret line="327" column="4" selection-start-line="327" selection-start-column="4" selection-end-line="327" selection-end-column="4" />
-              <folding>
-                <element signature="e#324#2339#0" expanded="false" />
-                <element signature="e#2395#6394#0" expanded="false" />
-                <element signature="e#6442#7877#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -123,8 +98,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/partials/main.jade" />
-        <option value="$PROJECT_DIR$/app/views/partials/setup.jade" />
         <option value="$PROJECT_DIR$/app/views/partials/league.jade" />
         <option value="$PROJECT_DIR$/app/scripts/controllers/team.js" />
         <option value="$PROJECT_DIR$/app/views/partials/team2.jade" />
@@ -152,15 +125,11 @@
         <option value="$PROJECT_DIR$/lib/models/user.js" />
         <option value="$PROJECT_DIR$/app/components/league/league.jade" />
         <option value="$PROJECT_DIR$/app/styles/main.scss" />
-        <option value="$PROJECT_DIR$/app/components/league/lobby.jade" />
         <option value="$PROJECT_DIR$/app/components/leaderboard/leaderboard.jade" />
-        <option value="$PROJECT_DIR$/app/components/app.js" />
-        <option value="$PROJECT_DIR$/app/components/userSession/navbar.jade" />
         <option value="$PROJECT_DIR$/app/components/league/leagueResource.js" />
         <option value="$PROJECT_DIR$/app/components/league/league.js" />
         <option value="$PROJECT_DIR$/app/components/tournament/pga.js" />
         <option value="$PROJECT_DIR$/app/components/player/player.js" />
-        <option value="$PROJECT_DIR$/app/components/userSession/navbar.js" />
         <option value="$PROJECT_DIR$/app/components/leaderboard/leaderboard.js" />
         <option value="$PROJECT_DIR$/lib/routes.js" />
         <option value="$PROJECT_DIR$/app/components/team/team.js" />
@@ -170,10 +139,16 @@
         <option value="$PROJECT_DIR$/lib/controllers/team.js" />
         <option value="$PROJECT_DIR$/app/components/team/editTeam.jade" />
         <option value="$PROJECT_DIR$/bin/setupTournament.js" />
-        <option value="$PROJECT_DIR$/bin/cronjobs.js" />
         <option value="$PROJECT_DIR$/app/components/index.jade" />
-        <option value="$PROJECT_DIR$/app/components/team/displayTeam.jade" />
         <option value="$PROJECT_DIR$/app/components/team/displayTeamCtrl.js" />
+        <option value="$PROJECT_DIR$/bin/cronjobs.js" />
+        <option value="$PROJECT_DIR$/app/components/league/displayLeague.jade" />
+        <option value="$PROJECT_DIR$/app/components/team/displayTeam.jade" />
+        <option value="$PROJECT_DIR$/app/components/league/lobby.jade" />
+        <option value="$PROJECT_DIR$/app/components/team/teamLobby.jade" />
+        <option value="$PROJECT_DIR$/app/components/app.js" />
+        <option value="$PROJECT_DIR$/app/components/userSession/navbar.jade" />
+        <option value="$PROJECT_DIR$/app/components/userSession/navbar.js" />
       </list>
     </option>
   </component>
@@ -476,7 +451,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="team" />
+              <option name="myItemId" value="userSession" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1029,7 +1004,15 @@
       <created>1408392630366</created>
       <updated>1408392630366</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="split team into two controls - display and edit">
+      <created>1408392940529</created>
+      <updated>1408392940529</updated>
+    </task>
+    <task id="LOCAL-00114" summary="split team into two controls - display and edit">
+      <created>1408392973263</created>
+      <updated>1408392973263</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1037,17 +1020,17 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38073394" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2771261" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2771261" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32844576" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28134558" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36950147" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3372434" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3372434" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2827641" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2827641" sideWeight="0.6712538" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1094,7 +1077,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
-    <MESSAGE value="load player thumbnails over https" />
     <MESSAGE value="fix setup: get courses from leaderboard obj&#10;fix calcTeams: do not overwrite players on de-populate" />
     <MESSAGE value="remove 'no leagues' warning" />
     <MESSAGE value="breakout team partial, add setup view" />
@@ -1119,7 +1101,8 @@
     <MESSAGE value="reorg and partial re-setup 2" />
     <MESSAGE value="add leaderboard" />
     <MESSAGE value="populate each player indiv" />
-    <option name="LAST_COMMIT_MESSAGE" value="populate each player indiv" />
+    <MESSAGE value="split team into two controls - display and edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="split team into two controls - display and edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1127,14 +1110,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/controllers/session.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
@@ -1295,14 +1270,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/league/lobby.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14527845" vertical-offset="75" max-vertical-offset="720">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
@@ -1327,48 +1294,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="930">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#369#462#0" expanded="false" />
-            <element signature="e#485#570#0" expanded="false" />
-            <element signature="e#596#680#0" expanded="false" />
-            <element signature="e#710#795#0" expanded="false" />
-            <element signature="e#830#949#0" expanded="false" />
-            <element signature="e#984#1111#0" expanded="false" />
-            <element signature="e#1135#1224#0" expanded="false" />
-            <element signature="e#1368#1401#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/userSession/navbar.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27586207" vertical-offset="0" max-vertical-offset="435">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/league/leagueResource.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.10344828" vertical-offset="0" max-vertical-offset="690">
           <caret line="3" column="50" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/league/league.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47816092" vertical-offset="62" max-vertical-offset="855">
-          <caret line="18" column="20" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#676#1344#0" expanded="false" />
-            <element signature="e#1389#1722#0" expanded="false" />
-            <element signature="e#1768#2101#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1384,14 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
           <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/userSession/navbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39310345" vertical-offset="39" max-vertical-offset="525">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1478,21 +1400,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="892" max-vertical-offset="1470">
+          <caret line="73" column="59" selection-start-line="73" selection-start-column="59" selection-end-line="73" selection-end-column="59" />
+          <folding>
+            <marker date="1408392666000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/team/displayTeamCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="825">
+          <caret line="42" column="48" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bin/cronjobs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="574" max-vertical-offset="1095">
-          <caret line="327" column="4" selection-start-line="327" selection-start-column="4" selection-end-line="327" selection-end-column="4" />
+        <state vertical-scroll-proportion="1.2903225" vertical-offset="0" max-vertical-offset="1095">
+          <caret line="296" column="69" selection-start-line="296" selection-start-column="31" selection-end-line="296" selection-end-column="31" />
           <folding>
             <element signature="e#324#2339#0" expanded="false" />
             <element signature="e#2395#6394#0" expanded="false" />
-            <element signature="e#6442#7877#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="930">
+        <state vertical-scroll-proportion="0.26451612" vertical-offset="87" max-vertical-offset="930">
           <caret line="43" column="84" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
           <folding>
             <element signature="e#239#862#0" expanded="false" />
@@ -1504,37 +1443,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="892" max-vertical-offset="1470">
-          <caret line="73" column="59" selection-start-line="73" selection-start-column="59" selection-end-line="73" selection-end-column="59" />
-          <folding>
-            <marker date="1408392666000" expanded="true" signature="1748:1891" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/team/editTeam.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="765">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
           <caret line="43" column="63" selection-start-line="43" selection-start-column="0" selection-end-line="45" selection-end-column="63" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/team/displayTeam.jade">
+    <entry file="file://$PROJECT_DIR$/app/components/league/viewleague.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1164" max-vertical-offset="1635">
-          <caret line="103" column="47" selection-start-line="103" selection-start-column="38" selection-end-line="103" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/team/displayTeamCtrl.js">
+    <entry file="file://$PROJECT_DIR$/app/components/league/league.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9870968" vertical-offset="171" max-vertical-offset="825">
-          <caret line="42" column="48" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="107" column="48" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <element signature="e#320#637#0" expanded="false" />
+            <element signature="e#676#1344#0" expanded="false" />
+            <element signature="e#1389#1722#0" expanded="false" />
+            <element signature="e#1768#2101#0" expanded="false" />
+            <element signature="e#2159#2548#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/team/displayTeam.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.3247423" vertical-offset="0" max-vertical-offset="1515">
+          <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/league/lobby.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="189" max-vertical-offset="600">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/team/teamLobby.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1768868" vertical-offset="0" max-vertical-offset="424">
+          <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/userSession/navbar.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="7" column="74" selection-start-line="7" selection-start-column="74" selection-end-line="7" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/userSession/navbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="510">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28773585" vertical-offset="148" max-vertical-offset="930">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#369#462#0" expanded="false" />
+            <element signature="e#485#571#0" expanded="false" />
+            <element signature="e#597#681#0" expanded="false" />
+            <element signature="e#711#796#0" expanded="false" />
+            <element signature="e#831#950#0" expanded="false" />
+            <element signature="e#985#1112#0" expanded="false" />
+            <element signature="e#1136#1225#0" expanded="false" />
+            <element signature="e#1369#1402#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

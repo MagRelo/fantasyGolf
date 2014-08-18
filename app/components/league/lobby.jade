@@ -3,11 +3,6 @@
 
 div.row
 
-    a.btn.btn-primary.pull-right(href='/editleagues')
-        span.glyphicon.glyphicon-th-large
-        | Edit Leagues
-
-
     div(ng-controller="LeagueCtrl")
         tabset
             tab(ng-repeat="league in leagues | filter:{active: 'true'}" heading="{{league.leagueName}}" active="league.tabActive" disabled="tab.tabDisabled")
@@ -37,7 +32,3 @@ div.row
                         div(ng-include='\'components/league/viewLeague\'')
 
                     .clearfix
-
-.row
-    .col-sm-12
-        div(ng-include='\'components/team/displayTeam\'')
