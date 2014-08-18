@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('TeamCtrl', function ($scope, $q, Auth, pga, Team) {
+  .controller('TeamCtrl', function ($scope, $q, pga, Team) {
 
     $scope.init = function(){
 
       $q.all([
           Team.getTeam($scope.currentUser.teamId),
-          pga.getField(),
+          //pga.getField(),
           pga.getSetup()
         ])
 
@@ -17,15 +17,15 @@ angular.module('fantasyGolfApp')
           $scope.team = result[0].data;
 
           //pga.getField()
-          $scope.field = result[1].data;
+          //$scope.field = result[1].data;
 
           //pga.getSetup()
-          $scope.event = result[2].data.event;
-          $scope.courses = result[2].data.courses;
+          $scope.event = result[1].data.event;
+          $scope.courses = result[1].data.courses;
 
           //setup table header (rounds)
           $scope.rounds = [];
-          while($scope.rounds.length < $scope.event.currentRnd){
+          while($scope.event.currentRnd < $scope.rounds.length){
             $scope.rounds.push({number: ($scope.rounds.length + 1) })
           }
 
@@ -56,18 +56,19 @@ angular.module('fantasyGolfApp')
       });
 
 
-      Team.update(team,
-        function(team){
+      Team.updateTeam(team, team._id)
+        .then(
+          function(response){
 
-          //update team
-          $scope.team = team;
+            //update team
+            $scope.team = response.data;
 
-          //reset form
-          $scope.TeamForm.$setPristine();
-          $scope.updated = true;
-          $scope.showSettings = false;
-        },
-        function(error){$scope.teamerror = error;}
+            //reset form
+            $scope.TeamForm.$setPristine();
+            $scope.updated = true;
+            $scope.showSettings = false;
+          },
+          function(error){$scope.teamerror = error;}
       )
 
     };

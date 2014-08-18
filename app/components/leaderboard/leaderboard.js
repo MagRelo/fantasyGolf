@@ -5,14 +5,14 @@ angular.module('fantasyGolfApp')
 
     pga.getLeaderboard()
       .then(
-      function(result){
-        $scope.players = result.data.players;
-        $scope.courses = result.data.courses;
-        $scope.info = result.data.info;
-      },
-      function(error){
-        $scope.error = error;
-      }
+        function(result){
+          $scope.players = result.data.players;
+          $scope.courses = result.data.courses;
+          $scope.info = result.data.info;
+        },
+        function(error){
+          $scope.error = error;
+        }
     );
 
 

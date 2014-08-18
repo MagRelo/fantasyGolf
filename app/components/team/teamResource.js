@@ -11,6 +11,9 @@ angular.module('fantasyGolfApp')
           },
           ttl: -1 //never expire
         });
+      },
+      updateTeam: function (team, teamId) {
+        return $http.put('/api/team/' + teamId, team);
       }
     };
 
