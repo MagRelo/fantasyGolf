@@ -30,7 +30,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 //}
 
 //start jobs
-require('./bin/cronjobs');
+//require('./bin/cronjobs');
 
   
 // Passport Configuration

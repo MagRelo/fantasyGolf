@@ -1,14 +1,19 @@
-table.table
+table.table.table-responsive(ng-controller="ViewLeagueCtrl")
 
     thead.text-muted
 
         th Team
-        //th Owner
-        //th Players
+        th Players
         th Score
+
     tbody
         tr(data-ng-repeat='team in league.teams')
             td {{team.teamName}}
             //td {{team.ownerName}}
-            //td {{team.players | json}}
+            td
+                p {{team.player1}}
+                p {{team.player1}}
+                p {{team.player1}}
+                p {{team.player1}}
+
             td {{team.modstable}}

@@ -5,12 +5,14 @@ angular.module('fantasyGolfApp')
 
     $scope.leagueId = $routeParams.leagueId;
 
-    League.get({id: $routeParams.leagueId},
-      function(league){
-        $scope.league = league;
-      },
-      function(error){
-        $scope.error = error;
-      })
+    League.getLeague($routeParams.leagueId)
+      .then(
+        function(league){
+          $scope.league = league;
+        },
+        function(error){
+          $scope.error = error;
+        }
+      )
 
   });

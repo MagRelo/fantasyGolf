@@ -15,30 +15,30 @@ angular.module('fantasyGolfApp', [
       .when('/', {
         templateUrl: 'components/userSession/main'
       })
-      .when('/tournament', {
-        templateUrl: 'components/tournament/tournament',
+      .when('/leagues', {
+        templateUrl: 'components/league/listLeagues',
+        authenticate: true
+      })
+      .when('/editleague', {
+        templateUrl: 'components/league/editLeagues',
+        authenticate: true
+      })
+      .when('/league/:leagueId', {
+        templateUrl: 'components/league/viewleague',
+        controller: 'ViewLeagueCtrl',
         authenticate: true
       })
       .when('/team', {
         templateUrl: 'components/team/teamLobby',
         authenticate: true
       })
-      .when('/leagues', {
-        templateUrl: 'components/league/lobby',
-        authenticate: true
-      })
-      .when('/editleagues', {
-        templateUrl: 'components/league/league',
+      .when('/editteam', {
+        templateUrl: 'components/team/editTeam',
         authenticate: true
       })
       .when('/player/:playerId', {
         templateUrl: 'components/player/player',
         controller: 'PlayerCtrl',
-        authenticate: true
-      })
-      .when('/league/:leagueId', {
-        templateUrl: 'components/league/viewleague',
-        controller: 'ViewLeagueCtrl',
         authenticate: true
       })
       .when('/setup', {

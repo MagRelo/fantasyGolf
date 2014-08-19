@@ -57,9 +57,7 @@ body {
 /* Make the masthead heading the same height as the navigation */
 .header h1 {
     margin-top: 0;
-    //margin-bottom: 20px;
     line-height: 40px;
-    //padding-bottom: 19px;
     font-family: Yellowtail, cursive, serif;
 }
 
@@ -118,7 +116,22 @@ body {
 
 //custom additions
 
+//angular-ui pointers
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+.nav-tabs {
+  border-bottom: 1px solid $mg-mid;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: $mg-white;
+  border: 1px solid $mg-mid;
+  border-bottom-color: transparent;
+  background: $mg-dark;
+}
 
 .nav > li > a:hover,
 .nav > li > a:focus {
@@ -126,6 +139,25 @@ body {
   background-color: $mg-dark;
   color: $mg-white;
 }
+
+
+table > thead > tr > th,
+table > tbody > tr > td{
+  text-align: center;
+}
+
+.table{
+  margin-bottom: 10px;
+}
+.table > thead > tr > th {
+  border-bottom: 1px solid $mg-white;
+}
+
+
+.input-group-addon {
+  background-color: $mg-mid;
+}
+
 
 .well{
   border-color: $mg-mid;
@@ -171,14 +203,9 @@ body {
   max-height: 300px;
 }
 
-.table{
-  margin-bottom: 10px;
-}
-.table > thead > tr > th {
-  border-bottom: 1px solid $mg-white;
-}
 
-.teamWell{
+
+.mg_well{
   //border: solid 1px $mg-mid;
   padding: 0 20px 0 20px;
 }
@@ -188,9 +215,7 @@ span.h3 > small{
   margin-left: 10px;
 }
 
-.input-group-addon {
-  background-color: $mg-mid;
-}
+
 
 .positive{
   background-color: $brand-success;
@@ -201,6 +226,7 @@ span.h3 > small{
 }
 
 .chatbox{
+  height: 200px;
   background: $mg-darkest;
   border-top: solid 1px $mg-mid;
   border-right: solid 1px $mg-mid;
@@ -209,29 +235,4 @@ span.h3 > small{
   margin-bottom: 0;
 }
 
-.leagueBox{
-  border-bottom: solid 1px $mg-mid;
-  border-right: solid 1px $mg-mid;
-  border-left: solid 1px $mg-mid;
-  background: $mg-dark;
-  padding-bottom: 14px;
-  margin-bottom: 20px;
-}
 
-.nav-tabs {
-  border-bottom: 1px solid $mg-mid;
-}
-
-.nav-tabs > li.active > a,
-.nav-tabs > li.active > a:hover,
-.nav-tabs > li.active > a:focus {
-  color: $mg-white;
-  border: 1px solid $mg-mid;
-  border-bottom-color: transparent;
-  background: $mg-dark;
-}
-
-table > thead > tr > th,
-table > tbody > tr > td{
-  text-align: center;
-}

@@ -1,0 +1,43 @@
+div.row(data-ng-controller="editLeaguesCtrl")
+
+    div.col-sm-12
+        .well
+            table.table.table-responsive()
+                legend My leagues
+                thead.text-muted
+                    th Name
+                    th Edit
+                    th Delete
+                    th Leave
+                    th View
+                tbody
+                    tr(data-ng-repeat="league in leagues")
+                        td
+                            h5 {{league.leagueName}}
+                        td
+                            button.btn.btn-primary.btn-sm.h5(data-ng-click="leaveLeague(league._id)")
+                                span.glyphicon.glyphicon-edit
+                        td
+                            button.btn.btn-danger.btn-sm(ng-href="{{'/league/' + league._id}}")
+                                span.glyphicon.glyphicon-remove
+                        td
+                            button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)")
+                                span.glyphicon.glyphicon-new-window
+                        td
+                            a.btn.btn-success.btn-sm(ng-href="{{'/league/' + league._id}}")
+                                span.glyphicon.glyphicon-picture
+    div.col-sm-12
+        div.well
+            form(role='form', name='LeagueForm', data-ng-submit='createLeague(newLeague)')
+                legend Create a new league
+                .form-group
+                    label.control-label(for='1') League Name
+                    input.form-control(type='text', name='leagueName', required, data-ng-model='newLeague.leagueName')
+                //.form-group
+                    label.control-label(for='1') Location
+                    input.form-control(type='text', name='leagueLocation', required, data-ng-model='newLeague.location')
+
+
+                button.btn.btn-success.pull-right(type='submit') Create
+                .clearfix
+
