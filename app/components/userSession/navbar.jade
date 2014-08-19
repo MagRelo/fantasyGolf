@@ -1,4 +1,4 @@
-div.row.header(ng-controller='NavbarCtrl')
+div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
 
     button.btn.btn-sm.btn-danger.pull-right(ng-click='logout()') Logout
 
