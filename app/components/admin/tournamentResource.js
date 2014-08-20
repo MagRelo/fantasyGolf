@@ -19,6 +19,15 @@ angular.module('fantasyGolfApp')
       },
       deleteTournament: function(tournamentId){
         return $http.del('/api/tournament/' + tournamentId);
+      },
+      runSetup: function(){
+        return $http.post('/api/admin/setup');
+      },
+      calcPlayers: function(){
+        return $http.post('/api/admin/calcplayers');
+      },
+      calcTeams: function(){
+        return $http.post('/api/admin/calcteams');
       }
     };
 

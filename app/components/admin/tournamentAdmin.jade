@@ -76,14 +76,25 @@ div(data-ng-controller="tournamentAdminCtrl")
             p run the tournament setup. will delete all players*
             button.btn.btn-danger(data-ng-click="runSetup()") Run Setup
 
+            alert(type="info", ng-show="setupResponse") {{setupResponse}}
+            alert(type="danger", ng-show="setupError") {{setupError}}
+
         .admin_buttonbox
             h3 Calc player scores
             p recalc player scores
             button.btn.btn-primary(data-ng-click="calcPlayerScores()") Calc player scores
 
+            alert(type="success", ng-show="playerResponse") {{playerResponse}}
+            alert(type="danger", ng-show="playerError") {{playerError}}
+
         .admin_buttonbox
             h3 Calc team scores
             p recalc team scores
             button.btn.btn-primary(data-ng-click="calcTeamScores()") Calc team scores
+
+            alert(type="info", ng-show="teamResponse") {{teamResponse}}
+            alert(type="danger", ng-show="teamError.status", close="teamError = {}")
+                h4 status: {{teamError.status}}
+                p {{teamError.name}}: {{teamError.message}}
 
 
