@@ -47,18 +47,23 @@ angular.module('fantasyGolfApp')
 
       League.joinLeague(leagueId, teamId)
         .then(function(result){
-          $scope.leagues = result.data;
-        },function(error){
+          $scope.leagues = markActiveLeagues(teamId, result.data);
+          },function(error){
         }
       )
+
     };
 
-    $scope.leaveLeague = function(league, teamId){
+    $scope.leaveLeague = function(leagueId, teamId){
 
       League.leaveLeague(leagueId, teamId)
-        .then(
-        function(result){},
-        function(error){}
+        .then(function(result){
+
+
+
+          $scope.leagues = markActiveLeagues(teamId, result.data);
+        },function(error){
+        }
       )
 
     };
@@ -66,7 +71,7 @@ angular.module('fantasyGolfApp')
   });
 
 
-//flag leagues the team is in in order to filter list of available leagues to join
+//flag leagues to filter the list of available leagues to join
 var markActiveLeagues = function(teamId, leagues){
 
   angular.forEach(leagues, function(league){
@@ -80,5 +85,4 @@ var markActiveLeagues = function(teamId, leagues){
   });
 
   return leagues;
-
 };

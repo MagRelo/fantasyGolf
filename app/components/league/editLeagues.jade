@@ -10,10 +10,10 @@ div.row(data-ng-controller="editLeaguesCtrl")
                 tbody
                     tr(data-ng-repeat="league in team.leagues")
                         td
-                            a.h5(ng-href="league/{{league.leagueName}}")
+                            a.h5(ng-href="league/{{league._id}}") {{league.leagueName}}
 
                         td
-                            button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id)")
+                            button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id, currentUser.teamId)")
                                 span.glyphicon.glyphicon-new-window
 
     div.col-sm-4
@@ -42,12 +42,6 @@ div.row(data-ng-controller="editLeaguesCtrl")
                 .form-group
                     label.control-label(for='name') League Name
                     input.form-control(type='text', name='name', required, data-ng-model='newLeague.leagueName')
-                .form-group
-                    label.control-label(for='private') Private?
-                    input.form-control(type='checkbox', name='private', required, data-ng-model='newLeague.private')
-                .form-group
-                    label.control-label(for='password') Password
-                    input.form-control(type='text', name='password', required, data-ng-model='newLeague.password')
 
                 button.btn.btn-success.pull-right(type='submit') Create
                 .clearfix
