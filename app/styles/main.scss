@@ -46,35 +46,15 @@ body {
     padding-bottom: 20px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+.header{
   margin-bottom: 20px;
-
 }
 
-/* Make the masthead heading the same height as the navigation */
 .header h1 {
     margin-top: 0;
     line-height: 40px;
     font-family: Yellowtail, cursive, serif;
 }
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-
 
 .front h1{
   font-size: 70px;
@@ -82,54 +62,12 @@ body {
   text-shadow: 1px 1px 0 black, -2px 2px 40px $brand-primary;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .container {
-        max-width: 860px;
-    }
-
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-        //background-image: url('/images/sunset1.jpg');
-        height: 413px;
-        //background-position-y: -120px;
-        padding-top: 5px;
-        text-align: left;
-    }
-
-    .jumbotron > h1{
-      padding-top: 280px;
-    }
-
-}
 
 //custom additions
 
 //angular-ui pointers
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-
-//.nav-tabs {
-//  border-bottom: 1px solid $mg-mid;
-//}
-//
-//.nav-tabs > li.active > a,
-//.nav-tabs > li.active > a:hover,
-//.nav-tabs > li.active > a:focus {
-//  color: $mg-white;
-//  border: 1px solid $mg-mid;
-//  border-bottom-color: transparent;
-//  background: $mg-dark;
-//}
 
 .nav > li > a:hover,
 .nav > li > a:focus {

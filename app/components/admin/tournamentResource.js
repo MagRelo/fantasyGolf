@@ -7,7 +7,7 @@ angular.module('fantasyGolfApp')
       getTournament: function () {
         return promiseCache({
           promise: function () {
-            return $http.get('/api/tournament/');
+            return $http.get('/api/pga/setup');
           },
           ttl: 30000
         });
