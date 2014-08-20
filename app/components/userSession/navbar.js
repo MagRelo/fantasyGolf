@@ -13,7 +13,10 @@ angular.module('fantasyGolfApp')
     }, {
       'title': 'leaderboard',
       'link': '/leaderboard'
-    }];
+    },{
+        'title': 'settings',
+        'link': '/settings'
+      }];
     
     $scope.logout = function() {
       Auth.logout()

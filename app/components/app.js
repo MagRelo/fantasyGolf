@@ -42,8 +42,8 @@ angular.module('fantasyGolfApp', [
         controller: 'PlayerCtrl',
         authenticate: true
       })
-      .when('/setup', {
-        templateUrl: 'components/userSession/setup',
+      .when('/settings', {
+        templateUrl: 'components/userSession/settings',
         authenticate: true
       })
       .when('/leaderboard', {
