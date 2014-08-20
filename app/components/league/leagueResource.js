@@ -27,37 +27,21 @@ angular.module('fantasyGolfApp')
         promiseCache.remove('listLeagues', false);
         return $http.post('/api/league/', newLeague);
       },
-      updateLeague: function(leagueId, newLeague){
+      updateLeague: function(leagueId, league){
         //bust cache
         promiseCache.remove('listLeagues', false);
-        return $http.put('/api/league/' + leagueId, newLeague);
+        return $http.put('/api/league/' + leagueId, league);
       },
       deleteLeague: function(leagueId){
         return $http.del('/api/league/' + leagueId);
+      },
+      joinLeague: function(leagueId, teamId){
+        return $http.put('/api/league/join', {leagueId: leagueId, teamId: teamId});
+      },
+      leaveLeague: function(leagueId, teamId){
+        return $http.put('/api/league/leave', {leagueId: leagueId, teamId: teamId});
       }
     };
 
 
-//    return $resource('/api/league/:id',
-//      {
-//        id: '@_id'
-//      },
-//      {
-//        join: {
-//          method: 'PUT',
-//          isArray: true,
-//          params: {id: 'join'}
-//        },
-//        leave: {
-//          method: 'PUT',
-//          isArray: true,
-//          params: {id: 'leave'}
-//        },
-//        create: {
-//          isArray: true,
-//          method: 'POST'
-//        }
-//      }
-//    );
-//
   });

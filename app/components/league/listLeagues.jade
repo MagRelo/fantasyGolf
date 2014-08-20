@@ -9,7 +9,7 @@ div.row(data-ng-controller="listLeaguesCtrl")
             |  Edit Leagues
         .clearfix
 
-    div(ng-repeat="league in leagues")
+    div(ng-repeat="league in team.leagues")
 
         .col-sm-12
             h3 {{league.leagueName}}
@@ -18,7 +18,7 @@ div.row(data-ng-controller="listLeaguesCtrl")
         .col-sm-8
             //chat
             .well
-                .chatbox
+                .league_chatbox
                 .input-group
                     input.form-control(type="text")
                     span.input-group-btn
@@ -29,5 +29,5 @@ div.row(data-ng-controller="listLeaguesCtrl")
 
         .col-sm-4
             .well
-                .chatbox
+                .league_leaderbox
             //league leaderboard

@@ -221,12 +221,20 @@ span.h3 > small{
   background-color: $brand-danger;
 }
 
-.chatbox{
+.league_chatbox{
   height: 200px;
   background: $mg-darkest;
   border-top: solid 1px $mg-mid;
   border-right: solid 1px $mg-mid;
   border-left: solid 1px $mg-mid;
+  padding: 8px;
+  margin-bottom: 0;
+}
+
+.league_leaderbox{
+  height: 234px;
+  background: $mg-darkest;
+  border: solid 1px $mg-mid;
   padding: 8px;
   margin-bottom: 0;
 }
