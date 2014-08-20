@@ -38,7 +38,7 @@ angular.module('fantasyGolfApp', [
         authenticate: true
       })
       .when('/player/:playerId', {
-        templateUrl: 'components/player/player',
+        templateUrl: 'components/pga/player',
         controller: 'PlayerCtrl',
         authenticate: true
       })
@@ -47,7 +47,7 @@ angular.module('fantasyGolfApp', [
         authenticate: true
       })
       .when('/leaderboard', {
-        templateUrl: 'components/leaderboard/leaderboard',
+        templateUrl: 'components/pga/leaderboard',
         authenticate: true
       })
       .otherwise({
