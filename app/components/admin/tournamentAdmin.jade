@@ -51,6 +51,24 @@ div(data-ng-controller="tournamentAdminCtrl")
             alert(type="danger", ng-show="tournamentError") {{tournamentError}}
 
     .well
+
+        form.form-horizontal
+
+            legend edit player
+            .form-group
+                .col-sm-2
+                    label.control-label Player
+                .col-sm-8
+
+                    select(class="form-control", ng-model="editPlayerId", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
+                        option Editable
+                        option Locked
+
+                .col-sm-2
+                    a.btn.btn-primary() edit player
+
+
+    .well
         legend run functions
 
         .admin_buttonbox
