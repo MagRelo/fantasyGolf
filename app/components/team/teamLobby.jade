@@ -1,6 +1,10 @@
 .row
     .col-sm-12
-        a.btn.btn-primary.pull-right(href="/editteam") Edit Team
+
+        a.btn.btn-primary.pull-right(href="/editteam")
+            span.glyphicon.glyphicon-edit
+            |  Edit Team
+        .clearfix
 
     .col-sm-12
         div(ng-include='\'components/team/displayTeam\'')
