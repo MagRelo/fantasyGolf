@@ -1,0 +1,53 @@
+.well(data-ng-controller="tournamentAdminCtrl")
+
+    form(role='form', name='TournamentForm')
+        legend edit tournament
+
+        .form-group
+            label.control-label(for='name') Tournament Name
+            input.form-control(type='text', name='name', required='required', data-ng-model='tournament.name')
+
+        .form-group
+            label.control-label(for='date') Date
+            input.form-control(type='text', name='date', required='required', data-ng-model='tournament.date')
+
+        .form-group
+            label.control-label(for='location') Location
+            input.form-control(type='text', name='location', required='required', data-ng-model='tournament.location')
+
+        .form-group
+            label.control-label(for='ownerName') Status
+            select(class="form-control", ng-model="tournament.status")
+                option in progress
+                option not in progress
+
+
+        //buttons
+        ul.list-inline.text-center(collapse='!TournamentForm.$dirty')
+            li
+                button.btn.btn-success(data-ng-click="saveTournament(tournament)") Save Changes
+            li
+                button.btn.btn-danger(data-ng-click="cancel()") Cancel
+
+            h5.text-success(data-ng-show='updated && TournamentForm.$pristine') All changes saved &#x2713;
+
+        alert(type="danger", ng-show="tournamentError") {{tournamentError}}
+
+    legend run functions
+
+    .admin_buttonbox
+        h3 Run setup
+        p run the tournament setup. will delete all players*
+        button.btn.btn-danger(data-ng-click="runSetup()") Run Setup
+
+    .admin_buttonbox
+        h3 Calc player scores
+        p recalc player scores
+        button.btn.btn-primary(data-ng-click="calcPlayerScores()") Calc player scores
+
+    .admin_buttonbox
+        h3 Calc team scores
+        p recalc team scores
+        button.btn.btn-primary(data-ng-click="calcTeamScores()") Calc team scores
+
+

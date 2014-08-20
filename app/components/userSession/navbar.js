@@ -16,7 +16,10 @@ angular.module('fantasyGolfApp')
     },{
         'title': 'settings',
         'link': '/settings'
-      }];
+    },{
+        'title': 'admin',
+        'link': '/admin'
+    }];
     
     $scope.logout = function() {
       Auth.logout()

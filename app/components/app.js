@@ -42,12 +42,16 @@ angular.module('fantasyGolfApp', [
         controller: 'PlayerCtrl',
         authenticate: true
       })
+      .when('/leaderboard', {
+        templateUrl: 'components/pga/leaderboard',
+        authenticate: true
+      })
       .when('/settings', {
         templateUrl: 'components/userSession/settings',
         authenticate: true
       })
-      .when('/leaderboard', {
-        templateUrl: 'components/pga/leaderboard',
+      .when('/admin', {
+        templateUrl: 'components/admin/tournamentAdmin',
         authenticate: true
       })
       .otherwise({
