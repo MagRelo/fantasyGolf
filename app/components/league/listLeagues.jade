@@ -7,9 +7,9 @@ div.row(data-ng-controller="listLeaguesCtrl")
         a.btn.btn-primary.pull-right(href="/editleague")
             span.glyphicon.glyphicon-edit
             |  Edit Leagues
-        .clearfix
+    .clearfix
 
-    div(ng-repeat="league in team.leagues")
+    div.league_well(ng-repeat="league in team.leagues")
 
         .col-sm-12
             h3 {{league.leagueName}}
@@ -17,17 +17,15 @@ div.row(data-ng-controller="listLeaguesCtrl")
 
         .col-sm-8
             //chat
-            .well
-                .league_chatbox
-                .input-group
-                    input.form-control(type="text")
-                    span.input-group-btn
-                        button.btn.btn-success send
 
-
-
-
+            .league_chatbox
+            .input-group
+                input.form-control(type="text")
+                span.input-group-btn
+                    button.btn.btn-success send
         .col-sm-4
-            .well
-                .league_leaderbox
-            //league leaderboard
+            //leaders
+
+            .league_leaderbox
+
+        .clearfix

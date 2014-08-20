@@ -221,6 +221,13 @@ span.h3 > small{
   background-color: $brand-danger;
 }
 
+.league_well{
+  border: solid 1px $mg-mid;
+  margin-top: 20px;
+  background: $mg-dark;
+  padding-bottom: 15px;
+}
+
 .league_chatbox{
   height: 200px;
   background: $mg-darkest;
@@ -238,6 +245,8 @@ span.h3 > small{
   padding: 8px;
   margin-bottom: 0;
 }
+
+
 
 
 
