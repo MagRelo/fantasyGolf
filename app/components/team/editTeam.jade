@@ -13,12 +13,12 @@
 
         .form-group
             label.control-label(for='ownerName') Player 1
-            select(class="form-control", ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+            select.form-control(required, ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
                 option select player
 
         .form-group
             label.control-label(for='ownerName') Player 2
-            select(class="form-control", ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+            select.form-control(required, ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
                 option select player
 
         .form-group
@@ -28,14 +28,14 @@
 
         .form-group
             label.control-label(for='ownerName') Player 4
-            select(class="form-control", ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+            select.form-control(required, ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
                 option select player
 
 
         //buttons
         ul.list-inline.text-center(collapse='!TeamForm.$dirty')
             li
-                button.btn.btn-success(data-ng-click="saveTeam(team)") Save Changes
+                button.btn.btn-success(type="submit", ng-click="saveTeam(team)", ng-disabled="TeamForm.$error" ) Save Changes
             li
                 button.btn.btn-danger(data-ng-click="cancel()") Cancel
 
