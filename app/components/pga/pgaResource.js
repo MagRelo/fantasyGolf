@@ -13,12 +13,7 @@ angular.module('fantasyGolfApp')
         });
       },
       getPlayer: function(playerId) {
-        return promiseCache({
-          promise: function() {
-            return $http.get('/api/pga/player/' + playerId);
-          },
-          ttl: 900000 //15 min
-        });
+        return $http.get('/api/pga/player/' + playerId);
       },
       getField: function() {
         return promiseCache({
