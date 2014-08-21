@@ -28,7 +28,7 @@ angular.module('fantasyGolfApp')
         //pad out rounds for player that missed the cut
         angular.forEach([$scope.team.player1, $scope.team.player2, $scope.team.player3, $scope.team.player4],
           function(playerData){
-            if(playerData.rounds){
+            if(playerData){
               while(playerData.rounds.length < $scope.event.currentRnd){
                 playerData.rounds.push({
                   sc: '--',

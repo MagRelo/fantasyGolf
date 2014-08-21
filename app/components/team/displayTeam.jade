@@ -76,7 +76,7 @@ div(data-ng-controller="displayTeamCtrl")
                     h4 {{team.player4.name.first + ' ' + team.player4.name.last}}
                     a(ng-href="{{'/player/' + team.player4.id}}")
                         span.glyphicon.glyphicon-list
-                        | scorecard
+                        |  scorecard
                 td.hidden-xs(data-ng-repeat="round in team.player4.rounds")
                     h5 {{round.modstable}}
                 td
