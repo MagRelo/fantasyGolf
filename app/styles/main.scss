@@ -68,14 +68,12 @@ body {
 //angular-ui pointers
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
   background-color: $mg-dark;
   color: $mg-white;
 }
-
 
 table > thead > tr > th,
 table > tbody > tr > td{
@@ -89,11 +87,9 @@ table > tbody > tr > td{
   border-bottom: 1px solid $mg-white;
 }
 
-
 .input-group-addon {
   background-color: $mg-mid;
 }
-
 
 .well{
   border-color: $mg-mid;
@@ -113,34 +109,6 @@ table > tbody > tr > td{
   margin-top: 2px;
 }
 
-.allPlayerList {
-  max-height: 400px;
-  overflow: auto;
-
-}
-
-.teamTable{
-  padding: 0 30px;
-}
-
-.playerList{
-  margin-bottom: 3px;
-}
-
-.leagueList {
-  overflow: auto;
-  border: solid 1px gray;
-  border-radius: 4px;
-  padding: 20px 40px;
-  background: $mg-dark;
-}
-
-.tableHeight{
-  max-height: 300px;
-}
-
-
-
 .mg_well{
   padding: 0 20px 0 20px;
 }
@@ -149,8 +117,6 @@ h3 > small,
 span.h3 > small{
   margin-left: 10px;
 }
-
-
 
 .positive{
   background-color: $brand-success;
@@ -193,6 +159,180 @@ span.h3 > small{
 
 
 
+
+
+/*____Loading Spinner*/
+//
+//.loadingtext{
+//
+//  width: 400px;
+//  position: absolute;
+//  top: 40%;
+//  margin-top: -100px;
+//  left: 50%;
+//  margin-left: -200px;
+//  text-align: center;
+//  font-family: monospace;
+//  font-size: 19px;
+//  padding: 10px;
+//
+//  background: rgba(31, 56, 63, 0.85);
+//  color: #00B4CC;
+//
+//}
+
+.loadingPanel{
+  z-index: 1000;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+}
+
+.wrapperloading {
+  position: absolute;
+  height: 200px;
+  width:  200px;
+  top: 50%;
+  margin-top: -100px;
+  left: 50%;
+  margin-left: -100px;
+
+  background: $mg-darkest;
+  border-radius: 0;
+}
+
+.wrapperloading .loading_up {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border-radius: 150px;
+
+  border: 4px solid $mg-white;
+  border-top-color: $mg-white;
+  border-bottom-color: $mg-white;
+  border-left-color: $brand-primary;
+  border-right-color: $brand-primary;
+
+  background: $mg-darkest;
+  -webkit-animation: rotation 3s linear infinite;
+  -moz-animation: rotation 3s linear infinite;
+  -o-animation: rotation 3s linear infinite;
+  animation: rotation 3s linear infinite;
+}
+.wrapperloading .loading_down {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 50%;
+  margin-top: -50px;
+  left: 50%;
+  margin-left: -50px;
+  border-radius: 150px;
+
+  border: 4px solid $mg-white;
+  border-right-color: $mg-white;
+  border-left-color: $mg-white;
+  border-top-color: $brand-primary;
+  border-bottom-color: $brand-primary;
+
+  -webkit-animation: rotation 1s linear infinite;
+  -moz-animation: rotation 1s linear infinite;
+  -o-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+}
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*____Loading Spinner*/
 
 
 
