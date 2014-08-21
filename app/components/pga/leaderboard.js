@@ -6,19 +6,17 @@ angular.module('fantasyGolfApp')
     $scope.dataLoaded = false;
 
     pga.getLeaderboard()
-      .then(
-        function(result){
+      .then(function(result){
           $scope.players = result.data.players;
           $scope.courses = result.data.courses;
           $scope.info = result.data.info;
-
-          $scope.dataLoaded = true;
-        },
-        function(error){
+        },function(error){
           $scope.error = error;
-
+        })
+      //hide loading spinner
+      .then(function(){
           $scope.dataLoaded = true;
         }
-    );
+      );
 
   });
