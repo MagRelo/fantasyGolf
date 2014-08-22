@@ -31,6 +31,9 @@ angular.module('fantasyGolfApp')
       runSetup: function(){
         return $http.post('/api/admin/setup');
       },
+      refreshSetup: function(){
+        return $http.post('/api/admin/refreshsetup');
+      },
       calcPlayers: function(){
         return $http.post('/api/admin/calcplayers');
       },

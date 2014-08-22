@@ -96,6 +96,15 @@ div(data-ng-controller="tournamentAdminCtrl")
 
             .col-sm-4
                 .admin_buttonbox
+                    h3 Refresh setup
+                    p update setup file only
+                    button.btn.btn-primary(data-ng-click="runRefreshSetup()") Refresh Setup
+
+                    alert(type="info", ng-show="RefreshSetupResponse") {{refresResponse}}
+                    alert(type="danger", ng-show="RefreshSetupError") {{refreshError}}
+
+            .col-sm-4
+                .admin_buttonbox
                     h3 Calc player scores
                     p recalc player scores
                     button.btn.btn-primary(data-ng-click="calcPlayerScores()") Calc player scores

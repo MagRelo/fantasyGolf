@@ -21,18 +21,21 @@ angular.module('fantasyGolfApp')
       });
 
     $scope.runSetup = function(){
-
       Tournament.runSetup()
         .then(function(result){
-
           $scope.setupResponse = result.data;
-
         },function(error){
-
           $scope.setupError = error;
-
         })
+    };
 
+    $scope.runRefreshSetup = function(){
+      Tournament.refreshSetup()
+        .then(function(result){
+          $scope.refreshSetupResponse = result.data;
+        },function(error){
+          $scope.refreshSetupError = error;
+        })
     };
 
     $scope.calcPlayerScores = function(){
