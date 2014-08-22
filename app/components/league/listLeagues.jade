@@ -27,7 +27,7 @@ div(data-ng-controller="listLeaguesCtrl")
                 .league_chatbox
                     p(ng-repeat="msg in league.chat | orderBy:'modified':true")
                         span.text-primary {{msg.name}}
-                        span.text-muted  {{msg.modified| date:'EEE, h:m a'}} -
+                        span.text-muted  {{msg.modified| date:'EEE, h:mm a'}} -
                         |  {{msg.message}}
 
             .col-sm-4
