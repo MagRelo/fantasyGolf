@@ -62,4 +62,18 @@ angular.module('fantasyGolfApp')
         })
     };
 
+
+    $scope.calcLeagues = function(){
+
+      Tournament.calcLeagues()
+        .then(function(result){
+          $scope.leagueResponse = result.data;
+        },function(error){
+          $scope.leagueError = error.data;
+          $scope.leagueError.status = error.status;
+        })
+    };
+
+
+
   });

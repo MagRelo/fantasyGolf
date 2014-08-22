@@ -39,6 +39,9 @@ angular.module('fantasyGolfApp')
       },
       calcTeams: function(){
         return $http.post('/api/admin/calcteams');
+      },
+      calcLeagues: function(){
+        return $http.post('/api/admin/calcleagues');
       }
     };
 

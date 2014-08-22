@@ -123,4 +123,13 @@ div(data-ng-controller="tournamentAdminCtrl")
                         h4 status: {{teamError.status}}
                         p {{teamError.name}}: {{teamError.message}}
 
+            .col-sm-4
+                .admin_buttonbox
+                    h3 Calc league scores
+                    p recalc league scores
+                    button.btn.btn-primary(data-ng-click="calcLeagues()") Calc league scores
 
+                    alert(type="info", ng-show="leagueResponse") {{leagueResponse}}
+                    alert(type="danger", ng-show="leagueError.status", close="leagueError = {}")
+                        h4 status: {{leagueError.status}}
+                        p {{leagueError.name}}: {{leagueError.message}}
