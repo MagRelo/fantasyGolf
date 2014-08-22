@@ -35,7 +35,7 @@
         //buttons
         ul.list-inline.text-center(collapse='!TeamForm.$dirty')
             li
-                button.btn.btn-success(type="submit", ng-click="saveTeam(team)", ng-disabled="TeamForm.$error" ) Save Changes
+                button.btn.btn-success(type="submit", ng-click="saveTeam(team)", ng-disabled="TeamForm.$invalid" ) Save Changes
             li
                 button.btn.btn-danger(data-ng-click="cancel()") Cancel
 
