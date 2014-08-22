@@ -25,8 +25,8 @@ angular.module('fantasyGolfApp')
 
       League.createLeague(newLeague)
         .then(
-          function(response){
-            $scope.leagues = response.data;
+          function(result){
+            $scope.leagues = markActiveLeagues(teamId, result.data);
             $scope.newLeague = {};
             $scope.LeagueForm.$setPristine();
           },

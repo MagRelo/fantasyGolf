@@ -5,19 +5,16 @@ div(data-ng-controller="listLeaguesCtrl")
 
     .row
         .col-sm-12
-            a.btn.btn-primary.pull-right(href="/editleague")
+            a.btn.btn-primary.mg-buttongroup.pull-right(href="/editleague")
                 span.glyphicon.glyphicon-edit
                 |  Edit Leagues
         .clearfix
 
     div.well.league_well(ng-repeat="league in team.leagues")
         .row
-            .col-sm-12
-                h2 {{league.leagueName}}
-                    small {{league.location}}
-
             .col-sm-8
-                //chat
+                h3 {{league.leagueName}}
+                small {{league.location}}
 
                 .input-group
                     input.form-control(type="text", ng-model="chatMessage")
@@ -31,8 +28,11 @@ div(data-ng-controller="listLeaguesCtrl")
                         |  {{msg.message}}
 
             .col-sm-4
-                //leaders
 
+                h3 Leaderboard
                 .league_leaderbox
+                    p(ng-repeat="team in league.leaderboard | orderBy:'score':true")
+                        span.text-primary {{team.teamName}}
+                        span.pull-right {{team.score}}
 
             .clearfix
