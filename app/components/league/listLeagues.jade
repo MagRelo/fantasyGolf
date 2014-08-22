@@ -1,31 +1,32 @@
 //
    Created by mattlovan on 8/18/14.
 
-div.row(data-ng-controller="listLeaguesCtrl")
+div(data-ng-controller="listLeaguesCtrl")
 
-    .col-sm-12
-        a.btn.btn-primary.pull-right(href="/editleague")
-            span.glyphicon.glyphicon-edit
-            |  Edit Leagues
-    .clearfix
-
-    div.league_well(ng-repeat="league in team.leagues")
-
+    .row
         .col-sm-12
-            h3 {{league.leagueName}}
-                small {{league.location}}
-
-        .col-sm-8
-            //chat
-
-            .league_chatbox
-            .input-group
-                input.form-control(type="text")
-                span.input-group-btn
-                    button.btn.btn-success send
-        .col-sm-4
-            //leaders
-
-            .league_leaderbox
-
+            a.btn.btn-primary.pull-right(href="/editleague")
+                span.glyphicon.glyphicon-edit
+                |  Edit Leagues
         .clearfix
+
+    div.well(ng-repeat="league in team.leagues")
+        .row
+            .col-sm-12
+                h3 {{league.leagueName}}
+                    small {{league.location}}
+
+            .col-sm-8
+                //chat
+
+                .league_chatbox
+                .input-group
+                    input.form-control(type="text")
+                    span.input-group-btn
+                        button.btn.btn-success send
+            .col-sm-4
+                //leaders
+
+                .league_leaderbox
+
+            .clearfix
