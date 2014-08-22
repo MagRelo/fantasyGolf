@@ -23,7 +23,6 @@ angular.module('fantasyGolfApp')
         });
       },
       createLeague: function(newLeague){
-        //bust cache
         promiseCache.remove('listLeagues', false);
         return $http.post('/api/league/', newLeague);
       },
@@ -36,12 +35,16 @@ angular.module('fantasyGolfApp')
         return $http.del('/api/league/' + leagueId);
       },
       joinLeague: function(leagueId, teamId){
+        promiseCache.remove('getTeam', false);
         return $http.put('/api/league/join', {leagueId: leagueId, teamId: teamId});
       },
       leaveLeague: function(leagueId, teamId){
+        promiseCache.remove('getTeam', false);
+        promiseCache.remove('listLeagues', false);
         return $http.put('/api/league/leave', {leagueId: leagueId, teamId: teamId});
       },
       addChat: function(message, leagueId, teamId){
+        promiseCache.remove('getTeam', false);
         return $http.put('/api/league/chat', {message: message, leagueId: leagueId, teamId: teamId});
       }
     };

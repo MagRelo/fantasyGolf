@@ -15,8 +15,6 @@ angular.module('fantasyGolfApp')
         });
       },
       updateTeam: function (team, teamId) {
-
-        //bust cache
         promiseCache.remove('getTeam', false);
 
         return $http.put('/api/team/' + teamId, team);

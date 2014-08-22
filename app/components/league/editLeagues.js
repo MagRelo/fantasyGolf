@@ -5,13 +5,13 @@ angular.module('fantasyGolfApp')
 
     var teamId = $scope.currentUser.teamId;
 
-    Team.getTeam(teamId)
-      .then(function(result){
-        $scope.team = result.data;
-      },function(error){
-        $scope.error = error;
-      }
-    );
+//    Team.getTeam(teamId)
+//      .then(function(result){
+//        $scope.team = result.data;
+//      },function(error){
+//        $scope.error = error;
+//      }
+//    );
 
     League.listLeagues()
       .then(function(result) {
@@ -30,16 +30,11 @@ angular.module('fantasyGolfApp')
             $scope.newLeague = {};
             $scope.LeagueForm.$setPristine();
           },
-          function(error){}
+          function(error){
+            $scope.leagueError = error.data;
+            $scope.leagueError.status = error.status;
+          }
         )
-
-    };
-
-    $scope.editLeague = function(leagueId, newLeague){
-
-      //remove team id from league?
-
-      League.updateLeague(leagueId, newLeague)
 
     };
 
@@ -49,20 +44,20 @@ angular.module('fantasyGolfApp')
         .then(function(result){
           $scope.leagues = markActiveLeagues(teamId, result.data);
           },function(error){
+          $scope.leagueError = error.data;
+          $scope.leagueError.status = error.status;
         }
       )
 
     };
 
     $scope.leaveLeague = function(leagueId, teamId){
-
       League.leaveLeague(leagueId, teamId)
         .then(function(result){
-
-
-
           $scope.leagues = markActiveLeagues(teamId, result.data);
         },function(error){
+          $scope.leagueError = error.data;
+          $scope.leagueError.status = error.status;
         }
       )
 

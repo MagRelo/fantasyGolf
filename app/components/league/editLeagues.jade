@@ -1,5 +1,10 @@
 div.row(data-ng-controller="editLeaguesCtrl")
 
+    div.col-sm-12
+        alert(type="danger", ng-show="leagueError.status", close="leagueError = {}")
+            h4 status: {{leagueError.status}}
+            p {{leagueError.name}}: {{leagueError.message}}
+
     div.col-sm-4
         .well
             table.table.table-responsive()
@@ -8,7 +13,7 @@ div.row(data-ng-controller="editLeaguesCtrl")
                     th Name
                     th Leave
                 tbody
-                    tr(data-ng-repeat="league in team.leagues")
+                    tr(data-ng-repeat="league in leagues | filter:{active: true} ")
                         td
                             a.h5(ng-href="league/{{league._id}}") {{league.leagueName}}
 
