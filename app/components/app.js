@@ -29,7 +29,7 @@ angular.module('fantasyGolfApp', [
         controller: 'ViewLeagueCtrl',
         authenticate: true
       })
-      .when('/team', {
+      .when('/team/:teamId', {
         templateUrl: 'components/team/teamLobby',
         authenticate: true
       })

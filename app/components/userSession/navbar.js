@@ -9,7 +9,7 @@ angular.module('fantasyGolfApp')
       'link': '/leagues'
     }, {
       'title': 'team',
-      'link': '/team'
+      'link': '/team/' + $scope.currentUser.teamId
     }, {
       'title': 'leaderboard',
       'link': '/leaderboard'

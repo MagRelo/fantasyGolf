@@ -32,7 +32,7 @@ div(data-ng-controller="listLeaguesCtrl")
                 h3 Leaderboard
                 .league_leaderbox
                     p(ng-repeat="team in league.leaderboard | orderBy:'score':true")
-                        span.text-primary {{team.teamName}}
+                        a(ng-href="/team/{{team.teamId}}") {{team.teamName}}
                         span.pull-right {{team.score}}
 
             .clearfix

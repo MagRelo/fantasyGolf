@@ -1,14 +1,14 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('displayTeamCtrl', function ($scope, $q, pga, Team) {
+  .controller('displayTeamCtrl', function ($scope, $q, $routeParams, pga, Team) {
 
-    var userTeamId = $scope.currentUser.teamId;
+    var teamId = $routeParams.teamId;
     $scope.rounds = [];
 
     $q.all([
 
-      Team.getTeam(userTeamId),
+      Team.getTeam(teamId),
       pga.getSetup()
 
     ]).then(
