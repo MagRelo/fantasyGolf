@@ -152,9 +152,14 @@ span.h3 > small{
 }
 
 .admin_buttonbox{
-  margin-top: 20px;
+  margin-bottom: 20px;
   border: solid 1px $mg-mid;
   padding: 0 15px 15px 15px;
+}
+
+.alert{
+  margin-bottom: 0;
+  margin-top: 20px;
 }
 
 
@@ -200,7 +205,6 @@ span.h3 > small{
   background: $mg-darkest;
   border-radius: 0;
 }
-
 .wrapperloading .loading_up {
   position: absolute;
   height: 200px;

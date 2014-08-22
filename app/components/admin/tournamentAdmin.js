@@ -5,11 +5,19 @@ angular.module('fantasyGolfApp')
 
     $scope.editPlayerId = 0;
 
+
     Tournament.getTournament()
       .then(function(results){
         $scope.tournament = angular.copy(results.data);
       }, function(error){
         $scope.tournamentError = error;
+      });
+
+    Tournament.getPlayers()
+      .then(function(results){
+        $scope.players = angular.copy(results.data);
+      }, function(error){
+        $scope.playerError = error;
       });
 
     $scope.runSetup = function(){

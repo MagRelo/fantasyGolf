@@ -20,23 +20,21 @@ div(data-ng-controller="tournamentAdminCtrl")
                     input.form-control(type='text', name='location', ng-model='tournament.location')
 
                 .col-sm-6
-                    label.control-label(for='location') Time Zone
-                    input.form-control(type='text', name='location', ng-model='tournament.event.detailtz')
+                    label.control-label(for='ownerName') Status
+                    select(class="form-control", ng-model="tournament.status")
+                        option Editable
+                        option Locked
 
             .form-group
                 .col-sm-6
                     div
                         label.control-label(for='location') Status: {{tournament.event.CurRndState}}
-                    div
-                        label.control-label(for='location') Total Rounds: {{tournament.event.totalRnds}}
-                    div
-                        label.control-label(for='location') Current Round: {{tournament.event.currentRnd}}
 
                 .col-sm-6
-                    label.control-label(for='ownerName') Status
-                    select(class="form-control", ng-model="tournament.status")
-                        option Editable
-                        option Locked
+                    div
+                        label.control-label(for='location') Current Round: {{tournament.event.currentRnd}} of {{tournament.event.totalRnds}}
+
+
 
 
             //buttons
@@ -51,50 +49,69 @@ div(data-ng-controller="tournamentAdminCtrl")
             alert(type="danger", ng-show="tournamentError") {{tournamentError}}
 
     .well
-
         form.form-horizontal
-
             legend edit player
             .form-group
                 .col-sm-2
                     label.control-label Player
                 .col-sm-8
 
-                    select(class="form-control", ng-model="editPlayerId", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
+                    select(class="form-control", ng-model="editPlayerId", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in players")
                         option Editable
                         option Locked
 
                 .col-sm-2
-                    a.btn.btn-primary() edit player
+                    a.btn.btn-primary(ng-href="admin/player/{{editPlayerId}}", ng-disabled="!editPlayerId")
+                        span.glyphicon.glyphicon-edit
+                        |  edit player
+
+    .well
+        form.form-horizontal
+            legend edit team
+            .form-group
+                .col-sm-2
+                    label.control-label Team
+                .col-sm-8
+                    select(class="form-control", ng-model="editTeamId", ng-options="p.id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
+                        option Editable
+                        option Locked
+                .col-sm-2
+                    a.btn.btn-primary(ng-href="admin/player/{{editTeamId}}", ng-disabled="!editTeamId")
+                        span.glyphicon.glyphicon-edit
+                        |  edit team
+
 
 
     .well
         legend run functions
+        .row
+            .col-sm-4
+                .admin_buttonbox
+                    h3 Run setup
+                    p will delete all players*
+                    button.btn.btn-danger(data-ng-click="runSetup()") Run Setup
 
-        .admin_buttonbox
-            h3 Run setup
-            p run the tournament setup. will delete all players*
-            button.btn.btn-danger(data-ng-click="runSetup()") Run Setup
+                    alert(type="info", ng-show="setupResponse") {{setupResponse}}
+                    alert(type="danger", ng-show="setupError") {{setupError}}
 
-            alert(type="info", ng-show="setupResponse") {{setupResponse}}
-            alert(type="danger", ng-show="setupError") {{setupError}}
+            .col-sm-4
+                .admin_buttonbox
+                    h3 Calc player scores
+                    p recalc player scores
+                    button.btn.btn-primary(data-ng-click="calcPlayerScores()") Calc player scores
 
-        .admin_buttonbox
-            h3 Calc player scores
-            p recalc player scores
-            button.btn.btn-primary(data-ng-click="calcPlayerScores()") Calc player scores
+                    alert(type="success", ng-show="playerResponse") {{playerResponse}}
+                    alert(type="danger", ng-show="playerError") {{playerError}}
 
-            alert(type="success", ng-show="playerResponse") {{playerResponse}}
-            alert(type="danger", ng-show="playerError") {{playerError}}
+            .col-sm-4
+                .admin_buttonbox
+                    h3 Calc team scores
+                    p recalc team scores
+                    button.btn.btn-primary(data-ng-click="calcTeamScores()") Calc team scores
 
-        .admin_buttonbox
-            h3 Calc team scores
-            p recalc team scores
-            button.btn.btn-primary(data-ng-click="calcTeamScores()") Calc team scores
-
-            alert(type="info", ng-show="teamResponse") {{teamResponse}}
-            alert(type="danger", ng-show="teamError.status", close="teamError = {}")
-                h4 status: {{teamError.status}}
-                p {{teamError.name}}: {{teamError.message}}
+                    alert(type="info", ng-show="teamResponse") {{teamResponse}}
+                    alert(type="danger", ng-show="teamError.status", close="teamError = {}")
+                        h4 status: {{teamError.status}}
+                        p {{teamError.name}}: {{teamError.message}}
 
 

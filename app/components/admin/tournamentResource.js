@@ -12,6 +12,14 @@ angular.module('fantasyGolfApp')
           ttl: 30000
         });
       },
+      getPlayers: function () {
+        return promiseCache({
+          promise: function () {
+            return $http.get('/api/pga/field');
+          },
+          ttl: 30000
+        });
+      },
       updateTournament: function(tournamentId, tournament){
         //bust cache
         promiseCache.remove('listTournaments', false);
