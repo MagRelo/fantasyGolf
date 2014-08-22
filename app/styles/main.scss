@@ -127,20 +127,19 @@ span.h3 > small{
 }
 
 .league_well{
-  border: solid 1px $mg-mid;
-  margin-top: 20px;
-  background: $mg-dark;
-  padding-bottom: 15px;
+  padding: 0 19px 19px 19px;
 }
 
 .league_chatbox{
   height: 200px;
   background: $mg-darkest;
-  border-top: solid 1px $mg-mid;
+  border-bottom: solid 1px $mg-mid;
   border-right: solid 1px $mg-mid;
   border-left: solid 1px $mg-mid;
-  padding: 8px;
+  padding: 10px 10px 0 10px;
   margin-bottom: 0;
+
+  overflow-y: auto;
 }
 
 .league_leaderbox{

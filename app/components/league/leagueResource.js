@@ -40,6 +40,9 @@ angular.module('fantasyGolfApp')
       },
       leaveLeague: function(leagueId, teamId){
         return $http.put('/api/league/leave', {leagueId: leagueId, teamId: teamId});
+      },
+      addChat: function(message, leagueId, teamId){
+        return $http.put('/api/league/chat', {message: message, leagueId: leagueId, teamId: teamId});
       }
     };
 

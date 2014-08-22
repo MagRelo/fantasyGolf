@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('listLeaguesCtrl', function ($scope, Team) {
+  .controller('listLeaguesCtrl', function ($scope, Team, League) {
 
 
     var teamId = $scope.currentUser.teamId;
@@ -13,13 +13,16 @@ angular.module('fantasyGolfApp')
         $scope.error = error;
       }
     );
-//
-//    League.listLeagues()
-//      .then(function(result) {
-//        $scope.leagues = result.data;
-//
-//      },function(error){
-//        $scope.error = error;
-//      });
+
+    $scope.addChat = function(message, leagueId){
+
+      League.addChat(message, leagueId, teamId)
+        .then(function(result){
+          $scope.team = result.data;
+        },function(error){
+          $scope.error = error;
+        })
+
+    };
 
   });

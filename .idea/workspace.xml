@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50b01cab-c01b-4338-93b8-21ce317af720" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/league.js" afterPath="$PROJECT_DIR$/lib/controllers/league.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/models/league.js" afterPath="$PROJECT_DIR$/lib/models/league.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/league/leagueResource.js" afterPath="$PROJECT_DIR$/app/components/league/leagueResource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/league/listLeagues.jade" afterPath="$PROJECT_DIR$/app/components/league/listLeagues.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/league/listLeagues.js" afterPath="$PROJECT_DIR$/app/components/league/listLeagues.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/styles/main.scss" afterPath="$PROJECT_DIR$/app/styles/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/controllers/serverFunctions.js" afterPath="$PROJECT_DIR$/lib/controllers/serverFunctions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/admin/tournamentAdmin.jade" afterPath="$PROJECT_DIR$/app/components/admin/tournamentAdmin.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/admin/tournamentAdmin.js" afterPath="$PROJECT_DIR$/app/components/admin/tournamentAdmin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/components/admin/tournamentResource.js" afterPath="$PROJECT_DIR$/app/components/admin/tournamentResource.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fantasy-golf.iws" />
@@ -30,59 +32,123 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tournamentAdmin.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/admin/tournamentAdmin.jade">
+      <file leaf-file-name="users.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/controllers/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="463" max-vertical-offset="1980">
-              <caret line="103" column="58" selection-start-line="103" selection-start-column="58" selection-end-line="103" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="840" max-vertical-offset="1800">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tournamentResource.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/admin/tournamentResource.js">
+      <file leaf-file-name="middleware.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/middleware.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="795">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serverFunctions.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/controllers/serverFunctions.js">
+      <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/models/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1935">
-              <caret line="153" column="46" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2280">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leagueResource.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/league/leagueResource.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+              <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
               <folding>
-                <element signature="e#328#2866#0" expanded="false" />
-                <element signature="e#5552#10197#0" expanded="false" />
-                <element signature="e#10257#11627#0" expanded="false" />
-                <element signature="e#11674#11962#0" expanded="false" />
-                <element signature="e#11999#12057#0" expanded="false" />
+                <element signature="e#147#371#0" expanded="false" />
+                <element signature="e#410#585#0" expanded="false" />
+                <element signature="e#626#761#0" expanded="false" />
+                <element signature="e#809#951#0" expanded="false" />
+                <element signature="e#991#1053#0" expanded="false" />
+                <element signature="e#1099#1192#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/routes.js">
+      <file leaf-file-name="listLeagues.jade" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/league/listLeagues.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="1125">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.2892768" vertical-offset="64" max-vertical-offset="645">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tournamentAdmin.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/admin/tournamentAdmin.js">
+      <file leaf-file-name="listLeagues.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/league/listLeagues.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.884434" vertical-offset="225" max-vertical-offset="945">
-              <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="510">
+              <caret line="12" column="46" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="league.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/controllers/league.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="2295">
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
               <folding>
-                <element signature="e#561#749#0" expanded="false" />
+                <element signature="e#233#352#0" expanded="false" />
+                <element signature="e#453#714#0" expanded="false" />
+                <element signature="e#779#807#0" expanded="false" />
+                <element signature="e#879#1433#0" expanded="false" />
+                <element signature="e#3680#4568#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="league.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/models/league.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="510">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="team.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/models/team.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+              <caret line="1" column="96" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.625" vertical-offset="1809" max-vertical-offset="3195">
+              <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="12" />
+              <folding>
+                <element signature="e#3286#3357#0" expanded="false" />
+                <element signature="e#3375#3552#0" expanded="false" />
+                <element signature="e#3581#4047#0" expanded="false" />
+                <element signature="e#4078#4585#0" expanded="false" />
+                <element signature="e#4586#5168#0" expanded="false" />
+                <element signature="e#5169#5748#0" expanded="false" />
+                <element signature="e#5749#6326#0" expanded="false" />
+                <element signature="e#6327#6901#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -107,8 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/components/tournament/tournament.jade" />
-        <option value="$PROJECT_DIR$/app/components/userSession/setup.jade" />
         <option value="$PROJECT_DIR$/app/components/userSession/signup.js" />
         <option value="$PROJECT_DIR$/app/components/userSession/login.js" />
         <option value="$PROJECT_DIR$/lib/models/user.js" />
@@ -131,12 +195,9 @@
         <option value="$PROJECT_DIR$/app/components/userSession/main.jade" />
         <option value="$PROJECT_DIR$/app/components/userSession/navbar.jade" />
         <option value="$PROJECT_DIR$/bower.json" />
-        <option value="$PROJECT_DIR$/app/components/league/leagueResource.js" />
-        <option value="$PROJECT_DIR$/app/components/league/listLeagues.js" />
         <option value="$PROJECT_DIR$/lib/controllers/team.js" />
         <option value="$PROJECT_DIR$/app/components/leaderboard/leaderboard.js" />
         <option value="$PROJECT_DIR$/app/components/leaderboard/leaderboard.jade" />
-        <option value="$PROJECT_DIR$/app/components/league/listLeagues.jade" />
         <option value="$PROJECT_DIR$/app/components/league/editLeagues.js" />
         <option value="$PROJECT_DIR$/app/components/league/editLeagues.jade" />
         <option value="$PROJECT_DIR$/app/components/index.jade" />
@@ -152,12 +213,17 @@
         <option value="$PROJECT_DIR$/lib/models/tournament.js" />
         <option value="$PROJECT_DIR$/app/components/team/editTeam.jade" />
         <option value="$PROJECT_DIR$/app/components/pga/player.jade" />
-        <option value="$PROJECT_DIR$/app/styles/main.scss" />
         <option value="$PROJECT_DIR$/app/components/admin/tournamentAdmin.jade" />
         <option value="$PROJECT_DIR$/app/components/admin/tournamentResource.js" />
-        <option value="$PROJECT_DIR$/lib/routes.js" />
         <option value="$PROJECT_DIR$/app/components/admin/tournamentAdmin.js" />
         <option value="$PROJECT_DIR$/lib/controllers/serverFunctions.js" />
+        <option value="$PROJECT_DIR$/lib/routes.js" />
+        <option value="$PROJECT_DIR$/app/components/league/leagueResource.js" />
+        <option value="$PROJECT_DIR$/app/components/league/listLeagues.js" />
+        <option value="$PROJECT_DIR$/lib/models/league.js" />
+        <option value="$PROJECT_DIR$/lib/controllers/league.js" />
+        <option value="$PROJECT_DIR$/app/styles/main.scss" />
+        <option value="$PROJECT_DIR$/app/components/league/listLeagues.jade" />
       </list>
     </option>
   </component>
@@ -507,72 +573,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="team" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fantasy-golf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1181,21 +1181,25 @@
       <created>1408718981198</created>
       <updated>1408718981198</updated>
     </task>
-    <option name="localTasksCounter" value="127" />
+    <task id="LOCAL-00127" summary="update league list formmatting - include row in well&#10;">
+      <created>1408722486164</created>
+      <updated>1408722486164</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38073394" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2771261" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34164223" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32844576" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28134558" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36950147" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Grunt" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3372434" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Grunt" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3372434" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1246,7 +1250,6 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
-    <MESSAGE value="update league layout" />
     <MESSAGE value="fix disappearing nav" />
     <MESSAGE value="cleanup league view" />
     <MESSAGE value="update team and layout" />
@@ -1271,7 +1274,8 @@
     <MESSAGE value="fix calc teams, update tournament setup file" />
     <MESSAGE value="prevent dirty form submission&#10;" />
     <MESSAGE value="prevent dirty form submission - fix&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="prevent dirty form submission - fix&#10;" />
+    <MESSAGE value="update league list formmatting - include row in well&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="update league list formmatting - include row in well&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1279,13 +1283,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/bower_components/angularfire/dist/angularfire.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2895" max-vertical-offset="26835">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/userSession/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
@@ -1307,22 +1304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2280">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19700748" vertical-offset="401" max-vertical-offset="870">
@@ -1335,14 +1316,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1820449" vertical-offset="227" max-vertical-offset="930">
           <caret line="20" column="46" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/league.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5137157" vertical-offset="4" max-vertical-offset="405">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1367,24 +1340,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="810">
           <caret line="17" column="45" selection-start-line="17" selection-start-column="0" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/league.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7010753" vertical-offset="791" max-vertical-offset="2475">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#879#1433#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/league/listLeagues.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4516129" vertical-offset="0" max-vertical-offset="465">
-          <caret line="14" column="68" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1453,7 +1408,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="975" max-vertical-offset="1530">
           <caret line="82" column="52" selection-start-line="82" selection-start-column="52" selection-end-line="82" selection-end-column="52" />
           <folding>
-            <marker date="1408721646000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1408727337000" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1464,22 +1419,6 @@
           <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
           <folding>
             <element signature="e#1722#2030#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/league/leagueResource.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5483871" vertical-offset="0" max-vertical-offset="465">
-          <caret line="47" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#147#371#0" expanded="false" />
-            <element signature="e#410#585#0" expanded="false" />
-            <element signature="e#626#761#0" expanded="false" />
-            <element signature="e#809#951#0" expanded="false" />
-            <element signature="e#991#1053#0" expanded="false" />
-            <element signature="e#1099#1192#0" expanded="false" />
-            <element signature="e#1239#1333#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1510,14 +1449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/session.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/controllers/pga.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1110">
@@ -1536,14 +1467,6 @@
             <element signature="e#2395#6394#0" expanded="false" />
             <element signature="e#6442#7550#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52369076" vertical-offset="0" max-vertical-offset="401">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1571,31 +1494,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/models/player.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="424">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/team/displayTeam.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="849" max-vertical-offset="1515">
           <caret line="78" column="27" selection-start-line="78" selection-start-column="27" selection-end-line="78" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="2010">
-          <caret line="59" column="42" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-          <folding>
-            <element signature="e#239#862#0" expanded="false" />
-            <element signature="e#1343#1369#0" expanded="false" />
-            <element signature="e#2438#2596#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1611,14 +1514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8089623" vertical-offset="1502" max-vertical-offset="2085">
           <caret line="123" column="65" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/league/viewleague.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2476415" vertical-offset="0" max-vertical-offset="424">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1639,14 +1534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/league/listLeagues.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45990565" vertical-offset="45" max-vertical-offset="540">
-          <caret line="16" column="78" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/pga/player.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40265486" vertical-offset="13" max-vertical-offset="540">
@@ -1655,35 +1542,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.583333" vertical-offset="2134" max-vertical-offset="3210">
-          <caret line="164" column="37" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <element signature="e#3317#3388#0" expanded="false" />
-            <element signature="e#3406#3583#0" expanded="false" />
-            <element signature="e#3612#4078#0" expanded="false" />
-            <element signature="e#4109#4616#0" expanded="false" />
-            <element signature="e#4617#5199#0" expanded="false" />
-            <element signature="e#5200#5779#0" expanded="false" />
-            <element signature="e#5780#6357#0" expanded="false" />
-            <element signature="e#6358#6932#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/team/displayTeamCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7096774" vertical-offset="225" max-vertical-offset="825">
           <caret line="37" column="19" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="1125">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1710,6 +1572,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/admin/tournamentAdmin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="945">
+          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+          <folding>
+            <element signature="e#561#749#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/admin/tournamentAdmin.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1980">
@@ -1718,13 +1590,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/admin/tournamentAdmin.js">
+    <entry file="file://$PROJECT_DIR$/lib/controllers/session.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.884434" vertical-offset="225" max-vertical-offset="945">
-          <caret line="47" column="37" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/player.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1140">
+          <caret line="35" column="75" selection-start-line="35" selection-start-column="64" selection-end-line="35" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/league/viewleague.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26184538" vertical-offset="0" max-vertical-offset="401">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="2010">
+          <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="59" selection-end-column="7" />
           <folding>
-            <element signature="e#561#749#0" expanded="false" />
+            <element signature="e#239#862#0" expanded="false" />
+            <element signature="e#1343#1369#0" expanded="false" />
+            <element signature="e#2438#2596#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="1" column="96" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/league/leagueResource.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding>
+            <element signature="e#147#371#0" expanded="false" />
+            <element signature="e#410#585#0" expanded="false" />
+            <element signature="e#626#761#0" expanded="false" />
+            <element signature="e#809#951#0" expanded="false" />
+            <element signature="e#991#1053#0" expanded="false" />
+            <element signature="e#1099#1192#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/middleware.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="2280">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/models/league.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/controllers/league.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="449" max-vertical-offset="2295">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+          <folding>
+            <element signature="e#233#352#0" expanded="false" />
+            <element signature="e#453#714#0" expanded="false" />
+            <element signature="e#779#807#0" expanded="false" />
+            <element signature="e#879#1433#0" expanded="false" />
+            <element signature="e#3680#4568#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/league/listLeagues.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="510">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/styles/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.625" vertical-offset="1809" max-vertical-offset="3195">
+          <caret line="128" column="0" selection-start-line="128" selection-start-column="0" selection-end-line="128" selection-end-column="12" />
+          <folding>
+            <element signature="e#3286#3357#0" expanded="false" />
+            <element signature="e#3375#3552#0" expanded="false" />
+            <element signature="e#3581#4047#0" expanded="false" />
+            <element signature="e#4078#4585#0" expanded="false" />
+            <element signature="e#4586#5168#0" expanded="false" />
+            <element signature="e#5169#5748#0" expanded="false" />
+            <element signature="e#5749#6326#0" expanded="false" />
+            <element signature="e#6327#6901#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/league/listLeagues.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2892768" vertical-offset="64" max-vertical-offset="645">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
