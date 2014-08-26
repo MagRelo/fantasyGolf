@@ -3,33 +3,40 @@
     form(role='form', name='TeamForm')
         legend edit team
 
-        .form-group
-            label.control-label(for='teamName') Team Name
-            input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
+        fieldset
+            .form-group
+                label.control-label(for='teamName') Team Name
+                input.form-control(type='text', name='teamName', required='required', data-ng-model='team.teamName')
 
-        .form-group
-            label.control-label(for='ownerName') Owner Name
-            input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
+            .form-group
+                label.control-label(for='ownerName') Owner Name
+                input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
-        .form-group
-            label.control-label(for='ownerName') Player 1
-            select.form-control(required, ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
-                option select player
 
-        .form-group
-            label.control-label(for='ownerName') Player 2
-            select.form-control(required, ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
-                option select player
+        h4.text-center.text-danger(ng-show="tournament.ballstrikersStatus == 'Locked'")
+            span.glyphicon.glyphicon-warning-sign
+            |  Players cannot be changed while a tournament is in progress
 
-        .form-group
-            label.control-label(for='ownerName') Player 3
-            select(class="form-control", ng-model="team.player3._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
-                option select player
+        fieldset(ng-disabled="tournament.ballstrikersStatus == 'Locked'")
+            .form-group
+                label.control-label(for='ownerName') Player 1
+                select.form-control(required, ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                    option select player
 
-        .form-group
-            label.control-label(for='ownerName') Player 4
-            select.form-control(required, ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
-                option select player
+            .form-group
+                label.control-label(for='ownerName') Player 2
+                select.form-control(required, ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                    option select player
+
+            .form-group
+                label.control-label(for='ownerName') Player 3
+                select(class="form-control", ng-model="team.player3._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                    option select player
+
+            .form-group
+                label.control-label(for='ownerName') Player 4
+                select.form-control(required, ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                    option select player
 
 
         //buttons

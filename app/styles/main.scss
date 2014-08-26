@@ -131,6 +131,10 @@ span.h3 > small{
   padding: 0 19px 19px 19px;
 }
 
+.league_well p{
+  margin: 0 0 3px
+}
+
 .league_chatbox{
   height: 200px;
   background: $mg-darkest;
@@ -168,7 +172,13 @@ span.h3 > small{
   padding: 0 10px;
 }
 
-
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: $mg-darkest;
+  color: $mg-mid;
+}
 
 
 /*____Loading Spinner*/
