@@ -20,22 +20,22 @@
         fieldset(ng-disabled="tournament.ballstrikersStatus == 'Locked'")
             .form-group
                 label.control-label(for='ownerName') Player 1
-                select.form-control(required, ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                select.form-control(required, ng-model="team.player1._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field | orderBy:'name.last'")
                     option select player
 
             .form-group
                 label.control-label(for='ownerName') Player 2
-                select.form-control(required, ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                select.form-control(required, ng-model="team.player2._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field | orderBy:'name.last'")
                     option select player
 
             .form-group
                 label.control-label(for='ownerName') Player 3
-                select(class="form-control", ng-model="team.player3._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                select(class="form-control", ng-model="team.player3._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field | orderBy:'name.last'")
                     option select player
 
             .form-group
                 label.control-label(for='ownerName') Player 4
-                select.form-control(required, ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field")
+                select.form-control(required, ng-model="team.player4._id", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in field | orderBy:'name.last'")
                     option select player
 
 
