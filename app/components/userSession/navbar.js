@@ -13,10 +13,7 @@ angular.module('fantasyGolfApp')
     }, {
       'title': 'leaderboard',
       'link': '/leaderboard'
-    },{
-      'title': 'settings',
-      'link': '/settings'
-    },{
+    }, {
       'title': 'admin',
       'link': '/admin'
     }];
