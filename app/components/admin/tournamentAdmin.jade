@@ -39,52 +39,6 @@ div(data-ng-controller="tournamentAdminCtrl")
 
                         alert(type="danger", ng-show="tournamentError") {{tournamentError}}
 
-    .well
-        form.form-horizontal
-            legend edit player
-            .form-group
-                .col-sm-2
-                    label.control-label Player
-                .col-sm-8
-
-                    select(class="form-control", ng-model="editPlayerId", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in players")
-                        option Editable
-                        option Locked
-
-                .col-sm-2
-                    a.btn.btn-primary(ng-href="admin/player/{{editPlayerId}}", ng-disabled="!editPlayerId")
-                        span.glyphicon.glyphicon-edit
-                        |  edit player
-
-    .well
-        form.form-horizontal
-            legend edit team
-            .form-group
-                .col-sm-2
-                    label.control-label Team
-                .col-sm-8
-                    select(class="form-control", ng-model="editTeamId", ng-options="p.id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
-                        option Editable
-                        option Locked
-                .col-sm-2
-                    a.btn.btn-primary(ng-href="admin/player/{{editTeamId}}", ng-disabled="!editTeamId")
-                        span.glyphicon.glyphicon-edit
-                        |  edit team
-
-    .well
-        form.form-horizontal
-            legend edit league
-            .form-group
-                .col-sm-2
-                    label.control-label Team
-                .col-sm-8
-                    select(class="form-control", ng-model="editTeamId", ng-options="p.id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
-                        option Editable
-                        option Locked
-                .col-sm-2
-                    a.btn.btn-primary(ng-href="admin/player/{{editTeamId}}", ng-disabled="!editTeamId")
-                        span.glyphicon.glyphicon-edit
-                        |  edit league
 
     .well
         legend run functions
@@ -138,3 +92,47 @@ div(data-ng-controller="tournamentAdminCtrl")
                     alert(type="danger", ng-show="leagueError.status", close="leagueError = {}")
                         h4 status: {{leagueError.status}}
                         p {{leagueError.name}}: {{leagueError.message}}
+
+
+    //.well
+        form.form-horizontal
+            legend edit player
+            .form-group
+                .col-sm-2
+                    label.control-label Player
+                .col-sm-8
+                    select(class="form-control", ng-model="editPlayerId", ng-options="p._id as (p.name.last + ', '+ p.name.first) for p in players")
+                    option Editable
+                    option Locked
+                .col-sm-2
+                    a.btn.btn-primary(ng-href="admin/player/{{editPlayerId}}", ng-disabled="!editPlayerId")
+                        span.glyphicon.glyphicon-edit
+                        | edit player
+    //.well
+        form.form-horizontal
+            legend edit team
+            .form-group
+                .col-sm-2
+                    label.control-label Team
+                .col-sm-8
+                    select(class="form-control", ng-model="editTeamId", ng-options="p.id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
+                        option Editable
+                        option Locked
+                .col-sm-2
+                    a.btn.btn-primary(ng-href="admin/player/{{editTeamId}}", ng-disabled="!editTeamId")
+                        span.glyphicon.glyphicon-edit
+                        | edit team
+    //.well
+        form.form-horizontal
+            legend edit league
+            .form-group
+                .col-sm-2
+                    label.control-label Team
+                .col-sm-8
+                    select(class="form-control", ng-model="editTeamId", ng-options="p.id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
+                        option Editable
+                        option Locked
+                .col-sm-2
+                    a.btn.btn-primary(ng-href="admin/player/{{editTeamId}}", ng-disabled="!editTeamId")
+                        span.glyphicon.glyphicon-edit
+                        | edit league
