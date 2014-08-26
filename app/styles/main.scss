@@ -75,6 +75,7 @@ body {
   color: $mg-white;
 }
 
+
 table > thead > tr > th,
 table > tbody > tr > td{
   text-align: center;
@@ -144,7 +145,6 @@ span.h3 > small{
   height: 234px;
   background: $mg-darkest;
   border: solid 1px $mg-mid;
-  padding: 8px;
   padding: 0 10px;
   overflow-y: auto;
 }

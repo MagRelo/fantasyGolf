@@ -6,47 +6,41 @@ div(data-ng-controller="tournamentAdminCtrl")
             legend edit tournament
 
             .form-group
-                .col-sm-6
-                    label.control-label(for='name') Tournament Name
-                    input.form-control(type='text', name='name', ng-model='tournament.event.name')
 
-                .col-sm-6
-                    label.control-label(for='date') Date
-                    input.form-control(type='text', name='date', ng-model='tournament.date')
 
-            .form-group
-                .col-sm-6
-                    label.control-label(for='location') Location
-                    input.form-control(type='text', name='location', ng-model='tournament.location')
 
-                .col-sm-6
-                    label.control-label(for='ownerName') Status
-                    select(class="form-control", ng-model="tournament.status")
-                        option Editable
-                        option Locked
+                .col-sm-12
+                    table.table
+                        thead
+                            tr
+                                th Name
+                                th Status
+                                th Round
+                                th Last Update
+                                th status
 
-            .form-group
-                .col-sm-6
+                        tbody
+                            tr
+                                td {{tournament.event.name}}
+                                td {{tournament.event.state}}
+                                td {{tournament.event.currentRnd}} of {{tournament.event.totalRnds}}
+                                td {{tournament.date}}
+                                td
+                                    select(class="form-control", ng-model="tournament.status")
+                                        option Editable
+                                        option Locked
+
                     div
-                        label.control-label(for='location') Status: {{tournament.event.CurRndState}}
+                        //buttons
+                        ul.list-inline(collapse='!TournamentForm.$dirty')
+                            li
+                                button.btn.btn-success(data-ng-click="saveTournament(tournament)") Save Changes
+                            li
+                                button.btn.btn-danger(data-ng-click="cancel()") Cancel
 
-                .col-sm-6
-                    div
-                        label.control-label(for='location') Current Round: {{tournament.event.currentRnd}} of {{tournament.event.totalRnds}}
+                            h5.text-success(data-ng-show='updated && TournamentForm.$pristine') All changes saved &#x2713;
 
-
-
-
-            //buttons
-            ul.list-inline.text-center(collapse='!TournamentForm.$dirty')
-                li
-                    button.btn.btn-success(data-ng-click="saveTournament(tournament)") Save Changes
-                li
-                    button.btn.btn-danger(data-ng-click="cancel()") Cancel
-
-                h5.text-success(data-ng-show='updated && TournamentForm.$pristine') All changes saved &#x2713;
-
-            alert(type="danger", ng-show="tournamentError") {{tournamentError}}
+                        alert(type="danger", ng-show="tournamentError") {{tournamentError}}
 
     .well
         form.form-horizontal
@@ -80,10 +74,24 @@ div(data-ng-controller="tournamentAdminCtrl")
                         span.glyphicon.glyphicon-edit
                         |  edit team
 
-
+    .well
+        form.form-horizontal
+            legend edit league
+            .form-group
+                .col-sm-2
+                    label.control-label Team
+                .col-sm-8
+                    select(class="form-control", ng-model="editTeamId", ng-options="p.id as (p.name.last + ', '+ p.name.first) for p in tournament.field")
+                        option Editable
+                        option Locked
+                .col-sm-2
+                    a.btn.btn-primary(ng-href="admin/player/{{editTeamId}}", ng-disabled="!editTeamId")
+                        span.glyphicon.glyphicon-edit
+                        |  edit league
 
     .well
         legend run functions
+
         .row
             .col-sm-4
                 .admin_buttonbox
