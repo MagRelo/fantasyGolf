@@ -30,7 +30,7 @@ angular.module('fantasyGolfApp', [
         authenticate: true
       })
       .when('/team/:teamId', {
-        templateUrl: 'components/team/teamLobby',
+        templateUrl: 'components/team/displayTeam',
         authenticate: true
       })
       .when('/editteam', {

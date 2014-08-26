@@ -9,16 +9,16 @@ angular.module('fantasyGolfApp')
       'link': '/leagues'
     }, {
       'title': 'team',
-      'link': '/team/' + $scope.currentUser.teamId
+      'link': '/editteam/'
     }, {
       'title': 'leaderboard',
       'link': '/leaderboard'
     },{
-        'title': 'settings',
-        'link': '/settings'
+      'title': 'settings',
+      'link': '/settings'
     },{
-        'title': 'admin',
-        'link': '/admin'
+      'title': 'admin',
+      'link': '/admin'
     }];
     
     $scope.logout = function() {
