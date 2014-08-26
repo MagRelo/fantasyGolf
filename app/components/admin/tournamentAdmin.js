@@ -20,6 +20,22 @@ angular.module('fantasyGolfApp')
         $scope.playerError = error;
       });
 
+
+    $scope.updateTournament = function(tournamentId, tournament){
+
+      Tournament.updateTournament(tournamentId, tournament)
+        .then(function(result){
+          $scope.updateResponse = result.data;
+          $scope.TournamentForm.$setPristine();
+        },function(error){
+          $scope.updateError = error.data;
+          $scope.updateError.status = error.status;
+          $scope.TournamentForm.$setPristine();
+        })
+    };
+    
+    
+    //---run functions
     $scope.runSetup = function(){
       Tournament.runSetup()
         .then(function(result){

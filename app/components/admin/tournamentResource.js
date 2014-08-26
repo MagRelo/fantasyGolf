@@ -22,7 +22,7 @@ angular.module('fantasyGolfApp')
       },
       updateTournament: function(tournamentId, tournament){
         //bust cache
-        promiseCache.remove('listTournaments', false);
+        //promiseCache.remove('listTournaments', false);
         return $http.put('/api/tournament/' + tournamentId, tournament);
       },
       deleteTournament: function(tournamentId){

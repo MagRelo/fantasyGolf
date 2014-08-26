@@ -6,9 +6,6 @@ div(data-ng-controller="tournamentAdminCtrl")
             legend edit tournament
 
             .form-group
-
-
-
                 .col-sm-12
                     table.table
                         thead
@@ -21,12 +18,12 @@ div(data-ng-controller="tournamentAdminCtrl")
 
                         tbody
                             tr
-                                td {{tournament.event.name}}
-                                td {{tournament.event.state}}
+                                td {{tournament.name}}
+                                td {{tournament.pgaStatus}}
                                 td {{tournament.event.currentRnd}} of {{tournament.event.totalRnds}}
                                 td {{tournament.date}}
                                 td
-                                    select(class="form-control", ng-model="tournament.status")
+                                    select(class="form-control", ng-model="tournament.ballstrikersStatus")
                                         option Editable
                                         option Locked
 
@@ -34,7 +31,7 @@ div(data-ng-controller="tournamentAdminCtrl")
                         //buttons
                         ul.list-inline(collapse='!TournamentForm.$dirty')
                             li
-                                button.btn.btn-success(data-ng-click="saveTournament(tournament)") Save Changes
+                                button.btn.btn-success(data-ng-click="updateTournament(tournament._id, tournament)") Save Changes
                             li
                                 button.btn.btn-danger(data-ng-click="cancel()") Cancel
 
