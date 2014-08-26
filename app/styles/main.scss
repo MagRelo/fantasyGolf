@@ -180,6 +180,17 @@ fieldset[disabled] .form-control {
   color: $mg-mid;
 }
 
+.input-group .form-control:last-child,
+.input-group-addon:last-child,
+.input-group-btn:last-child > .btn,
+.input-group-btn:last-child > .dropdown-toggle,
+.input-group-btn:first-child > .btn:not(:first-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-color: $mg-mid;
+}
+
 
 /*____Loading Spinner*/
 //
@@ -207,7 +218,6 @@ fieldset[disabled] .form-control {
   height: 90%;
   width: 90%;
 }
-
 .wrapperloading {
   position: absolute;
   height: 200px;
