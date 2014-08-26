@@ -1,31 +1,32 @@
-h3.text-primary Scorecard
+.well
+    h2 Scorecard
 
 
-img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{playerId}}.png")
-span.h3  {{player.name.first + ' ' + player.name.last}}
-    small.text-muted {{player.info.hometown}}
+    img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{playerId}}.png")
+    span.h3  {{player.name.first + ' ' + player.name.last}}
+        small.text-muted {{player.info.hometown}}
 
-div
-    div.btn-group.pull-right
-        button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'sc'", data-ng-class="{active: scoringStyle == 'sc'}") strokes
-        button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'stable'", data-ng-class="{active: scoringStyle == 'stable'}") stableford
-        button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'modstable'", data-ng-class="{active: scoringStyle == 'modstable'}") mod stable
+    div
+        div.btn-group.pull-right
+            button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'sc'", data-ng-class="{active: scoringStyle == 'sc'}") strokes
+            button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'stable'", data-ng-class="{active: scoringStyle == 'stable'}") stableford
+            button.btn.btn-sm.btn-primary(data-ng-click="scoringStyle = 'modstable'", data-ng-class="{active: scoringStyle == 'modstable'}") mod stable
 
-div.tableOverflow
-    table.table
-        thead.text-muted
-            th hole
-            th(data-ng-repeat='hole in player.rounds[0].holes') {{$index + 1}}
-            th tot
+    div.tableOverflow
+        table.table
+            thead.text-muted
+                th hole
+                th(data-ng-repeat='hole in player.rounds[0].holes') {{$index + 1}}
+                th tot
 
-        tbody
-            tr(data-ng-repeat='round in player.rounds')
-                td.text-muted round {{$index + 1}}
-                td(data-ng-repeat='hole in round.holes', data-ng-class="{'positive': (hole.modstable > 0), 'negative': (hole.modstable < 0)}")
-                    span(data-ng-show="scoringStyle == 'sc'") {{hole.sc}}
-                    span(data-ng-show="scoringStyle == 'stable'") {{hole.stable}}
-                    span(data-ng-show="scoringStyle == 'modstable'") {{hole.modstable}}
-                td
-                    span(data-ng-show="scoringStyle == 'sc'") {{round.sc}}
-                    span(data-ng-show="scoringStyle == 'stable'") {{round.stable}}
-                    span(data-ng-show="scoringStyle == 'modstable'") {{round.modstable}}
+            tbody
+                tr(data-ng-repeat='round in player.rounds')
+                    td.text-muted round {{$index + 1}}
+                    td(data-ng-repeat='hole in round.holes', data-ng-class="{'positive': (hole.modstable > 0), 'negative': (hole.modstable < 0)}")
+                        span(data-ng-show="scoringStyle == 'sc'") {{hole.sc}}
+                        span(data-ng-show="scoringStyle == 'stable'") {{hole.stable}}
+                        span(data-ng-show="scoringStyle == 'modstable'") {{hole.modstable}}
+                    td
+                        span(data-ng-show="scoringStyle == 'sc'") {{round.sc}}
+                        span(data-ng-show="scoringStyle == 'stable'") {{round.stable}}
+                        span(data-ng-show="scoringStyle == 'modstable'") {{round.modstable}}

@@ -90,21 +90,18 @@ body {
 }
 
 .mg-navGroup{
-  margin-left: 8px;
-  margin-right: 8px;
-  padding: 7px;
+  padding: 10px;
 }
-.mg-navGroup.active {
+.mg-navButton.active {
   background: rgba(30, 32, 34, .5);
   border: solid $mg-mid 1px;
 }
 
-.mg-navGroup:hover{
-
-  background-color: rgba(180,180,180,.5);
+.mg-navButton:hover{
+  background: rgba(30, 32, 34, .5);
 }
 
-.mg-navGroup>a{
+.mg-navGroup > a{
   color: $mg-white;
 }
 
@@ -270,7 +267,7 @@ fieldset[disabled] .form-control {
   left: 50%;
   margin-left: -100px;
 
-  background: $mg-darkest;
+  background: transparent;
   border-radius: 0;
 }
 .wrapperloading .loading_up {
@@ -285,7 +282,7 @@ fieldset[disabled] .form-control {
   border-left-color: $brand-primary;
   border-right-color: $brand-primary;
 
-  background: $mg-darkest;
+  background: transparent;
   -webkit-animation: rotation 3s linear infinite;
   -moz-animation: rotation 3s linear infinite;
   -o-animation: rotation 3s linear infinite;

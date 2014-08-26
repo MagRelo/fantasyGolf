@@ -8,7 +8,7 @@ angular.module('fantasyGolfApp')
       'title': 'leagues',
       'link': '/leagues'
     }, {
-      'title': 'team',
+      'title': 'my team',
       'link': '/editteam'
     }, {
       'title': 'leaderboard',

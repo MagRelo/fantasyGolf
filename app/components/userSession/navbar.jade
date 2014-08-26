@@ -4,8 +4,8 @@ div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
 
         ul.list-inline.hidden-sm.hidden-xs.pull-right
             li
-               span.mg-navGroup(ng-repeat="item in menu", ng-class="{active: isActive(item.link)}")
-                    a.btn.mg-navButton(ng-href="{{item.link}}") {{item.title}}
+               span.mg-navGroup(ng-repeat="item in menu")
+                    a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
 
                button.btn.btn-danger(ng-click='logout()') Logout
 
