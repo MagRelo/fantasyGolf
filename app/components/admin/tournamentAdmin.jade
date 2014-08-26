@@ -20,7 +20,7 @@ div(data-ng-controller="tournamentAdminCtrl")
                             tr
                                 td {{tournament.name}}
                                 td {{tournament.pgaStatus}}
-                                td {{tournament.event.currentRnd}} of {{tournament.event.totalRnds}}
+                                td {{tournament.currentRound}} of {{tournament.totalRounds}}
                                 td {{tournament.date}}
                                 td
                                     select(class="form-control", ng-model="tournament.ballstrikersStatus")
