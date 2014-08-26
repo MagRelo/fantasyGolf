@@ -13,11 +13,11 @@ $brand-danger:          #B95050 !default;
 
 // Typography
 $font-family-sans-serif:  Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$body-bg:               $mg-darkest !default;
+$body-bg:               transparent !default;
 $text-color:            $mg-white !default;
 
 // Forms
-$input-bg:              $mg-darkest !default;
+$input-bg:              rgba(30,32,34,.9) !default;
 $input-color:           $mg-white !default;
 $input-border:          $mg-mid !default;
 $legend-color:          $mg-white !default;
@@ -39,6 +39,15 @@ $well-bg:               $mg-dark !default;
     color: #000;
     padding: 0.2em 0;
 }
+
+html {
+  background: url(../images/dunes.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 
 /* Space out content a bit */
 body {
@@ -62,6 +71,11 @@ body {
   text-shadow: 1px 1px 0 black, -2px 2px 40px $brand-primary;
 }
 
+.front h1 small{
+
+  color: $mg-white;
+  text-shadow:  1px 1px 0 black;
+}
 
 //custom additions
 
@@ -74,6 +88,34 @@ body {
   background-color: $mg-dark;
   color: $mg-white;
 }
+
+.mg-navGroup{
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 7px;
+}
+.mg-navGroup.active {
+  background: rgba(30, 32, 34, .5);
+  border: solid $mg-mid 1px;
+}
+
+.mg-navGroup:hover{
+
+  background-color: rgba(180,180,180,.5);
+}
+
+.mg-navGroup>a{
+  color: $mg-white;
+}
+
+
+.btn.mg-navButton:hover,
+.btn.mg-navButton:focus {
+  color: white;
+}
+
+
+
 
 
 table > thead > tr > th,
@@ -94,6 +136,7 @@ table > tbody > tr > td{
 
 .well{
   border-color: $mg-mid;
+  background-color: rgba(40,43,46,.85);
 }
 
 //section titles
@@ -137,7 +180,7 @@ span.h3 > small{
 
 .league_chatbox{
   height: 200px;
-  background: $mg-darkest;
+  background: rgba(30,32,34,.9);
   border-bottom: solid 1px $mg-mid;
   border-right: solid 1px $mg-mid;
   border-left: solid 1px $mg-mid;
@@ -147,7 +190,7 @@ span.h3 > small{
 
 .league_leaderbox{
   height: 234px;
-  background: $mg-darkest;
+  background-color: rgba(30,32,34,.9);
   border: solid 1px $mg-mid;
   padding: 5px 10px 0 10px;
   overflow-y: auto;

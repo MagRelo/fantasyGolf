@@ -2,13 +2,23 @@
 
 .front.hidden-sm.hidden-xs
     h1 Ballstrikers
+        small  fantasy golf
 
 .row
-
     .col-sm-6
         .well
-            div(ng-include='\'components/userSession/login\'')
+            legend How to play
+            ol
+                li Each owner manages one team. You can join and compete in multiple leages with your team.
+                li Each team has four players. You must select new players for each tournament. Once the tournament has begun you cannot change your players.
+                li Your team score is the sum of the scores of your players. Each player's score is calculated using
+                    a(href="http://en.wikipedia.org/wiki/Stableford#Modified_Stableford", target="_blank")  the modified stableford scoring system.
 
-    .col-sm-6
-        .well
             div(ng-include='\'components/userSession/signup\'')
+
+    .col-sm-6
+        .well
+            div(ng-show="!showSignup", ng-include='\'components/userSession/login\'')
+
+
+

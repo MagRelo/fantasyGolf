@@ -7,9 +7,9 @@ div(ng-controller="LeaderboardCtrl")
             .loading_down
 
 
-    div(ng-show="dataLoaded")
-        h3.text-primary {{info.name}}
-            small {{info.date}}
+    div.well(ng-show="dataLoaded")
+        h2 {{info.name}}
+            small  {{info.date}}
 
         table.table
             thead.text-muted

@@ -1,10 +1,31 @@
 div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
 
-    button.btn.btn-sm.btn-danger.pull-right(ng-click='logout()') Logout
+    div
 
-    h1 Ballstrikers
+        ul.list-inline.hidden-sm.hidden-xs.pull-right
+            li
+               span.mg-navGroup(ng-repeat="item in menu", ng-class="{active: isActive(item.link)}")
+                    a.btn.mg-navButton(ng-href="{{item.link}}") {{item.title}}
 
-    ul.nav.nav-pills
-        li(ng-repeat="item in menu", ng-class="{active: isActive(item.link)}")
-            a(ng-href="{{item.link}}") {{item.title}}
+               button.btn.btn-danger(ng-click='logout()') Logout
 
+        .navbar.hidden-md.hidden-lg
+            .navbar-inner
+                .container
+                    // Note: set the initial collapsed state and change it when clicking
+                    a.btn.btn-navbar.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+                        span.glyphicon.glyphicon-list
+                        |  Menu
+                    h1 Ballstrikers
+                    .nav-collapse.collapse.navbar-responsive-collapse(collapse="navCollapsed")
+                        ul.nav
+                            li(ng-repeat="item in menu", ng-class="{active: isActive(item.link)}")
+                                a.btn.mg-navButton(ng-href="{{item.link}}") {{item.title}}
+
+
+                    // /.nav-collapse
+                // /.container
+            // /navbar-inner
+        // /navbar
+
+    h1.hidden-sm.hidden-xs Ballstrikers

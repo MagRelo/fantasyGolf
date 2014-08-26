@@ -3,12 +3,7 @@
 
 div(data-ng-controller="listLeaguesCtrl")
 
-    .row
-        .col-sm-12
-            a.btn.btn-primary.mg-buttongroup.pull-right(href="/editleague")
-                span.glyphicon.glyphicon-edit
-                |  Edit Leagues
-        .clearfix
+
 
     div.well.league_well(ng-repeat="league in team.leagues")
         .row
@@ -36,3 +31,10 @@ div(data-ng-controller="listLeaguesCtrl")
                         span.pull-right {{team.score}}
 
             .clearfix
+
+    .row
+        .col-sm-12
+            a.btn.btn-primary.btn-lg.mg-buttongroup(href="/editleague")
+                span.glyphicon.glyphicon-edit
+                |  Edit Leagues
+        .clearfix
