@@ -25,9 +25,10 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 });
 
 // Populate empty DB with sample data
-//if(process.env.NODE_ENV == 'development'){
-//  require('./lib/config/dummydata');
-//}
+if(process.env.NODE_ENV == 'development'
+  || process.env.SETUP_DATA =='true'){
+  require('./lib/config/dummydata');
+}
 
 //start jobs
 //require('./bin/cronjobs');
