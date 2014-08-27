@@ -7,25 +7,27 @@ div(data-ng-controller="tournamentAdminCtrl")
 
             .form-group
                 .col-sm-12
-                    table.table
-                        thead
-                            tr
-                                th Name
-                                th Status
-                                th Round
-                                th Last Update
-                                th status
 
-                        tbody
-                            tr
-                                td {{tournament.name}}
-                                td {{tournament.pgaStatus}}
-                                td {{tournament.currentRound}} of {{tournament.totalRounds}}
-                                td {{tournament.date}}
-                                td
-                                    select(class="form-control", ng-model="tournament.ballstrikersStatus")
-                                        option Editable
-                                        option Locked
+                    .tableOverflow
+                        table.table
+                            thead
+                                tr
+                                    th Name
+                                    th Status
+                                    th Round
+                                    th Last Update
+                                    th status
+
+                            tbody
+                                tr
+                                    td {{tournament.name}}
+                                    td {{tournament.pgaStatus}}
+                                    td {{tournament.currentRound}} of {{tournament.totalRounds}}
+                                    td {{tournament.date}}
+                                    td
+                                        select(class="form-control", ng-model="tournament.ballstrikersStatus")
+                                            option Editable
+                                            option Locked
 
                     div
                         //buttons
