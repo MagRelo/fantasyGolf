@@ -11,17 +11,18 @@ div(ng-controller="LeaderboardCtrl")
         h2 {{info.name}}
             small  {{info.date}}
 
-        table.table
-            thead.text-muted
-                th name
-                th(ng-repeat="item in courses[0].h") {{$index + 1}}
-                th tot
-            tbody
-                tr(data-ng-repeat='player in players | limitTo:49')
-                    td.text-muted
-                        a(ng-href="/player/{{player.id}}") {{player.ln +', ' + player.fn}}
-                    td(ng-repeat="hole in player.h.h") {{hole.sc}}
-                    td {{player.tp}}
+        div.tableOverflow
+            table.table
+                thead.text-muted
+                    th name
+                    th(ng-repeat="item in courses[0].h") {{$index + 1}}
+                    th tot
+                tbody
+                    tr(data-ng-repeat='player in players | limitTo:49')
+                        td.text-muted
+                            a(ng-href="/player/{{player.id}}") {{player.ln +', ' + player.fn}}
+                        td(ng-repeat="hole in player.h.h") {{hole.sc}}
+                        td {{player.tp}}
 
 
 
