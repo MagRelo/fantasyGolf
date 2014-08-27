@@ -33,8 +33,8 @@ angular.module('fantasyGolfApp', [
         templateUrl: 'components/team/displayTeam',
         authenticate: true
       })
-      .when('/editteam', {
-        templateUrl: 'components/team/editTeam',
+      .when('/myteam', {
+        templateUrl: 'components/team/myTeam',
         authenticate: true
       })
       .when('/player/:playerId', {

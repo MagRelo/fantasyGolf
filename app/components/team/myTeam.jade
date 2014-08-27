@@ -1,0 +1,10 @@
+div(ng-controller="myTeamCtrl")
+
+    div(ng-if="tournament.ballstrikersStatus === 'Locked'")
+        div(ng-include='\'components/team/displayTeam\'')
+
+    div(ng-if="tournament.ballstrikersStatus !== 'Locked'")
+        div(ng-include='\'components/team/editTeam\'')
+
+    div(ng-include='\'components/userSession/settings\'')
+

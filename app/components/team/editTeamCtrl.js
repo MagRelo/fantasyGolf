@@ -5,8 +5,9 @@ angular.module('fantasyGolfApp')
 
     $q.all([
       Team.getTeam($scope.currentUser.teamId),
-      pga.getField(),
-      pga.getSetup()
+      pga.getField()
+      //,
+      //pga.getSetup()
     ])
       .then(function(result){
 
@@ -15,7 +16,7 @@ angular.module('fantasyGolfApp')
 
         $scope.field = result[1].data;
 
-        $scope.tournament = result[2].data;
+        //$scope.tournament = result[2].data;
 
       });
 
@@ -50,6 +51,7 @@ angular.module('fantasyGolfApp')
           function(result){
             $scope.team = angular.copy(result.data);
             $scope.TeamForm.$setPristine();
+            $scope.updated = false;
           },
           function(error){$scope.teamError = error;}
       )

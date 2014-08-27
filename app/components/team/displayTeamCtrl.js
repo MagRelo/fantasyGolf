@@ -4,7 +4,7 @@ angular.module('fantasyGolfApp')
   .controller('displayTeamCtrl', function ($scope, $q, $routeParams, pga, Team) {
 
     var currentRound, totalRounds;
-    var teamId = $routeParams.teamId;
+    var teamId = $routeParams.teamId || $scope.currentUser.teamId;
     $scope.rounds = [];
 
     $q.all([

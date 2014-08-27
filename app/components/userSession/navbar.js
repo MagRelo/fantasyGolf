@@ -9,7 +9,7 @@ angular.module('fantasyGolfApp')
       'link': '/leagues'
     }, {
       'title': 'my team',
-      'link': '/editteam'
+      'link': '/myteam'
     }, {
       'title': 'leaderboard',
       'link': '/leaderboard'
