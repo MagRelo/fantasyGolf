@@ -7,7 +7,6 @@ angular.module('fantasyGolfApp', [
   'ngRoute',
   'ngAnimate',
   'ui.bootstrap',
-  'firebase',
   'angular-promise-cache'
 ])
 
