@@ -13,15 +13,18 @@ div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
             .navbar-inner
                 .container
                     // Note: set the initial collapsed state and change it when clicking
-                    a.btn.btn-navbar.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+                    a.btn.btn-navbar.mg-navButton.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
                         span.glyphicon.glyphicon-list
                         |  Menu
                     h1 Ballstrikers
+
                     .nav-collapse.collapse.navbar-responsive-collapse(collapse="navCollapsed")
                         ul.nav
-                            li(ng-repeat="item in menu", ng-class="{active: isActive(item.link)}")
-                                a.btn.mg-navButton(ng-href="{{item.link}}") {{item.title}}
-
+                            li(ng-repeat="item in menu")
+                                a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
+                            li
+                                .well-sm.text-center
+                                    button.btn.btn-danger(ng-click='logout()') Logout
 
                     // /.nav-collapse
                 // /.container

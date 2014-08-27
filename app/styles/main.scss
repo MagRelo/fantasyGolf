@@ -93,23 +93,25 @@ body {
 .mg-navGroup{
   padding: 10px;
 }
-.mg-navButton.active {
+
+.btn.mg-navGroup > a{
+  color: $mg-white;
+}
+
+.btn.mg-navButton{
+  //background: rgba(30, 32, 34, .5);
+  //border: solid $mg-mid 1px;
+  color: $mg-white;
+}
+
+.btn.mg-navButton.active {
   background: rgba(30, 32, 34, .5);
   border: solid $mg-mid 1px;
 }
 
-.mg-navButton:hover{
-  background: rgba(30, 32, 34, .5);
-}
-
-.mg-navGroup > a{
-  color: $mg-white;
-}
-
-
 .btn.mg-navButton:hover,
 .btn.mg-navButton:focus {
-  color: white;
+  color: $mg-white;
 }
 
 
