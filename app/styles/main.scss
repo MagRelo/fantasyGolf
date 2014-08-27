@@ -31,8 +31,6 @@ $well-bg:               $mg-dark !default;
 
 @import 'sass-bootstrap/lib/bootstrap';
 
-
-
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -48,7 +46,6 @@ html {
   background-size: cover;
 }
 
-
 /* Space out content a bit */
 body {
     padding-top: 20px;
@@ -57,6 +54,7 @@ body {
 
 //angular-ui pointers
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 
 .header{
   margin-bottom: 20px;
@@ -70,14 +68,19 @@ body {
 }
 
 .front h1{
-  font-size: 70px;
+  font-size: 40px;
   font-family: Yellowtail, cursive, serif;
   text-shadow: 1px 1px 0 black, -2px 2px 40px $brand-primary;
   margin-top: 0;
 }
 
-.front h1 small{
+@media all and (min-width: 768px) {
+  .front h1{
+    font-size: 70px;
+  }
+}
 
+.front h1 small{
   color: $mg-white;
   text-shadow:  1px 1px 0 black;
 }
