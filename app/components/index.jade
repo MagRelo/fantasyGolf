@@ -35,7 +35,8 @@ html.no-js
 
 
     div.container
-        div(data-ng-include='\'components/userSession/navbar\'')
+        div(ng-if="currentUser")
+            div(ng-include='\'components/userSession/navbar\'')
 
         div(ng-view)
 
@@ -49,6 +50,7 @@ html.no-js
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
