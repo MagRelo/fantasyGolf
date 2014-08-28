@@ -74,9 +74,14 @@ angular.module('fantasyGolfApp', [
 
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
-      
+
+      if(Auth.isLoggedIn() && $location.path() == '/'){
+        $location.path('/leagues');
+      }
+
       if (next.authenticate && !Auth.isLoggedIn()) {
         $location.path('/');
       }
+
     });
   });
