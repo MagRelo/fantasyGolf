@@ -5,9 +5,17 @@ angular.module('fantasyGolfApp')
 
     return {
       getTeam: function (teamId) {
-        return $http.get('/api/team/' + teamId);
+        return promiseCache({
+          promise: function () {
+            return $http.get('/api/team/' + teamId);
+          },
+          ttl: -1,
+          bustCache: false,
+          key: 'getTeam'
+        });
       },
       updateTeam: function (team, teamId) {
+
         promiseCache.remove('getTeam', false);
 
         return $http.put('/api/team/' + teamId, team);

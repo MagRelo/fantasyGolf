@@ -36,6 +36,7 @@ angular.module('fantasyGolfApp')
       },
       joinLeague: function(leagueId, teamId){
         promiseCache.remove('getTeam', false);
+        promiseCache.remove('listLeagues', false);
         return $http.put('/api/league/join', {leagueId: leagueId, teamId: teamId});
       },
       leaveLeague: function(leagueId, teamId){
