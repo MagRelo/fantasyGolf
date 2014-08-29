@@ -187,8 +187,20 @@ span.h3 > small{
   height: 334px;
   background-color: rgba(30,32,34,.9);
   border: solid 1px $mg-mid;
-  padding: 5px 10px 0 10px;
+  //padding: 5px 10px 0 10px;
   overflow-y: auto;
+}
+
+.league_leaderbox_item{
+  color: $mg-white;
+  border: 1px solid $mg-mid;
+  padding: 10px 15px;
+  margin: 2px 2px 0 2px;
+  background-color: $mg-dark;
+}
+
+.league_leaderbox_item:hover{
+  background-color: $mg-mid;
 }
 
 .admin_buttonbox{
