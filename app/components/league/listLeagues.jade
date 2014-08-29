@@ -10,11 +10,11 @@ div(data-ng-controller="listLeaguesCtrl")
             .col-sm-8
                 h3 {{league.leagueName}}
                 small {{league.location}}
-
-                .input-group
-                    input.form-control(type="text", ng-model="chatMessage")
-                    span.input-group-btn
-                        button.btn.btn-success(ng-click="addChat(chatMessage, league._id, currentUser.teamId)") send
+                form
+                    .input-group
+                        input.form-control(type="text", ng-model="chatMessage")
+                        span.input-group-btn
+                            button.btn.btn-success(ng-click="addChat(chatMessage, league._id, currentUser.teamId)") send
 
                 .league_chatbox
                     p(ng-repeat="msg in league.chat | orderBy:'modified':true")
