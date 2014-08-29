@@ -25,8 +25,7 @@ fs.readdirSync(modelsPath).forEach(function (file) {
 });
 
 // Populate empty DB with sample data
-if(process.env.NODE_ENV == 'development'
-  || process.env.SETUP_DATA =='true'){
+if(process.env.SETUP_DATA == 'true'){
   require('./lib/config/dummydata');
 }
 
