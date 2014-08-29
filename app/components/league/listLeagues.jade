@@ -37,7 +37,12 @@ div(data-ng-controller="listLeaguesCtrl")
 
     .row
         .col-sm-12
-            a.btn.btn-primary.btn-lg.mg-buttongroup(href="/editleague")
-                span.glyphicon.glyphicon-edit
-                |  Edit Leagues
-        .clearfix
+            .well.text-center
+
+                h4(ng-hide="team.leagues.length > 0")  You're not currently a member of any leagues. click 'Join Leagues' to join a league and compete against other teams.
+                br
+                a.btn.btn-primary.btn-lg.mg-buttongroup(href="/editleague")
+                    span.glyphicon.glyphicon-edit
+                    span(ng-hide="team.leagues.length > 0")  Join
+                    span(ng-show="team.leagues.length > 0")  Edit
+                    |  Leagues
