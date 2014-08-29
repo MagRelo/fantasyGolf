@@ -174,7 +174,7 @@ span.h3 > small{
 }
 
 .league_chatbox{
-  height: 200px;
+  height: 300px;
   background: rgba(30,32,34,.9);
   border-bottom: solid 1px $mg-mid;
   border-right: solid 1px $mg-mid;
@@ -184,7 +184,7 @@ span.h3 > small{
 }
 
 .league_leaderbox{
-  height: 234px;
+  height: 334px;
   background-color: rgba(30,32,34,.9);
   border: solid 1px $mg-mid;
   padding: 5px 10px 0 10px;
@@ -407,3 +407,21 @@ fieldset[disabled] .form-control {
 
 
 
+
+//WebKit scrollbars
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: $mg-dark;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  background-color: $mg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.25);
+  background-color: $mg-mid;
+}
