@@ -199,6 +199,11 @@ span.h3 > small{
   background-color: $mg-dark;
 }
 
+.league_leaderbox > a{
+  text-decoration: none;
+
+}
+
 .league_leaderbox_item:hover{
   background-color: $mg-mid;
 }
