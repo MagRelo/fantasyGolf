@@ -3,9 +3,7 @@
 angular.module('fantasyGolfApp')
   .controller('listLeaguesCtrl', function ($scope, Team, League) {
 
-
     var teamId = $scope.currentUser.teamId;
-
 
     //parse scores into floats for sorting
     var parseScores = function(leagues){
@@ -17,14 +15,10 @@ angular.module('fantasyGolfApp')
       return leagues;
     };
 
-
-
     Team.getTeam(teamId)
       .then(function(result){
         $scope.team = result.data;
-
         $scope.team.leagues = parseScores($scope.team.leagues);
-
       },function(error){
         $scope.error = error;
       }
@@ -35,6 +29,7 @@ angular.module('fantasyGolfApp')
       League.addChat(message, leagueId, teamId)
         .then(function(result){
           $scope.team = result.data;
+          $scope.team.leagues = parseScores($scope.team.leagues);
         },function(error){
           $scope.error = error;
         })
