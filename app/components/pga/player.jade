@@ -15,9 +15,14 @@
     div.tableOverflow
         table.table
             thead.text-muted
-                th hole
-                th(data-ng-repeat='hole in player.rounds[0].holes') {{$index + 1}}
-                th tot
+                tr
+                    th hole
+                    th(data-ng-repeat='hole in player.rounds[0].holes') {{$index + 1}}
+                    th tot
+                tr
+                    th par
+                    th(data-ng-repeat='hole in player.rounds[0].holes') {{hole.p}}
+                    th
 
             tbody
                 tr(data-ng-repeat='round in player.rounds')
