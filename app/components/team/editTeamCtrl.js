@@ -4,20 +4,16 @@ angular.module('fantasyGolfApp')
   .controller('editTeamCtrl', function ($scope, $q, pga, Team) {
 
     $q.all([
-      Team.getTeam($scope.currentUser.teamId),
+      Team.getMyTeam($scope.currentUser.teamId),
       pga.getField()
-      //,
-      //pga.getSetup()
     ])
       .then(function(result){
 
         //copy object to break binding to allow cancel
         $scope.team = angular.copy(result[0].data);
 
+        //get field for player drop downs
         $scope.field = result[1].data;
-
-        //$scope.tournament = result[2].data;
-
       });
 
 

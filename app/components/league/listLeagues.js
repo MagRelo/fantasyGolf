@@ -15,7 +15,7 @@ angular.module('fantasyGolfApp')
       return leagues;
     };
 
-    Team.getTeam(teamId)
+    Team.getMyTeam(teamId)
       .then(function(result){
         $scope.team = result.data;
         $scope.team.leagues = parseScores($scope.team.leagues);
