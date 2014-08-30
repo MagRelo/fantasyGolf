@@ -8,217 +8,249 @@ var CronJob = require('cron').CronJob;
 var mongoose = require('mongoose'),
   Player = mongoose.model('Player'),
   Tournament = mongoose.model('Tournament'),
-  Team = mongoose.model('Team');
+  Team = mongoose.model('Team'),
+  League = mongoose.model('League');
 
-//setup tournament
-var tournamentSetup = function() {
+//helper functions
+var sumPlayerScores = function(playerArray){
+
+  var teamScores = {
+    modstable: 0,
+    stable: 0,
+    sc: 0
+  };
+
+  playerArray.forEach(function(player){
+    if(player){
+      teamScores.modstable += player.modstable;
+      teamScores.stable += player.stable;
+      teamScores.sc += player.sc;
+    }
+  });
+
+  return teamScores;
+};
+var flattenObject = function(item){
+  if(item){
+    item = item._id;
+  }
+  return item;
+};
+
+
+var refreshSetup = function(){
 
   //clear existing records
   async.parallel([
-    function(callback){
-      Tournament.find({}).remove(function(err) {
-        if(err)
-        console.log('deleted tourneys');
-        callback(err);
-      });
-    },
-    function(callback){
-      Player.find({}).remove(function(err) {
-        console.log('deleted players');
-        callback(err);
-      });
-    },
-    function(callback){
-      //get setupFile
-      request({uri: 'http://www.pgatour.com/data/r/current/setup.json', json: true},
-        function(err, response, body) {
-          console.log('got setup');
-          callback(err, body);
-        }
-      )
-    },
-    function(callback){
-      //get leaderboard
-      request({uri: 'http://www.pgatour.com/data/r/current/leaderboard.json', json: true},
-        function(err, response, body) {
-          console.log('got leaderboard');
-          callback(err, body);
-        }
-      )
-    }
-  ],
+      function(callback){
+        Tournament.find({}).remove(function(err) {
+          if(err)
+            console.log('deleted tourneys');
+          callback(err);
+        });
+      },
+      function(callback){
+        //get setupFile
+        request({uri: 'http://www.pgatour.com/data/r/current/setup.json', json: true},
+          function(err, response, body) {
+            console.log('got setup');
+            callback(err, body);
+          }
+        )
+      },
+      function(callback){
+        //get leaderboard
+        request({uri: 'http://www.pgatour.com/data/r/current/leaderboard.json', json: true},
+          function(err, response, body) {
+            console.log('got leaderboard');
+            callback(err, body);
+          }
+        )
+      }
+    ],
     function(err, results){
-      if(err){return console.log(err);}
+      if(err){console.log(err); }
 
       //get data from results array
       var setupFile, leaderboard = {};
-      setupFile = results[2];
-      leaderboard = results[3];
+      setupFile = results[1];
+      leaderboard = results[2];
 
       //check for tournament object
       if(typeof setupFile.trn === "undefined" || typeof leaderboard.lb.c.c === "undefined"){
+
         return console.log('tournament setup record retrieved but undefined');
+        //return res.json(500, 'tournament setup record retrieved but undefined');
       }
 
       var setupObj = {
         event: setupFile.trn.event,
         field: setupFile.trn.field,
         rounds: setupFile.trn.rnds,
-        courses: leaderboard.lb.c.c
+        courses: leaderboard.lb.c.c,
+
+        name: leaderboard.lb.tn,
+        date: leaderboard.lb.lt,
+        pgaStatus: leaderboard.lb.rs,
+        ballstrikersStatus: 'Editable',
+        totalRounds: setupFile.trn.event.totalRnds,
+        currentRound: setupFile.trn.event.currentRnd,
+
+        fedex: setupFile.trn.event.cup,
+        money: setupFile.trn.event.money,
+        history: setupFile.trn.event.hiestory
       };
 
-      //save all players
-      if(setupObj.field){
-        setupObj.field.forEach(function(player){
-
-          //save
-          var fieldPlayer = new Player(player);
-          fieldPlayer.save(player, function(err){
-            if(err){ console.log(err); }
-          })
-
-        });
-      }
-
-      Tournament.create(setupObj, function(err, item){
-        if(err){ return console.log('setup file not saved: ' + err);}
-        return console.log('setup record saved: ' + item._id);
+      Tournament.create(setupObj, function(err){
+        if(err){
+          console.log('setup file not saved: ' + err);
+          //return res.json(500, 'setup file not saved: ' + err);
+        }
+        console.log('tournament setup file saved');
+        //return res.send(200, 'setup record saved: ' + item._id);
       });
 
     });
 
-
 };
 
-//refresh all players
-var refreshPlayers = function(){
+var refreshPlayerScores = function(callback){
+
+  console.log('Updating players...');
 
   async.parallel([
-    function(callback){
-      //get par for courses from setup
-      Tournament
-        .findOne({})
-        .exec(function(err, setup){
-          console.log('got setup');
-          callback(err, setup);
-        });
-    },
-    function(callback){
-      Player
-        .find({})
-        .exec(function(err, players) {
-          console.log('got players');
-          callback(err, players);
-        });
-    }
-  ],
+      function(callback){
+        //get par for courses from setup
+        Tournament
+          .findOne({})
+          .exec(function(err, setup){
+            callback(err, setup);
+          });
+      },
+      function(callback){
+        Player
+          .find({})
+          .exec(function(err, players) {
+            callback(err, players);
+          });
+      }
+    ],
     function(err, results){
-      if(err){return console.log(err);}
+      if(err){ return console.log(err);}
 
+      //assign data returned from http calls
       var setup = results[0];
       var players = results[1];
-      if (!players || !setup) {return console.log('no players or courses found');}
+      if (!players || !setup) { return console.log('no players or courses found'); }
 
       //get array of holes
-      var holes = setup.courses[0].h;
+      var scorecardTemplate = setup.courses[0].h;
+      // --- this should select the appropriate course?
 
-      players.forEach(function(player){
+      async.each(players, function(player, callback) {
+
+        //initialize player obj
+        player.rounds = [];
+        player.sc = 0;
+        player.stable = 0;
+        player.modstable = 0;
+
 
         //get scorecard
         request({uri: 'http://www.pgatour.com/data/r/current/scorecards/' + player.id + '.json', json: true},
           function(err, response, body) {
-            if(err){return console.log(err);}
+            if(err){ return console.log(err); }
             if(typeof body.p.rnds === "undefined"){ return console.log('player record retrieved but undefined'); }
-            console.log('player score retrieved: ' + player.id);
 
-            //initialize player obj
-            player.rounds = [];
-            player.sc = 0;
-            player.stable = 0;
-            player.modstable = 0;
+            //process each round
+            body.p.rnds.forEach(function(rawRound){
 
+              var scorecard = JSON.parse(JSON.stringify(scorecardTemplate));
 
-            //process rounds, push each into player object
-            body.p.rnds.forEach(function(round){
+              //create a template to push into the player
+              var processedRound = {
+                modStablefordTotal: 0,
+                stablefordTotal: 0,
+                standardTotal: 0,
+                holes: scorecard
+              };
 
-              var modStablefordTotal = 0;
-              var stablefordTotal = 0;
-              var standardTotal = 0;
+              processedRound.holes.forEach(function(processedHole, pHoleIndex){
 
-              //loop through holes
-              for(var j = 0 ; j < round.holes.length; j++ ){
+                processedHole.score = '';
+                processedHole.modstable = 0;
+                processedHole.stable = 0;
 
+                //loop through raw hole to find hole number that matches
+                rawRound.holes.forEach(function(rawHole){
 
-                //****
-                ///**********
+                  if(rawHole.cNum === processedHole.n) {
 
-                holes.forEach(function(hole){
-                  if(round.holes[j].n == hole.n){
-                    round.holes[j].par = hole.p;
-                  }
-                });
+                    //set score
+                    processedHole.score = rawHole.sc;
 
-                var par = round.holes[j].par || 4;
-                ///**********
-                //****
+                    //if blank, set all to '-' for consistent display
+                    if(processedHole.score ===  ''){
+                      processedHole.score = '-';
+                      processedHole.modstable = '-';
+                      processedHole.stable = '-';}
+                    else{
 
-                var score = '';
-                score = round.holes[j].sc;
-                var modstable = 0;
-                var stable = 0;
+                      var diff = processedHole.score - processedHole.p;
 
-                if(score == ''){
-                  modstable = '--';
-                  stable = '--';}
-                else{
+                      //modStable
+                      if(diff > 1){processedHole.modstable = -3}
+                      else if (diff === 1){processedHole.modstable = -1}
+                      else if (diff === 0){processedHole.modstable = 0}
+                      else if (diff === -1){processedHole.modstable = 2}
+                      else if (diff === -2){processedHole.modstable = 5}
+                      else if (diff < -2 ){processedHole.modstable = 8}
 
-                  var diff = score - par;
+                      //Stable
+                      if(diff > 1){processedHole.stable = 0}
+                      else if (diff === 1 ){processedHole.stable = 1}
+                      else if (diff === 0 ){processedHole.stable = 2}
+                      else if (diff === -1){processedHole.stable = 3}
+                      else if (diff === -2){processedHole.stable = 4}
+                      else if (diff === -3){processedHole.stable = 5}
+                      else if (diff >  -3){processedHole.stable = 6}
 
-                  //modStable
-                  if(diff > 1){modstable = -3}
-                  else if (diff == 1 ){modstable = -1}
-                  else if (diff == 0 ){modstable = 0}
-                  else if (diff == -1){modstable = 2}
-                  else if (diff == -2){modstable = 5}
-                  else if (diff < -2 ){modstable = 8}
+                      processedRound.standardTotal += Number(processedHole.score);
+                      processedRound.stablefordTotal += processedHole.stable;
+                      processedRound.modStablefordTotal += processedHole.modstable;
+                    }
 
-                  //Stable
-                  if(diff > 1){stable = 0}
-                  else if (diff == 1 ){stable = 1}
-                  else if (diff == 0 ){stable = 2}
-                  else if (diff == -1){stable = 3}
-                  else if (diff == -2){stable = 4}
-                  else if (diff == -3){stable = 5}
-                  else if (diff >  -3){stable = 6}
+                  }//if hole numbers match
 
-                  standardTotal = standardTotal + Number(score);
-                  stablefordTotal =  stablefordTotal + stable;
-                  modStablefordTotal = modStablefordTotal + modstable;
-                }
+                }); //raw.forEach loop
 
-                round.holes[j].stable =  stable;
-                round.holes[j].modstable =  modstable;
-              }
+                processedRound.holes[pHoleIndex] = processedHole;
 
-              //round totals
-              round.sc =  standardTotal;
-              round.stable =  stablefordTotal;
-              round.modstable = modStablefordTotal;
+              }); // Each processedHole
 
               //tournament totals
-              player.sc +=  standardTotal;
-              player.stable +=  stablefordTotal;
-              player.modstable += modStablefordTotal;
+              player.sc +=  processedRound.standardTotal ;
+              player.stable +=  processedRound.stablefordTotal;
+              player.modstable += processedRound.modStablefordTotal;
 
-              player.rounds.push(round)
-            });
+              player.rounds.push(processedRound)
+
+            }); //each round
 
             player.save(function(err){
-              if (err) {return console.log(err);}
-              return console.log('player score saved: ' + player.id)
+              if (err) { return console.log('player: ' + player.id + ' -- ' + err); }
+              return callback();
             })
           }
         );
+
+      }, function(err){
+        if( err ) {
+          console.log('error processing player scores: ' + err);
+        } else {
+          console.log('...all players updated');
+          callback();
+        }
       });
 
 
@@ -227,16 +259,19 @@ var refreshPlayers = function(){
 
 };
 
-//calc Team scores
-var calcTeams = function(){
+var refreshTeamScores = function(callback){
+
+  console.log('Updating teams...');
 
   Team
     .find({})
-    .populate('players')
+    .populate('player1')
+    .populate('player2')
+    .populate('player3')
+    .populate('player4')
     .exec(function(err, teams){
       if (err) {return console.log(err);}
       if (!teams) {return console.log('calc: did not load teams');}
-      console.log('calc: teams: ' + teams.length);
 
       //called for each team
       async.each(teams,
@@ -245,21 +280,18 @@ var calcTeams = function(){
           team.stable = 0;
           team.sc = 0;
 
-          team.players.forEach(function(player){
-            team.modstable += player.modstable;
-            team.stable += player.stable;
-            team.sc += player.sc;
-          });
+          var teamScores = sumPlayerScores([team.player1, team.player2, team.player3, team.player4]);
+          team.modstable = teamScores.modstable;
+          team.stable = teamScores.stable;
+          team.sc = teamScores.sc;
 
-          //de-populate players
-          team.players.forEach(function(player, index){
-            team.players[index] = player._id;
-          });
+          team.player1 = flattenObject(team.player1);
+          team.player2 = flattenObject(team.player2);
+          team.player3 = flattenObject(team.player3);
+          team.player4 = flattenObject(team.player4);
 
           team.save(function(err){
-              if (err) {return console.log(err);}
-
-              console.log('team saved');
+              if (err) { console.log(err); }
               return callback();
             }
           );
@@ -267,8 +299,53 @@ var calcTeams = function(){
 
         //after all async ops
         function(err){
-          if (err) {return console.log(err);}
-          console.log('teams updated');
+          if (err) { console.log(err); }
+          console.log('... all teams updated');
+          callback();
+        })
+
+    });
+
+};
+
+var refreshLeagueScores = function(callback){
+
+  console.log('Updating leagues...');
+
+  League
+    .find({})
+    .populate('teams')
+    .exec(function(err, leagues){
+      if (err) {return console.log(err);}
+      if (!leagues) {return console.log('calc: did not load teams');}
+
+      //called for each league
+      async.each(leagues,
+        function(league, callback){
+
+          league.leaderboard = [];
+          league.teams.forEach(function(team){
+
+            league.leaderboard.push({
+              teamName: team.teamName,
+              ownerName: team.ownerName,
+              teamId: team._id,
+              score: team.modstable
+            });
+          });
+
+          league.save(function(err){
+              if (err) { console.log(err); }
+              return callback();
+            }
+          );
+        },
+
+        //after all async ops
+        function(err){
+          if (err) { console.log(err); }
+          console.log('... all leagues Updated');
+          callback();
         })
 
     });
@@ -276,44 +353,33 @@ var calcTeams = function(){
 };
 
 
-//Setup Tournament - every tuesday midnight
-new CronJob('00 00 00 * * 2', function(){
-  var now = new Date;
-  console.log('setup Tournament begin: ' + now);
-
-  tournamentSetup();
-
-}, null, true);
-
-
-//Get Players - every 15 minutes
-new CronJob('00 00,15,30,45 * * * *', function(){
-  console.log('refresh players begin: ' + new Date);
-
-  refreshPlayers();
-
-}, null, true);
-
-//Calc Teams - every 15 minutes
-new CronJob('00 05,20,35,50 * * * *', function(){
-  console.log('calc teams begin: ' + new Date);
-
-  calcTeams();
-
-}, null, true);
-
 
 //test
-new CronJob('00 10,25,40,55 * * * *', function(){
+new CronJob('00 00,15,30,45 * * * *', function(){
 
-    console.log('run setup? ' + process.env.RUN_SETUP);
-    if(process.env.RUN_SETUP == 'true'){
-      console.log('run setup - start time: ' + new Date);
-      tournamentSetup();
+    var refresh = process.env.RUN_REFRESH || 'true';
+
+    console.log('Run Refresh? ' + refresh);
+    if(refresh === 'true'){
+      console.log('refresh start time: ' + new Date);
+
+      async.series([
+          function(callback){
+            refreshPlayerScores(callback);
+          },
+          function(callback){
+            refreshTeamScores(callback);
+          },
+          function(callback){
+            refreshLeagueScores(callback);
+          }
+        ],
+        function(err){
+          if (err) {return console.log(err);}
+          console.log('refresh complete: ' + new Date);
+        })
+
     }
-
-  //test
-  //tournamentSetup();
 
 }, null, true);
 

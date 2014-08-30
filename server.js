@@ -30,7 +30,7 @@ if(process.env.SETUP_DATA == 'true'){
 }
 
 //start jobs
-//require('./bin/cronjobs');
+require('./bin/cronjobs');
 
   
 // Passport Configuration
