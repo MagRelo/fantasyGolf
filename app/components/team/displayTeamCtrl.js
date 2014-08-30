@@ -36,9 +36,7 @@ angular.module('fantasyGolfApp')
             if(playerData){
               while(playerData.rounds.length < totalRounds){
                 playerData.rounds.push({
-                  sc: '--',
-                  stable: '--',
-                  modstable: '--'
+                  modStablefordTotal: ''
                 })
               }
             }

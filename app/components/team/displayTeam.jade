@@ -25,7 +25,7 @@ div.well.league_well(data-ng-controller="displayTeamCtrl")
 
 
                 td.hidden-xs(data-ng-repeat="round in team.player1.rounds")
-                    h5 {{round.modstable}}
+                    h5 {{round.modStablefordTotal}}
                 td
                     h5.text-center {{team.player1.modstable}}
 
@@ -44,7 +44,7 @@ div.well.league_well(data-ng-controller="displayTeamCtrl")
 
 
                 td.hidden-xs(data-ng-repeat="round in team.player2.rounds")
-                    h5 {{round.modstable}}
+                    h5 {{round.modStablefordTotal}}
                 td
                     h5.text-center {{team.player2.modstable}}
 
@@ -63,7 +63,7 @@ div.well.league_well(data-ng-controller="displayTeamCtrl")
 
 
                 td.hidden-xs(data-ng-repeat="round in team.player3.rounds")
-                    h5 {{round.modstable}}
+                    h5 {{round.modStablefordTotal}}
                 td
                     h5.text-center {{team.player3.modstable}}
 
@@ -78,7 +78,7 @@ div.well.league_well(data-ng-controller="displayTeamCtrl")
                         span.glyphicon.glyphicon-list
                         |  scorecard
                 td.hidden-xs(data-ng-repeat="round in team.player4.rounds")
-                    h5 {{round.modstable}}
+                    h5 {{round.modStablefordTotal}}
                 td
                     h5.text-center {{team.player4.modstable}}
         
