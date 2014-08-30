@@ -9,6 +9,7 @@ div.row(data-ng-controller="editLeaguesCtrl")
         .well
             table.table.table-responsive()
                 legend My leagues
+                p Click on the red button to leave a league.
                 thead.text-muted
                     th Name
                     th Leave
@@ -23,9 +24,14 @@ div.row(data-ng-controller="editLeaguesCtrl")
 
     div.col-sm-4
         .well
-            legend All leagues
-            input.form-control(ng-model="leagueFilter", placeholder="type to search...")
+            legend Join leagues
 
+
+            //search box
+            //p use the box below to search for a league
+            //input.form-control(ng-model="leagueFilter", placeholder="type to search...")
+
+            p Click on the blue button to join a league.
             div
                 table.table.table-responsive()
                     thead.text-muted
