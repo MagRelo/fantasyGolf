@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($rootScope, $scope, $location, Auth) {
 
     $scope.menu = [
       { 'title': 'leagues', 'link': '/leagues' }
@@ -19,14 +19,20 @@ angular.module('fantasyGolfApp')
     };
     addAdmin();
 
-    $scope.logout = function() {
-      Auth.logout()
-      .then(function() {
-        $location.path('/');
-      });
-    };
-    
     $scope.isActive = function(route) {
       return route === $location.path();
     };
+
+    //Close nav after link selected
+    $rootScope.$on('$routeChangeSuccess', function (event, next) {
+      $scope.navCollapsed = true;
+    });
+
+    $scope.logout = function() {
+      Auth.logout()
+        .then(function() {
+          $location.path('/');
+        });
+    };
+
   });
