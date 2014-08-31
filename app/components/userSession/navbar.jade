@@ -1,17 +1,19 @@
 div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
 
-    div
+    div.hidden-sm.hidden-xs
 
-        ul.list-inline.hidden-sm.hidden-xs.pull-right
-            li
-               span.mg-navGroup(ng-repeat="item in menu")
-                    a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
+        ul.list-inline.pull-right
 
+            li.mg-navGroup(ng-repeat="item in menu")
+                a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
+            li.mg-navGroup
                button.btn.btn-danger(ng-click='logout()') Logout
 
-        .navbar.hidden-md.hidden-lg
+    div.navbar.hidden-md.hidden-lg
+
             .navbar-inner
                 .container
+
                     // Note: set the initial collapsed state and change it when clicking
                     a.btn.btn-navbar.mg-navButton.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
                         span.glyphicon.glyphicon-list

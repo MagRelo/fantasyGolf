@@ -4,30 +4,24 @@ $mg-white:              #D2D5D8;
 $mg-mid:                #5E6266;
 $mg-dark:               #3C3F42;
 $mg-darkest:            #282B2E;
-
 $brand-info:            yellowgreen !default;
 $brand-primary:         #2B7EC0 !default;
 $brand-success:         #468847 !default;
 $brand-warning:         #e67e22 !default;
 $brand-danger:          #B95050 !default;
-
 // Typography
 $font-family-sans-serif:  Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $body-bg:               transparent !default;
 $text-color:            $mg-white !default;
-
 // Forms
 $input-bg:              rgba(30,32,34,.9) !default;
 $input-color:           $mg-white !default;
 $input-border:          $mg-mid !default;
 $legend-color:          $mg-white !default;
-
 // Panels
 $panel-bg:              $mg-dark !default;
-
 // Wells
 $well-bg:               $mg-dark !default;
-
 
 @import 'sass-bootstrap/lib/bootstrap';
 
@@ -46,7 +40,6 @@ html {
   background-size: cover;
 }
 
-/* Space out content a bit */
 body {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -56,16 +49,7 @@ body {
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 
-.header{
-  margin-bottom: 20px;
-}
-
-.header h1 {
-    margin-top: 0;
-    line-height: 40px;
-    font-family: Yellowtail, cursive, serif;
-    text-shadow:  1px 1px 0 $mg-darkest;
-}
+//------------FRONT----------*
 
 .front h1{
   font-size: 40px;
@@ -74,10 +58,17 @@ body {
   margin-top: 0;
 }
 
+.front h1 small{
+  color: $mg-white;
+  text-shadow:  1px 1px 0 black;
+}
+
+.instructions{
+  margin-bottom: 25px;
+}
+
 @media all and (min-width: 768px) {
-  .front h1{
-    font-size: 70px;
-  }
+  .front h1{ font-size: 70px; }
 
   //WebKit scrollbars
   ::-webkit-scrollbar {
@@ -98,21 +89,21 @@ body {
   }
 }
 
-.front h1 small{
-  color: $mg-white;
-  text-shadow:  1px 1px 0 black;
+//------------FRONT----------*
+//------------NAV----------*
+.header{
+  margin-bottom: 20px;
 }
 
-
-.nav > li > a:hover,
-.nav > li > a:focus {
-  text-decoration: none;
-  background-color: $mg-dark;
-  color: $mg-white;
+.header h1 {
+  margin-top: 0;
+  line-height: 40px;
+  font-family: Yellowtail, cursive, serif;
+  text-shadow:  1px 1px 0 $mg-darkest;
 }
 
 .mg-navGroup{
-  margin-right: 25px;
+  margin-left: 25px;
 }
 
 .btn.mg-navGroup > a{
@@ -129,6 +120,17 @@ body {
   background: rgba(30, 32, 34, .35);
 }
 
+//small screen link styling
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: $mg-dark;
+  color: $mg-white;
+}
+
+//------------NAV----------*
+
+//------------TABLE--------
 table > thead > tr > th,
 table > tbody > tr > td{
   text-align: center;
@@ -141,24 +143,21 @@ table > tbody > tr > td{
   border-bottom: 1px solid $mg-white;
 }
 
+.tableOverflow{
+  border: solid 1px $mg-dark;
+  overflow-x: auto;
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+//------------TABLE--------*
+
+//------------MISC--------*
 .input-group-addon {
   background-color: $mg-mid;
 }
-
-.well{
-  border-color: $mg-mid;
-  border-right-color: #4c4f52;
-  border-bottom-color: #4c4f52;
-  background-color: rgba(40,43,46,.85);
-}
-
-//section titles
 .text-primary:hover{
   color: $brand-primary;
-}
-
-.mg-buttongroup{
-  margin-bottom: 10px;
 }
 
 .playerImage{
@@ -166,8 +165,23 @@ table > tbody > tr > td{
   margin-top: 2px;
 }
 
-.mg_well{
-  padding: 0 20px 0 20px;
+.positive{
+  background-color: $brand-success;
+}
+
+.negative{
+  background-color: $brand-danger;
+}
+//------------MISC--------*
+
+//------------WELL--------*
+
+.well{
+  border-color: $mg-mid;
+  border-right-color: #4c4f52;
+  border-bottom-color: #4c4f52;
+  background-color: rgba(40,43,46,.85);
+  padding: 0 19px 19px 19px;
 }
 
 h3{
@@ -179,21 +193,13 @@ span.h3 > small{
   margin-left: 10px;
 }
 
-.positive{
-  background-color: $brand-success;
-  }
-
-.negative{
-  background-color: $brand-danger;
+legend{
+  margin-top: 15px;
 }
 
-.league_well{
-  padding: 0 19px 19px 19px;
-}
+//------------WELL--------*
 
-.league_well p{
-  margin: 0 0 3px
-}
+//------------LEAGUE--------*
 
 .league_chatbox{
   height: 300px;
@@ -205,11 +211,18 @@ span.h3 > small{
   overflow-y: auto;
 }
 
+//chatbox 'send' button
+.input-group-btn:last-child > .btn {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-color: $mg-mid;
+}
+
 .league_leaderbox{
   height: 334px;
   background-color: rgba(30,32,34,.9);
   border: solid 1px $mg-mid;
-  //padding: 5px 10px 0 10px;
   overflow-y: auto;
 }
 
@@ -229,13 +242,15 @@ span.h3 > small{
 
 .league_leaderbox > a{
   text-decoration: none;
-
 }
 
 .league_leaderbox_item:hover{
   background-color: $mg-mid;
   border-color: $mg-dark;
 }
+
+//------------LEAGUE--------*
+//------------ADMIN--------*
 
 .admin_buttonbox{
   margin-bottom: 20px;
@@ -248,37 +263,7 @@ span.h3 > small{
   margin-top: 20px;
 }
 
-.instructions{
-  margin-bottom: 25px;
-}
-
-
-.tableOverflow{
-  border: solid 1px $mg-dark;
-  overflow-x: auto;
-  margin-top: 15px;
-  padding: 0 10px;
-}
-
-.form-control[disabled],
-.form-control[readonly],
-fieldset[disabled] .form-control {
-  cursor: not-allowed;
-  background-color: $mg-darkest;
-  color: $mg-mid;
-}
-
-.input-group .form-control:last-child,
-.input-group-addon:last-child,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-top-left-radius: 0;
-  border-color: $mg-mid;
-}
-
+//------------ADMIN--------*
 
 /*____Loading Spinner*/
 //

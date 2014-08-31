@@ -4,16 +4,9 @@ angular.module('fantasyGolfApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
 
     $scope.menu = [
-      {
-        'title': 'leagues',
-        'link': '/leagues'
-      }, {
-        'title': 'my team',
-        'link': '/myteam'
-      }, {
-        'title': 'leaderboard',
-        'link': '/leaderboard'
-      }
+      { 'title': 'leagues', 'link': '/leagues' }
+      ,{ 'title': 'my team', 'link': '/myteam' }
+      ,{ 'title': 'leaderboard', 'link': '/leaderboard' }
     ];
 
     //add admin link
@@ -24,7 +17,6 @@ angular.module('fantasyGolfApp')
         )
       }
     };
-
     addAdmin();
 
     $scope.logout = function() {
