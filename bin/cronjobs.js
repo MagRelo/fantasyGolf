@@ -324,6 +324,7 @@ var refreshLeagueScores = function(callback){
         function(league, callback){
 
           league.leaderboard = [];
+          league.modified = new Date;
           league.teams.forEach(function(team){
 
             league.leaderboard.push({

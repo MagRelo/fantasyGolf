@@ -25,6 +25,7 @@ div(data-ng-controller="listLeaguesCtrl")
             .col-sm-4
 
                 h3 Leaderboard
+                    small updated: {{league.modified| date:'EEE, h:mm a'}}
                 .league_leaderbox
                     a(ng-repeat="team in league.leaderboard | orderBy:'score':true", ng-href="/team/{{team.teamId}}")
                         div.league_leaderbox_item(ng-class="{active: team.teamId == currentUser.teamId}")
