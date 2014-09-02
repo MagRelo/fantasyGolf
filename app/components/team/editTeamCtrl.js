@@ -46,7 +46,7 @@ angular.module('fantasyGolfApp')
 
     $scope.cancel = function(){
 
-      Team.getTeam($scope.currentUser.teamId)
+      Team.getMyTeam($scope.currentUser.teamId)
         .then(
           function(result){
             $scope.team = angular.copy(result.data);

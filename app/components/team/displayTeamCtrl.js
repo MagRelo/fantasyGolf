@@ -20,7 +20,6 @@ angular.module('fantasyGolfApp')
 
         $scope.courses = results[1].data.courses;
 
-        //currentRound = results[1].data.currentRound;
         totalRounds = results[1].data.totalRounds;
 
         //setup table header (rounds)

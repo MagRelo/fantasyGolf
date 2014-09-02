@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .factory('Auth', function Auth($location, $rootScope, Session, Team, User, $cookieStore) {
+  .factory('Auth', function Auth($location, $rootScope, Session, Team, User, $cookieStore, promiseCache) {
     
     // Get currentUser from cookie
     $rootScope.currentUser = $cookieStore.get('user') || null;
@@ -41,6 +41,7 @@ angular.module('fantasyGolfApp')
 
         return Session.delete(function() {
             $rootScope.currentUser = null;
+            promiseCache.removeAll(false);
             return cb();
           },
           function(err) {

@@ -15,7 +15,7 @@ angular.module('fantasyGolfApp')
         })
         .then( function() {
           // Logged in, redirect to home
-          $location.path('/myteam');
+          $location.path('/leagues');
         })
         .catch( function(err) {
           err = err.data;
