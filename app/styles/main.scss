@@ -153,11 +153,22 @@ table > tbody > tr > td{
 //------------TABLE--------*
 
 //------------MISC--------*
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+  background-color: $input-bg;
+  color: $mg-mid;
+}
+
 .input-group-addon {
   background-color: $mg-mid;
 }
-.text-primary:hover{
+.text-primary:hover,{
   color: $brand-primary;
+}
+.text-danger:hover,{
+  color: $brand-danger;
 }
 
 .playerImage{
