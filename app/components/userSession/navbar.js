@@ -4,9 +4,9 @@ angular.module('fantasyGolfApp')
   .controller('NavbarCtrl', function ($rootScope, $scope, $location, Auth) {
 
     $scope.menu = [
-      { 'title': 'leagues', 'link': '/leagues' }
-      ,{ 'title': 'my team', 'link': '/myteam' }
-      ,{ 'title': 'leaderboard', 'link': '/leaderboard' }
+      { 'title': 'my leagues', 'link': '/leagues' }
+      ,{ 'title': 'view my team', 'link': '/myteam' }
+      ,{ 'title': 'edit my team', 'link': '/editteam' }
     ];
 
     //add admin link

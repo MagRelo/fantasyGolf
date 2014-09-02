@@ -5,7 +5,8 @@ angular.module('fantasyGolfApp')
 
     $q.all([
       Team.getMyTeam($scope.currentUser.teamId),
-      pga.getField()
+      pga.getField(),
+      pga.getSetup()
     ])
       .then(function(result){
 
@@ -14,6 +15,9 @@ angular.module('fantasyGolfApp')
 
         //get field for player drop downs
         $scope.field = result[1].data;
+
+        //
+        $scope.tournament = result[2].data;
       });
 
 

@@ -177,11 +177,17 @@ table > tbody > tr > td{
 //------------WELL--------*
 
 .well{
-  border-color: $mg-mid;
-  border-right-color: #4c4f52;
-  border-bottom-color: #4c4f52;
-  background-color: rgba(40,43,46,.85);
-  padding: 0 19px 19px 19px;
+  border: none;
+  border-radius: 0;
+  //border-right-color: #4c4f52;
+  //border-bottom-color: #4c4f52;
+  background-color: rgba(40,43,46,.95);
+  padding: 0 20px 20px 20px;
+  box-shadow:
+    0 0 1px 2px $mg-mid,
+    0 0 1px 3px $mg-darkest,
+    0 10px 15px -6px #0B0B0C
+
 }
 
 h3{
@@ -194,7 +200,7 @@ span.h3 > small{
 }
 
 legend{
-  margin-top: 15px;
+  padding-top: 15px;
 }
 
 //------------WELL--------*

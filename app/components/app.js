@@ -23,17 +23,21 @@ angular.module('fantasyGolfApp', [
         templateUrl: 'components/league/editLeagues',
         authenticate: true
       })
-      .when('/league/:leagueId', {
-        templateUrl: 'components/league/viewleague',
-        controller: 'ViewLeagueCtrl',
-        authenticate: true
-      })
+//      .when('/league/:leagueId', {
+//        templateUrl: 'components/league/viewleague',
+//        controller: 'ViewLeagueCtrl',
+//        authenticate: true
+//      })
       .when('/team/:teamId', {
         templateUrl: 'components/team/displayTeam',
         authenticate: true
       })
       .when('/myteam', {
         templateUrl: 'components/team/myTeam',
+        authenticate: true
+      })
+      .when('/editteam', {
+        templateUrl: 'components/team/editTeam',
         authenticate: true
       })
       .when('/player/:playerId', {
