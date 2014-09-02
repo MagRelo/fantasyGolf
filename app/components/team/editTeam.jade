@@ -16,7 +16,7 @@
                 input.form-control(type='text', name='ownerName', required='required', data-ng-model='team.ownerName')
 
 
-        h4.text-center.text-danger(ng-show="tournament.ballstrikersStatus == 'Locked'")
+        h5.text-center.text-danger(ng-show="tournament.ballstrikersStatus == 'Locked'")
             span.glyphicon.glyphicon-warning-sign
             |  Players cannot be changed while a tournament is in progress
 

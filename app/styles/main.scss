@@ -110,10 +110,14 @@ body {
   color: $mg-white;
 }
 
-.btn.mg-navButton,
+.btn.mg-navButton{
+  color: $mg-white;
+}
+
 .btn.mg-navButton:hover,
 .btn.mg-navButton:focus {
   color: $mg-white;
+  background: rgba(30, 32, 34, .35);
 }
 
 .btn.mg-navButton.active {
@@ -176,6 +180,17 @@ fieldset[disabled] .form-control {
   margin-top: 2px;
 }
 
+.btn.logout{
+  background-color: $mg-mid;
+  color: $mg-white;
+  box-shadow: 0 2px 2px -2px #0B0B0C
+}
+
+
+.btn.logout:hover{
+  background-color: $brand-danger;
+}
+
 .positive{
   background-color: $brand-success;
 }
@@ -188,17 +203,17 @@ fieldset[disabled] .form-control {
 //------------WELL--------*
 
 .well{
-  border: none;
   border-radius: 0;
-  //border-right-color: #4c4f52;
-  //border-bottom-color: #4c4f52;
+  border-color: #4c4f52;
+//  border-top-color: #4c4f52;
+//  border-left-color: #4c4f52;
+//  border-right-color: #4c4f52;
   background-color: rgba(40,43,46,.95);
   padding: 0 20px 20px 20px;
-  box-shadow:
-    0 0 1px 2px $mg-mid,
-    0 0 1px 3px $mg-darkest,
-    0 10px 15px -6px #0B0B0C
 
+  box-shadow:
+    0 0 1px 1px $mg-darkest,
+    0 10px 15px -6px #0B0B0C;
 }
 
 h3{

@@ -7,7 +7,7 @@ div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
             li.mg-navGroup(ng-repeat="item in menu")
                 a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
             li.mg-navGroup
-               button.btn.btn-danger(ng-click='logout()') Logout
+               button.btn.logout(ng-click='logout()') Logout
 
     div.navbar.hidden-md.hidden-lg
 
@@ -26,7 +26,7 @@ div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
                                 a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
                             li
                                 .well-sm.text-center
-                                    button.btn.btn-danger(ng-click='logout()') Logout
+                                    button.btn.logout(ng-click='logout()') Logout
 
                     // /.nav-collapse
                 // /.container
