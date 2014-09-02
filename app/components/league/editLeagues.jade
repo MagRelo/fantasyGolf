@@ -7,6 +7,23 @@ div.row(data-ng-controller="editLeaguesCtrl")
 
     div.col-sm-4
         .well
+            legend Join leagues
+            p Click on the blue button to join a league.
+            div
+                table.table.table-responsive()
+                    thead.text-muted
+                        th Name
+                        th Join
+                    tbody
+                        tr(data-ng-repeat="league in leagues | filter: leagueFilter | filter:{active: false} ")
+                            td
+                                h5 {{league.leagueName}}
+                            td
+                                button.btn.btn-primary.btn-sm.h5(data-ng-click="joinLeague(league._id, currentUser.teamId)")
+                                    span.glyphicon.glyphicon-ok
+
+    div.col-sm-4
+        .well
             table.table.table-responsive()
                 legend My leagues
                 p Click on the red button to leave a league.
@@ -21,30 +38,6 @@ div.row(data-ng-controller="editLeaguesCtrl")
                         td
                             button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id, currentUser.teamId)")
                                 span.glyphicon.glyphicon-new-window
-
-    div.col-sm-4
-        .well
-            legend Join leagues
-
-
-            //search box
-            //p use the box below to search for a league
-            //input.form-control(ng-model="leagueFilter", placeholder="type to search...")
-
-            p Click on the blue button to join a league.
-            div
-                table.table.table-responsive()
-                    thead.text-muted
-                        th Name
-                        th Join
-                    tbody
-                        tr(data-ng-repeat="league in leagues | filter: leagueFilter | filter:{active: false} ")
-                            td
-                                h5 {{league.leagueName}}
-
-                            td
-                                button.btn.btn-primary.btn-sm.h5(data-ng-click="joinLeague(league._id, currentUser.teamId)")
-                                    span.glyphicon.glyphicon-ok
 
     div.col-sm-4
         .well
