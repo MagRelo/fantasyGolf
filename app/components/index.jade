@@ -3,7 +3,7 @@ doctype html
 // [if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]
 // [if IE 8]>         <html class="no-js lt-ie9"> <![endif]
 // [if gt IE 8]><!
-html.no-js
+html
   //<![endif]
   head
     meta(charset="utf-8")
@@ -21,18 +21,11 @@ html.no-js
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
   body(ng-app="fantasyGolfApp")
-    //[if lt IE 7]>
-      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-      <![endif]
-    //[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
-      <![endif]
-
-    // Add your site or application content here
-
-
+    <!--[if lt IE 10]>
+    <p class="well">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <!--<![endif]-->
 
     div.container
         div(ng-if="currentUser")
@@ -51,7 +44,9 @@ html.no-js
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
