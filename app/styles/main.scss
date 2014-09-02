@@ -213,8 +213,18 @@ legend{
   border-bottom: solid 1px $mg-mid;
   border-right: solid 1px $mg-mid;
   border-left: solid 1px $mg-mid;
-  padding: 10px 10px 0 10px;
+  padding: 0 15px 0 15px;
   overflow-y: auto;
+}
+
+.league_chatbox_item{
+  border-bottom: dashed 1px $mg-mid;
+  padding: 10px 0;
+
+}
+
+.league_chatbox_item_title{
+  margin-right: 7px;
 }
 
 //chatbox 'send' button

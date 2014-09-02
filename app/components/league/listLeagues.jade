@@ -16,9 +16,10 @@ div(data-ng-controller="listLeaguesCtrl")
                             button.btn.btn-success(ng-click="addChat(chatMessage, league._id, currentUser.teamId)") send
 
                 .league_chatbox
-                    p(ng-repeat="msg in league.chat | orderBy:'modified':true")
-                        span.text-primary {{msg.name}}
-                        span.text-muted  {{msg.modified| date:'EEE, h:mm a'}} -
+                    div.league_chatbox_item(ng-repeat="msg in league.chat | orderBy:'modified':true")
+                        span.league_chatbox_item_title
+                            span.text-primary {{msg.name}}
+                            span.text-muted  {{msg.modified| date:'EEE, h:mm a'}}
                         |  {{msg.message}}
 
             .col-sm-4
