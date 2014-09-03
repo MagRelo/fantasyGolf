@@ -3,15 +3,13 @@
 
 div(data-ng-controller="listLeaguesCtrl")
 
-
-
     div.well(ng-repeat="league in team.leagues")
         .row
             .col-sm-8
                 h3 {{league.leagueName}}
                 form
                     .input-group
-                        input.form-control(type="text", ng-model="chatMessage")
+                        input.form-control(type="text", placeholder="enter a message here...", ng-model="chatMessage")
                         span.input-group-btn
                             button.btn.btn-success(ng-click="addChat(chatMessage, league._id, currentUser.teamId)") send
 
@@ -23,7 +21,6 @@ div(data-ng-controller="listLeaguesCtrl")
                         |  {{msg.message}}
 
             .col-sm-4
-
                 h3 Leaderboard
                     small updated: {{league.modified| date:'EEE, h:mm a'}}
                 .league_leaderbox
@@ -33,17 +30,6 @@ div(data-ng-controller="listLeaguesCtrl")
                             span  {{team.teamName}}
                                 small.text-muted  {{team.ownerName}}
                             span.pull-right {{team.score}}
-
             .clearfix
 
-    //.row
-        .col-sm-12
-            .well.text-center
 
-                h4(ng-hide="team.leagues.length > 0")  You're not currently a member of any leagues. click 'Join Leagues' to join a league and compete against other teams.
-                br
-                a.btn.btn-primary.btn-lg(href="/editleague")
-                    span.glyphicon.glyphicon-edit
-                    span(ng-hide="team.leagues.length > 0")  Join
-                    span(ng-show="team.leagues.length > 0")  Edit
-                    |  Leagues
