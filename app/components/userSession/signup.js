@@ -7,11 +7,13 @@ angular.module('fantasyGolfApp')
 
     $scope.register = function(form) {
       $scope.submitted = true;
-  
+
+      var userEmail = $scope.user.email.toLowerCase();
+
       if(form.$valid) {
         Auth.createUser({
           name: $scope.user.name,
-          email: $scope.user.email,
+          email: userEmail,
           password: $scope.user.password
         })
         .then( function() {

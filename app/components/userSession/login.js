@@ -7,10 +7,12 @@ angular.module('fantasyGolfApp')
 
     $scope.login = function(form) {
       $scope.submitted = true;
-      
+
+      var userEmail = $scope.user.email.toLowerCase();
+
       if(form.$valid) {
         Auth.login({
-          email: $scope.user.email,
+          email: userEmail,
           password: $scope.user.password
         })
         .then( function() {
