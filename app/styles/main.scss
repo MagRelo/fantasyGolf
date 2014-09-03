@@ -10,7 +10,7 @@ $brand-success:         #468847 !default;
 $brand-warning:         #e67e22 !default;
 $brand-danger:          #B95050 !default;
 // Typography
-$font-family-sans-serif:  Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  'Arimo', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $body-bg:               transparent !default;
 $text-color:            $mg-white !default;
 // Forms
@@ -212,8 +212,8 @@ fieldset[disabled] .form-control {
   padding: 0 20px 20px 20px;
 
   box-shadow:
-    0 0 1px 1px $mg-darkest,
-    0 10px 15px -6px #0B0B0C;
+    0 0 1px 1px #282b2e,
+    0 3px 10px 0px #0b0b0c
 }
 
 h3{
