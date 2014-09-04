@@ -43,20 +43,27 @@
 
 
         //buttons
-        ul.list-inline.text-center
-            li
-                button.btn.btn-success(type="submit", ng-click="saveTeam(team)", ng-disabled="TeamForm.$invalid || TeamForm.$pristine" )
-                    span.glyphicon.glyphicon-ok
-                    |  Save
-            li
-                button.btn.btn-primary(data-ng-click="cancel()", ng-disabled="TeamForm.$pristine")
-                    span.glyphicon.glyphicon-repeat
-                    |  Undo
-            h5.text-success(data-ng-show='updated && TeamForm.$pristine') All changes saved &#x2713;
+        div.well-sm.text-center
+            ul.list-inline
+                li
+                    button.btn.btn-success(type="submit", ng-click="saveTeam(team)", ng-disabled="TeamForm.$invalid || TeamForm.$pristine" )
+                        span.glyphicon.glyphicon-ok
+                        span(ng-show="TeamForm.$dirty")  Save changes
+                        span(ng-show="TeamForm.$pristine")  All changes saved
+                li
+                    button.btn.btn-danger(data-ng-click="cancel()", ng-disabled="TeamForm.$pristine")
+                        span.glyphicon.glyphicon-repeat
+                        |  Undo changes
+
+                li
+                    a.btn.btn-primary(href="/myteam", ng-disabled="TeamForm.$dirty")
+                        span.glyphicon.glyphicon-picture
+                        |  View my team
+
+            //error
+            alert(type="danger", ng-if="teamError") {{teamError}}
 
 
-        //error
-        alert(type="danger", ng-show="teamError") {{teamError}}
 
 
 div(ng-include='\'components/league/editLeagues\'')
