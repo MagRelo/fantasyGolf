@@ -495,11 +495,11 @@ legend{
 
 
 
-div[ng-view].ng-enter {
+.viewAnimate.ng-enter {
   transition: all 800ms cubic-bezier(0.230, 1.000, 0.320, 1.000); /* easeOutQuint */
   opacity: 0;
 }
 
-div[ng-view].ng-enter-active {
+.viewAnimate.ng-enter-active {
   opacity: 1;
 }
