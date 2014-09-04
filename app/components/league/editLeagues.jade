@@ -14,23 +14,23 @@ div.row(data-ng-controller="editLeaguesCtrl")
                 table.table.table-responsive()
                     thead.text-muted
                         th League Name
-                        th Am I a member?
+                        th.hidden-xs Am I a member?
                         th Leave / Join League
                     tbody
                         tr(data-ng-repeat="league in leagues")
                             td
                                 h5 {{league.leagueName}}
-                            td
+                            td.hidden-xs
                                 h5
                                     span.glyphicon(ng-class="{'glyphicon-ok': league.active, 'glyphicon-remove': !league.active}")
                             td
                                 button.btn.btn-danger.h5(ng-show="league.active",ng-click="leaveLeague(league._id, currentUser.teamId)")
                                     span.glyphicon.glyphicon-new-window
-                                    |  Leave league
+                                    |  Leave
 
                                 button.btn.btn-success.h5(ng-hide="league.active",ng-click="joinLeague(league._id, currentUser.teamId)")
                                     span.glyphicon.glyphicon-ok
-                                    |  Join league
+                                    |  Join
 
             div.well-sm.text-center
                 a.btn.btn-primary(href="/leagues")

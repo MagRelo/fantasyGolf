@@ -186,6 +186,10 @@ fieldset[disabled] .form-control {
   box-shadow: 0 2px 2px -2px #0B0B0C
 }
 
+.list-inline > li > .btn {
+  margin-top: 5px;
+}
+
 
 .btn.logout:hover{
   background-color: $brand-danger;
