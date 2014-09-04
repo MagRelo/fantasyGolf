@@ -5,41 +5,38 @@ div.row(data-ng-controller="editLeaguesCtrl")
             h4 status: {{leagueError.status}}
             p {{leagueError.name}}: {{leagueError.message}}
 
-    div.col-sm-4
+    div.col-sm-12
         .well
-            legend Join leagues
-            p Click on the blue button to join a league.
+            legend Manage my leagues
+            //p(type="success") This is a list of all of the leagues on Ballstrikers. You can join multiple leagues. Click the green button to join a league. Click the red button to leave a league.
+
             div
                 table.table.table-responsive()
                     thead.text-muted
-                        th Name
-                        th Join
+                        th League Name
+                        th Am I a member?
+                        th Leave / Join League
                     tbody
-                        tr(data-ng-repeat="league in leagues | filter: leagueFilter | filter:{active: false} ")
+                        tr(data-ng-repeat="league in leagues")
                             td
                                 h5 {{league.leagueName}}
                             td
-                                button.btn.btn-primary.btn-sm.h5(data-ng-click="joinLeague(league._id, currentUser.teamId)")
+                                h5
+                                    span.glyphicon(ng-class="{'glyphicon-ok': league.active, 'glyphicon-remove': !league.active}")
+                            td
+                                button.btn.btn-danger.h5(ng-show="league.active",ng-click="leaveLeague(league._id, currentUser.teamId)")
+                                    span.glyphicon.glyphicon-new-window
+                                    |  Leave {{league.leagueName}}
+
+                                button.btn.btn-success.h5(ng-hide="league.active",ng-click="joinLeague(league._id, currentUser.teamId)")
                                     span.glyphicon.glyphicon-ok
+                                    |  Join {{league.leagueName}}
 
-    div.col-sm-4
-        .well
-            table.table.table-responsive()
-                legend My leagues
-                p Click on the red button to leave a league.
-                thead.text-muted
-                    th Name
-                    th Leave
-                tbody
-                    tr(data-ng-repeat="league in leagues | filter:{active: true} ")
-                        td
-                            a.h5(ng-href="league/{{league._id}}") {{league.leagueName}}
+            div.well-sm.text-center
+                a.btn.btn-primary(href="/leagues") View my leagues
 
-                        td
-                            button.btn.btn-danger.btn-sm.h5(data-ng-click="leaveLeague(league._id, currentUser.teamId)")
-                                span.glyphicon.glyphicon-new-window
 
-    div.col-sm-4
+    div.col-sm-12
         .well
             form(role='form', name='LeagueForm', data-ng-submit='createLeague(newLeague)')
                 legend Create a new league

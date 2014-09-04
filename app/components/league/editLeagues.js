@@ -22,23 +22,6 @@ angular.module('fantasyGolfApp')
       }
     );
 
-    $scope.createLeague = function(newLeague){
-
-      League.createLeague(newLeague)
-        .then(
-          function(result){
-            $scope.leagues = markActiveLeagues(teamId, result.data);
-            $scope.newLeague = {};
-            $scope.LeagueForm.$setPristine();
-          },
-          function(error){
-            $scope.leagueError = error.data;
-            $scope.leagueError.status = error.status;
-          }
-        )
-
-    };
-
     $scope.joinLeague = function(leagueId, teamId){
 
       League.joinLeague(leagueId, teamId)
@@ -57,6 +40,23 @@ angular.module('fantasyGolfApp')
         .then(function(result){
           $scope.leagues = markActiveLeagues(teamId, result.data);
         },function(error){
+          $scope.leagueError = error.data;
+          $scope.leagueError.status = error.status;
+        }
+      )
+
+    };
+
+    $scope.createLeague = function(newLeague){
+
+      League.createLeague(newLeague)
+        .then(
+        function(result){
+          $scope.leagues = markActiveLeagues(teamId, result.data);
+          $scope.newLeague = {};
+          $scope.LeagueForm.$setPristine();
+        },
+        function(error){
           $scope.leagueError = error.data;
           $scope.leagueError.status = error.status;
         }
