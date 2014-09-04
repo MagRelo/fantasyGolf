@@ -34,7 +34,7 @@ div(data-ng-controller="listLeaguesCtrl")
                             span.h4  {{$index + 1}}.
                             span  {{team.teamName}}
                                 small.text-muted  {{team.ownerName}}
-                            span.pull-right {{team.score}}
+                            span.pull-right {{team.score || '0'}}
             .clearfix
 
 
