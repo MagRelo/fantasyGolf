@@ -3,6 +3,11 @@
 
 div(data-ng-controller="listLeaguesCtrl")
 
+    div(ng-show="displayNoLeaguesMessage")
+        .well.text-center
+            h4 You're not currently a member of any leagues. Click 'Edit Leagues' to join leagues.
+            a.btn.btn-primary(href="/editleagues") Edit Leagues
+
     div.well(ng-repeat="league in team.leagues")
         .row
             .col-sm-8

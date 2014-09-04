@@ -4,6 +4,7 @@ angular.module('fantasyGolfApp')
   .controller('listLeaguesCtrl', function ($scope, Team, League) {
 
     var teamId = $scope.currentUser.teamId;
+    $scope.displayNoLeaguesMessage = false;
 
     //parse scores into floats for sorting
     var parseScores = function(leagues){
@@ -19,6 +20,12 @@ angular.module('fantasyGolfApp')
       .then(function(result){
         $scope.team = result.data;
         $scope.team.leagues = parseScores($scope.team.leagues);
+
+        //set no leagues message
+        if($scope.team.leagues.length < 1){
+          $scope.displayNoLeaguesMessage = true;
+        }
+
       },function(error){
         $scope.error = error;
       }
