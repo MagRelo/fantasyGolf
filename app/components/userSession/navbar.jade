@@ -15,7 +15,7 @@ div.header(ng-controller='NavbarCtrl', ng-show="currentUser")
                 .container
 
                     // Note: set the initial collapsed state and change it when clicking
-                    a.btn.btn-navbar.mg-navButton.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+                    a.btn.btn-navbar.mg-navButton.mg-menuButton.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
                         span.glyphicon.glyphicon-list
                         |  Menu
                     h1 Ballstrikers
