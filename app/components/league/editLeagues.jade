@@ -26,11 +26,11 @@ div.row(data-ng-controller="editLeaguesCtrl")
                             td
                                 button.btn.btn-danger.h5(ng-show="league.active",ng-click="leaveLeague(league._id, currentUser.teamId)")
                                     span.glyphicon.glyphicon-new-window
-                                    |  Leave {{league.leagueName}}
+                                    |  Leave league
 
                                 button.btn.btn-success.h5(ng-hide="league.active",ng-click="joinLeague(league._id, currentUser.teamId)")
                                     span.glyphicon.glyphicon-ok
-                                    |  Join {{league.leagueName}}
+                                    |  Join league
 
             div.well-sm.text-center
                 a.btn.btn-primary(href="/leagues") View my leagues
