@@ -15,7 +15,7 @@ angular.module('fantasyGolfApp', [
 
     //configure logging through sentry
     Raven.config('https://19cfd39e1cb249a59e737f67b0f1f4ea@app.getsentry.com/29841', {
-      logger: 'Error Handling Demo'
+      logger: 'Ballstrikers Logger'
     }).install();
 
     $routeProvider
