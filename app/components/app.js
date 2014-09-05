@@ -15,8 +15,8 @@ angular.module('fantasyGolfApp', [
       .when('/', {
         templateUrl: 'components/userSession/main'
       })
-      .when('/leagues', {
-        templateUrl: 'components/league/listLeagues',
+      .when('/myleagues', {
+        templateUrl: 'components/team/myLeagues',
         authenticate: true
       })
       .when('/editleagues', {
@@ -75,7 +75,7 @@ angular.module('fantasyGolfApp', [
     $rootScope.$on('$routeChangeStart', function (event, next) {
 
       if(Auth.isLoggedIn() && $location.path() == '/'){
-        $location.path('/leagues');
+        $location.path('/myleagues');
       }
 
       if (next.authenticate && !Auth.isLoggedIn()) {

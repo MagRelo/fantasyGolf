@@ -1,14 +1,11 @@
-//
-   Created by mattlovan on 8/18/14.
-
-div(data-ng-controller="listLeaguesCtrl")
-
+div(ng-controller="myLeaguesCtrl")
     div(ng-show="displayNoLeaguesMessage")
-        .well.text-center
-            h4 You're not currently a member of any leagues. Click 'Edit Leagues' to join leagues.
+        .well
+            legend My leagues
+            p You're not currently a member of any leagues. Click 'Edit Leagues' to join leagues.
             a.btn.btn-primary(href="/editleagues") Edit Leagues
 
-    div.well(ng-repeat="league in team.leagues")
+    div.well(ng-repeat="league in leagues")
         .row
             .col-sm-8
                 h3 {{league.leagueName}}
@@ -17,14 +14,12 @@ div(data-ng-controller="listLeaguesCtrl")
                         input.form-control(type="text", placeholder="enter a message here...", ng-model="chatMessage")
                         span.input-group-btn
                             button.btn.btn-success(ng-click="addChat(chatMessage, league._id, currentUser.teamId)") send
-
                 .league_chatbox
                     div.league_chatbox_item(ng-repeat="msg in league.chat | orderBy:'modified':true")
                         span.league_chatbox_item_title
                             span.text-primary {{msg.name}}
                             span.text-muted  {{msg.modified| date:'EEE, h:mm a'}}
-                        |  {{msg.message}}
-
+                        | {{msg.message}}
             .col-sm-4
                 h3 Leaderboard
                     small updated: {{league.modified| date:'EEE, h:mm a'}}

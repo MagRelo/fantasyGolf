@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('listLeaguesCtrl', function ($scope, Team, League) {
+  .controller('myLeaguesCtrl', function ($scope, Team, League) {
 
-    var teamId = $scope.currentUser.teamId;
     $scope.displayNoLeaguesMessage = false;
+    var teamId = $scope.currentUser.teamId;
 
     //parse scores into floats for sorting
     var parseScores = function(leagues){
@@ -17,30 +17,21 @@ angular.module('fantasyGolfApp')
     };
 
     Team.getMyTeam(teamId)
-      .then(function(result){
-        $scope.team = result.data;
-        $scope.team.leagues = parseScores($scope.team.leagues);
-
-        //set no leagues message
-        if($scope.team.leagues.length < 1){
-          $scope.displayNoLeaguesMessage = true;
-        }
-
-      },function(error){
-        $scope.error = error;
-      }
-    );
+      .then(
+        function(results){
+          $scope.leagues = parseScores(results.data.leagues);
+          $scope.displayNoLeaguesMessage = $scope.leagues.length == 0;
+        },
+        function(error){
+        });
 
     $scope.addChat = function(message, leagueId){
-
       League.addChat(message, leagueId, teamId)
         .then(function(result){
-          $scope.team = result.data;
-          $scope.team.leagues = parseScores($scope.team.leagues);
+          $scope.leagues = parseScores(result.data.leagues);
         },function(error){
           $scope.error = error;
         })
-
     };
 
   });
