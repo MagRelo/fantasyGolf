@@ -1,3 +1,4 @@
+/* global Raven:true */
 'use strict';
 
 angular.module('fantasyGolfApp', [
@@ -11,6 +12,12 @@ angular.module('fantasyGolfApp', [
 ])
 
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
+
+    //configure logging through sentry
+    Raven.config('https://19cfd39e1cb249a59e737f67b0f1f4ea@app.getsentry.com/29841', {
+      logger: 'Error Handling Demo'
+    }).install();
+
     $routeProvider
       .when('/', {
         templateUrl: 'components/userSession/main'

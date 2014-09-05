@@ -13,6 +13,7 @@ html
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     // Place favicon.ico and apple-touch-icon.png in the root directory
+    <script src="//cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Yellowtail|Arimo' rel='stylesheet' type='text/css'>
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
@@ -57,6 +58,8 @@ html
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="components/app.js"></script>
+
+    <script src="components/errorDecorator.js"></script>
 
     <script src="components/league/leagueResource.js"></script>
     <script src="components/league/editLeagues.js"></script>
