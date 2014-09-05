@@ -70,9 +70,9 @@ div(data-ng-controller="tournamentAdminCtrl")
                     p recalc player scores
                     button.btn.btn-primary(data-ng-click="calcPlayerScores()") Calc player scores
 
-                    alert(type="success", ng-show="playerResponse") {{playerResponse}}
+                    alert(type="info", ng-show="playerResponse") {{playerResponse}}
                     alert(type="danger", ng-show="playerError") {{playerError}}
-
+        .row
             .col-sm-4
                 .admin_buttonbox
                     h3 Calc team scores
