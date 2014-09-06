@@ -69,7 +69,7 @@ body {
 
 @media all and (min-width: 768px) {
   .front h1{ font-size: 70px; }
-
+  
   //WebKit scrollbars
   ::-webkit-scrollbar {
     width: 8px;
@@ -103,7 +103,7 @@ body {
 }
 
 .mg-navGroup{
-  margin-left: 25px;
+  margin-left: 15px;
 }
 
 .btn.mg-navGroup > a{
@@ -159,8 +159,25 @@ table > tbody > tr > td{
 }
 
 //------------TABLE--------*
+//------------VIEW TEAM--------*
 
+.viewteam_rowItem{
+  margin-top: 20px;
+  font-size: 17px;
+}
+
+//------------VIEW TEAM--------*
 //------------MISC--------*
+h2 > small, .h2 > small,
+h3 > small, .h3 > small{
+  margin-left: 10px;
+}
+
+.glyphicon{
+  top: 2px;
+  margin-right: 3px;
+}
+
 
 .form-control[disabled],
 .form-control[readonly],
@@ -213,25 +230,18 @@ fieldset[disabled] .form-control {
 .well{
   border-radius: 0;
   border-color: #56595C;
-//  border-top-color: #4c4f52;
-//  border-left-color: #4c4f52;
-//  border-right-color: #4c4f52;
   background-color: rgba(40,43,46,.95);
   padding: 0 20px 20px 20px;
-
   box-shadow:
     0 0 1px 1px #282b2e,
-    0 3px 10px 0px #0b0b0c
+    0 3px 10px 0px #0b0b0c;
 }
 
 h3{
   text-shadow: 1px 1px 1px $mg-darkest;
 }
 
-h3 > small,
-span.h3 > small{
-  margin-left: 10px;
-}
+
 
 legend{
   padding-top: 15px;
