@@ -166,6 +166,19 @@ table > tbody > tr > td{
   font-size: 17px;
 }
 
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+  border-top: 1px solid $mg-mid;
+}
+
+.table > thead > tr > th {
+  border-bottom: 1px solid $mg-mid;
+}
+
 //------------VIEW TEAM--------*
 //------------MISC--------*
 h2 > small, .h2 > small,

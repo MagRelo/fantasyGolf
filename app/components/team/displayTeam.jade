@@ -5,7 +5,7 @@ div.well(data-ng-controller="displayTeamCtrl")
             th(colspan=2)
                 h3 {{team.teamName}}
                     small  {{team.ownerName}}
-            th.hidden-xs(data-ng-repeat="round in rounds")
+            th.text-muted.hidden-xs(data-ng-repeat="round in rounds")
                 | {{'rnd ' + round.number}}
             th.text-center total
 
@@ -15,19 +15,15 @@ div.well(data-ng-controller="displayTeamCtrl")
                     div.playerList
                         a(ng-href="{{'/player/' + team.player1.id}}")
                             img.playerImage(ng-src="https://res.cloudinary.com/pga-tour/image/upload/t_headshots_player_s/headshots_{{team.player1.id}}.png")
-
-
                 td
                     h4 {{team.player1.name.first + ' ' + team.player1.name.last}}
                     a(ng-href="{{'/player/' + team.player1.id}}")
-                        span.glyphicon.glyphicon-list
+                        span.glyphicon.glyphicon-list-alt
                         |  scorecard
-
-
                 td.hidden-xs(data-ng-repeat="round in team.player1.rounds")
-                    h5 {{round.modStablefordTotal}}
+                    .viewteam_rowItem {{round.modStablefordTotal}}
                 td
-                    h5.text-center {{team.player1.modstable}}
+                    .viewteam_rowItem {{team.player1.modstable}}
 
             tr
                 td
@@ -39,14 +35,14 @@ div.well(data-ng-controller="displayTeamCtrl")
                 td
                     h4 {{team.player2.name.first + ' ' + team.player2.name.last}}
                     a(ng-href="{{'/player/' + team.player2.id}}")
-                        span.glyphicon.glyphicon-list
+                        span.glyphicon.glyphicon-list-alt
                         |  scorecard
 
 
                 td.hidden-xs(data-ng-repeat="round in team.player2.rounds")
-                    h5 {{round.modStablefordTotal}}
+                    .viewteam_rowItem {{round.modStablefordTotal}}
                 td
-                    h5.text-center {{team.player2.modstable}}
+                    .viewteam_rowItem {{team.player2.modstable}}
 
             tr
                 td
@@ -58,14 +54,14 @@ div.well(data-ng-controller="displayTeamCtrl")
                 td
                     h4 {{team.player3.name.first + ' ' + team.player3.name.last}}
                     a(ng-href="{{'/player/' + team.player3.id}}")
-                        span.glyphicon.glyphicon-list
+                        span.glyphicon.glyphicon-list-alt
                         |  scorecard
 
 
                 td.hidden-xs(data-ng-repeat="round in team.player3.rounds")
-                    h5 {{round.modStablefordTotal}}
+                    .viewteam_rowItem {{round.modStablefordTotal}}
                 td
-                    h5.text-center {{team.player3.modstable}}
+                    .viewteam_rowItem {{team.player3.modstable}}
 
             tr
                 td
@@ -75,19 +71,19 @@ div.well(data-ng-controller="displayTeamCtrl")
                 td
                     h4 {{team.player4.name.first + ' ' + team.player4.name.last}}
                     a(ng-href="{{'/player/' + team.player4.id}}")
-                        span.glyphicon.glyphicon-list
+                        span.glyphicon.glyphicon-list-alt
                         |  scorecard
                 td.hidden-xs(data-ng-repeat="round in team.player4.rounds")
-                    h5 {{round.modStablefordTotal}}
+                    .viewteam_rowItem {{round.modStablefordTotal}}
                 td
-                    h5.text-center {{team.player4.modstable}}
+                    .viewteam_rowItem {{team.player4.modstable}}
         
         tfoot
             tr
                 td
                 td.hidden-xs(data-ng-repeat="round in rounds")
                 td
-                    h4 total:
+                    h4.pull-right total:
                 td.text-center
                     h4 {{team.modstable}}
 
