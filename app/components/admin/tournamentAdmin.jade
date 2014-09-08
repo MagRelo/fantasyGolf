@@ -42,7 +42,6 @@ div(data-ng-controller="tournamentAdminCtrl")
                         alert(type="danger", ng-show="tournamentError") {{tournamentError}}
 
 
-    .well
         legend run functions
 
         .row
@@ -94,6 +93,28 @@ div(data-ng-controller="tournamentAdminCtrl")
                     alert(type="danger", ng-show="leagueError.status", close="leagueError = {}")
                         h4 status: {{leagueError.status}}
                         p {{leagueError.name}}: {{leagueError.message}}
+
+    .well
+        legend Users ({{users.length}})
+
+        alert(type="danger", ng-if="userError") {{teamError.name}}: {{teamError.message}}
+
+        .tableOverflow
+            table.table
+                thead
+                    tr
+                        th Name
+                        th Email
+                        th Role
+                        th Delete
+
+                tbody
+                    tr(ng-repeat="user in users")
+                        td {{user.name}}
+                        td {{user.email}}
+                        td {{user.role}}
+                        td
+                            button.btn.btn-sm.btn-danger(ng-click="deleteUser(user.userId)") Delete
 
 
     //.well

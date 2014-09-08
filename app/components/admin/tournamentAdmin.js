@@ -5,7 +5,6 @@ angular.module('fantasyGolfApp')
 
     $scope.editPlayerId = 0;
 
-
     Tournament.getTournament()
       .then(function(results){
         $scope.tournament = angular.copy(results.data);
@@ -13,13 +12,19 @@ angular.module('fantasyGolfApp')
         $scope.tournamentError = error;
       });
 
-    Tournament.getPlayers()
-      .then(function(results){
-        $scope.players = angular.copy(results.data);
-      }, function(error){
-        $scope.playerError = error;
-      });
+//    Tournament.getPlayers()
+//      .then(function(results){
+//        $scope.players = angular.copy(results.data);
+//      }, function(error){
+//        $scope.playerError = error;
+//      });
 
+    Tournament.listUsers()
+      .then(function(results){
+        $scope.users = results.data;
+      }, function(error){
+        $scope.usersError = error;
+      });
 
     $scope.updateTournament = function(tournamentId, tournament){
 
@@ -33,8 +38,19 @@ angular.module('fantasyGolfApp')
           $scope.TournamentForm.$setPristine();
         })
     };
-    
-    
+
+
+    //---user functions
+    $scope.deleteUser = function(userId){
+      Tournament.deleteUser(userId)
+        .then(function(results){
+            $scope.users = results.data;
+          },function(error){
+            $scope.userError = error;
+          })
+    };
+
+
     //---run functions
     $scope.runSetup = function(){
       Tournament.runSetup()
@@ -77,7 +93,6 @@ angular.module('fantasyGolfApp')
           $scope.teamError.status = error.status;
         })
     };
-
 
     $scope.calcLeagues = function(){
 

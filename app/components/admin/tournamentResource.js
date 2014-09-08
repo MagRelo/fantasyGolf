@@ -9,7 +9,7 @@ angular.module('fantasyGolfApp')
           promise: function () {
             return $http.get('/api/pga/setup');
           },
-          ttl: 30000
+          ttl: 900000
         });
       },
       getPlayers: function () {
@@ -17,7 +17,7 @@ angular.module('fantasyGolfApp')
           promise: function () {
             return $http.get('/api/pga/field');
           },
-          ttl: 30000
+          ttl: 900000
         });
       },
       updateTournament: function(tournamentId, tournament){
@@ -42,6 +42,12 @@ angular.module('fantasyGolfApp')
       },
       calcLeagues: function(){
         return $http.post('/api/admin/calcleagues');
+      },
+      listUsers: function(){
+        return $http.get('/api/admin/users');
+      },
+      deleteUser: function(userId){
+        return $http.delete('/api/admin/users/' + userId);
       }
     };
 
