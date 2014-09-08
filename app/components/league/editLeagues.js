@@ -1,14 +1,18 @@
 'use strict';
 
 angular.module('fantasyGolfApp')
-  .controller('editLeaguesCtrl', function ($scope, League, Team) {
+  .controller('editLeaguesCtrl', function ($scope, League) {
 
     var teamId = $scope.currentUser.teamId;
+
     var markActiveLeagues = function(teamId, leagues){
       //flag leagues to filter the list of available leagues to join
       angular.forEach(leagues, function(league){
+        league.active = false;
         angular.forEach(league.teams, function(team){
-          league.active = team._id == teamId;
+          if(team._id == teamId){
+            league.active = true;
+          }
         })
       });
       return leagues;
