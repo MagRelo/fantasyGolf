@@ -24,9 +24,9 @@ module.exports = function(app) {
     });
 
     app.use(express.static(path.join(config.root, '.tmp')));
-    app.use(express.static(path.join(config.root, 'app')));
+    app.use(express.static(path.join(config.root, 'client')));
     app.use(express.errorHandler());
-    app.set('views', config.root + '/app');
+    app.set('views', config.root + '/client');
   });
 
   app.configure('production', function(){
@@ -55,7 +55,7 @@ module.exports = function(app) {
     //use passport session
     app.use(passport.initialize());
     app.use(passport.session());
-    
+
     // Router needs to be last
     app.use(app.router);
   });
