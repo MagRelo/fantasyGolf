@@ -1,8 +1,8 @@
 //img.centerImage.hidden-sm.hidden-xs(src="/images/sunset1.jpg")
 
 .front
-    h1 Ballstrikers
-        small  fantasy golf
+    h1 Backspin
+        small fantasy golf
 
 .row
     .col-sm-6
@@ -10,19 +10,54 @@
             legend How to play
             ol.instructions
                 li
-                    p Each team selects four golfers for each tournament.
+                    h4 Create a team - choose 4 golfers
+                      small
+
                 li
+                    h4 Scoring
                     p Your team score is the sum of the scores of your golfers. Each golfer's score is calculated using the
-                        a(href="http://en.wikipedia.org/wiki/Stableford#Modified_Stableford", target="_blank")  modified stableford
-                        |  scoring system.
+                      a(href="http://en.wikipedia.org/wiki/Stableford#Modified_Stableford", target="_blank")  modified stableford
+                      |  scoring system.
+
+                    p Example -
+
+                    .well
+                      table.table
+                        tbody
+                          tr
+                            td par for the hole
+                            td
+                            td
+                            td  4
+                            td
+                            td
+                          tr
+                            td golfer's score
+                            td
+                            td
+                            td
+                            td  3
+                            td
+                          tr
+                            td points
+                            td  -3
+                            td  -1
+                            td  0
+                            td  5
+                            td 10
+
+
+
                 li
-                    p Join leages to compete with other teams.
+                    h4 Create private leagues
 
-            div(ng-include='\'components/userSession/signup\'')
 
-    .col-sm-6
+
+    //.col-sm-6
         .well
             div(ng-show="!showSignup", ng-include='\'components/userSession/login\'')
-
+    .col-sm-6
+        .well
+            div(ng-include='\'components/userSession/signup\'')
 
 
