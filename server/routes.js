@@ -17,6 +17,8 @@ var middleware = require('./middleware');
  */
 module.exports = function(app) {
 
+  app.get('/api/pga/leaderboard', pga.leaderboard);
+
   // User API Routes
   app.post('/api/users', users.createUser);
   app.put('/api/users', users.changePassword);
@@ -44,7 +46,6 @@ module.exports = function(app) {
   //pga routes
   app.get('/api/pga/setup',  middleware.auth, pga.tournamentSetup);
   app.get('/api/pga/field',  middleware.auth, pga.getField);
-  app.get('/api/pga/leaderboard',  middleware.auth, pga.leaderboard);
   app.get('/api/pga/player/:playerId',  middleware.auth, pga.getScorecard);
 
   //tournament routes
