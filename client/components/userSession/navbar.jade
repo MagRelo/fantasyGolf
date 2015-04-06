@@ -28,7 +28,7 @@ div.header(ng-controller="NavbarCtrl", role="navigation")
                         ul.nav
                             li(ng-repeat="item in menu")
                                 a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
-                                  span(ng-class="{item.icon}")
+                                  span(ng-class="item.icon")
                             li
                                 .well-sm.text-center
                                     button.btn.logout(ng-click='logout()') Logout

@@ -257,8 +257,8 @@ fieldset[disabled] .form-control {
 //------------WELL--------*
 
 .well{
-  border-radius: 0 10px 10px 10px;
-  border-color: $mg-darkest;
+  border-radius: 0 0 10px 10px;
+  border-color: $mg-white;
   padding: 0 20px 20px 20px;
 }
 
@@ -272,7 +272,11 @@ legend{
 .tournament{
   color: $mg-white;
   font-family: Lora, serif;
-  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  border: solid 1px #fefff7;
+  box-shadow: inset white 0 0 5px 2px;
+
   h1 {
     font-family: Lora, serif;
     margin-top: 0;
