@@ -3,9 +3,11 @@
 angular.module('fantasyGolfApp')
   .controller('displayTeamCtrl', function ($scope, $q, $routeParams, pga, Team) {
 
-    var totalRounds;
-    var teamId = $routeParams.teamId || $scope.currentUser.teamId;
+    //var teamId = $routeParams.teamId || $scope.currentUser.teamId;
+    var teamId = '';
+
     $scope.rounds = [];
+
 
     $q.all([
 
@@ -15,9 +17,9 @@ angular.module('fantasyGolfApp')
     ]).then(
       function(results){
 
+        var totalRounds;
+
         $scope.team = results[0].data;
-
-
         $scope.courses = results[1].data.courses;
 
         totalRounds = results[1].data.totalRounds;
@@ -43,7 +45,11 @@ angular.module('fantasyGolfApp')
 
       },
       function(error){
-        $scope.teamError = error;
+        $scope.teamError = {
+          title: "Error occurred while loading team",
+          status: error.status,
+          message: error.data
+        };
       }
     );
 

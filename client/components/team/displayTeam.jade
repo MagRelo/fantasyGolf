@@ -1,5 +1,10 @@
 
-div.well(data-ng-controller="displayTeamCtrl")
+div(data-ng-controller="displayTeamCtrl")
+    //error
+    //alert(type="danger", ng-if="teamError")
+      span.h3 {{teamError.title}}
+      p Status Code: {{teamError.status}} - {{teamError.message}}
+
     table.table.table-condensed
         thead
             th(colspan=2)
@@ -77,7 +82,7 @@ div.well(data-ng-controller="displayTeamCtrl")
                     .viewteam_rowItem {{round.modStablefordTotal}}
                 td
                     .viewteam_rowItem {{team.player4.modstable}}
-        
+
         tfoot
             tr
                 td
@@ -86,7 +91,3 @@ div.well(data-ng-controller="displayTeamCtrl")
                     h4.pull-right total:
                 td.text-center
                     h4 {{team.modstable}}
-
-
-        //error
-        alert(type="danger", ng-show="teamError") {{teamError}}

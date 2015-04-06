@@ -3,8 +3,11 @@
 angular.module('fantasyGolfApp')
   .controller('myLeaguesCtrl', function ($scope, Team, League) {
 
-    $scope.displayNoLeaguesMessage = false;
-    var teamId = $scope.currentUser.teamId;
+    $scope.leagues = [];
+    $scope.displayNoLeaguesMessage = true;
+
+    //var teamId = $scope.currentUser.teamId;
+    var teamId = '';
 
     //parse scores into floats for sorting
     var parseScores = function(leagues){
@@ -16,15 +19,6 @@ angular.module('fantasyGolfApp')
       return leagues;
     };
 
-    Team.getMyTeam(teamId)
-      .then(
-        function(results){
-          $scope.leagues = parseScores(results.data.leagues);
-          $scope.displayNoLeaguesMessage = $scope.leagues.length == 0;
-        },
-        function(error){
-        });
-
     $scope.addChat = function(message, leagueId){
       League.addChat(message, leagueId, teamId)
         .then(function(result){
@@ -33,5 +27,22 @@ angular.module('fantasyGolfApp')
           $scope.error = error;
         })
     };
+
+    if(teamId){
+      Team.getMyTeam(teamId)
+        .then(
+        function(results){
+          $scope.leagues = parseScores(results.data.leagues);
+          if($scope.leagues.length){
+            $scope.displayNoLeaguesMessage = $scope.leagues.length == 0;
+          }
+
+        },
+        function(error){
+          $scope.error = error;
+        });
+    }
+
+
 
   });

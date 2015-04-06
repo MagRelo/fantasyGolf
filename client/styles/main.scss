@@ -2,7 +2,8 @@
 
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-$mg-white:              #e5e8cc;
+$mg-white:              #fefff7;
+$mg-tan:                #e5e8cc;
 $mg-mid:                #BCAA84;
 $mg-dark:               #523525;
 $mg-darkest:            #39250D;
@@ -15,7 +16,7 @@ $brand-warning:         #e67e22 !default;
 $brand-danger:          #A74F43 !default;
 
 // Typography
-$font-family-sans-serif:  'Arimo', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:   "Lora", Helvetica, Arial, sans-serif !default;
 $body-bg:               transparent !default;
 $text-color:            $mg-darkest !default;
 // Forms
@@ -38,7 +39,7 @@ $well-bg:               $mg-white !default;
 }
 
 html {
-  background: $mg-darkest url(../images/green_grass.jpg) no-repeat center center fixed;
+  background: $mg-darkest url(../images/dark.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -99,14 +100,22 @@ body {
 //------------FRONT----------*
 //------------NAV----------*
 .header{
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .header h1 {
   margin-top: 0;
+  color: $mg-white;
+  font-size: 48px;
   line-height: 40px;
+
   font-family: Yellowtail, cursive, serif;
   text-shadow:  1px 1px 0 $mg-darkest;
+}
+
+.header h1 small {
+  margin-left: .5em;
+  color: $mg-white;
 }
 
 .mg-navGroup{
@@ -217,8 +226,8 @@ fieldset[disabled] .form-control {
 }
 
 .playerImage{
-  margin-right: 10px;
-  margin-top: 2px;
+  margin-top: 5px;
+  width: 20px;
 }
 
 .btn.logout{
@@ -253,18 +262,27 @@ fieldset[disabled] .form-control {
   padding: 0 20px 20px 20px;
 }
 
-h3{
-  text-shadow: 1px 1px 1px $mg-darkest;
-}
-
-
-
 legend{
   padding-top: 15px;
 }
 
 //------------WELL--------*
+//------------Leaderboard--------*
 
+.tournament{
+  color: $mg-white;
+  font-family: Lora, serif;
+  margin-bottom: 15px;
+  h1 {
+    font-family: Lora, serif;
+    margin-top: 0;
+  }
+  h2, .h4 {
+    font-family: Lora, serif;
+  }
+}
+
+//------------Leaderboard--------*
 //------------LEAGUE--------*
 
 .league_chatbox{

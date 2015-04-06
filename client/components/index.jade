@@ -9,12 +9,12 @@ html
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     base(href="/")
-    title  Ballstrikers Golf
+    title  Backspin Golf
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     // Place favicon.ico and apple-touch-icon.png in the root directory
     <script src="//cdn.ravenjs.com/1.1.15/jquery,native/raven.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Yellowtail|Arimo' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Yellowtail|Lora|Roboto' rel='stylesheet' type='text/css'>
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -29,8 +29,7 @@ html
     <!--<![endif]-->
 
     div.container
-        div(ng-if="currentUser")
-            div(ng-include='\'components/userSession/navbar\'')
+        div(ng-include='\'components/userSession/navbar\'')
 
         div.viewAnimate(ng-view)
 
@@ -88,4 +87,4 @@ html
     <script src="components/userSession/mongooseError.js"></script>
 
     <!-- endbuild -->
-    
+

@@ -7,10 +7,7 @@ div(ng-controller="LeaderboardCtrl")
             .loading_down
 
 
-    div.well(ng-show="dataLoaded")
-        h2 {{info.name}}
-            small  {{info.date}}
-
+    div(ng-show="dataLoaded")
         div.tableOverflow.leaderboard
             table.table
                 thead.text-muted

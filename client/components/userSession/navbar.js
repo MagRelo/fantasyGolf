@@ -3,21 +3,21 @@
 angular.module('fantasyGolfApp')
   .controller('NavbarCtrl', function ($rootScope, $scope, $location, Auth) {
 
-    $scope.menu = [
-      { 'title': 'my leagues', 'link': '/leagues' }
-      ,{ 'title': 'view my team', 'link': '/myteam' }
-      ,{ 'title': 'edit my team', 'link': '/editteam' }
-    ];
+    //var userIsLoggedIn = !!$scope.currentUser;
+    var userIsLoggedIn = true;
 
-    //add admin link
-    var addAdmin = function(){
-      if($scope.currentUser.role === 'admin'){
-        $scope.menu.push(
-          {'title': 'admin', 'link': '/admin'}
-        )
-      }
-    };
-    addAdmin();
+    if(userIsLoggedIn){
+      $scope.menu = [
+        { 'title': 'Settings', 'link': '/settings', 'icon': 'glyphicon glyphicon-cog' }
+      ];
+    }
+
+    //add admin link if admin
+    //if(userIsLoggedIn  && $scope.currentUser.role === 'admin'){
+    //  $scope.menu.push(
+    //    {'title': 'admin', 'link': '/admin'}
+    //  )
+    //}
 
     $scope.isActive = function(route) {
       return route === $location.path();

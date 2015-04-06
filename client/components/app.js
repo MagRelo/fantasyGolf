@@ -14,13 +14,13 @@ angular.module('fantasyGolfApp', [
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
 
     //configure logging through sentry
-    Raven.config('https://19cfd39e1cb249a59e737f67b0f1f4ea@app.getsentry.com/29841', {
-      logger: 'Ballstrikers Logger'
-    }).install();
+    //Raven.config('https://19cfd39e1cb249a59e737f67b0f1f4ea@app.getsentry.com/29841', {
+    //  logger: 'Ballstrikers Logger'
+    //}).install();
 
     $routeProvider
       .when('/', {
-        templateUrl: 'components/pga/leaderboard'
+        templateUrl: 'components/layout'
       })
       .when('/myleagues', {
         templateUrl: 'components/team/myLeagues',

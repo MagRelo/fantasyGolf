@@ -5,32 +5,38 @@ div.header(ng-controller="NavbarCtrl", role="navigation")
         ul.list-inline.pull-right
 
             li.mg-navGroup(ng-repeat="item in menu")
-                a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
+                a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}")
+                  span(ng-class="item.icon")
+                  | {{item.title}}
             li.mg-navGroup
                button.btn.logout(ng-click='logout()') Logout
 
     div.navbar.hidden-md.hidden-lg
 
-            .navbar-inner
-                .container
+        .navbar-inner
+            .container
 
-                    // Note: set the initial collapsed state and change it when clicking
-                    a.btn.btn-navbar.mg-navButton.mg-menuButton.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
-                        span.glyphicon.glyphicon-list
-                        |  Menu
-                    h1 Ballstrikers
+                // Note: set the initial collapsed state and change it when clicking
+                a.btn.btn-navbar.mg-navButton.mg-menuButton.pull-right(ng-init="navCollapsed = true", ng-click="navCollapsed = !navCollapsed")
+                    span.glyphicon.glyphicon-list
+                    |  Menu
+
+                h1 Backspin
+                    small fantasy golf
 
                     .nav-collapse.collapse.navbar-responsive-collapse(collapse="navCollapsed")
                         ul.nav
                             li(ng-repeat="item in menu")
                                 a.btn.mg-navButton(ng-href="{{item.link}}", ng-class="{active: isActive(item.link)}") {{item.title}}
+                                  span(ng-class="{item.icon}")
                             li
                                 .well-sm.text-center
                                     button.btn.logout(ng-click='logout()') Logout
 
-                    // /.nav-collapse
-                // /.container
-            // /navbar-inner
-        // /navbar
+                  // /.nav-collapse
+            // /.container
+        // /navbar-inner
+    // /navbar
 
-    h1.hidden-sm.hidden-xs Ballstrikers
+    h1.hidden-sm.hidden-xs Backspin
+      small fantasy golf
