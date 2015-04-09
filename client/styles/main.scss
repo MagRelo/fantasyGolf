@@ -2,16 +2,16 @@
 
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-$mg-white:              #fefff7;
+$mg-white:              #FFFBF9;
 $mg-tan:                #e5e8cc;
 $mg-mid:                #BCAA84;
 $mg-dark:               #523525;
 $mg-darkest:            #39250D;
 
 
-$brand-info:            yellowgreen !default;
+$brand-info:            #2C83CB !default;
 $brand-primary:         #468847 !default;
-$brand-success:         #468847 !default;
+$brand-success:         #32BE34 !default;
 $brand-warning:         #e67e22 !default;
 $brand-danger:          #A74F43 !default;
 
@@ -19,13 +19,16 @@ $brand-danger:          #A74F43 !default;
 $font-family-sans-serif:   "Lora", Helvetica, Arial, sans-serif !default;
 $body-bg:               transparent !default;
 $text-color:            $mg-darkest !default;
+
 // Forms
 $input-bg:              $mg-darkest !default;
 $input-color:           $mg-white !default;
 $input-border:          $mg-mid !default;
 $legend-color:          $mg-dark !default;
+
 // Panels
 $panel-bg:              $mg-dark !default;
+
 // Wells
 $well-bg:               $mg-white !default;
 
@@ -59,14 +62,14 @@ body {
 
 .front h1{
   font-size: 40px;
-  font-family: Yellowtail, cursive, serif;
+  font-family: "Architects Daughter", cursive, serif;
   text-shadow: 1px 1px 0 black, -2px 2px 40px $brand-primary;
   margin-top: 0;
   color: $mg-white;
 }
 
 .front h1 small{
-  color: $mg-white;
+  color: $brand-success;
   text-shadow:  1px 1px 0 black;
   margin-left: 20px;
 }
@@ -109,13 +112,13 @@ body {
   font-size: 48px;
   line-height: 40px;
 
-  font-family: Yellowtail, cursive, serif;
+  font-family: "Architects Daughter", cursive, serif;
   text-shadow:  1px 1px 0 $mg-darkest;
 }
 
 .header h1 small {
   margin-left: .5em;
-  color: $mg-white;
+  color: $brand-info;
 }
 
 .mg-navGroup{
@@ -160,27 +163,6 @@ table > tbody > tr > td{
   text-align: center;
 }
 
-.table{
-  margin-bottom: 10px;
-}
-.table > thead > tr > th {
-  border-bottom: 1px solid $mg-white;
-}
-
-.tableOverflow{
-  border: solid 1px $mg-dark;
-  overflow-x: auto;
-  margin-top: 15px;
-  padding: 0 10px;
-}
-
-//------------TABLE--------*
-//------------VIEW TEAM--------*
-
-.viewteam_rowItem{
-  margin-top: 20px;
-  font-size: 17px;
-}
 
 .table > thead > tr > th,
 .table > thead > tr > td,
@@ -194,6 +176,30 @@ table > tbody > tr > td{
 .table > thead > tr > th {
   border-bottom: 1px solid $mg-mid;
 }
+
+th{
+  text-transform: uppercase;
+  font-size: x-small;
+  color: $mg-mid;
+}
+
+.table{
+  margin-bottom: 10px;
+}
+
+.tableOverflow{
+  overflow-x: auto;
+  padding: 0 10px;
+}
+
+//------------TABLE--------*
+//------------VIEW TEAM--------*
+
+.viewteam_rowItem{
+  margin-top: 20px;
+  font-size: 17px;
+}
+
 
 //------------VIEW TEAM--------*
 //------------MISC--------*
@@ -260,10 +266,14 @@ fieldset[disabled] .form-control {
   border-radius: 0 0 10px 10px;
   border-color: $mg-white;
   padding: 0 20px 20px 20px;
+  box-shadow: none;
 }
 
 legend{
+  color: $mg-dark;
   padding-top: 15px;
+  border-bottom-color: $mg-mid;
+  margin-bottom: 0;
 }
 
 //------------WELL--------*
@@ -284,6 +294,14 @@ legend{
   h2, .h4 {
     font-family: Lora, serif;
   }
+
+
+}
+
+.text-backspin{
+  font-family: "Architects Daughter", cursive, serif;
+  line-height: 18px;
+  color: $brand-info;
 }
 
 //------------Leaderboard--------*
@@ -351,7 +369,19 @@ legend{
 //------------LEADERBOARD--------*
 
 .leaderboard{
-//  background-color: rgba(30,32,34,.9);
+
+  max-height: 400px;
+
+
+  td > div{
+    margin-top: 5px;
+  }
+
+  .btn{
+    text-transform: uppercase;
+    font-size: x-small;
+  }
+
 }
 
 //------------LEADERBOARD--------*
