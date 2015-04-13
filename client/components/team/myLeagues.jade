@@ -1,14 +1,14 @@
 div(ng-controller="myLeaguesCtrl")
     div(ng-show="displayNoLeaguesMessage")
         .well
-            legend Backspin leagues
+            legend.text-backspin Backspin leagues
             p You're not currently a member of any leagues. Click 'Edit Leagues' to join leagues.
             a.btn.btn-primary(href="/editleagues") Edit Leagues
 
     div.well(ng-repeat="league in leagues")
         .row
             .col-sm-8
-                h3 {{league.leagueName}}
+                h3.text-backspin {{league.leagueName}}
                 form
                     .input-group
                         input.form-control(type="text", placeholder="enter a message here...", ng-model="chatMessage")

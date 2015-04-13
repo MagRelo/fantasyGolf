@@ -1,51 +1,20 @@
 div(ng-controller="LeaderboardCtrl")
 
 
-    div(ng-hide="dataLoaded")
+    div.loadingPanel(ng-if="!dataLoaded")
         .wrapperloading
             .loading_up
             .loading_down
 
 
-    div(ng-show="dataLoaded")
+    div.well.viewAnimate(ng-if="dataLoaded")
 
         h1 {{info.name}}
         div.h4 {{info.date}}
 
-        div.tableOverflow.leaderboard
-
-            legend Your Team
-            table.table
-                thead.text-muted
-                  th picture
-                  th name
-                  //th(ng-repeat="item in courses[0].h") {{$index + 1}}
-                  th today
-                  th to par
-                  th points
-                  th action
-
-
-                tbody
-                  tr(data-ng-repeat='player in players | limitTo:4')
-                    td
-                      div.glyphicon.glyphicon-user
-                    td.text-muted
-                      div
-                        a(ng-href="/player/{{player.id}}") {{player.ln +', ' + player.fn}}
-                    //td(ng-repeat="hole in player.h.h") {{hole.sc}}
-                    td
-                      div {{player.tp}}
-                    td
-                      div {{player.tp}}
-                    td
-                      div.text-backspin 93
-                    td
-                      button.btn.btn-primary add
-
         legend {{info.name}} Leaderboard
-        div.tableOverflow.leaderboard
 
+        div.tableOverflow.leaderboard
             table.table
                 thead.text-muted
                     th picture
